@@ -1,0 +1,55 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, setup, include=FALSE}
+knitr::opts_knit$set(root.dir = '.')
+```
+
+```{r, echo=FALSE, comment=FALSE, message=FALSE}
+source("LandR_Modules.R")
+if (!require("Require")) install.packages("Require")
+out <- Require::Require(c("PredictiveEcology/SpaDES.install@installFromSource", 
+                          "reproducible", "igraph", "dplyr", "visNetwork", "data.table"))
+```
+
+```{r listModules, echo=FALSE, comment=FALSE, message=FALSE}
+cacheRepo <- "LandR_Module_Cache"
+out <- checkPath(cacheRepo, create = TRUE)
+options(reproducible.cachePath = cacheRepo)
+mods <- Cache(listModules, c("Biomass", "WBI", "LandR", "fireSense", "CBM", "LandMine", "LandWeb", 
+                             "NRV", #"scfm", 
+                             "priority", "spades_ws3",
+                             "dataPrep", "DataPrep", "RoF", "Ontario", "ROF"), 
+              accounts = c("PredictiveEcology", "ianmseddy", "achubaty", "FOR-CAST", "eliotmcintire",
+                           "tati-micheletti", "gparadis")
+              )
+
+out <- Map(mod = mods, nam = names(mods), function(mod, nam) {
+  out <- Cache(getModule, paste0(nam, "/", mod), modulePath = "testMods")
+  out
+})
+
+
+DT <- moduleDepenencies(mods, modulePath = "testMods")
+
+graph <- moduleDependenciesToGraph(DT)
+
+
+vn <- PlotModuleGraph(graph)  
+
+```
+
+```{r, echo=FALSE}
+
+visSave(vn, file = paste0("LandR_Modules_Fig.html"))
+
+```
+
+### LandR modules and their potential for interoperability
+
+```{r, results='asis', echo=FALSE}
+htmltools::includeHTML("LandR_Modules_Fig.html")
+```
