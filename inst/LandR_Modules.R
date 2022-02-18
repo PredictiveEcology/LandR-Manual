@@ -42,7 +42,11 @@ moduleDepenencies <- function(modules, modulePath) {
 
   modsFlat <- unlist(modules)
   names(modsFlat) <- modsFlat
+  dirsExist <- dir.exists(file.path(modulePath, modsFlat))
+  modsFlat <- modsFlat[dirsExist]
+
   obs <- lapply(modsFlat, function(mod) {
+    if (mod == "spades_ws3_connect_LandR-Biomass") browser()
     io <- inputObjects(module = mod, path = modulePath)
     oo <- outputObjects(module = mod, path = modulePath)
     list(io = io[[mod]], oo = oo[[mod]], name = mod)

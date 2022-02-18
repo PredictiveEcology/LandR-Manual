@@ -11,7 +11,7 @@ knitr::opts_knit$set(root.dir = '.')
 ```{r, echo=FALSE, comment=FALSE, message=FALSE}
 source("LandR_Modules.R")
 if (!require("Require")) install.packages("Require")
-out <- Require::Require(c("PredictiveEcology/SpaDES.install@installFromSource", 
+out <- Require::Require(c("PredictiveEcology/SpaDES.install@installFromSource", "SpaDES.core",
                           "reproducible", "igraph", "dplyr", "visNetwork", "data.table"))
 ```
 

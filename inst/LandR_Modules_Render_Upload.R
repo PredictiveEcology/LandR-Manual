@@ -11,7 +11,7 @@ rmarkdown::render(input = "LandR_Modules.Rmd", output_file="LandR_Modules.html")
 
 # update the same document with a new title
 updateResult <- markdown::rpubsUpload(
-  "LandR module ecosystem", "inst/LandR_Modules.html",
+  "LandR module ecosystem", "LandR_Modules.html",
   id = "https://api.rpubs.com/api/v1/document/867563/e0232cc23d03426095251b77312fa626")
 
 
