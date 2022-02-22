@@ -1,4 +1,5 @@
 ---
+title: LandR module ecosystem
 output: html_document
 editor_options: 
   chunk_output_type: console
@@ -21,7 +22,7 @@ out <- checkPath(cacheRepo, create = TRUE)
 options(reproducible.cachePath = cacheRepo)
 mods <- Cache(listModules, c("Biomass", "WBI", "LandR", "fireSense", "CBM", "LandMine", "LandWeb", 
                              "NRV", #"scfm", 
-                             "priority", "spades_ws3",
+                             "priority", "spades_ws3", "birdsNWT", "caribouRSF_NT", "caribouPopGrowthModel",
                              "dataPrep", "DataPrep", "RoF", "Ontario", "ROF"), 
               accounts = c("PredictiveEcology", "ianmseddy", "achubaty", "FOR-CAST", "eliotmcintire",
                            "tati-micheletti", "gparadis")
@@ -49,6 +50,8 @@ visSave(vn, file = paste0("LandR_Modules_Fig.html"))
 ```
 
 ### LandR modules and their potential for interoperability
+
+Modules that have many linkages are drawn to the center; modules with few linkages are further out
 
 ```{r, results='asis', echo=FALSE}
 htmltools::includeHTML("LandR_Modules_Fig.html")
