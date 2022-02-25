@@ -16,6 +16,7 @@ rsconnect
 packages/*
 !packages/pkgSnapshot.txt
 citations/*.csl
+citations/packages.bib
 
 # produced vignettes
 vignettes/*.html
