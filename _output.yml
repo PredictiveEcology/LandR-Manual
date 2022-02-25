@@ -1,0 +1,33 @@
+bookdown::gitbook:
+  description: "A manual to the LandR Ecosystem of SpaDES modules"
+  css: style.css
+  number-sections: false
+  split-bib: true
+  config:
+    toc:
+      collapse: subsection
+      scroll_highlight: true
+      before: |
+        <li><a href="./">LandR Manual</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    edit: null
+    download: ["pdf", "epub"]
+    info: false
+  sharing:
+    facebook: false
+    github: false
+    twitter: true
+    linkedin: true
+    weibo: false
+    instapaper: false
+    vk: false
+    whatsapp: false
+  github-repo: PredictiveEcology/LandR-Manual
+  cover-image: figures/LandRHex.png
+bookdown::pdf_book:
+  citation_package: natbib
+  keep_tex: no
+  pandoc_args: ["--extract-media", "figures/"]
+bookdown::epub_book: default
+bookdown::bs4_book: default
