@@ -9,6 +9,13 @@
 *.R.save
 *.swp
 
+_book
+_bookdown_files
+rsconnect
+
+packages/*
+!packages/pkgSnapshot.txt
+
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
