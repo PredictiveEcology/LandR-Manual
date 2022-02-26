@@ -1,9 +1,8 @@
 bookdown::gitbook:
   description: "A manual to the LandR Ecosystem of SpaDES modules"
   css: style.css
-  number-sections: false
+  number_sections: false
   split-bib: true
-  global_numbering: true
   config:
     toc:
       collapse: subsection
@@ -26,14 +25,6 @@ bookdown::gitbook:
     whatsapp: false
   github-repo: PredictiveEcology/LandR-Manual
   cover-image: figures/LandRHex.png
-bookdown::pdf_book:
-  number-sections: false
-  citation_package: default
-  keep_tex: no
-  pandoc_args: ["--extract-media", "figures/"]
-  tables: yes
-  includes:
-    in_header: preamble.tex
 bookdown::epub_book: default
 
 
