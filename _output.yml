@@ -3,6 +3,7 @@ bookdown::gitbook:
   css: style.css
   number-sections: false
   split-bib: true
+  global_numbering: true
   config:
     toc:
       collapse: subsection
@@ -26,8 +27,13 @@ bookdown::gitbook:
   github-repo: PredictiveEcology/LandR-Manual
   cover-image: figures/LandRHex.png
 bookdown::pdf_book:
-  citation_package: natbib
+  number-sections: false
+  citation_package: default
   keep_tex: no
   pandoc_args: ["--extract-media", "figures/"]
+  tables: yes
+  includes:
+    in_header: preamble.tex
 bookdown::epub_book: default
-bookdown::bs4_book: default
+
+
