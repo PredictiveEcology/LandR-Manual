@@ -21,30 +21,3 @@ LandR is a collection of `SpaDES` modules [see @ChubatyMcIntire2019] which are a
 
 The present manual is a "live" document, in that will grow and change according to the existing number of LandR modules, as well as their development. In addition, sub-manuals may be produced describing smaller collections of LandR modules -- e.g., the LandR Biomass manual describes only the LandR modules that are essential for the simulation of the vegetation components of forest succession, hence excluding fire disturbance modules.
 
-```{r setup, include = FALSE, eval = FALSE}
-if(!require("Require")) {
-  install.packages("Require")
-}
-# Require::pkgSnapshot("packages/pkgSnapshot.txt")
-# Much later on a different or same machine
-Require::Require(pkgSnapshot = "packages/pkgSnapshot.txt")
-
-## automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), "bookdown", "knitr", "rmarkdown",
-  "SpaDES.core", "SpaDES", "SpaDES.experiment", "reproducible",
-  "LandR", "Require"
-), "citations/packages.bib")
-
-## collapse all chapter .bib files into one - NOT WORKING
-# bibFiles <- list.files("citations/", "references_", full.names = TRUE)  ## add package.bib
-# bookYML <- ymlthis::as_yml(yaml::read_yaml("_bookdown.yml"))
-# bookYML <- ymlthis::yml_citations(bookYML, bibliography = bibFiles,
-#                                   csl = "citations/ecology-letters.csl",
-#                                   link_citations = TRUE)
-# file.remove("_bookdown.yml")  ## to avoid ymlthis::use_bookdown_yml prompting a decision
-# ymlthis::use_bookdown_yml(bookYML, path = ".")
-
-## strip YML
-readLines()
-```
