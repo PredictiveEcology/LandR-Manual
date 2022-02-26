@@ -5,8 +5,6 @@ author: "Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. M
 date: "Last updated: `r Sys.Date()`"
 site: bookdown::bookdown_site
 bibliography:
-  - citations/references_Biomass_core.bib
-  - citations/references_Biomass_validationKNN.bib
   - citations/references_LandRManual.bib
 csl: citations/ecology-letters.csl
 link-citations: true
