@@ -4,3 +4,6 @@
 [submodule "modules/Biomass_validationKNN"]
 	path = modules/Biomass_validationKNN
 	url = https://github.com/PredictiveEcology/Biomass_validationKNN
+[submodule "modules/Biomass_speciesData"]
+	path = modules/Biomass_speciesData
+	url = https://github.com/PredictiveEcology/Biomass_speciesData.git
