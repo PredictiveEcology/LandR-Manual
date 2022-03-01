@@ -7,5 +7,6 @@ rmd_files:
   - index.Rmd
   - modules/Biomass_core/Biomass_core2.Rmd
   - LandR-dataModulesForeword.Rmd
+  - modules/Biomass_speciesData/Biomass_speciesData2.Rmd
   - LandR-validModulesForeword.Rmd
   - modules/Biomass_validationKNN/Biomass_validationKNN2.Rmd
