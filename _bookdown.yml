@@ -1,0 +1,9 @@
+book_filename: LandR-manual
+language:
+  ui:
+  chapter_name: 'Chapter '
+delete_merged_file: true
+rmd_files:
+  - index.Rmd
+  - modules/Biomass_core/Biomass_core2.Rmd
+  - modules/Biomass_validationKNN/Biomass_validationKNN2.Rmd
