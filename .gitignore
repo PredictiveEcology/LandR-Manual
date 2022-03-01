@@ -9,6 +9,8 @@
 *.R.save
 *.swp
 
+nul
+
 _book
 !_book/*.html
 !_book/*.pdf
