@@ -42,8 +42,37 @@ copyModuleRmds <- sapply(moduleRmds, function(x) {
   lines2Rm <- modelr::seq_range(which(linesModuleRmd == "---"), by = 1)
   linesModuleRmd <- linesModuleRmd[-lines2Rm]
 
+  ## make sure that setup chunk will be evaluated again (a previous setup chunk may have set "eval = FALSE")
+  setupChunkStart <- which(grepl("```{r setup", linesModuleRmd, fixed = TRUE))
+  setupChunkOptions <- linesModuleRmd[setupChunkStart]
+  if (isFALSE(grepl("eval.*=TRUE", setupChunkOptions))) {
+    setupChunkOptions <- sub("(.*)\\}", "\\1, eval = TRUE\\}", setupChunkOptions)
+  }
+
+  linesModuleRmd[setupChunkStart] <- setupChunkOptions
+
+  ## change root.dir for each .Rmd
+  existsRootDirsSetup <- any(grepl("root\\.dir", linesModuleRmd))   ## only searching for argument instead of <function>(.*<arg>) as the code may be split into different lines
+  if (existsRootDirsSetup) {
+    ## make sure the root.dir is the right one
+    rootDirLine <- which(grepl("root\\.dir", linesModuleRmd))
+    dir2replace <- normalizePath(dirname(copyModuleRmd), winslash = "/")
+    code2replace <-  sub("(.*root\\.dir.*=[[:space:]]*)(.*)(\\))",
+                         paste0("\\1", "'",  dir2replace, "'", "\\3"),
+                         linesModuleRmd[rootDirLine])
+    linesModuleRmd[rootDirLine] <- code2replace
+  } else {
+    ## break lines into 2 to add a working dir setup line
+    beforeSetupChunkStart <- linesModuleRmd[1:setupChunkStart]
+    afterSetupChunkStart <- linesModuleRmd[(setupChunkStart + 1):length(linesModuleRmd)]
+
+    addedCode <- paste0("knitr::opts_knit$set(root.dir = '", normalizePath(dirname(copyModuleRmd), winslash = "/"), "')")
+
+    linesModuleRmd <- c(beforeSetupChunkStart, addedCode, afterSetupChunkStart)
+  }
   writeLines(linesModuleRmd, con = copyModuleRmd)
-  copyModuleRmd
+
+  return(copyModuleRmd)
 })
 
 bookdown::render_book()
