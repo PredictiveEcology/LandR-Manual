@@ -1,7 +1,7 @@
 book_filename: LandR-manual
 language:
   ui:
-  chapter_name: 'Chapter '
+  chapter_name: "Chapter "
 delete_merged_file: true
 rmd_files:
   - index.Rmd
