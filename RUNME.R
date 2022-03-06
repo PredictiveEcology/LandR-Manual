@@ -23,9 +23,9 @@ knitr::write_bib(c(
 ), "citations/packages.bib")
 
 ## collapse all chapter .bib files into one ------
-## NOT WORKING!!!
 bibFiles <- c(list.files("modules", "references_", recursive = TRUE, full.names = TRUE),
-              "citations/packages.bib")
+              "citations/packages.bib",
+              "citations/references_LandRManual.bib")
 bibdata <- lapply(bibFiles, readLines)
 write(unlist(bibdata), file = "citations/references_LandRManual.bib")
 
