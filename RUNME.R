@@ -6,13 +6,13 @@
 
 ## PACKAGES -----------------------------------------
 ## Make sure necessary packages are installed
-if(!require("Require")) {
+if (!require("Require")) {
   install.packages("Require")
 }
 
-# Require::pkgSnapshot("packages/pkgSnapshot.txt")
+Require::pkgSnapshot("packages/pkgSnapshot.txt")
 # Much later on a different or same machine
-Require::Require(pkgSnapshot = "packages/pkgSnapshot.txt")
+# Require::Require(pkgSnapshot = "packages/pkgSnapshot.txt")
 
 ## REFERENCES ---------------------------------------
 ## automatically create a bib database for R packages
@@ -28,6 +28,11 @@ bibFiles <- c(list.files("modules", "references_", recursive = TRUE, full.names 
               "citations/references_LandRManual.bib")
 bibdata <- lapply(bibFiles, readLines)
 write(unlist(bibdata), file = "citations/references_LandRManual.bib")
+
+if (!file.exists("citations/ecology-letters.csl")) {
+  dir.create("citations", showWarnings = FALSE)
+  download.file("https://www.zotero.org/styles/ecology-letters?source=1", destfile = "citations/ecology-letters.csl")
+}
 
 ## RMD PREP ------------------------------------------
 ## strip module.Rmd YAML headers -----
