@@ -24,7 +24,6 @@ bookdown::gitbook:
     vk: false
     whatsapp: false
   github-repo: PredictiveEcology/LandR-Manual
-  cover-image: figures/LandRHex.png
 bookdown::epub_book: default
 
 

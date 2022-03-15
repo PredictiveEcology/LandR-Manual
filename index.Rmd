@@ -1,5 +1,5 @@
 ---
-title: "LandR Biomass Manual"
+title: "LandR Manual"
 subtitle: "v. 0.0.9000"
 author: "Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire"
 date: "Last updated: `r Sys.Date()`"
@@ -11,15 +11,20 @@ link-citations: true
 documentclass: book
 github-repo: CeresBarros/LandR-Manual
 description: "A manual for the LandR ecosystem of SpaDES modules"
+cover-image: "figures/LandRHex.png"
 ---
 
 <!-- manual version TODO: link to date and commit of manual/project repo -->
 
-# LandR Manual
+# Preface
+
+```{r figLandRHex, eval = TRUE, echo = FALSE, fig.align = 'center', fig.dim = c(10,10)}
+knitr::include_graphics(c("figures/LandRHex.png"))
+
 ## prevents GitHub from rendering book using Jekyll
 file.create("docs/.nojekyll")
+```
 
 LandR is a collection of `SpaDES` modules [see @ChubatyMcIntire2019] which are aimed at simulating forest dynamics across large spatial scales, while taking into account various disturbances that affected them (e.g., wildfire and climate change), as well as their interactions with other components of forest systems, such as bird communities and ungulates (via changes in the habitat of these species) or carbon cycling.
 
 The present manual is a "live" document, in that will grow and change according to the existing number of LandR modules, as well as their development. In addition, sub-manuals may be produced describing smaller collections of LandR modules -- e.g., the LandR Biomass manual describes only the LandR modules that are essential for the simulation of the vegetation components of forest succession, hence excluding fire disturbance modules.
-
