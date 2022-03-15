@@ -11,10 +11,10 @@
 
 nul
 
-_book
-!_book/*.html
-!_book/*.pdf
-!_book/*.epub
+docs
+!docs/*.html
+!docs/*.pdf
+!docs/*.epub
 _bookdown_files
 rsconnect
 

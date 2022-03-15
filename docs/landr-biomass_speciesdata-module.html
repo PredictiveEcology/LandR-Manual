@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>LandR Biomass_speciesData Module | LandR Manual</title>
+  <meta name="description" content="A manual for the LandR ecosystem of SpaDES modules" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="LandR Biomass_speciesData Module | LandR Manual" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="/figures/LandRHex.png" />
+  <meta property="og:description" content="A manual for the LandR ecosystem of SpaDES modules" />
+  <meta name="github-repo" content="CeresBarros/LandR-Manual" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="LandR Biomass_speciesData Module | LandR Manual" />
+  
+  <meta name="twitter:description" content="A manual for the LandR ecosystem of SpaDES modules" />
+  <meta name="twitter:image" content="/figures/LandRHex.png" />
+
+<meta name="author" content="Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="landr-data-modules.html"/>
+<link rel="next" href="landr-validation-modules.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="_book/index.html">LandR Manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li><a href="landr-biomass_core-module.html#landr-biomass_core-module">LandR <em>Biomass_core</em> Module</a>
+<ul>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html"><i class="fa fa-check"></i>Module Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#module-summary"><i class="fa fa-check"></i>Module summary</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#module-inputs-and-parameters"><i class="fa fa-check"></i>Module inputs and parameters</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#events"><i class="fa fa-check"></i>Events</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#module-outputs"><i class="fa fa-check"></i>Module outputs</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#links-to-other-modules"><i class="fa fa-check"></i>Links to other modules</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#getting-help"><i class="fa fa-check"></i>Getting help</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#module-manual"><i class="fa fa-check"></i>Module manual</a>
+<ul>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li><a href="landr-biomass_core-module.html#differences-between-biomass_core-and-lbse">Differences between <em>Biomass_core</em> and LBSE</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#initialization-inputs-and-parameters"><i class="fa fa-check"></i>Initialization, inputs and parameters</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#simulation-flow"><i class="fa fa-check"></i>Simulation flow</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#usage-example"><i class="fa fa-check"></i>Usage example</a>
+<ul>
+<li><a href="landr-biomass_core-module.html#load-spades">Load <code>SpaDES</code></a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#get-the-module"><i class="fa fa-check"></i>Get the module</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#setup-simulation"><i class="fa fa-check"></i>Setup simulation</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#run-simulation"><i class="fa fa-check"></i>Run simulation</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#appendix"><i class="fa fa-check"></i>Appendix</a>
+<ul>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#tables"><i class="fa fa-check"></i>Tables</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#figures"><i class="fa fa-check"></i>Figures</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="landr-data-modules.html"><a href="landr-data-modules.html"><i class="fa fa-check"></i>LandR Data Modules</a></li>
+<li><a href="landr-biomass_speciesdata-module.html#landr-biomass_speciesdata-module">LandR <em>Biomass_speciesData</em> Module</a>
+<ul>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html"><i class="fa fa-check"></i>Module Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#module-summary-1"><i class="fa fa-check"></i>Module summary</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#module-inputs-and-parameters-at-a-glance"><i class="fa fa-check"></i>Module inputs and parameters at a glance</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#events-1"><i class="fa fa-check"></i>Events</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#module-outputs-1"><i class="fa fa-check"></i>Module outputs</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#links-to-other-modules-1"><i class="fa fa-check"></i>Links to other modules</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#getting-help-1"><i class="fa fa-check"></i>Getting help</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#module-manual-1"><i class="fa fa-check"></i>Module manual</a>
+<ul>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#detailed-description"><i class="fa fa-check"></i>Detailed description</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#initialization-inputs-and-parameters-1"><i class="fa fa-check"></i>Initialization, inputs and parameters</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#simulation-flow-1"><i class="fa fa-check"></i>Simulation flow</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#usage-example-1"><i class="fa fa-check"></i>Usage example</a>
+<ul>
+<li><a href="landr-biomass_speciesdata-module.html#load-spades-and-other-packages.">Load <code>SpaDES</code> and other packages.</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#get-module-necessary-packages-and-set-up-folder-directories"><i class="fa fa-check"></i>Get module, necessary packages and set up folder directories</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#setup-simulation-1"><i class="fa fa-check"></i>Setup simulation</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#run-module"><i class="fa fa-check"></i>Run module</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#references-1"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="landr-validation-modules.html"><a href="landr-validation-modules.html"><i class="fa fa-check"></i>LandR Validation Modules</a></li>
+<li><a href="landr-biomass_validationknn-module.html#landr-biomass_validationknn-module">LandR <em>Biomass_validationKNN</em> Module</a>
+<ul>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html"><i class="fa fa-check"></i>Module Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#module-summary-2"><i class="fa fa-check"></i>Module summary</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#module-inputs-and-parameters-at-a-glance-1"><i class="fa fa-check"></i>Module inputs and parameters at a glance</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#events-2"><i class="fa fa-check"></i>Events</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#module-outputs-2"><i class="fa fa-check"></i>Module outputs</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#links-to-other-modules-2"><i class="fa fa-check"></i>Links to other modules</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#getting-help-2"><i class="fa fa-check"></i>Getting help</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#module-manual-2"><i class="fa fa-check"></i>Module manual</a>
+<ul>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#detailed-description-1"><i class="fa fa-check"></i>Detailed description</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#validation-approaches"><i class="fa fa-check"></i>Validation approaches</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#initialization-inputs-and-parameters-2"><i class="fa fa-check"></i>Initialization, inputs and parameters</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#simulation-flow-2"><i class="fa fa-check"></i>Simulation flow</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#usage-example-2"><i class="fa fa-check"></i>Usage example</a>
+<ul>
+<li><a href="landr-biomass_validationknn-module.html#load-spades-and-other-packages.-1">Load <code>SpaDES</code> and other packages.</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#get-the-modules"><i class="fa fa-check"></i>Get the modules</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#setup-simulation-2"><i class="fa fa-check"></i>Setup simulation</a></li>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#run-simulation-1"><i class="fa fa-check"></i>Run simulation</a></li>
+<li><a href="landr-biomass_validationknn-module.html#validate-simulation-outputs-with-biomass_validationknn">Validate simulation outputs with <em>Biomass_validationKNN</em></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#references-2"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LandR Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="landr-biomass_speciesdata-module" class="section level1">
+<h1>LandR <em>Biomass_speciesData</em> Module</h1>
+<!-- the following are text references used in captions for LaTeX compatibility -->
+
+<p><a href="http://commonmark.org"><img src="https://img.shields.io/badge/Made%20with-Markdown-1f425f.png" alt="made-with-Markdown" /></a>
+<a href="https://github.com/PredictiveEcology/Biomass_speciesData/issues"><img src="https://img.shields.io/badge/Get%20help-Report%20issues-%3CCOLOR%3E.png" alt="Generic badge" /></a></p>
+<!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
+<p><strong>This documentation is work in progress. Potential discrepancies and omissions
+may exist for the time being. If you find any, do contact us using the link
+above^^</strong></p>
+<div id="authors-1" class="section level4">
+<h4>Authors:</h4>
+<p>Eliot J B McIntire <a href="mailto:eliot.mcintire@nrcan-rncan.gc.ca" class="email">eliot.mcintire@nrcan-rncan.gc.ca</a> [aut, cre], Alex M. Chubaty <a href="mailto:achubaty@for-cast.ca" class="email">achubaty@for-cast.ca</a> [aut], Ceres Barros <a href="mailto:cbarros@mail.ubc.ca" class="email">cbarros@mail.ubc.ca</a> [aut]
+<!-- ideally separate authors with new lines, '\n' not working --></p>
+</div>
+<div id="module-overview-1" class="section level2">
+<h2>Module Overview</h2>
+<div id="module-summary-1" class="section level3">
+<h3>Module summary</h3>
+<p>This module downloads and pre-process species % cover data layers to be passed
+to other LandR data modules (e.g., <em>Biomass_borealDataPrep</em>) or to the LandR
+forest simulation module <em>Biomass_core</em>.</p>
+</div>
+<div id="module-inputs-and-parameters-at-a-glance" class="section level3">
+<h3>Module inputs and parameters at a glance</h3>
+<p>Below are the full list of input objects (Table
+<a href="landr-biomass_speciesdata-module.html#tab:moduleInputs-Biomass-speciesData">16</a>) and parameters (Table
+<a href="landr-biomass_speciesdata-module.html#tab:moduleParams-Biomass-speciesData">17</a>) that <em>Biomass_speciesData</em> expects.
+Of these, the only input that <strong>must</strong> be provided (i.e., <em>Biomass_speciesData</em>
+does not have a default for) is <code>studyAreaLarge</code>.</p>
+<p>Raw data layers downloaded by the module are saved in <code>dataPath(sim)</code>, which can
+be controlled via <code>options(reproducible.destinationPath = ...)</code>.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:moduleInputs-Biomass-speciesData">Table 16: </span>List of <em>Biomass_speciesData</em> input objects and their description.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+objectName
+</th>
+<th style="text-align:left;">
+desc
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+rasterToMatchLarge
+</td>
+<td style="text-align:left;">
+a raster of <code>studyAreaLarge</code> in the same resolution and projection the simulation’s. Defaults to the using the Canadian Forestry Service, National Forest Inventory, kNN-derived stand biomass map.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppColorVect
+</td>
+<td style="text-align:left;">
+A named vector of colors to use for plotting. The names must be in sim<span class="math inline">\(sppEquiv[[sim\)</span>sppEquivCol]], and should also contain a color for ‘Mixed’
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppEquiv
+</td>
+<td style="text-align:left;">
+table of species equivalencies. See <code>LandR::sppEquivalencies_CA</code>.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+studyAreaLarge
+</td>
+<td style="text-align:left;">
+Polygon to use as the parametrisation study area. Must be provided by the user. Note that <code>studyAreaLarge</code> is only used for parameter estimation, and can be larger than the actual study area used for LandR simulations (e.g, larger than <code>studyArea</code> in LandR Biomass_core).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+studyAreaReporting
+</td>
+<td style="text-align:left;">
+multipolygon (typically smaller/unbuffered than <code>studyAreaLarge</code> and <code>studyArea</code> in LandR Biomass_core) to use for plotting/reporting. If not provided, will default to <code>studyAreaLarge</code>.
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:moduleParams-Biomass-speciesData">Table 17: </span>List of <em>Biomass_speciesData</em> parameters and their description.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+paramName
+</th>
+<th style="text-align:left;">
+paramDesc
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+coverThresh
+</td>
+<td style="text-align:left;">
+The minimum % cover a species needs to have (per pixel) in the study area to be considered present
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dataYear
+</td>
+<td style="text-align:left;">
+Passed to <code>paste0('prepSpeciesLayers_', types)</code> function to fetch data from that year (if applicable). Defaults to 2001 as the default kNN year.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppEquivCol
+</td>
+<td style="text-align:left;">
+The column in <code>sim$sppEquiv</code> data.table to group species by and use as a naming convention. If different species in, e.g., the kNN data have the same name in the chosen column, their data are merged into one species by summing their % cover in each raster cell.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+types
+</td>
+<td style="text-align:left;">
+The possible data sources. These must correspond to a function named paste0(‘prepSpeciesLayers_’, types). Defaults to ‘KNN’ to get the Canadian Forestry Service, National Forest Inventory, kNN-derived species cover maps from year ‘dataYear’, using the <code>LandR::prepSpeciesLayers_KNN</code> function (see <a href="https://open.canada.ca/" class="uri">https://open.canada.ca/</a> data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990 for details on these data). Other currently available options are ‘ONFRI’, ‘CASFRI’, ‘Pickell’ and ‘ForestInventory’, which attempt to get proprietary data - the user must be granted access first. A custom function can be used to retrieve any data, just as long as it is accessible by the module (e.g., in the global environment) and is named as paste0(‘prepSpeciesLayers_’, types).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegLeadingProportion
+</td>
+<td style="text-align:left;">
+a number that defines whether a species is leading for a given pixel. Only used for plotting.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.plotInitialTime
+</td>
+<td style="text-align:left;">
+This describes the simulation time at which the first plot event should occur
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.plotInterval
+</td>
+<td style="text-align:left;">
+This describes the simulation time interval between plot events
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.saveInitialTime
+</td>
+<td style="text-align:left;">
+This describes the simulation time at which the first save event should occur
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.saveInterval
+</td>
+<td style="text-align:left;">
+This describes the simulation time interval between save events
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.studyAreaName
+</td>
+<td style="text-align:left;">
+Human-readable name for the study area used. If NA, a hash of <code>studyAreaLarge</code> will be used.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.useCache
+</td>
+<td style="text-align:left;">
+Controls cache; caches the init event by default
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.useParallel
+</td>
+<td style="text-align:left;">
+Used in reading csv file with fread. Will be passed to data.table::setDTthreads.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="events-1" class="section level3">
+<h3>Events</h3>
+<p><em>Biomass_speciesData</em> only runs two events:</p>
+<ul>
+<li>Module “initiation” (<code>init</code> event), during which all species % cover layers
+are downloaded and processed.</li>
+<li>Plotting of the processed species cover layers (<code>initPlot</code> event).</li>
+</ul>
+</div>
+<div id="module-outputs-1" class="section level3">
+<h3>Module outputs</h3>
+<p>The module produces the following outputs (Table
+<a href="landr-biomass_speciesdata-module.html#tab:moduleOutputs-Biomass-speciesData">18</a>):</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:moduleOutputs-Biomass-speciesData">Table 18: </span>List of <em>Biomass_speciesData</em> output objects and their description.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+objectName
+</th>
+<th style="text-align:left;">
+desc
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+speciesLayers
+</td>
+<td style="text-align:left;">
+biomass percentage raster layers by species in Canada species map
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+treed
+</td>
+<td style="text-align:left;">
+Table with one logical column for each species, indicating whether there were non-zero cover values in each pixel.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+numTreed
+</td>
+<td style="text-align:left;">
+a named vector with number of pixels with non-zero cover values for each species
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nonZeroCover
+</td>
+<td style="text-align:left;">
+A single value indicating how many pixels have non-zero cover
+</td>
+</tr>
+</tbody>
+</table>
+<p>and automatically saves the processed species cover layers in the output path
+defined in <code>getPaths(sim)$outputPath</code>.</p>
+</div>
+<div id="links-to-other-modules-1" class="section level3">
+<h3>Links to other modules</h3>
+<p>Intended to be used with other LandR data modules (e.g.,
+<em>Biomass_borealDataPrep</em>) that require species cover data and the LandR forest
+simulation <em>Biomass_core</em> module. You can see all <em>potential</em> module linkages
+within the LandR ecosystem
+<a href="https://rpubs.com/PredictiveEcology/LandR_Module_Ecosystem">here</a>. Select
+<em>Biomass_speciesData</em> from the drop-down menu to see linkages.</p>
+</div>
+<div id="getting-help-1" class="section level3">
+<h3>Getting help</h3>
+<ul>
+<li><a href="https://github.com/PredictiveEcology/Biomass_speciesData/issues" class="uri">https://github.com/PredictiveEcology/Biomass_speciesData/issues</a></li>
+</ul>
+</div>
+</div>
+<div id="module-manual-1" class="section level2">
+<h2>Module manual</h2>
+<div id="detailed-description" class="section level3">
+<h3>Detailed description</h3>
+<p>This module accesses and processes species percent cover (% cover) data for the
+parametrisation and initialization of LandR <em>Biomass_core</em>. This module ensures
+1) all data use the same geospatial geometries and 2) that these are correctly
+re-projected to studyAreaLarge, and 3) attempts to sequentially fill-in and
+replace the lowest quality data with higher quality data when several data
+sources are used. It’s primary output is a <code>RasterStack</code> of species % cover,
+with each layer corresponding to a species.</p>
+<p>Currently, the module can access the Canadian Forest Inventory forest attributes
+kNN dataset [the default; <span class="citation">Beaudoin <em>et al.</em> (<a href="#ref-BeaudoinEtAl2017" role="doc-biblioref">2017</a>)</span>], the Common Attribute Schema for
+Forest Resource Inventories [CASFRI; <span class="citation">Cosco (<a href="#ref-Cosco2011" role="doc-biblioref">2011</a>)</span>] dataset, the Ontario Forest
+Resource Inventory (ONFRI), a dataset specific to Alberta compiled by Paul
+Pickell, and other Alberta forest inventory datasets. However, <strong>only the NFI
+kNN data are freely available</strong> – access to the other datasets must be granted
+by module developers and data owners, and a Google account is required.
+Nevertheless, the module is flexible enough that any user can use it to process
+additional datasets, provided that an adequate R function is passed to the
+module (see <code>types</code> parameter details in <a href="landr-biomass_validationknn-module.html#parameters-2">Parameters</a>)</p>
+<p>When multiple data sources are used, the module will use replace lower quality
+data with higher quality data following the order specified by the parameter
+<code>types</code> (see <a href="landr-biomass_validationknn-module.html#parameters-2">Parameters</a>).</p>
+<p>The module can also exclude species % cover layers if they don’t have a minimum
+% cover value in at least one pixel. This means that the user should still
+inspect in how many pixels the species is deemed present, as it is possible that
+some data have only a few pixels with high % cover for a given species. In this
+case, the user may choose to exclude these species <em>a posteriori</em>. The summary
+plot automatically shown by <em>Biomass_speciesData</em> can help diagnose whether
+certain species are present in very few pixels (see Fig.
+<a href="landr-biomass_speciesdata-module.html#fig:fig-Biomass-speciesDataOutPlots">8</a>).</p>
+</div>
+<div id="initialization-inputs-and-parameters-1" class="section level3">
+<h3>Initialization, inputs and parameters</h3>
+<p><em>Biomass_speciesData</em> initializes itself and prepares all inputs provided that
+it has internet access to download the raw data layers (or that these layers
+have been previously downloaded and stored in the folder specified by
+<code>options("reproducible.destinationPath")</code>).</p>
+<p>The module defaults to processing cover data fo all species listed in the
+<code>Boreal</code> column of the default <code>sppEquiv</code> input <code>data.table</code> object, for which
+there are available % cover layers in the kNN dataset (Table
+<a href="landr-biomass_speciesdata-module.html#tab:defaultSppBiomass-speciesData">19</a>; see <code>?LandR::sppEquivalencies_CA</code> for
+more information):</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:defaultSppBiomass-speciesData">Table 19: </span>List of species cover data downloaded by default by <em>Biomass_speciesData</em>.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:left;">
+Generic name
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<em>Abies balsamea</em>
+</td>
+<td style="text-align:left;">
+Balsam Fir
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Abies lasiocarpa</em>
+</td>
+<td style="text-align:left;">
+Fir
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Acer negundo</em>
+</td>
+<td style="text-align:left;">
+Boxelder maple
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Acer pensylvanicum</em>
+</td>
+<td style="text-align:left;">
+Striped maple
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Acer saccharum</em>
+</td>
+<td style="text-align:left;">
+Sugar maple
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Acer spicatum</em>
+</td>
+<td style="text-align:left;">
+Mountain maple
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Acer spp.</em>
+</td>
+<td style="text-align:left;">
+Maple
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Alnus spp</em>
+</td>
+<td style="text-align:left;">
+Alder
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Betula alleghaniensis</em>
+</td>
+<td style="text-align:left;">
+Swamp birch
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Betula papyrifera</em>
+</td>
+<td style="text-align:left;">
+Paper birch
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Betula populifolia</em>
+</td>
+<td style="text-align:left;">
+Gray birch
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Betula spp.</em>
+</td>
+<td style="text-align:left;">
+Birch
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Fagus grandifolia</em>
+</td>
+<td style="text-align:left;">
+American beech
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Fraxinus americana</em>
+</td>
+<td style="text-align:left;">
+American ash
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Fraxinus nigra</em>
+</td>
+<td style="text-align:left;">
+Black ash
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Larix laricina</em>
+</td>
+<td style="text-align:left;">
+Tamarack
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Larix lyallii</em>
+</td>
+<td style="text-align:left;">
+Alpine larch
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Larix occidentalis</em>
+</td>
+<td style="text-align:left;">
+Western larch
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Larix spp.</em>
+</td>
+<td style="text-align:left;">
+Larch
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Picea engelmannii</em>
+</td>
+<td style="text-align:left;">
+Engelmann’s spruce
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Picea glauca</em>
+</td>
+<td style="text-align:left;">
+White.Spruce
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Picea mariana</em>
+</td>
+<td style="text-align:left;">
+Black.Spruce
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Picea spp.</em>
+</td>
+<td style="text-align:left;">
+Spruce
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Pinus albicaulis</em>
+</td>
+<td style="text-align:left;">
+Whitebark pine
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Pinus banksiana</em>
+</td>
+<td style="text-align:left;">
+Jack pine
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Pinus contorta</em>
+</td>
+<td style="text-align:left;">
+Lodgepole pine
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Pinus monticola</em>
+</td>
+<td style="text-align:left;">
+Western white pine
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Pinus resinosa</em>
+</td>
+<td style="text-align:left;">
+Red pine
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Pinus spp.</em>
+</td>
+<td style="text-align:left;">
+Pine
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Populus balsamifera v. balsamifera</em>
+</td>
+<td style="text-align:left;">
+Balsam poplar
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Populus trichocarpa</em>
+</td>
+<td style="text-align:left;">
+Black cottonwood
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Populus grandidentata</em>
+</td>
+<td style="text-align:left;">
+White poplar
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Populus spp.</em>
+</td>
+<td style="text-align:left;">
+Poplar
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Populus tremuloides</em>
+</td>
+<td style="text-align:left;">
+Trembling poplar
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Tsuga canadensis</em>
+</td>
+<td style="text-align:left;">
+Eastern hemlock
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Tsuga spp.</em>
+</td>
+<td style="text-align:left;">
+Hemlock
+</td>
+</tr>
+</tbody>
+</table>
+<div id="input-objects-1" class="section level4">
+<h4>Input objects</h4>
+<p><em>Biomass_speciesData</em> requires the following input data layers</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:moduleInputs2-Biomass-speciesData">Table 20: </span>List of <em>Biomass_speciesData</em> input objects and their description.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+objectName
+</th>
+<th style="text-align:left;">
+objectClass
+</th>
+<th style="text-align:left;">
+desc
+</th>
+<th style="text-align:left;">
+sourceURL
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+rasterToMatchLarge
+</td>
+<td style="text-align:left;">
+RasterLayer
+</td>
+<td style="text-align:left;">
+a raster of <code>studyAreaLarge</code> in the same resolution and projection the simulation’s. Defaults to the using the Canadian Forestry Service, National Forest Inventory, kNN-derived stand biomass map.
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppColorVect
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+A named vector of colors to use for plotting. The names must be in sim<span class="math inline">\(sppEquiv[[sim\)</span>sppEquivCol]], and should also contain a color for ‘Mixed’
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppEquiv
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+table of species equivalencies. See <code>LandR::sppEquivalencies_CA</code>.
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+studyAreaLarge
+</td>
+<td style="text-align:left;">
+SpatialPolygonsDataFrame
+</td>
+<td style="text-align:left;">
+Polygon to use as the parametrisation study area. Must be provided by the user. Note that <code>studyAreaLarge</code> is only used for parameter estimation, and can be larger than the actual study area used for LandR simulations (e.g, larger than <code>studyArea</code> in LandR Biomass_core).
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+studyAreaReporting
+</td>
+<td style="text-align:left;">
+SpatialPolygonsDataFrame
+</td>
+<td style="text-align:left;">
+multipolygon (typically smaller/unbuffered than <code>studyAreaLarge</code> and <code>studyArea</code> in LandR Biomass_core) to use for plotting/reporting. If not provided, will default to <code>studyAreaLarge</code>.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+<p>Of the inputs in Table <a href="landr-biomass_speciesdata-module.html#tab:moduleInputs2-Biomass-speciesData">20</a>, the
+following are particularly important and deserve special attention:</p>
+<ul>
+<li><p><code>studyAreaLarge</code> – the polygon defining the area for which species cover
+data area desired. It can be larger (but never smaller) that the study area
+used in the simulation of forest dynamics (i.e., <code>studyArea</code> object in
+<em>Biomass_core</em>).</p></li>
+<li><p><code>sppEquiv</code> – a table of correspondences between different species naming
+conventions. This table is used across several LandR modules, including
+<em>Biomass_core</em>. It is particularly important here because it will determine
+whether and how species (and their cover layers) are merged, if this is
+desired by the user. For instance, if the user wishes to simulate a generic
+<em>Picea spp.</em> that includes, <em>Picea glauca</em>, <em>Picea mariana</em> and <em>Picea
+engelmannii</em>, they will need to provide these three species names in the
+data column (e.g., <code>KNN</code> if obtaining forest attribute kNN data layers from
+the Canadian Forest Inventory), but the same name (e.g., “Pice_Spp”) in the
+coumn chosen for the naming convention used throughout the simulation (the
+<code>sppEquivCol</code> parameter); see Table
+<a href="landr-biomass_speciesdata-module.html#tab:mergingSpp-Biomass-speciesData">21</a> for an example)</p></li>
+</ul>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:mergingSpp-Biomass-speciesData">Table 21: </span>Example of species merging for simulation. Here the user wants to model <em>Abies balsamea</em>, <em>A. lasiocarpa</em> and <em>Pinus contorta</em> as separate species, but all <em>Picea</em> species as a generic <em>Picea spp.</em>. For this, all six species are identified in the ‘KNN’ column, so that their % cover layers can be obtained, but in the ‘Boreal’ column (which defines the naming convention used in the simulation in this example) all <em>Picea</em> species have the same name. <em>Biomass_speciesData</em> will merge their % cover data into a single layer by summing their cover per pixel.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:left;">
+KNN
+</th>
+<th style="text-align:left;">
+Boreal
+</th>
+<th style="text-align:left;">
+Modelled as
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<em>Abies balsamea</em>
+</td>
+<td style="text-align:left;">
+Abie_Bal
+</td>
+<td style="text-align:left;">
+Abie_Bal
+</td>
+<td style="text-align:left;">
+<em>Abies balsamea</em>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Abies lasiocarpa</em>
+</td>
+<td style="text-align:left;">
+Abie_Las
+</td>
+<td style="text-align:left;">
+Abie_Las
+</td>
+<td style="text-align:left;">
+<em>Abies lasiocarpa</em>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Picea engelmannii</em>
+</td>
+<td style="text-align:left;">
+Pice_Eng
+</td>
+<td style="text-align:left;">
+Pice_Spp
+</td>
+<td style="text-align:left;">
+<em>Picea spp.</em>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Picea glauca</em>
+</td>
+<td style="text-align:left;">
+Pice_Gla
+</td>
+<td style="text-align:left;">
+Pice_Spp
+</td>
+<td style="text-align:left;">
+<em>Picea spp.</em>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Picea mariana</em>
+</td>
+<td style="text-align:left;">
+Pice_Mar
+</td>
+<td style="text-align:left;">
+Pice_Spp
+</td>
+<td style="text-align:left;">
+<em>Picea spp.</em>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<em>Pinus contorta</em>
+</td>
+<td style="text-align:left;">
+Pinu_Con
+</td>
+<td style="text-align:left;">
+Pinu_Con
+</td>
+<td style="text-align:left;">
+<em>Pinus contorta</em>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="parameters-1" class="section level4">
+<h4>Parameters</h4>
+<p>Table <a href="landr-biomass_speciesdata-module.html#tab:moduleParams2-Biomass-speciesData">22</a> lists all parameters used in
+<em>Biomass_speciesData</em> and their detailed information.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:moduleParams2-Biomass-speciesData">Table 22: </span>List of <em>Biomass_speciesData</em> parameters and their description.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+paramName
+</th>
+<th style="text-align:left;">
+paramClass
+</th>
+<th style="text-align:left;">
+default
+</th>
+<th style="text-align:left;">
+min
+</th>
+<th style="text-align:left;">
+max
+</th>
+<th style="text-align:left;">
+paramDesc
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+coverThresh
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+The minimum % cover a species needs to have (per pixel) in the study area to be considered present
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dataYear
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+2001
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Passed to <code>paste0('prepSpeciesLayers_', types)</code> function to fetch data from that year (if applicable). Defaults to 2001 as the default kNN year.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppEquivCol
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Boreal
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+The column in <code>sim$sppEquiv</code> data.table to group species by and use as a naming convention. If different species in, e.g., the kNN data have the same name in the chosen column, their data are merged into one species by summing their % cover in each raster cell.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+types
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+KNN
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+The possible data sources. These must correspond to a function named paste0(‘prepSpeciesLayers_’, types). Defaults to ‘KNN’ to get the Canadian Forestry Service, National Forest Inventory, kNN-derived species cover maps from year ‘dataYear’, using the <code>LandR::prepSpeciesLayers_KNN</code> function (see <a href="https://open.canada.ca/" class="uri">https://open.canada.ca/</a> data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990 for details on these data). Other currently available options are ‘ONFRI’, ‘CASFRI’, ‘Pickell’ and ‘ForestInventory’, which attempt to get proprietary data - the user must be granted access first. A custom function can be used to retrieve any data, just as long as it is accessible by the module (e.g., in the global environment) and is named as paste0(‘prepSpeciesLayers_’, types).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegLeadingProportion
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+0.8
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+a number that defines whether a species is leading for a given pixel. Only used for plotting.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.plotInitialTime
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This describes the simulation time at which the first plot event should occur
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.plotInterval
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This describes the simulation time interval between plot events
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.saveInitialTime
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This describes the simulation time at which the first save event should occur
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.saveInterval
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This describes the simulation time interval between save events
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.studyAreaName
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Human-readable name for the study area used. If NA, a hash of <code>studyAreaLarge</code> will be used.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.useCache
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+init
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Controls cache; caches the init event by default
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.useParallel
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+16
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Used in reading csv file with fread. Will be passed to data.table::setDTthreads.
+</td>
+</tr>
+</tbody>
+</table>
+<p>Of the parameters listed in Table <a href="landr-biomass_speciesdata-module.html#tab:moduleParams2-Biomass-speciesData">22</a>,
+the following are particularly important:</p>
+<ul>
+<li><p><code>coverThresh</code> – integer. Defines a minimum % cover value (from 0-100) that
+the species must have in at least one pixel to be considered present in the
+study area, otherwise it is excluded from the final stack of species layers.
+Note that this will affect what species have data for an eventual simulation
+and the user will need to adjust simulation parameters (e.g., species in
+trait tables will need to match the species in the cover layers)
+accordingly.</p></li>
+<li><p><code>types</code> – character. Which % cover data sources are to be used (see
+<a href="landr-biomass_validationknn-module.html#detailed-description-1">Detailed description</a>). Several data sources can be passed, in which case
+the module will overlay the lower quality layers with higher quality ones
+<strong>following the order of data sources specified by <code>types</code></strong> – i.e., if
+<code>types == c("KNN", "CASFRI", "ForestInventory")</code>, <em>KNN</em> is assumed to be the
+lowest quality data set and <em>ForestInventory</em> the highest: values in <em>KNN</em>
+layers are replaced with overlapping values from <em>CASFRI</em> layers and values
+from <em>KNN</em> and <em>CASFRI</em> layers are replaced with overlapping values of
+<em>ForestInventory</em> layers.</p></li>
+</ul>
+</div>
+</div>
+<div id="simulation-flow-1" class="section level3">
+<h3>Simulation flow</h3>
+<p>The general flow of <em>Biomass_speciesData</em> processes is:</p>
+<ol style="list-style-type: decimal">
+<li><p>Download (if necessary) of and spatial processing of species cover layers
+from the first data source listed in the <code>types</code> parameter. Spatial
+processing consists in sub-setting the data to the area defined by
+<code>studyAreaLarge</code> and ensuring that the spatial projection and resolution
+match those of <code>rasterToMatchLarge</code>. After spatial processing, species
+layers that have no pixels with values &gt;= to the <code>coverThresh</code> parameter
+are excluded.</p></li>
+<li><p>If more than one data source is listed in <code>types</code>, the second set of species
+cover layers is downloaded and processed as above.</p></li>
+<li><p>The second set of layers is assumed to be the highest quality dataset and
+used to replaced overlapping pixel values on the first (including for
+species whose layers may have been initially excluded after applying the
+<code>coverThresh</code> filter).</p></li>
+<li><p>Steps 2 and 3 are repeated for remaining data sources listed in <code>types</code>.</p></li>
+<li><p>Final layers are saved to disk and plotted. A summary of number of pixels
+with forest cover are calculated (<code>treed</code>and <code>numTreed</code> output objects; see
+<a href="landr-biomass_validationknn-module.html#module-outputs-2">Module outputs</a>).</p></li>
+</ol>
+</div>
+</div>
+<div id="usage-example-1" class="section level2">
+<h2>Usage example</h2>
+<div id="load-spades-and-other-packages." class="section level3">
+<h3>Load <code>SpaDES</code> and other packages.</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="landr-biomass_speciesdata-module.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(Require)) {</span>
+<span id="cb5-2"><a href="landr-biomass_speciesdata-module.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;Require&quot;</span>)</span>
+<span id="cb5-3"><a href="landr-biomass_speciesdata-module.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(Require)</span>
+<span id="cb5-4"><a href="landr-biomass_speciesdata-module.html#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-5"><a href="landr-biomass_speciesdata-module.html#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="landr-biomass_speciesdata-module.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Require</span>(<span class="fu">c</span>(<span class="st">&quot;PredictiveEcology/SpaDES.install&quot;</span>,</span>
+<span id="cb5-7"><a href="landr-biomass_speciesdata-module.html#cb5-7" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;SpaDES&quot;</span>, <span class="st">&quot;PredictiveEcology/SpaDES.core@development&quot;</span>,</span>
+<span id="cb5-8"><a href="landr-biomass_speciesdata-module.html#cb5-8" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;PredictiveEcology/LandR&quot;</span>), </span>
+<span id="cb5-9"><a href="landr-biomass_speciesdata-module.html#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">install_githubArgs =</span> <span class="fu">list</span>(<span class="at">dependencies =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+</div>
+<div id="get-module-necessary-packages-and-set-up-folder-directories" class="section level3">
+<h3>Get module, necessary packages and set up folder directories</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="landr-biomass_speciesdata-module.html#cb6-1" aria-hidden="true" tabindex="-1"></a>tempDir <span class="ot">&lt;-</span> <span class="fu">tempdir</span>()</span>
+<span id="cb6-2"><a href="landr-biomass_speciesdata-module.html#cb6-2" aria-hidden="true" tabindex="-1"></a>spadesModulesDirectory <span class="ot">&lt;-</span> <span class="fu">file.path</span>(tempDir, <span class="st">&quot;modules&quot;</span>)</span>
+<span id="cb6-3"><a href="landr-biomass_speciesdata-module.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="landr-biomass_speciesdata-module.html#cb6-4" aria-hidden="true" tabindex="-1"></a>paths <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">inputPath =</span> <span class="fu">normPath</span>(<span class="fu">file.path</span>(tempDir, <span class="st">&quot;inputs&quot;</span>)), </span>
+<span id="cb6-5"><a href="landr-biomass_speciesdata-module.html#cb6-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">cachePath =</span> <span class="fu">normPath</span>(<span class="fu">file.path</span>(tempDir, <span class="st">&quot;cache&quot;</span>)), </span>
+<span id="cb6-6"><a href="landr-biomass_speciesdata-module.html#cb6-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">modulePath =</span> <span class="fu">normPath</span>(spadesModulesDirectory), </span>
+<span id="cb6-7"><a href="landr-biomass_speciesdata-module.html#cb6-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">outputPath =</span> <span class="fu">normPath</span>(<span class="fu">file.path</span>(tempDir, <span class="st">&quot;outputs&quot;</span>)))</span>
+<span id="cb6-8"><a href="landr-biomass_speciesdata-module.html#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="landr-biomass_speciesdata-module.html#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">getModule</span>(<span class="st">&quot;PredictiveEcology/Biomass_speciesData&quot;</span>, <span class="at">modulePath =</span> spadesModulesDirectory, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-10"><a href="landr-biomass_speciesdata-module.html#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="landr-biomass_speciesdata-module.html#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="do">## make sure all necessary packages are installed:</span></span>
+<span id="cb6-12"><a href="landr-biomass_speciesdata-module.html#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">makeSureAllPackagesInstalled</span>(spadesModulesDirectory)</span></code></pre></div>
+</div>
+<div id="setup-simulation-1" class="section level3">
+<h3>Setup simulation</h3>
+<p>For this demonstration we are using all default parameter values, except
+<code>coverThresh</code> , which is lowered to 5%. The species layers (the major output of
+interest) are saved automatically, so there is no need to tell <code>spades</code> what to
+save using the <code>outputs</code> argument (see <code>?SpaDES.core::outputs</code>).</p>
+<p>We pass the global parameter <code>.plotInitialTime = 1</code> in the <code>simInitAndSpades</code>
+function to activate plotting.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="landr-biomass_speciesdata-module.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># User may want to set some options -- see ?reproducibleOptions </span></span>
+<span id="cb7-2"><a href="landr-biomass_speciesdata-module.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#    -- e.g., often the path to the &#39;inputs&#39; folder will be set outside of project by user:</span></span>
+<span id="cb7-3"><a href="landr-biomass_speciesdata-module.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># options(reproducible.inputPaths = &quot;E:/Data/LandR_related/&quot;) # to re-use datasets across projects</span></span>
+<span id="cb7-4"><a href="landr-biomass_speciesdata-module.html#cb7-4" aria-hidden="true" tabindex="-1"></a>studyAreaLarge <span class="ot">&lt;-</span> <span class="fu">Cache</span>(randomStudyArea, <span class="at">size =</span> <span class="fl">1e7</span>,</span>
+<span id="cb7-5"><a href="landr-biomass_speciesdata-module.html#cb7-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">cacheRepo =</span> paths<span class="sc">$</span>cachePath) <span class="co"># cache this so it creates a random one only once on a machine</span></span>
+<span id="cb7-6"><a href="landr-biomass_speciesdata-module.html#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="landr-biomass_speciesdata-module.html#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Pick the species you want to work with -- here we use the naming convention in &quot;Boreal&quot; column of LandR::sppEquivalencies_CA (default)</span></span>
+<span id="cb7-8"><a href="landr-biomass_speciesdata-module.html#cb7-8" aria-hidden="true" tabindex="-1"></a>speciesNameConvention <span class="ot">&lt;-</span> <span class="st">&quot;Boreal&quot;</span></span>
+<span id="cb7-9"><a href="landr-biomass_speciesdata-module.html#cb7-9" aria-hidden="true" tabindex="-1"></a>speciesToUse <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Pice_Gla&quot;</span>, <span class="st">&quot;Popu_Tre&quot;</span>, <span class="st">&quot;Pinu_Con&quot;</span>)</span>
+<span id="cb7-10"><a href="landr-biomass_speciesdata-module.html#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="landr-biomass_speciesdata-module.html#cb7-11" aria-hidden="true" tabindex="-1"></a>sppEquiv <span class="ot">&lt;-</span> LandR<span class="sc">::</span>sppEquivalencies_CA[<span class="fu">get</span>(speciesNameConvention) <span class="sc">%in%</span> speciesToUse]</span>
+<span id="cb7-12"><a href="landr-biomass_speciesdata-module.html#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign a colour convention for graphics for each species</span></span>
+<span id="cb7-13"><a href="landr-biomass_speciesdata-module.html#cb7-13" aria-hidden="true" tabindex="-1"></a>sppColorVect <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">sppColors</span>(sppEquiv, speciesNameConvention,</span>
+<span id="cb7-14"><a href="landr-biomass_speciesdata-module.html#cb7-14" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">newVals =</span> <span class="st">&quot;Mixed&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>)</span>
+<span id="cb7-15"><a href="landr-biomass_speciesdata-module.html#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="landr-biomass_speciesdata-module.html#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Usage example</span></span>
+<span id="cb7-17"><a href="landr-biomass_speciesdata-module.html#cb7-17" aria-hidden="true" tabindex="-1"></a>modules <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Biomass_speciesData&quot;</span>)</span>
+<span id="cb7-18"><a href="landr-biomass_speciesdata-module.html#cb7-18" aria-hidden="true" tabindex="-1"></a>objects <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;studyAreaLarge&quot;</span> <span class="ot">=</span> studyAreaLarge,</span>
+<span id="cb7-19"><a href="landr-biomass_speciesdata-module.html#cb7-19" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;sppEquiv&quot;</span> <span class="ot">=</span> sppEquiv,</span>
+<span id="cb7-20"><a href="landr-biomass_speciesdata-module.html#cb7-20" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;sppColorVect&quot;</span> <span class="ot">=</span> sppColorVect)</span>
+<span id="cb7-21"><a href="landr-biomass_speciesdata-module.html#cb7-21" aria-hidden="true" tabindex="-1"></a>params <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Biomass_speciesData&quot;</span> <span class="ot">=</span> <span class="fu">list</span>(<span class="st">&quot;coverThresh&quot;</span> <span class="ot">=</span> 5L))</span></code></pre></div>
+</div>
+<div id="run-module" class="section level3">
+<h3>Run module</h3>
+<p>Note that because this is a data module (i.e., only attempts to prepare data for
+the simulation) we are not iterating it and so both the start and end times are
+set to <code>1</code> here.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="landr-biomass_speciesdata-module.html#cb8-1" aria-hidden="true" tabindex="-1"></a>opts <span class="ot">&lt;-</span> <span class="fu">options</span>(<span class="at">reproducible.useCache =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb8-2"><a href="landr-biomass_speciesdata-module.html#cb8-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">reproducible.inputPaths =</span> paths<span class="sc">$</span>inputPath)</span>
+<span id="cb8-3"><a href="landr-biomass_speciesdata-module.html#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="landr-biomass_speciesdata-module.html#cb8-4" aria-hidden="true" tabindex="-1"></a>mySimOut <span class="ot">&lt;-</span> <span class="fu">simInitAndSpades</span>(<span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">1</span>),</span>
+<span id="cb8-5"><a href="landr-biomass_speciesdata-module.html#cb8-5" aria-hidden="true" tabindex="-1"></a>                             <span class="at">modules =</span> modules, </span>
+<span id="cb8-6"><a href="landr-biomass_speciesdata-module.html#cb8-6" aria-hidden="true" tabindex="-1"></a>                             <span class="at">parameters =</span> params,</span>
+<span id="cb8-7"><a href="landr-biomass_speciesdata-module.html#cb8-7" aria-hidden="true" tabindex="-1"></a>                             <span class="at">objects =</span> objects, </span>
+<span id="cb8-8"><a href="landr-biomass_speciesdata-module.html#cb8-8" aria-hidden="true" tabindex="-1"></a>                             <span class="at">paths =</span> paths,</span>
+<span id="cb8-9"><a href="landr-biomass_speciesdata-module.html#cb8-9" aria-hidden="true" tabindex="-1"></a>                             <span class="at">.plotInitialTime =</span> <span class="dv">1</span>)</span>
+<span id="cb8-10"><a href="landr-biomass_speciesdata-module.html#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(opts)</span></code></pre></div>
+<p>Here are some of the data retrieved by <em>Biomass_speciesData</em> for a randomly
+generated study area within Canada.</p>
+<div class="figure"><span style="display:block;" id="fig:fig-Biomass-speciesDataOutPlots"></span>
+<img src="figures/testRunFigure.png" alt="Biomass_speciesData automatically generates a plot of species dominance and number of presences in the study area when `.plotInitialTime=1` is passed as an argument."  />
+<p class="caption">
+Figure 8: <em>Biomass_speciesData</em> automatically generates a plot of species dominance and number of presences in the study area when <code>.plotInitialTime=1</code> is passed as an argument.
+</p>
+</div>
+</div>
+</div>
+<div id="references-1" class="section level2">
+<h2>References</h2>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-BeaudoinEtAl2017" class="csl-entry">
+Beaudoin, A., Bernier, P.Y., Villemaire, P., Guindon, L. &amp; Guo, X.J. (2017). <a href="https://doi.org/10.23687/EC9E2659-1C29-4DDB-87A2-6ACED147A990">Species composition, forest properties and land cover types across canada’s forests at 250m resolution for 2001 and 2011</a>.
+</div>
+<div id="ref-Cosco2011" class="csl-entry">
+Cosco, J. (2011). <em>COMMON ATTRIBUTE SCHEMA (CAS) FOR FOREST INVENTORIES ACROSS CANADA</em>. BOREAL AVIAN MODELLING PROJECT, CANADIAN BEACONs PROJECT.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="landr-data-modules.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="landr-validation-modules.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["LandR-manual.pdf", "LandR-manual.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
