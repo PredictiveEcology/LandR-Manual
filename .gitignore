@@ -15,6 +15,7 @@ docs
 !docs/*.html
 !docs/*.pdf
 !docs/*.epub
+!docs/.nojekyll
 _bookdown_files
 rsconnect
 
