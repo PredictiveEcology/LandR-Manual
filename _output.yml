@@ -23,7 +23,7 @@ bookdown::gitbook:
     instapaper: false
     vk: false
     whatsapp: false
-  github-repo: PredictiveEcology/LandR-Manual
+  github-repo: https://github.com/CeresBarros/CeresBarros/LandR-Manual
 bookdown::epub_book: default
 bookdown::pdf_book:
   includes:

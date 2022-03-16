@@ -13,7 +13,7 @@
   
   <meta property="og:image" content="/figures/LandRHex.png" />
   <meta property="og:description" content="A manual for the LandR ecosystem of SpaDES modules" />
-  <meta name="github-repo" content="CeresBarros/LandR-Manual" />
+  <meta name="github-repo" content="https://github.com/CeresBarros/LandR-Manual" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="LandR Biomass_speciesData Module | LandR Manual" />
@@ -157,7 +157,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="_book/index.html">LandR Manual</a></li>
+<li><a href="docs/index.html">LandR Manual</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
@@ -1447,30 +1447,30 @@ with forest cover are calculated (<code>treed</code>and <code>numTreed</code> ou
 <h2>Usage example</h2>
 <div id="load-spades-and-other-packages." class="section level3">
 <h3>Load <code>SpaDES</code> and other packages.</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="landr-biomass_speciesdata-module.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(Require)) {</span>
-<span id="cb5-2"><a href="landr-biomass_speciesdata-module.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;Require&quot;</span>)</span>
-<span id="cb5-3"><a href="landr-biomass_speciesdata-module.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(Require)</span>
-<span id="cb5-4"><a href="landr-biomass_speciesdata-module.html#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-5"><a href="landr-biomass_speciesdata-module.html#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="landr-biomass_speciesdata-module.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Require</span>(<span class="fu">c</span>(<span class="st">&quot;PredictiveEcology/SpaDES.install&quot;</span>,</span>
-<span id="cb5-7"><a href="landr-biomass_speciesdata-module.html#cb5-7" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;SpaDES&quot;</span>, <span class="st">&quot;PredictiveEcology/SpaDES.core@development&quot;</span>,</span>
-<span id="cb5-8"><a href="landr-biomass_speciesdata-module.html#cb5-8" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;PredictiveEcology/LandR&quot;</span>), </span>
-<span id="cb5-9"><a href="landr-biomass_speciesdata-module.html#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">install_githubArgs =</span> <span class="fu">list</span>(<span class="at">dependencies =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="landr-biomass_speciesdata-module.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(Require)) {</span>
+<span id="cb4-2"><a href="landr-biomass_speciesdata-module.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;Require&quot;</span>)</span>
+<span id="cb4-3"><a href="landr-biomass_speciesdata-module.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(Require)</span>
+<span id="cb4-4"><a href="landr-biomass_speciesdata-module.html#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-5"><a href="landr-biomass_speciesdata-module.html#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="landr-biomass_speciesdata-module.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Require</span>(<span class="fu">c</span>(<span class="st">&quot;PredictiveEcology/SpaDES.install&quot;</span>,</span>
+<span id="cb4-7"><a href="landr-biomass_speciesdata-module.html#cb4-7" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;SpaDES&quot;</span>, <span class="st">&quot;PredictiveEcology/SpaDES.core@development&quot;</span>,</span>
+<span id="cb4-8"><a href="landr-biomass_speciesdata-module.html#cb4-8" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;PredictiveEcology/LandR&quot;</span>), </span>
+<span id="cb4-9"><a href="landr-biomass_speciesdata-module.html#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">install_githubArgs =</span> <span class="fu">list</span>(<span class="at">dependencies =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
 </div>
 <div id="get-module-necessary-packages-and-set-up-folder-directories" class="section level3">
 <h3>Get module, necessary packages and set up folder directories</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="landr-biomass_speciesdata-module.html#cb6-1" aria-hidden="true" tabindex="-1"></a>tempDir <span class="ot">&lt;-</span> <span class="fu">tempdir</span>()</span>
-<span id="cb6-2"><a href="landr-biomass_speciesdata-module.html#cb6-2" aria-hidden="true" tabindex="-1"></a>spadesModulesDirectory <span class="ot">&lt;-</span> <span class="fu">file.path</span>(tempDir, <span class="st">&quot;modules&quot;</span>)</span>
-<span id="cb6-3"><a href="landr-biomass_speciesdata-module.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="landr-biomass_speciesdata-module.html#cb6-4" aria-hidden="true" tabindex="-1"></a>paths <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">inputPath =</span> <span class="fu">normPath</span>(<span class="fu">file.path</span>(tempDir, <span class="st">&quot;inputs&quot;</span>)), </span>
-<span id="cb6-5"><a href="landr-biomass_speciesdata-module.html#cb6-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">cachePath =</span> <span class="fu">normPath</span>(<span class="fu">file.path</span>(tempDir, <span class="st">&quot;cache&quot;</span>)), </span>
-<span id="cb6-6"><a href="landr-biomass_speciesdata-module.html#cb6-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">modulePath =</span> <span class="fu">normPath</span>(spadesModulesDirectory), </span>
-<span id="cb6-7"><a href="landr-biomass_speciesdata-module.html#cb6-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">outputPath =</span> <span class="fu">normPath</span>(<span class="fu">file.path</span>(tempDir, <span class="st">&quot;outputs&quot;</span>)))</span>
-<span id="cb6-8"><a href="landr-biomass_speciesdata-module.html#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="landr-biomass_speciesdata-module.html#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">getModule</span>(<span class="st">&quot;PredictiveEcology/Biomass_speciesData&quot;</span>, <span class="at">modulePath =</span> spadesModulesDirectory, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb6-10"><a href="landr-biomass_speciesdata-module.html#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="landr-biomass_speciesdata-module.html#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="do">## make sure all necessary packages are installed:</span></span>
-<span id="cb6-12"><a href="landr-biomass_speciesdata-module.html#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">makeSureAllPackagesInstalled</span>(spadesModulesDirectory)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="landr-biomass_speciesdata-module.html#cb5-1" aria-hidden="true" tabindex="-1"></a>tempDir <span class="ot">&lt;-</span> <span class="fu">tempdir</span>()</span>
+<span id="cb5-2"><a href="landr-biomass_speciesdata-module.html#cb5-2" aria-hidden="true" tabindex="-1"></a>spadesModulesDirectory <span class="ot">&lt;-</span> <span class="fu">file.path</span>(tempDir, <span class="st">&quot;modules&quot;</span>)</span>
+<span id="cb5-3"><a href="landr-biomass_speciesdata-module.html#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="landr-biomass_speciesdata-module.html#cb5-4" aria-hidden="true" tabindex="-1"></a>paths <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">inputPath =</span> <span class="fu">normPath</span>(<span class="fu">file.path</span>(tempDir, <span class="st">&quot;inputs&quot;</span>)), </span>
+<span id="cb5-5"><a href="landr-biomass_speciesdata-module.html#cb5-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">cachePath =</span> <span class="fu">normPath</span>(<span class="fu">file.path</span>(tempDir, <span class="st">&quot;cache&quot;</span>)), </span>
+<span id="cb5-6"><a href="landr-biomass_speciesdata-module.html#cb5-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">modulePath =</span> <span class="fu">normPath</span>(spadesModulesDirectory), </span>
+<span id="cb5-7"><a href="landr-biomass_speciesdata-module.html#cb5-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">outputPath =</span> <span class="fu">normPath</span>(<span class="fu">file.path</span>(tempDir, <span class="st">&quot;outputs&quot;</span>)))</span>
+<span id="cb5-8"><a href="landr-biomass_speciesdata-module.html#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="landr-biomass_speciesdata-module.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">getModule</span>(<span class="st">&quot;PredictiveEcology/Biomass_speciesData&quot;</span>, <span class="at">modulePath =</span> spadesModulesDirectory, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-10"><a href="landr-biomass_speciesdata-module.html#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="landr-biomass_speciesdata-module.html#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="do">## make sure all necessary packages are installed:</span></span>
+<span id="cb5-12"><a href="landr-biomass_speciesdata-module.html#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">makeSureAllPackagesInstalled</span>(spadesModulesDirectory)</span></code></pre></div>
 </div>
 <div id="setup-simulation-1" class="section level3">
 <h3>Setup simulation</h3>
@@ -1480,43 +1480,43 @@ interest) are saved automatically, so there is no need to tell <code>spades</cod
 save using the <code>outputs</code> argument (see <code>?SpaDES.core::outputs</code>).</p>
 <p>We pass the global parameter <code>.plotInitialTime = 1</code> in the <code>simInitAndSpades</code>
 function to activate plotting.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="landr-biomass_speciesdata-module.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># User may want to set some options -- see ?reproducibleOptions </span></span>
-<span id="cb7-2"><a href="landr-biomass_speciesdata-module.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#    -- e.g., often the path to the &#39;inputs&#39; folder will be set outside of project by user:</span></span>
-<span id="cb7-3"><a href="landr-biomass_speciesdata-module.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># options(reproducible.inputPaths = &quot;E:/Data/LandR_related/&quot;) # to re-use datasets across projects</span></span>
-<span id="cb7-4"><a href="landr-biomass_speciesdata-module.html#cb7-4" aria-hidden="true" tabindex="-1"></a>studyAreaLarge <span class="ot">&lt;-</span> <span class="fu">Cache</span>(randomStudyArea, <span class="at">size =</span> <span class="fl">1e7</span>,</span>
-<span id="cb7-5"><a href="landr-biomass_speciesdata-module.html#cb7-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">cacheRepo =</span> paths<span class="sc">$</span>cachePath) <span class="co"># cache this so it creates a random one only once on a machine</span></span>
-<span id="cb7-6"><a href="landr-biomass_speciesdata-module.html#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="landr-biomass_speciesdata-module.html#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Pick the species you want to work with -- here we use the naming convention in &quot;Boreal&quot; column of LandR::sppEquivalencies_CA (default)</span></span>
-<span id="cb7-8"><a href="landr-biomass_speciesdata-module.html#cb7-8" aria-hidden="true" tabindex="-1"></a>speciesNameConvention <span class="ot">&lt;-</span> <span class="st">&quot;Boreal&quot;</span></span>
-<span id="cb7-9"><a href="landr-biomass_speciesdata-module.html#cb7-9" aria-hidden="true" tabindex="-1"></a>speciesToUse <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Pice_Gla&quot;</span>, <span class="st">&quot;Popu_Tre&quot;</span>, <span class="st">&quot;Pinu_Con&quot;</span>)</span>
-<span id="cb7-10"><a href="landr-biomass_speciesdata-module.html#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="landr-biomass_speciesdata-module.html#cb7-11" aria-hidden="true" tabindex="-1"></a>sppEquiv <span class="ot">&lt;-</span> LandR<span class="sc">::</span>sppEquivalencies_CA[<span class="fu">get</span>(speciesNameConvention) <span class="sc">%in%</span> speciesToUse]</span>
-<span id="cb7-12"><a href="landr-biomass_speciesdata-module.html#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign a colour convention for graphics for each species</span></span>
-<span id="cb7-13"><a href="landr-biomass_speciesdata-module.html#cb7-13" aria-hidden="true" tabindex="-1"></a>sppColorVect <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">sppColors</span>(sppEquiv, speciesNameConvention,</span>
-<span id="cb7-14"><a href="landr-biomass_speciesdata-module.html#cb7-14" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">newVals =</span> <span class="st">&quot;Mixed&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>)</span>
-<span id="cb7-15"><a href="landr-biomass_speciesdata-module.html#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="landr-biomass_speciesdata-module.html#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Usage example</span></span>
-<span id="cb7-17"><a href="landr-biomass_speciesdata-module.html#cb7-17" aria-hidden="true" tabindex="-1"></a>modules <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Biomass_speciesData&quot;</span>)</span>
-<span id="cb7-18"><a href="landr-biomass_speciesdata-module.html#cb7-18" aria-hidden="true" tabindex="-1"></a>objects <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;studyAreaLarge&quot;</span> <span class="ot">=</span> studyAreaLarge,</span>
-<span id="cb7-19"><a href="landr-biomass_speciesdata-module.html#cb7-19" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;sppEquiv&quot;</span> <span class="ot">=</span> sppEquiv,</span>
-<span id="cb7-20"><a href="landr-biomass_speciesdata-module.html#cb7-20" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;sppColorVect&quot;</span> <span class="ot">=</span> sppColorVect)</span>
-<span id="cb7-21"><a href="landr-biomass_speciesdata-module.html#cb7-21" aria-hidden="true" tabindex="-1"></a>params <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Biomass_speciesData&quot;</span> <span class="ot">=</span> <span class="fu">list</span>(<span class="st">&quot;coverThresh&quot;</span> <span class="ot">=</span> 5L))</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="landr-biomass_speciesdata-module.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># User may want to set some options -- see ?reproducibleOptions </span></span>
+<span id="cb6-2"><a href="landr-biomass_speciesdata-module.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#    -- e.g., often the path to the &#39;inputs&#39; folder will be set outside of project by user:</span></span>
+<span id="cb6-3"><a href="landr-biomass_speciesdata-module.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># options(reproducible.inputPaths = &quot;E:/Data/LandR_related/&quot;) # to re-use datasets across projects</span></span>
+<span id="cb6-4"><a href="landr-biomass_speciesdata-module.html#cb6-4" aria-hidden="true" tabindex="-1"></a>studyAreaLarge <span class="ot">&lt;-</span> <span class="fu">Cache</span>(randomStudyArea, <span class="at">size =</span> <span class="fl">1e7</span>,</span>
+<span id="cb6-5"><a href="landr-biomass_speciesdata-module.html#cb6-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">cacheRepo =</span> paths<span class="sc">$</span>cachePath) <span class="co"># cache this so it creates a random one only once on a machine</span></span>
+<span id="cb6-6"><a href="landr-biomass_speciesdata-module.html#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="landr-biomass_speciesdata-module.html#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Pick the species you want to work with -- here we use the naming convention in &quot;Boreal&quot; column of LandR::sppEquivalencies_CA (default)</span></span>
+<span id="cb6-8"><a href="landr-biomass_speciesdata-module.html#cb6-8" aria-hidden="true" tabindex="-1"></a>speciesNameConvention <span class="ot">&lt;-</span> <span class="st">&quot;Boreal&quot;</span></span>
+<span id="cb6-9"><a href="landr-biomass_speciesdata-module.html#cb6-9" aria-hidden="true" tabindex="-1"></a>speciesToUse <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Pice_Gla&quot;</span>, <span class="st">&quot;Popu_Tre&quot;</span>, <span class="st">&quot;Pinu_Con&quot;</span>)</span>
+<span id="cb6-10"><a href="landr-biomass_speciesdata-module.html#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="landr-biomass_speciesdata-module.html#cb6-11" aria-hidden="true" tabindex="-1"></a>sppEquiv <span class="ot">&lt;-</span> LandR<span class="sc">::</span>sppEquivalencies_CA[<span class="fu">get</span>(speciesNameConvention) <span class="sc">%in%</span> speciesToUse]</span>
+<span id="cb6-12"><a href="landr-biomass_speciesdata-module.html#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign a colour convention for graphics for each species</span></span>
+<span id="cb6-13"><a href="landr-biomass_speciesdata-module.html#cb6-13" aria-hidden="true" tabindex="-1"></a>sppColorVect <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">sppColors</span>(sppEquiv, speciesNameConvention,</span>
+<span id="cb6-14"><a href="landr-biomass_speciesdata-module.html#cb6-14" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">newVals =</span> <span class="st">&quot;Mixed&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>)</span>
+<span id="cb6-15"><a href="landr-biomass_speciesdata-module.html#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="landr-biomass_speciesdata-module.html#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Usage example</span></span>
+<span id="cb6-17"><a href="landr-biomass_speciesdata-module.html#cb6-17" aria-hidden="true" tabindex="-1"></a>modules <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Biomass_speciesData&quot;</span>)</span>
+<span id="cb6-18"><a href="landr-biomass_speciesdata-module.html#cb6-18" aria-hidden="true" tabindex="-1"></a>objects <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;studyAreaLarge&quot;</span> <span class="ot">=</span> studyAreaLarge,</span>
+<span id="cb6-19"><a href="landr-biomass_speciesdata-module.html#cb6-19" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;sppEquiv&quot;</span> <span class="ot">=</span> sppEquiv,</span>
+<span id="cb6-20"><a href="landr-biomass_speciesdata-module.html#cb6-20" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;sppColorVect&quot;</span> <span class="ot">=</span> sppColorVect)</span>
+<span id="cb6-21"><a href="landr-biomass_speciesdata-module.html#cb6-21" aria-hidden="true" tabindex="-1"></a>params <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Biomass_speciesData&quot;</span> <span class="ot">=</span> <span class="fu">list</span>(<span class="st">&quot;coverThresh&quot;</span> <span class="ot">=</span> 5L))</span></code></pre></div>
 </div>
 <div id="run-module" class="section level3">
 <h3>Run module</h3>
 <p>Note that because this is a data module (i.e., only attempts to prepare data for
 the simulation) we are not iterating it and so both the start and end times are
 set to <code>1</code> here.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="landr-biomass_speciesdata-module.html#cb8-1" aria-hidden="true" tabindex="-1"></a>opts <span class="ot">&lt;-</span> <span class="fu">options</span>(<span class="at">reproducible.useCache =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb8-2"><a href="landr-biomass_speciesdata-module.html#cb8-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">reproducible.inputPaths =</span> paths<span class="sc">$</span>inputPath)</span>
-<span id="cb8-3"><a href="landr-biomass_speciesdata-module.html#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="landr-biomass_speciesdata-module.html#cb8-4" aria-hidden="true" tabindex="-1"></a>mySimOut <span class="ot">&lt;-</span> <span class="fu">simInitAndSpades</span>(<span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">1</span>),</span>
-<span id="cb8-5"><a href="landr-biomass_speciesdata-module.html#cb8-5" aria-hidden="true" tabindex="-1"></a>                             <span class="at">modules =</span> modules, </span>
-<span id="cb8-6"><a href="landr-biomass_speciesdata-module.html#cb8-6" aria-hidden="true" tabindex="-1"></a>                             <span class="at">parameters =</span> params,</span>
-<span id="cb8-7"><a href="landr-biomass_speciesdata-module.html#cb8-7" aria-hidden="true" tabindex="-1"></a>                             <span class="at">objects =</span> objects, </span>
-<span id="cb8-8"><a href="landr-biomass_speciesdata-module.html#cb8-8" aria-hidden="true" tabindex="-1"></a>                             <span class="at">paths =</span> paths,</span>
-<span id="cb8-9"><a href="landr-biomass_speciesdata-module.html#cb8-9" aria-hidden="true" tabindex="-1"></a>                             <span class="at">.plotInitialTime =</span> <span class="dv">1</span>)</span>
-<span id="cb8-10"><a href="landr-biomass_speciesdata-module.html#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(opts)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="landr-biomass_speciesdata-module.html#cb7-1" aria-hidden="true" tabindex="-1"></a>opts <span class="ot">&lt;-</span> <span class="fu">options</span>(<span class="at">reproducible.useCache =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-2"><a href="landr-biomass_speciesdata-module.html#cb7-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">reproducible.inputPaths =</span> paths<span class="sc">$</span>inputPath)</span>
+<span id="cb7-3"><a href="landr-biomass_speciesdata-module.html#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="landr-biomass_speciesdata-module.html#cb7-4" aria-hidden="true" tabindex="-1"></a>mySimOut <span class="ot">&lt;-</span> <span class="fu">simInitAndSpades</span>(<span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">1</span>),</span>
+<span id="cb7-5"><a href="landr-biomass_speciesdata-module.html#cb7-5" aria-hidden="true" tabindex="-1"></a>                             <span class="at">modules =</span> modules, </span>
+<span id="cb7-6"><a href="landr-biomass_speciesdata-module.html#cb7-6" aria-hidden="true" tabindex="-1"></a>                             <span class="at">parameters =</span> params,</span>
+<span id="cb7-7"><a href="landr-biomass_speciesdata-module.html#cb7-7" aria-hidden="true" tabindex="-1"></a>                             <span class="at">objects =</span> objects, </span>
+<span id="cb7-8"><a href="landr-biomass_speciesdata-module.html#cb7-8" aria-hidden="true" tabindex="-1"></a>                             <span class="at">paths =</span> paths,</span>
+<span id="cb7-9"><a href="landr-biomass_speciesdata-module.html#cb7-9" aria-hidden="true" tabindex="-1"></a>                             <span class="at">.plotInitialTime =</span> <span class="dv">1</span>)</span>
+<span id="cb7-10"><a href="landr-biomass_speciesdata-module.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(opts)</span></code></pre></div>
 <p>Here are some of the data retrieved by <em>Biomass_speciesData</em> for a randomly
 generated study area within Canada.</p>
 <div class="figure"><span style="display:block;" id="fig:fig-Biomass-speciesDataOutPlots"></span>
@@ -1586,7 +1586,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["LandR-manual.pdf", "LandR-manual.epub"],
+"download": ["LandRManual.pdf", "LandRManual.epub"],
 "search": {
 "engine": "fuse",
 "options": null

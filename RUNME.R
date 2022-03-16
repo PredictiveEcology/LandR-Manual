@@ -80,6 +80,11 @@ copyModuleRmds <- sapply(moduleRmds, function(x) {
   return(copyModuleRmd)
 })
 
+## prevents GitHub from rendering book using Jekyll
+if (!file.exists("docs/.nojekyll")) {
+  file.create("docs/.nojekyll")
+}
+
 bookdown::render_book()
 
 ## remove temporary .Rmds
