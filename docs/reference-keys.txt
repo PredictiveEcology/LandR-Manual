@@ -28,6 +28,11 @@ tab:moduleInputs2-Biomass-speciesData
 tab:mergingSpp-Biomass-speciesData
 tab:moduleParams2-Biomass-speciesData
 fig:fig-Biomass-speciesDataOutPlots
+tab:moduleInputs-Biomass-borealDataPrep
+tab:moduleParams-Biomass-borealDataPrep
+tab:moduleOutputs-Biomass-borealDataPrep
+tab:moduleInputs2-Biomass-borealDataPrep
+tab:moduleParams2-Biomass-borealDataPrep
 tab:moduleInputs-Biomass-validationKNN
 tab:moduleParams-Biomass-validationKNN
 tab:moduleOutputs-Biomass-validationKNN
