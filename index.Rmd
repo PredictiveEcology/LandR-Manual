@@ -3,14 +3,16 @@ title: "LandR Manual"
 subtitle: "v. 0.0.9000"
 author: "Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire"
 date: "Last updated: `r Sys.Date()`"
+description: "A manual for the LandR ecosystem of SpaDES modules"
 site: bookdown::bookdown_site
+knit: "bookdown::render_book"
 bibliography:
   - citations/references_LandRManual.bib
 csl: citations/ecology-letters.csl
 link-citations: true
 documentclass: book
-github-repo: https://github.com/CeresBarros/LandR-Manual
-description: "A manual for the LandR ecosystem of SpaDES modules"
+github-repo: PredictiveEcology/LandR-Manual
+url: 'https\://predictiveecology.github.io/LandR-Manual'
 cover-image: "figures/LandRHex.png"
 ---
 

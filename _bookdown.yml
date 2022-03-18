@@ -1,8 +1,9 @@
 book_filename: LandRManual
+repo: https://github.com/PredictiveEcology/LandR-Manual
 output_dir: "docs"
 language:
   ui:
-  chapter_name: "Chapter "
+    chapter_name: "Chapter "
 delete_merged_file: true
 rmd_files:
   - index.Rmd
