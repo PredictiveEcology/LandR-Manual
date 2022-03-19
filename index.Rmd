@@ -7,13 +7,14 @@ description: "A manual for the LandR ecosystem of SpaDES modules"
 site: bookdown::bookdown_site
 knit: "bookdown::render_book"
 bibliography:
-  - citations/references_LandRManual.bib
+  - citations/referencesLandRManual.bib
 csl: citations/ecology-letters.csl
 link-citations: true
 documentclass: book
 github-repo: PredictiveEcology/LandR-Manual
 url: 'https\://predictiveecology.github.io/LandR-Manual'
 cover-image: "figures/LandRHex.png"
+always_allow_html: true
 ---
 
 <!-- manual version TODO: link to date and commit of manual/project repo -->
@@ -21,7 +22,7 @@ cover-image: "figures/LandRHex.png"
 # Preface
 
 ```{r figLandRHex, eval = TRUE, echo = FALSE, fig.align = 'center', fig.dim = c(10,10)}
-knitr::include_graphics(c("figures/LandRHex.png"))
+knitr::include_graphics(normalizePath(c("figures/LandRHex.png"), winslash = "/"))
 ```
 
 LandR is a collection of `SpaDES` modules [see @ChubatyMcIntire2019] which are aimed at simulating forest dynamics across large spatial scales, while taking into account various disturbances that affected them (e.g., wildfire and climate change), as well as their interactions with other components of forest systems, such as bird communities and ungulates (via changes in the habitat of these species) or carbon cycling.
