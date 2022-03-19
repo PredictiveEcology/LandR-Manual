@@ -109,7 +109,8 @@ if (!file.exists("docs/.nojekyll")) {
   file.create("docs/.nojekyll")
 }
 
-bookdown::render_book()
+bookdown::render_book(output_format = "all")
+# rmarkdown::render_site(encoding = 'UTF-8')
 
 ## remove temporary .Rmds
 file.remove(copyModuleRmds)
