@@ -29,6 +29,9 @@ vignettes/*.pdf
 *_cache/
 /cache/
 
+## these are downloaded automatically, no point in caching
+figures/*Badge.png
+
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
