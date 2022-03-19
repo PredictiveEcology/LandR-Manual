@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>LandR Manual</title>
   <meta name="description" content="A manual for the LandR ecosystem of SpaDES modules" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
   <meta property="og:title" content="LandR Manual" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://predictiveecology.github.io/LandR-Manual" />
   <meta property="og:image" content="https://predictiveecology.github.io/LandR-Manual/figures/LandRHex.png" />
   <meta property="og:description" content="A manual for the LandR ecosystem of SpaDES modules" />
   <meta name="github-repo" content="PredictiveEcology/LandR-Manual" />
@@ -32,7 +31,6 @@
   
 
 <link rel="next" href="landr-biomass_core-module.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -160,116 +159,141 @@ div.csl-indent {
 <li><a href="docs/index.html">LandR Manual</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li><a href="landr-biomass_core-module.html#landr-biomass_core-module">LandR <em>Biomass_core</em> Module</a>
+<li><a href="index.html#preface">Preface<span></span></a></li>
+<li><a href="landr-biomass_core-module.html#landr-biomass_core-module">LandR <em>Biomass_core</em> Module<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html"><i class="fa fa-check"></i>Module Overview</a>
+<li><a href="landr-biomass_core-module.html#module-overview">Module Overview<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#module-summary"><i class="fa fa-check"></i>Module summary</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#module-inputs-and-parameters"><i class="fa fa-check"></i>Module inputs and parameters</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#events"><i class="fa fa-check"></i>Events</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#module-outputs"><i class="fa fa-check"></i>Module outputs</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#links-to-other-modules"><i class="fa fa-check"></i>Links to other modules</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#getting-help"><i class="fa fa-check"></i>Getting help</a></li>
+<li><a href="landr-biomass_core-module.html#module-summary">Module summary<span></span></a></li>
+<li><a href="landr-biomass_core-module.html#module-inputs-and-parameters">Module inputs and parameters<span></span></a></li>
+<li><a href="landr-biomass_core-module.html#events">Events<span></span></a></li>
+<li><a href="landr-biomass_core-module.html#module-outputs">Module outputs<span></span></a></li>
+<li><a href="landr-biomass_core-module.html#links-to-other-modules">Links to other modules<span></span></a></li>
+<li><a href="landr-biomass_core-module.html#getting-help">Getting help<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#module-manual"><i class="fa fa-check"></i>Module manual</a>
+<li><a href="landr-biomass_core-module.html#module-manual">Module manual<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
-<li><a href="landr-biomass_core-module.html#differences-between-biomass_core-and-lbse">Differences between <em>Biomass_core</em> and LBSE</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#initialization-inputs-and-parameters"><i class="fa fa-check"></i>Initialization, inputs and parameters</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#simulation-flow"><i class="fa fa-check"></i>Simulation flow</a></li>
+<li><a href="landr-biomass_core-module.html#introduction">Introduction<span></span></a></li>
+<li><a href="landr-biomass_core-module.html#differences-between-biomass_core-and-lbse">Differences between <em>Biomass_core</em> and LBSE<span></span></a></li>
+<li><a href="landr-biomass_core-module.html#initialization-inputs-and-parameters">Initialization, inputs and parameters<span></span></a></li>
+<li><a href="landr-biomass_core-module.html#simulation-flow">Simulation flow<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#usage-example"><i class="fa fa-check"></i>Usage example</a>
+<li><a href="landr-biomass_core-module.html#usage-example">Usage example<span></span></a>
 <ul>
-<li><a href="landr-biomass_core-module.html#load-spades">Load <code>SpaDES</code></a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#get-the-module"><i class="fa fa-check"></i>Get the module</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#setup-simulation"><i class="fa fa-check"></i>Setup simulation</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#run-simulation"><i class="fa fa-check"></i>Run simulation</a></li>
+<li><a href="landr-biomass_core-module.html#load-spades">Load <code>SpaDES</code><span></span></a></li>
+<li><a href="landr-biomass_core-module.html#get-the-module">Get the module<span></span></a></li>
+<li><a href="landr-biomass_core-module.html#setup-simulation">Setup simulation<span></span></a></li>
+<li><a href="landr-biomass_core-module.html#run-simulation">Run simulation<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#appendix"><i class="fa fa-check"></i>Appendix</a>
+<li><a href="landr-biomass_core-module.html#appendix">Appendix<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#tables"><i class="fa fa-check"></i>Tables</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#figures"><i class="fa fa-check"></i>Figures</a></li>
+<li><a href="landr-biomass_core-module.html#tables">Tables<span></span></a></li>
+<li><a href="landr-biomass_core-module.html#figures">Figures<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landr-biomass_core-module.html"><a href="landr-biomass_core-module.html#references"><i class="fa fa-check"></i>References</a></li>
+<li><a href="landr-biomass_core-module.html#references">References<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landr-data-modules.html"><a href="landr-data-modules.html"><i class="fa fa-check"></i>LandR Data Modules</a></li>
-<li><a href="landr-biomass_speciesdata-module.html#landr-biomass_speciesdata-module">LandR <em>Biomass_speciesData</em> Module</a>
+<li><a href="landr-data-modules.html#landr-data-modules">LandR Data Modules<span></span></a></li>
+<li><a href="landr-biomass_speciesdata-module.html#landr-biomass_speciesdata-module">LandR <em>Biomass_speciesData</em> Module<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html"><i class="fa fa-check"></i>Module Overview</a>
+<li><a href="landr-biomass_speciesdata-module.html#module-overview-1">Module Overview<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#module-summary-1"><i class="fa fa-check"></i>Module summary</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#module-inputs-and-parameters-at-a-glance"><i class="fa fa-check"></i>Module inputs and parameters at a glance</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#events-1"><i class="fa fa-check"></i>Events</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#module-outputs-1"><i class="fa fa-check"></i>Module outputs</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#links-to-other-modules-1"><i class="fa fa-check"></i>Links to other modules</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#getting-help-1"><i class="fa fa-check"></i>Getting help</a></li>
+<li><a href="landr-biomass_speciesdata-module.html#module-summary-1">Module summary<span></span></a></li>
+<li><a href="landr-biomass_speciesdata-module.html#module-inputs-and-parameters-at-a-glance">Module inputs and parameters at a glance<span></span></a></li>
+<li><a href="landr-biomass_speciesdata-module.html#events-1">Events<span></span></a></li>
+<li><a href="landr-biomass_speciesdata-module.html#module-outputs-1">Module outputs<span></span></a></li>
+<li><a href="landr-biomass_speciesdata-module.html#links-to-other-modules-1">Links to other modules<span></span></a></li>
+<li><a href="landr-biomass_speciesdata-module.html#getting-help-1">Getting help<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#module-manual-1"><i class="fa fa-check"></i>Module manual</a>
+<li><a href="landr-biomass_speciesdata-module.html#module-manual-1">Module manual<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#detailed-description"><i class="fa fa-check"></i>Detailed description</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#initialization-inputs-and-parameters-1"><i class="fa fa-check"></i>Initialization, inputs and parameters</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#simulation-flow-1"><i class="fa fa-check"></i>Simulation flow</a></li>
+<li><a href="landr-biomass_speciesdata-module.html#detailed-description">Detailed description<span></span></a></li>
+<li><a href="landr-biomass_speciesdata-module.html#initialization-inputs-and-parameters-1">Initialization, inputs and parameters<span></span></a></li>
+<li><a href="landr-biomass_speciesdata-module.html#simulation-flow-1">Simulation flow<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#usage-example-1"><i class="fa fa-check"></i>Usage example</a>
+<li><a href="landr-biomass_speciesdata-module.html#usage-example-1">Usage example<span></span></a>
 <ul>
-<li><a href="landr-biomass_speciesdata-module.html#load-spades-and-other-packages.">Load <code>SpaDES</code> and other packages.</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#get-module-necessary-packages-and-set-up-folder-directories"><i class="fa fa-check"></i>Get module, necessary packages and set up folder directories</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#setup-simulation-1"><i class="fa fa-check"></i>Setup simulation</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#run-module"><i class="fa fa-check"></i>Run module</a></li>
+<li><a href="landr-biomass_speciesdata-module.html#load-spades-and-other-packages.">Load <code>SpaDES</code> and other packages.<span></span></a></li>
+<li><a href="landr-biomass_speciesdata-module.html#get-module-necessary-packages-and-set-up-folder-directories">Get module, necessary packages and set up folder directories<span></span></a></li>
+<li><a href="landr-biomass_speciesdata-module.html#setup-simulation-1">Setup simulation<span></span></a></li>
+<li><a href="landr-biomass_speciesdata-module.html#run-module">Run module<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landr-biomass_speciesdata-module.html"><a href="landr-biomass_speciesdata-module.html#references-1"><i class="fa fa-check"></i>References</a></li>
+<li><a href="landr-biomass_speciesdata-module.html#references-1">References<span></span></a></li>
 </ul></li>
-<li><a href="landr-biomass_borealdataprep-module.html#landr-biomass_borealdataprep-module">LandR <em>Biomass_borealDataPrep</em> Module</a>
+<li><a href="landr-biomass_borealdataprep-module.html#landr-biomass_borealdataprep-module">LandR <em>Biomass_borealDataPrep</em> Module<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html"><i class="fa fa-check"></i>Module Overview</a>
+<li><a href="landr-biomass_borealdataprep-module.html#module-overview-2">Module Overview<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html#module-summary-2"><i class="fa fa-check"></i>Module summary</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html#module-inputs-and-parameters-at-a-glance-1"><i class="fa fa-check"></i>Module inputs and parameters at a glance</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html#events-2"><i class="fa fa-check"></i>Events</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html#module-outputs-2"><i class="fa fa-check"></i>Module outputs</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html#links-to-other-modules-2"><i class="fa fa-check"></i>Links to other modules</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html#getting-help-2"><i class="fa fa-check"></i>Getting help</a></li>
+<li><a href="landr-biomass_borealdataprep-module.html#module-summary-2">Module summary<span></span></a></li>
+<li><a href="landr-biomass_borealdataprep-module.html#module-inputs-and-parameters-at-a-glance-1">Module inputs and parameters at a glance<span></span></a></li>
+<li><a href="landr-biomass_borealdataprep-module.html#events-2">Events<span></span></a></li>
+<li><a href="landr-biomass_borealdataprep-module.html#module-outputs-2">Module outputs<span></span></a></li>
+<li><a href="landr-biomass_borealdataprep-module.html#links-to-other-modules-2">Links to other modules<span></span></a></li>
+<li><a href="landr-biomass_borealdataprep-module.html#getting-help-2">Getting help<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html#module-manual-2"><i class="fa fa-check"></i>Module manual</a>
+<li><a href="landr-biomass_borealdataprep-module.html#module-manual-2">Module manual<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html#detailed-description-1"><i class="fa fa-check"></i>Detailed description</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html#data-acquisition-and-treatment"><i class="fa fa-check"></i>Data acquisition and treatment</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html#parameter-estimationcalibration"><i class="fa fa-check"></i>Parameter estimation/calibration</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html#initialization-inputs-and-parameters-2"><i class="fa fa-check"></i>Initialization, inputs and parameters</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html#simulation-flow-2"><i class="fa fa-check"></i>Simulation flow</a></li>
+<li><a href="landr-biomass_borealdataprep-module.html#detailed-description-1">Detailed description<span></span></a></li>
+<li><a href="landr-biomass_borealdataprep-module.html#data-acquisition-and-treatment">Data acquisition and treatment<span></span></a></li>
+<li><a href="landr-biomass_borealdataprep-module.html#parameter-estimationcalibration">Parameter estimation/calibration<span></span></a></li>
+<li><a href="landr-biomass_borealdataprep-module.html#initialization-inputs-and-parameters-2">Initialization, inputs and parameters<span></span></a></li>
+<li><a href="landr-biomass_borealdataprep-module.html#simulation-flow-2">Simulation flow<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html#usage-example-2"><i class="fa fa-check"></i>Usage example</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_borealdataprep-module.html"><a href="landr-biomass_borealdataprep-module.html#references-2"><i class="fa fa-check"></i>References</a></li>
+<li><a href="landr-biomass_borealdataprep-module.html#usage-example-2">Usage example<span></span></a></li>
+<li><a href="landr-biomass_borealdataprep-module.html#references-2">References<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landr-validation-modules.html"><a href="landr-validation-modules.html"><i class="fa fa-check"></i>LandR Validation Modules</a></li>
-<li><a href="landr-biomass_validationknn-module.html#landr-biomass_validationknn-module">LandR <em>Biomass_validationKNN</em> Module</a>
+<li><a href="landr-biomass_speciesparameters-module.html#landr-biomass_speciesparameters-module">LandR <em>Biomass_speciesParameters</em> Module<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html"><i class="fa fa-check"></i>Module Overview</a>
+<li><a href="landr-biomass_speciesparameters-module.html#module-overview-3">Module Overview<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#module-summary-3"><i class="fa fa-check"></i>Module summary</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#module-inputs-and-parameters-at-a-glance-2"><i class="fa fa-check"></i>Module inputs and parameters at a glance</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#events-3"><i class="fa fa-check"></i>Events</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#module-outputs-3"><i class="fa fa-check"></i>Module outputs</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#links-to-other-modules-3"><i class="fa fa-check"></i>Links to other modules</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#getting-help-3"><i class="fa fa-check"></i>Getting help</a></li>
+<li><a href="landr-biomass_speciesparameters-module.html#module-summary-3">Module summary<span></span></a></li>
+<li><a href="landr-biomass_speciesparameters-module.html#module-inputs-and-parameters-at-a-glance-2">Module inputs and parameters at a glance<span></span></a></li>
+<li><a href="landr-biomass_speciesparameters-module.html#events-3">Events<span></span></a></li>
+<li><a href="landr-biomass_speciesparameters-module.html#module-outputs-3">Module outputs<span></span></a></li>
+<li><a href="landr-biomass_speciesparameters-module.html#links-to-other-modules-3">Links to other modules<span></span></a></li>
+<li><a href="landr-biomass_speciesparameters-module.html#getting-help-3">Getting help<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#module-manual-3"><i class="fa fa-check"></i>Module manual</a>
+<li><a href="landr-biomass_speciesparameters-module.html#module-manual-3">Module manual<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#detailed-description-2"><i class="fa fa-check"></i>Detailed description</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#validation-approaches"><i class="fa fa-check"></i>Validation approaches</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#initialization-inputs-and-parameters-3"><i class="fa fa-check"></i>Initialization, inputs and parameters</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#simulation-flow-3"><i class="fa fa-check"></i>Simulation flow</a></li>
+<li><a href="landr-biomass_speciesparameters-module.html#detailed-description-2">Detailed description<span></span></a></li>
+<li><a href="landr-biomass_speciesparameters-module.html#initialization-inputs-and-parameters-3">Initialization, inputs and parameters<span></span></a></li>
+<li><a href="landr-biomass_speciesparameters-module.html#simulation-flow-3">Simulation flow<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#usage-example-3"><i class="fa fa-check"></i>Usage example</a>
+<li><a href="landr-biomass_speciesparameters-module.html#usage-example-3">Usage example<span></span></a>
 <ul>
-<li><a href="landr-biomass_validationknn-module.html#load-spades-and-other-packages.-1">Load <code>SpaDES</code> and other packages.</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#get-the-modules"><i class="fa fa-check"></i>Get the modules</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#setup-simulation-2"><i class="fa fa-check"></i>Setup simulation</a></li>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#run-simulation-1"><i class="fa fa-check"></i>Run simulation</a></li>
-<li><a href="landr-biomass_validationknn-module.html#validate-simulation-outputs-with-biomass_validationknn">Validate simulation outputs with <em>Biomass_validationKNN</em></a></li>
+<li><a href="landr-biomass_speciesparameters-module.html#load-spades-and-other-packages.-1">Load <code>SpaDES</code> and other packages.<span></span></a></li>
+<li><a href="landr-biomass_speciesparameters-module.html#get-module-necessary-packages-and-set-up-folder-directories-1">Get module, necessary packages and set up folder directories<span></span></a></li>
+<li><a href="landr-biomass_speciesparameters-module.html#setup-simulation-2">Setup simulation<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landr-biomass_validationknn-module.html"><a href="landr-biomass_validationknn-module.html#references-3"><i class="fa fa-check"></i>References</a></li>
+<li><a href="landr-biomass_speciesparameters-module.html#references-3">References<span></span></a></li>
+</ul></li>
+<li><a href="landr-validation-modules.html#landr-validation-modules">LandR Validation Modules<span></span></a></li>
+<li><a href="landr-biomass_validationknn-module.html#landr-biomass_validationknn-module">LandR <em>Biomass_validationKNN</em> Module<span></span></a>
+<ul>
+<li><a href="landr-biomass_validationknn-module.html#module-overview-4">Module Overview<span></span></a>
+<ul>
+<li><a href="landr-biomass_validationknn-module.html#module-summary-4">Module summary<span></span></a></li>
+<li><a href="landr-biomass_validationknn-module.html#module-inputs-and-parameters-at-a-glance-3">Module inputs and parameters at a glance<span></span></a></li>
+<li><a href="landr-biomass_validationknn-module.html#events-4">Events<span></span></a></li>
+<li><a href="landr-biomass_validationknn-module.html#module-outputs-4">Module outputs<span></span></a></li>
+<li><a href="landr-biomass_validationknn-module.html#links-to-other-modules-4">Links to other modules<span></span></a></li>
+<li><a href="landr-biomass_validationknn-module.html#getting-help-4">Getting help<span></span></a></li>
+</ul></li>
+<li><a href="landr-biomass_validationknn-module.html#module-manual-4">Module manual<span></span></a>
+<ul>
+<li><a href="landr-biomass_validationknn-module.html#detailed-description-3">Detailed description<span></span></a></li>
+<li><a href="landr-biomass_validationknn-module.html#validation-approaches">Validation approaches<span></span></a></li>
+<li><a href="landr-biomass_validationknn-module.html#initialization-inputs-and-parameters-4">Initialization, inputs and parameters<span></span></a></li>
+<li><a href="landr-biomass_validationknn-module.html#simulation-flow-4">Simulation flow<span></span></a></li>
+</ul></li>
+<li><a href="landr-biomass_validationknn-module.html#usage-example-4">Usage example<span></span></a>
+<ul>
+<li><a href="landr-biomass_validationknn-module.html#load-spades-and-other-packages.-2">Load <code>SpaDES</code> and other packages.<span></span></a></li>
+<li><a href="landr-biomass_validationknn-module.html#get-the-modules">Get the modules<span></span></a></li>
+<li><a href="landr-biomass_validationknn-module.html#setup-simulation-3">Setup simulation<span></span></a></li>
+<li><a href="landr-biomass_validationknn-module.html#run-simulation-1">Run simulation<span></span></a></li>
+<li><a href="landr-biomass_validationknn-module.html#validate-simulation-outputs-with-biomass_validationknn">Validate simulation outputs with <em>Biomass_validationKNN</em><span></span></a></li>
+</ul></li>
+<li><a href="landr-biomass_validationknn-module.html#references-4">References<span></span></a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -295,10 +319,10 @@ div.csl-indent {
 <h1 class="title">LandR Manual</h1>
 <h2 class="subtitle"><em>v. 0.0.9000</em></h2>
 <p class="author"><em>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</em></p>
-<p class="date"><em>Last updated: 2022-03-17</em></p>
+<p class="date"><em>Last updated: 2022-03-18</em></p>
 </div>
-<div id="preface" class="section level1">
-<h1>Preface</h1>
+<div id="preface" class="section level1 hasAnchor">
+<h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><img src="figures/LandRHex.png" width="365" style="display: block; margin: auto;" /></p>
 <p>LandR is a collection of <code>SpaDES</code> modules <span class="citation">(see <a href="#ref-ChubatyMcIntire2019" role="doc-biblioref">Chubaty &amp; McIntire 2019</a>)</span> which are aimed at simulating forest dynamics across large spatial scales, while taking into account various disturbances that affected them (e.g., wildfire and climate change), as well as their interactions with other components of forest systems, such as bird communities and ungulates (via changes in the habitat of these species) or carbon cycling.</p>
 <p>The present manual is a “live” document, in that will grow and change according to the existing number of LandR modules, as well as their development. In addition, sub-manuals may be produced describing smaller collections of LandR modules – e.g., the LandR Biomass manual describes only the LandR modules that are essential for the simulation of the vegetation components of forest succession, hence excluding fire disturbance modules.</p>
