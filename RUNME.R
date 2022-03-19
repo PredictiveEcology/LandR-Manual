@@ -99,6 +99,7 @@ copyModuleRmds <- sapply(moduleRmds, function(x) {
 
     linesModuleRmd <- c(beforeSetupChunkStart, addedCode, afterSetupChunkStart)
   }
+
   writeLines(linesModuleRmd, con = copyModuleRmd)
 
   return(copyModuleRmd)
