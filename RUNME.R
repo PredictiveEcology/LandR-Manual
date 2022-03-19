@@ -58,11 +58,24 @@ copyModuleRmds <- sapply(moduleRmds, function(x) {
   lines2Rm <- modelr::seq_range(which(linesModuleRmd == "---"), by = 1)
   linesModuleRmd <- linesModuleRmd[-lines2Rm]
 
-  ## make sure that setup chunk will be evaluated again (a previous setup chunk may have set "eval = FALSE")
+  ## make sure that setup chunk will be evaluated again
+  ## (a previous setup chunk may have set "eval = FALSE" and "cache = TRUE")
   setupChunkStart <- which(grepl("```{r setup", linesModuleRmd, fixed = TRUE))
   setupChunkOptions <- linesModuleRmd[setupChunkStart]
-  if (isFALSE(grepl("eval.*=TRUE", setupChunkOptions))) {
-    setupChunkOptions <- sub("(.*)\\}", "\\1, eval = TRUE\\}", setupChunkOptions)
+  if (isFALSE(grepl("eval[[:space:]]*=[[:space:]]*TRUE", setupChunkOptions))) {
+    setupChunkOptions <- if (grepl("eval", setupChunkOptions)) {
+      sub("(.*)(eval[[:space:]]*=[[:space:]]*FALSE)(.*)\\}", "\\1eval = TRUE\\3\\}", setupChunkOptions)
+    } else {
+      sub("(.*)\\}", "\\1, eval = TRUE\\}", setupChunkOptions)
+    }
+  }
+
+  if (isFALSE(grepl("cache[[:space:]]*=[[:space:]]*FALSE", setupChunkOptions))) {
+    setupChunkOptions <- if (grepl("cache", setupChunkOptions)) {
+      sub("(.*)(cache[[:space:]]*=[[:space:]]*)(TRUE|[[:digit:]])(.*)\\}", "\\1\\2FALSE\\4\\}", setupChunkOptions)
+    } else {
+      sub("(.*)\\}", "\\1, cache = FALSE\\}", setupChunkOptions)
+    }
   }
 
   linesModuleRmd[setupChunkStart] <- setupChunkOptions
