@@ -10,7 +10,7 @@
 "bit64","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","4.0.5",NA,NA,NA,NA
 "bitops","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.0-7",NA,NA,NA,NA
 "blob","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.2.2",NA,NA,NA,NA
-"bookdown","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.24",NA,NA,NA,NA
+"bookdown","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.25",NA,NA,NA,NA
 "brew","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.0-7",NA,NA,NA,NA
 "brio","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.1.3",NA,NA,NA,NA
 "broom","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.7.12",NA,NA,NA,NA
@@ -25,7 +25,7 @@
 "cli","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","3.2.0",NA,NA,NA,NA
 "clipr","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.8.0",NA,NA,NA,NA
 "colorspace","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","2.0-3",NA,NA,NA,NA
-"commonmark","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.7",NA,NA,NA,NA
+"commonmark","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.8.0",NA,NA,NA,NA
 "corrplot","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.92",NA,NA,NA,NA
 "covr","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","3.5.1",NA,NA,NA,NA
 "cowplot","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.1.1",NA,NA,NA,NA
@@ -35,7 +35,7 @@
 "curl","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","4.3.2",NA,NA,NA,NA
 "data.table","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.14.2",NA,NA,NA,NA
 "DBI","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.1.2",NA,NA,NA,NA
-"desc","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.4.0",NA,NA,NA,NA
+"desc","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.4.1",NA,NA,NA,NA
 "devtools","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","2.4.3",NA,NA,NA,NA
 "diffobj","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.3.5",NA,NA,NA,NA
 "digest","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.6.29",NA,NA,NA,NA
@@ -88,7 +88,7 @@
 "jquerylib","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.1.4",NA,NA,NA,NA
 "jsonlite","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.8.0",NA,NA,NA,NA
 "kableExtra","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.3.4",NA,NA,NA,NA
-"knitr","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.37",NA,NA,NA,NA
+"knitr","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.37.7","knitr","yihui","HEAD","fb54231ef9b47a2821cde7ad410aba927c3961d0"
 "labeling","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.4.2",NA,NA,NA,NA
 "LandR","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.0.7.9007","LandR","PredictiveEcology","development","06cd9cc72427dfab5793543cf9aa8df98dca22f8"
 "later","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.3.0",NA,NA,NA,NA
@@ -99,7 +99,7 @@
 "lobstr","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.1.1",NA,NA,NA,NA
 "magrittr","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","2.0.2",NA,NA,NA,NA
 "map","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.0.3.9001","map","PredictiveEcology","development","a7bf56142ae4301d76e885243212e387c6fef1f1"
-"maptools","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.1-2",NA,NA,NA,NA
+"maptools","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.1-3",NA,NA,NA,NA
 "markdown","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.1",NA,NA,NA,NA
 "MatrixModels","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.5-0",NA,NA,NA,NA
 "memoise","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","2.0.1",NA,NA,NA,NA
@@ -111,7 +111,7 @@
 "munsell","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.5.0",NA,NA,NA,NA
 "nloptr","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","2.0.0",NA,NA,NA,NA
 "numDeriv","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","2016.8-1.1",NA,NA,NA,NA
-"openssl","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.4.6",NA,NA,NA,NA
+"openssl","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","2.0.0",NA,NA,NA,NA
 "pbkrtest","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.5.1",NA,NA,NA,NA
 "pemisc","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.0.3.9003","pemisc","PredictiveEcology","development","2183a8c68035f9c739c680f285f6b44528f8f03b"
 "peutils","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.1.0","peutils","PredictiveEcology","development","d40d97c594c01014101c1edacd48bcace89dcb97"
@@ -147,7 +147,7 @@
 "rasterVis","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.51.2",NA,NA,NA,NA
 "rcmdcheck","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.4.0",NA,NA,NA,NA
 "RColorBrewer","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.1-2",NA,NA,NA,NA
-"Rcpp","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.0.8",NA,NA,NA,NA
+"Rcpp","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.0.8.3",NA,NA,NA,NA
 "RcppArmadillo","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.10.8.1.0",NA,NA,NA,NA
 "RcppEigen","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.3.3.9.1",NA,NA,NA,NA
 "RcppParallel","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","5.1.5",NA,NA,NA,NA
@@ -157,11 +157,11 @@
 "reproducible","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.2.8.9040","reproducible","PredictiveEcology","development","f35b3ffae1898d7f7f2451e45f82f5a76c4f0413"
 "Require","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.0.13",NA,NA,NA,NA
 "rex","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.2.1",NA,NA,NA,NA
-"rgdal","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.5-28",NA,NA,NA,NA
+"rgdal","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.5-29",NA,NA,NA,NA
 "rgeos","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.5-9",NA,NA,NA,NA
 "rjson","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.2.21",NA,NA,NA,NA
-"rlang","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.0.1",NA,NA,NA,NA
-"rmarkdown","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","2.11",NA,NA,NA,NA
+"rlang","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.0.2",NA,NA,NA,NA
+"rmarkdown","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","2.13",NA,NA,NA,NA
 "rosm","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.2.5",NA,NA,NA,NA
 "roxygen2","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","7.1.2",NA,NA,NA,NA
 "rprojroot","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","2.0.2",NA,NA,NA,NA
@@ -174,7 +174,7 @@
 "sass","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.4.0",NA,NA,NA,NA
 "scales","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.1.1",NA,NA,NA,NA
 "sessioninfo","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.2.2",NA,NA,NA,NA
-"sf","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.0-6",NA,NA,NA,NA
+"sf","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.0-7",NA,NA,NA,NA
 "shiny","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.7.1",NA,NA,NA,NA
 "shinyBS","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.61",NA,NA,NA,NA
 "sourcetools","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.1.7",NA,NA,NA,NA
@@ -201,16 +201,16 @@
 "units","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.8-0",NA,NA,NA,NA
 "usethis","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","2.1.5",NA,NA,NA,NA
 "utf8","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.2.2",NA,NA,NA,NA
-"uuid","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.0-3",NA,NA,NA,NA
+"uuid","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.0-4",NA,NA,NA,NA
 "vctrs","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.3.8",NA,NA,NA,NA
 "viridisLite","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.4.0",NA,NA,NA,NA
-"waldo","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.3.1",NA,NA,NA,NA
+"waldo","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.4.0",NA,NA,NA,NA
 "webshot","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.5.2",NA,NA,NA,NA
 "whisker","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.4",NA,NA,NA,NA
 "whoami","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.3.0",NA,NA,NA,NA
-"withr","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","2.4.3",NA,NA,NA,NA
+"withr","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","2.5.0",NA,NA,NA,NA
 "wk","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.6.0",NA,NA,NA,NA
-"xfun","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.29",NA,NA,NA,NA
+"xfun","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","0.30",NA,NA,NA,NA
 "XML","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","3.99-0.9",NA,NA,NA,NA
 "xml2","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.3.3",NA,NA,NA,NA
 "xopen","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.0.0",NA,NA,NA,NA
@@ -220,31 +220,31 @@
 "zip","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","2.2.0",NA,NA,NA,NA
 "zoo","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.0","1.8-9",NA,NA,NA,NA
 "base","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
-"boot","C:/Program Files/R/R-4.0.4/library","1.3-27",NA,NA,NA,NA
-"class","C:/Program Files/R/R-4.0.4/library","7.3-18",NA,NA,NA,NA
-"cluster","C:/Program Files/R/R-4.0.4/library","2.1.1",NA,NA,NA,NA
+"boot","C:/Program Files/R/R-4.0.4/library","1.3-28",NA,NA,NA,NA
+"class","C:/Program Files/R/R-4.0.4/library","7.3-20",NA,NA,NA,NA
+"cluster","C:/Program Files/R/R-4.0.4/library","2.1.2",NA,NA,NA,NA
 "codetools","C:/Program Files/R/R-4.0.4/library","0.2-18",NA,NA,NA,NA
 "compiler","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
 "datasets","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
-"foreign","C:/Program Files/R/R-4.0.4/library","0.8-81",NA,NA,NA,NA
+"foreign","C:/Program Files/R/R-4.0.4/library","0.8-82",NA,NA,NA,NA
 "graphics","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
 "grDevices","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
 "grid","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
-"KernSmooth","C:/Program Files/R/R-4.0.4/library","2.23-18",NA,NA,NA,NA
-"lattice","C:/Program Files/R/R-4.0.4/library","0.20-41",NA,NA,NA,NA
-"MASS","C:/Program Files/R/R-4.0.4/library","7.3-53.1",NA,NA,NA,NA
-"Matrix","C:/Program Files/R/R-4.0.4/library","1.3-2",NA,NA,NA,NA
+"KernSmooth","C:/Program Files/R/R-4.0.4/library","2.23-20",NA,NA,NA,NA
+"lattice","C:/Program Files/R/R-4.0.4/library","0.20-45",NA,NA,NA,NA
+"MASS","C:/Program Files/R/R-4.0.4/library","7.3-55",NA,NA,NA,NA
+"Matrix","C:/Program Files/R/R-4.0.4/library","1.4-0",NA,NA,NA,NA
 "methods","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
-"mgcv","C:/Program Files/R/R-4.0.4/library","1.8-34",NA,NA,NA,NA
-"nlme","C:/Program Files/R/R-4.0.4/library","3.1-152",NA,NA,NA,NA
-"nnet","C:/Program Files/R/R-4.0.4/library","7.3-15",NA,NA,NA,NA
+"mgcv","C:/Program Files/R/R-4.0.4/library","1.8-39",NA,NA,NA,NA
+"nlme","C:/Program Files/R/R-4.0.4/library","3.1-155",NA,NA,NA,NA
+"nnet","C:/Program Files/R/R-4.0.4/library","7.3-17",NA,NA,NA,NA
 "parallel","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
-"rpart","C:/Program Files/R/R-4.0.4/library","4.1-15",NA,NA,NA,NA
-"spatial","C:/Program Files/R/R-4.0.4/library","7.3-13",NA,NA,NA,NA
+"rpart","C:/Program Files/R/R-4.0.4/library","4.1.16",NA,NA,NA,NA
+"spatial","C:/Program Files/R/R-4.0.4/library","7.3-15",NA,NA,NA,NA
 "splines","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
 "stats","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
 "stats4","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
-"survival","C:/Program Files/R/R-4.0.4/library","3.2-10",NA,NA,NA,NA
+"survival","C:/Program Files/R/R-4.0.4/library","3.3-1",NA,NA,NA,NA
 "tcltk","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
 "tools","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
 "translations","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
