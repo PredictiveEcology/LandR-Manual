@@ -9,6 +9,7 @@ knit: "bookdown::render_book"
 bibliography:
   - citations/referencesLandRManual.bib
 csl: citations/ecology-letters.csl
+biblatexoptions: [refsegment=chapter]
 link-citations: true
 documentclass: book
 github-repo: PredictiveEcology/LandR-Manual

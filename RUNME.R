@@ -100,6 +100,23 @@ copyModuleRmds <- sapply(moduleRmds, function(x) {
     linesModuleRmd <- c(beforeSetupChunkStart, addedCode, afterSetupChunkStart)
   }
 
+  ## if missing add chapter bibliography at the end of each module chapter:
+  chapterBibLine <- grep("printbibliography", linesModuleRmd, fixed = TRUE)
+  needChapterBibLine <- TRUE
+
+  if (length(chapterBibLine)) {
+    ## if not in one of the last two lines, "move to the end"
+    if (!chapterBibLine %in% c(length(linesModuleRmd), length(linesModuleRmd)-1)) {
+      linesModuleRmd[chapterBibLine] <- NULL
+    } else {
+      needChapterBibLine <- FALSE
+    }
+  }
+
+  if (needChapterBibLine) {
+    linesModuleRmd <- capture.output(cat(linesModuleRmd, "\\printbibliography[segment=\\therefsegment,heading=subbibliography]", append = TRUE, sep = "\n"))
+  }
+
   writeLines(linesModuleRmd, con = copyModuleRmd)
 
   return(copyModuleRmd)
