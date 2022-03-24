@@ -78,8 +78,8 @@ simulation-flow
 no-disturbances
 with-disturbances
 usage-example
-load-spades
-get-the-module
+set-up-r-libraries
+get-the-module-and-module-dependencies
 setup-simulation
 run-simulation
 appendix

@@ -1459,7 +1459,7 @@ save any objects (see Table <a href="landr-biomass_validationknn-module.html#tab
 <h3>
 <span class="header-section-number">8.3.1</span> Load <code>SpaDES</code> and other packages.<a class="anchor" aria-label="anchor" href="#load-spades-and-other-packages.-2"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades.predictiveecology.org">SpaDES</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades-install.predictiveecology.org/">SpaDES.install</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">SpaDES.experiment</span><span class="op">)</span>
@@ -1474,7 +1474,7 @@ observed data, we need to first run a simulation of forest dynamics with
 <em>Biomass_core</em>. To do that we get both modules’ code from the PredictiveEcology
 GitHub repository. Notice that we are placing all module code, inputs and
 outputs in temporary directories.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tempDir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">spadesModulesDirectory</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"modules"</span><span class="op">)</span>
 <span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>inputPath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"inputs"</span><span class="op">)</span>, 
@@ -1496,7 +1496,7 @@ outputs in temporary directories.</p>
 <h3>
 <span class="header-section-number">8.3.3</span> Setup simulation<a class="anchor" aria-label="anchor" href="#setup-simulation-3"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">2001</span>, end <span class="op">=</span> <span class="fl">2011</span><span class="op">)</span>
 
 <span class="va">studyArea</span> <span class="op">&lt;-</span> <span class="fu">Cache</span><span class="op">(</span><span class="va">randomStudyArea</span>, size <span class="op">=</span> <span class="fl">1e7</span><span class="op">)</span> <span class="co"># cache this so it creates a random one only once on a machine</span>
@@ -1546,7 +1546,7 @@ outputs in temporary directories.</p>
 <p>Here we run a simulation with three replicates using the <code>experiment2</code> function
 of the <code>SpaDES.experiment</code> R package <span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-McIntireChubaty2021" role="doc-biblioref">McIntire &amp; Chubaty 2021</a>)</span>, which builds a
 folder structure where simulation outputs are conveniently organised.</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">graphics.off</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">mySimInit</span> <span class="op">&lt;-</span> <span class="fu">simInit</span><span class="op">(</span>times <span class="op">=</span> <span class="va">times</span>,
                      params <span class="op">=</span> <span class="va">parameters</span>, 
@@ -1568,7 +1568,7 @@ folder structure where simulation outputs are conveniently organised.</p>
 <p>Note that because we ran <em>Biomass_core</em> by itself using theoretical input data,
 we can expect the validation to reveal that the module didn’t do a great job at
 reproducing observed patterns.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">simulationOutputs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">mySimExperiment</span>, FUN <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">localSimPaths</span><span class="op">)</span> <span class="op">{</span>
   <span class="va">oldPath</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/basename.html">dirname</a></span><span class="op">(</span><span class="fu">outputPath</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="co">## exclude sim*_rep* folder</span>
   <span class="va">DT</span> <span class="op">&lt;-</span> <span class="fu">as.data.table</span><span class="op">(</span><span class="fu">outputs</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>
@@ -1762,7 +1762,7 @@ Yang, J., He, H.S., Shifley, S.R., Thompson, F.R. &amp; Zhang, Y. (2011). <a hre
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-03-20.</p>
+    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-03-22.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

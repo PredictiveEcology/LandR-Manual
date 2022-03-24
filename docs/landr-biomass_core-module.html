@@ -1962,9 +1962,9 @@ Used only in seed dispersal. If numeric, it will be passed to <code><a href="htt
 <h2>
 <span class="header-section-number">2.3</span> Usage example<a class="anchor" aria-label="anchor" href="#usage-example"><i class="fas fa-link"></i></a>
 </h2>
-<div id="load-spades" class="section level3" number="2.3.1">
+<div id="set-up-r-libraries" class="section level3" number="2.3.1">
 <h3>
-<span class="header-section-number">2.3.1</span> Load <code>SpaDES</code><a class="anchor" aria-label="anchor" href="#load-spades"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.3.1</span> Set up R libraries<a class="anchor" aria-label="anchor" href="#set-up-r-libraries"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
@@ -1983,25 +1983,27 @@ Used only in seed dispersal. If numeric, it will be passed to <code><a href="htt
 <span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>inputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"inputs"</span><span class="op">)</span><span class="op">)</span>, 
               cachePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"cache"</span><span class="op">)</span><span class="op">)</span>, 
               modulePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="va">spadesModulesDirectory</span><span class="op">)</span>, 
-              outputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"outputs"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-
-<span class="fu">getModule</span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_core"</span>, 
-                       modulePath <span class="op">=</span> <span class="va">spadesModulesDirectory</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+              outputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"outputs"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="get-the-module-and-module-dependencies" class="section level3" number="2.3.2">
+<h3>
+<span class="header-section-number">2.3.2</span> Get the module and module dependencies<a class="anchor" aria-label="anchor" href="#get-the-module-and-module-dependencies"><i class="fas fa-link"></i></a>
+</h3>
+<p>We can use the <code><a href="https://rdrr.io/pkg/SpaDES.install/man/getModule.html">SpaDES.install::getModule</a></code> function to download the module to the module folder specified above.
+Alternatively, see <a href="https://github.com/PredictiveEcology/SpaDES-modules">SpaDES-modules repository</a> to see how to download this and other <code>SpaDES</code> modules, or fork/clone from its <a href="https://github.com/PredictiveEcology/Biomass_core/">GitHub repository</a> directly.</p>
+<p>After downloading the module, it is important to make sure all module R package dependencies are installed in their correct version. <code><a href="https://rdrr.io/pkg/SpaDES.install/man/makeSureAllPackagesInstalled.html">SpaDES.install::makeSureAllPackagesInstalled</a></code> takes care of this for this and any other module in the <code>spadesModulesDirectory</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">SpaDES.install</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/SpaDES.install/man/getModule.html">getModule</a></span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_core"</span>, 
+                          modulePath <span class="op">=</span> <span class="va">spadesModulesDirectory</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="co">## make sure all necessary packages are installed:</span>
-<span class="fu">makeSureAllPackagesInstalled</span><span class="op">(</span><span class="va">spadesModulesDirectory</span><span class="op">)</span></code></pre></div>
-</div>
-<div id="get-the-module" class="section level3" number="2.3.2">
-<h3>
-<span class="header-section-number">2.3.2</span> Get the module<a class="anchor" aria-label="anchor" href="#get-the-module"><i class="fas fa-link"></i></a>
-</h3>
-<p>See <a href="https://github.com/PredictiveEcology/SpaDES-modules">SpaDES-modules repository</a> to see how to download this and other <code>SpaDES</code> modules. Alternatively, it can be forked or cloned from its <a href="https://github.com/PredictiveEcology/Biomass_core/">GitHub repository</a> directly.</p>
+<span class="fu">SpaDES.install</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/SpaDES.install/man/makeSureAllPackagesInstalled.html">makeSureAllPackagesInstalled</a></span><span class="op">(</span><span class="va">spadesModulesDirectory</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="setup-simulation" class="section level3" number="2.3.3">
 <h3>
 <span class="header-section-number">2.3.3</span> Setup simulation<a class="anchor" aria-label="anchor" href="#setup-simulation"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">0</span>, end <span class="op">=</span> <span class="fl">30</span><span class="op">)</span>
 
 <span class="va">studyArea</span> <span class="op">&lt;-</span> <span class="fu">Cache</span><span class="op">(</span><span class="va">randomStudyArea</span>, size <span class="op">=</span> <span class="fl">1e7</span><span class="op">)</span> <span class="co"># cache this so it creates a random one only once on a machine</span>
@@ -2047,7 +2049,7 @@ Used only in seed dispersal. If numeric, it will be passed to <code><a href="htt
 <h3>
 <span class="header-section-number">2.3.4</span> Run simulation<a class="anchor" aria-label="anchor" href="#run-simulation"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">simInitAndSpades</span><span class="op">(</span>times <span class="op">=</span> <span class="va">times</span>,
                           params <span class="op">=</span> <span class="va">parameters</span>, 
                           modules <span class="op">=</span> <span class="va">modules</span>, 
@@ -4124,8 +4126,8 @@ Figure 2.7: Simulation efficiencies of LBSE and (ref:Biomass-core) with increasi
 </li>
 <li>
 <a class="nav-link" href="#usage-example"><span class="header-section-number">2.3</span> Usage example</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#load-spades"><span class="header-section-number">2.3.1</span> Load SpaDES</a></li>
-<li><a class="nav-link" href="#get-the-module"><span class="header-section-number">2.3.2</span> Get the module</a></li>
+<li><a class="nav-link" href="#set-up-r-libraries"><span class="header-section-number">2.3.1</span> Set up R libraries</a></li>
+<li><a class="nav-link" href="#get-the-module-and-module-dependencies"><span class="header-section-number">2.3.2</span> Get the module and module dependencies</a></li>
 <li><a class="nav-link" href="#setup-simulation"><span class="header-section-number">2.3.3</span> Setup simulation</a></li>
 <li><a class="nav-link" href="#run-simulation"><span class="header-section-number">2.3.4</span> Run simulation</a></li>
 </ul>
@@ -4154,7 +4156,7 @@ Figure 2.7: Simulation efficiencies of LBSE and (ref:Biomass-core) with increasi
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-03-20.</p>
+    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-03-22.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
