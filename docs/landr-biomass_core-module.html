@@ -110,7 +110,7 @@
 <h3>
 <span class="header-section-number">2.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary"><i class="fas fa-link"></i></a>
 </h3>
-<p>LandR <em>Biomass_core</em> (hereafter <em>Biomass_core</em>) is the core forest succession simulation module of the LandR ecosystem of <code>SpaDES</code> modules <span class="citation">(see <a href="landr-biomass_validationknn-module.html#ref-ChubatyMcIntire2019" role="doc-biblioref">Chubaty &amp; McIntire 2019</a>)</span>. It simulates tree cohort ageing, growth, mortality and competition for light resources, as well as seed dispersal (Fig. <a href="landr-biomass_core-module.html#fig:fig-Biomass-core">2.1</a>), in a spatially explicit manner and using a yearly time steps. The model is based on the LANDIS-II Biomass Succession Extension v.3.2.1 [LBSE; <span class="citation">Scheller &amp; Miranda (<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">2015b</a>)</span>], with a few changes (see <a href="landr-biomass_core-module.html#differences-between-biomass_core-and-lbse">Differences between <em>Biomass_core</em> and LBSE</a>). Nonetheless, the essential functioning of the succession model still largely follows its LANDIS-II counterpart, and we refer the reader to the corresponding LANDIS-II BSE manual <span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span> for a detailed reading of the mechanisms implemented in the model.</p>
+<p>LandR <em>Biomass_core</em> (hereafter <em>Biomass_core</em>) is the core forest succession simulation module of the LandR ecosystem of <code>SpaDES</code> modules <span class="citation">(see <a href="landr-biomass_validationknn-module.html#ref-ChubatyMcIntire2019" role="doc-biblioref">Chubaty &amp; McIntire 2019</a>)</span>. It simulates tree cohort ageing, growth, mortality and competition for light resources, as well as seed dispersal (Fig. <a href="landr-biomass_core-module.html#fig:fig-Biomass-core">2.1</a>), in a spatially explicit manner and using a yearly time steps. The model is based on the LANDIS-II Biomass Succession Extension v.3.2.1 [LBSE; <span class="citation">Scheller &amp; Miranda (<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">2015b</a>)</span>], with a few changes (see [Differences between <em>Biomass_core</em> and LBSE]). Nonetheless, the essential functioning of the succession model still largely follows its LANDIS-II counterpart, and we refer the reader to the corresponding LANDIS-II BSE manual <span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span> for a detailed reading of the mechanisms implemented in the model.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-Biomass-core"></span>
 <img src="modules/Biomass_core/figures/Biomass_coreSchematic.png" alt="(ref:Biomass-core) simulates tree cohort growth, mortality, recruitment and dispersal dynamics, as a function of  cohort ageing and competition for light (shading) and space, as well as disturbances like fire (simulated using other modules)." width="60%"><p class="caption">
@@ -215,7 +215,7 @@ a raster of the <code>studyArea</code> in the same resolution and projection as 
 species
 </td>
 <td style="text-align:left;">
-a table that has species traits such as longevity, shade tolerance, etc. Default is partially based on Dominic Cyr and Yan Boulanger’s project
+a table of invariant species traits with the following trait colums: ‘species’, ‘Area’, ‘longevity’, ‘sexualmature’, ‘shadetolerance’, ‘firetolerance’, ‘seeddistance_eff’, ‘seeddistance_max’, ‘resproutprob’, ‘mortalityshape’, ‘growthcurve’, ‘resproutage_min’, ‘resproutage_max’, ‘postfireregen’, ‘wooddecayrate’, ‘leaflongevity’ ‘leafLignin’, ‘hardsoft’. The last seven traits are not used in Biomass_core , and may be ommited. However, this may result in downstream issues with other modules. Default is from Dominic Cyr and Yan Boulanger’s project
 </td>
 </tr>
 <tr>
@@ -223,7 +223,7 @@ a table that has species traits such as longevity, shade tolerance, etc. Default
 speciesEcoregion
 </td>
 <td style="text-align:left;">
-table defining the maxANPP, maxB and SEP, which can change with both ecoregion and simulation time. Defaults to a dummy table based on dummy data os biomass, age, ecoregion and land cover class
+table of spatially-varying species traits (<code>maxB</code>, <code>maxANPP</code>, <code>establishprob</code>), defined by species and <code>ecoregionGroup</code>) Defaults to a dummy table based on dummy data os biomass, age, ecoregion and land cover class
 </td>
 </tr>
 <tr>
@@ -811,9 +811,9 @@ Map of leading species in each pixel, colored according to <code>sim$sppColorVec
 </h3>
 <p>LandR <em>Biomass_core</em> (hereafter <em>Biomass_core</em>) a forest landscape model based on the LANDIS-II Biomass Succession Extension v.3.2.1 model [LBSE; <span class="citation">Scheller &amp; Miranda (<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">2015b</a>)</span>]. It is the core forest succession model of the LandR ecosystem of <code>SpaDES</code> modules. Similarly to the LBSE, <em>Biomass_core</em> simulates changes in tree cohort aboveground biomass (g/m<sup>2</sup>.) by calculating growth, mortality and recruitment as functions of pixel and species characteristics, competition and disturbances (Fig. <a href="landr-biomass_core-module.html#fig:fig-Biomass-core">2.1</a>). Specifically, growth is driven by both invariant (<code>growthcurve</code>) and spatially varying species growth traits (maximum biomass, <code>maxB</code>, and maximum annual net primary productivity, <code>maxANPP</code>), while mortality depends only on invariant species traits (<code>age</code>, <code>longevity</code> and <code>mortalityshape</code>). Disturbances (e.g., fire) can also cause cohort mortality, but are simulated in separate modules (e.g., <em>Biomass_regeneration</em> simulates the death of all cohorts immediately after a fire). The parameters <code>growthcurve</code> and <code>mortalityshape</code> directly influence the shape of species growth curves, by determining how fast they grow and how soon age mortality starts with respect to longevity. Cohort recruitment is determined by available “space” (<em>i.e.</em>, pixel shade), invariant species traits (regeneration mode, age at maturity, shade tolerance) and spatially varying traits (species establishment probability, <code>SEP</code>). The available “growing space” is calculated as species <code>maxB</code> minus the occupied biomass (summed across other cohorts and species). If there is “space”, a cohort can establish from one of three recruitment modes: serotiny, resprouting and germinating. Serotiny and resprouting occur only in response to fire and are simulated in two separate, but interchangeable modules, <em>Biomass_regeneration</em> and <em>Biomass_regenerationPM</em>. Germination occurs if seeds are made available from local sources (the pixel), or via seed dispersal. Seed dispersal can be of three modes: ‘no dispersal’, ‘universal dispersal’ (only interesting for dummy case studies) or ‘ward dispersal’ <span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>. The ‘ward dispersal’ algorithm describes a flexible kernel that calculates the probability of a species colonising a neighbour pixel as a function of distance from the source and dispersal-related (and invariant) species traits, and is used by default. We refer the reader to <span class="citation">Scheller &amp; Miranda (<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">2015b</a>)</span>, <span class="citation">Scheller &amp; Domingo (<a href="landr-biomass_validationknn-module.html#ref-SchellerDomingo2011" role="doc-biblioref">2011</a>)</span> and <span class="citation">Scheller &amp; Domingo (<a href="landr-biomass_validationknn-module.html#ref-SchellerDomingo2012" role="doc-biblioref">2012</a>)</span> for further details with respect to the mechanisms implemented in the module.</p>
 </div>
-<div id="differences-between-biomass_core-and-lbse" class="section level3" number="2.2.2">
+<div id="differences-between-biomass_core-and-the-landis-ii-biomass-succession-extension-lbse" class="section level3" number="2.2.2">
 <h3>
-<span class="header-section-number">2.2.2</span> Differences between <em>Biomass_core</em> and LBSE<a class="anchor" aria-label="anchor" href="#differences-between-biomass_core-and-lbse"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.2.2</span> Differences between <em>Biomass_core</em> and the LANDIS-II Biomass Succession Extension (LBSE)<a class="anchor" aria-label="anchor" href="#differences-between-biomass_core-and-the-landis-ii-biomass-succession-extension-lbse"><i class="fas fa-link"></i></a>
 </h3>
 <div id="algorithm-changes" class="section level4" number="2.2.2.1">
 <h4>
@@ -1030,7 +1030,7 @@ species
 data.table
 </td>
 <td style="text-align:left;">
-a table that has species traits such as longevity, shade tolerance, etc. Default is partially based on Dominic Cyr and Yan Boulanger’s project
+a table of invariant species traits with the following trait colums: ‘species’, ‘Area’, ‘longevity’, ‘sexualmature’, ‘shadetolerance’, ‘firetolerance’, ‘seeddistance_eff’, ‘seeddistance_max’, ‘resproutprob’, ‘mortalityshape’, ‘growthcurve’, ‘resproutage_min’, ‘resproutage_max’, ‘postfireregen’, ‘wooddecayrate’, ‘leaflongevity’ ‘leafLignin’, ‘hardsoft’. The last seven traits are not used in Biomass_core , and may be ommited. However, this may result in downstream issues with other modules. Default is from Dominic Cyr and Yan Boulanger’s project
 </td>
 <td style="text-align:left;">
 <a href="https://raw.githubusercontent.com/dcyr/LANDIS-II_IA_generalUseFiles/master/speciesTraits.csv" class="uri">https://raw.githubusercontent.com/dcyr/LANDIS-II_IA_generalUseFiles/master/speciesTraits.csv</a>
@@ -1044,7 +1044,7 @@ speciesEcoregion
 data.table
 </td>
 <td style="text-align:left;">
-table defining the maxANPP, maxB and SEP, which can change with both ecoregion and simulation time. Defaults to a dummy table based on dummy data os biomass, age, ecoregion and land cover class
+table of spatially-varying species traits (<code>maxB</code>, <code>maxANPP</code>, <code>establishprob</code>), defined by species and <code>ecoregionGroup</code>) Defaults to a dummy table based on dummy data os biomass, age, ecoregion and land cover class
 </td>
 <td style="text-align:left;">
 NA
@@ -1924,7 +1924,7 @@ Used only in seed dispersal. If numeric, it will be passed to <code><a href="htt
 <li>Seed dispersal can be a slow process and has been adapted to occur every 10 years. The user can set it to occur more often, but this should not make much of a difference to model outputs, because age classes are meant to be collapsed to tens.</li>
 </ul>
 <ol start="3" style="list-style-type: decimal">
-<li>Growth and mortality – based on <span class="citation">Scheller &amp; Mladenoff (<a href="landr-biomass_validationknn-module.html#ref-SchellerMladenoff2004" role="doc-biblioref">2004</a>)</span>
+<li>Growth and mortality – based on <span class="citation">Scheller &amp; Mladenoff (<a href="landr-biomass_validationknn-module.html#ref-SchellerMladenoff2004" role="doc-biblioref">2004a</a>)</span>
 </li>
 </ol>
 <ul>
@@ -1978,11 +1978,9 @@ Used only in seed dispersal. If numeric, it will be passed to <code><a href="htt
         install_githubArgs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="co"># In general, a module code will be controlled at one level above the source code</span>
 
 <span class="va">tempDir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">spadesModulesDirectory</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"modules"</span><span class="op">)</span>
-
 <span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>inputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"inputs"</span><span class="op">)</span><span class="op">)</span>, 
               cachePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"cache"</span><span class="op">)</span><span class="op">)</span>, 
-              modulePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="va">spadesModulesDirectory</span><span class="op">)</span>, 
+              modulePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"modules"</span><span class="op">)</span><span class="op">)</span>, 
               outputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"outputs"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="get-the-module-and-module-dependencies" class="section level3" number="2.3.2">
@@ -1991,13 +1989,13 @@ Used only in seed dispersal. If numeric, it will be passed to <code><a href="htt
 </h3>
 <p>We can use the <code><a href="https://rdrr.io/pkg/SpaDES.install/man/getModule.html">SpaDES.install::getModule</a></code> function to download the module to the module folder specified above.
 Alternatively, see <a href="https://github.com/PredictiveEcology/SpaDES-modules">SpaDES-modules repository</a> to see how to download this and other <code>SpaDES</code> modules, or fork/clone from its <a href="https://github.com/PredictiveEcology/Biomass_core/">GitHub repository</a> directly.</p>
-<p>After downloading the module, it is important to make sure all module R package dependencies are installed in their correct version. <code><a href="https://rdrr.io/pkg/SpaDES.install/man/makeSureAllPackagesInstalled.html">SpaDES.install::makeSureAllPackagesInstalled</a></code> takes care of this for this and any other module in the <code>spadesModulesDirectory</code>.</p>
+<p>After downloading the module, it is important to make sure all module R package dependencies are installed in their correct version. <code><a href="https://rdrr.io/pkg/SpaDES.install/man/makeSureAllPackagesInstalled.html">SpaDES.install::makeSureAllPackagesInstalled</a></code> takes care of this for this and any other module in the <code>paths$modulePath</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">SpaDES.install</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/SpaDES.install/man/getModule.html">getModule</a></span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_core"</span>, 
-                          modulePath <span class="op">=</span> <span class="va">spadesModulesDirectory</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+                          modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="co">## make sure all necessary packages are installed:</span>
-<span class="fu">SpaDES.install</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/SpaDES.install/man/makeSureAllPackagesInstalled.html">makeSureAllPackagesInstalled</a></span><span class="op">(</span><span class="va">spadesModulesDirectory</span><span class="op">)</span></code></pre></div>
+<span class="fu">SpaDES.install</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/SpaDES.install/man/makeSureAllPackagesInstalled.html">makeSureAllPackagesInstalled</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="setup-simulation" class="section level3" number="2.3.3">
 <h3>
@@ -4119,7 +4117,7 @@ Figure 2.7: Simulation efficiencies of LBSE and (ref:Biomass-core) with increasi
 <li>
 <a class="nav-link" href="#module-manual"><span class="header-section-number">2.2</span> Module manual</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#introduction"><span class="header-section-number">2.2.1</span> Introduction</a></li>
-<li><a class="nav-link" href="#differences-between-biomass_core-and-lbse"><span class="header-section-number">2.2.2</span> Differences between Biomass_core and LBSE</a></li>
+<li><a class="nav-link" href="#differences-between-biomass_core-and-the-landis-ii-biomass-succession-extension-lbse"><span class="header-section-number">2.2.2</span> Differences between Biomass_core and the LANDIS-II Biomass Succession Extension (LBSE)</a></li>
 <li><a class="nav-link" href="#initialization-inputs-and-parameters"><span class="header-section-number">2.2.3</span> Initialization, inputs and parameters</a></li>
 <li><a class="nav-link" href="#simulation-flow"><span class="header-section-number">2.2.4</span> Simulation flow</a></li>
 </ul>
@@ -4156,7 +4154,7 @@ Figure 2.7: Simulation efficiencies of LBSE and (ref:Biomass-core) with increasi
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-03-22.</p>
+    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-03-29.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

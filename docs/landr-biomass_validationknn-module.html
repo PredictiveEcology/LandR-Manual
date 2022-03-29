@@ -148,7 +148,7 @@ expects. The only input that <strong>must</strong> be provided (i.e., <em>Biomas
 does not have a default for) is <code>studyArea</code>. All other input objects and
 parameters have internal defaults (see Tables
 <a href="landr-biomass_validationknn-module.html#tab:moduleInputs2-Biomass-validationKNN">8.4</a> and
-<a href="landr-biomass_validationknn-module.html#tab:moduleParams2-Biomass-validationKNN">8.5</a>. Objects suffixed with <code>*Start</code>
+<a href="landr-biomass_validationknn-module.html#tab:moduleParams2-Biomass-validationKNN">8.5</a>). Objects suffixed with <code>*Start</code>
 correspond to the same objects in the simulation without this suffix (e.g.
 <code>rawBiomassMapStart</code> is <code>rawBiomassMap</code> in the simulation), whereas other
 objects like <code>studyArea</code> and <code>rasterToMatch</code> have the same names in the
@@ -251,7 +251,39 @@ An OPTIONAL map of land cover change years in the study area used to exclude pix
 simulationOutputs
 </td>
 <td style="text-align:left;">
-An OPTIONAL table listing simulation outputs (as passed to <code>spades()</code>, or <code>experiment) that will be used to make</code>allCohortData<code>,</code>pixelGroupMapStk<code>, if these are not provided. &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; speciesLayersStart &lt;/td&gt;    &lt;td style="text-align:left;"&gt; observed cover percentage raster layers by species in Canada species map, at the first year of the validation period. Defaults to the Canadian Forestry Service, National Forest Inventory, kNN-derived species cover maps from 2001, using a cover threshold of 10% - see https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990 for metadata &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; speciesLayersEnd &lt;/td&gt;    &lt;td style="text-align:left;"&gt; observed percent cover raster layers by species in Canada used for validation at the last year of the validation period. Defaults to the Canadian Forestry Service, National Forest Inventory, kNN-derived species cover maps from 2011 - see https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990 for metadata &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; sppColorVect &lt;/td&gt;    &lt;td style="text-align:left;"&gt; A named vector of colors to use for plotting. The names must be in sim$sppEquiv[[sim$sppEquivCol]], and should also contain a color for 'Mixed' &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; sppEquiv &lt;/td&gt;    &lt;td style="text-align:left;"&gt; table of species equivalencies. See</code>LandR::sppEquivalencies_CA`.
+An OPTIONAL table listing simulation outputs (as passed to <code>spades()</code>, or <code>experiment</code>) that will be used to make <code>allCohortData</code>, <code>pixelGroupMapStk</code>, if these are not provided.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+speciesLayersStart
+</td>
+<td style="text-align:left;">
+observed cover percentage raster layers by species in Canada species map, at the first year of the validation period. Defaults to the Canadian Forestry Service, National Forest Inventory, kNN-derived species cover maps from 2001, using a cover threshold of 10% - see <a href="https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990" class="uri">https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990</a> for metadata
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+speciesLayersEnd
+</td>
+<td style="text-align:left;">
+observed percent cover raster layers by species in Canada used for validation at the last year of the validation period. Defaults to the Canadian Forestry Service, National Forest Inventory, kNN-derived species cover maps from 2011 - see <a href="https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990" class="uri">https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990</a> for metadata
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppColorVect
+</td>
+<td style="text-align:left;">
+A named vector of colors to use for plotting. The names must be in sim<span class="math inline">\(sppEquiv[[sim\)</span>sppEquivCol]], and should also contain a color for ‘Mixed’
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppEquiv
+</td>
+<td style="text-align:left;">
+table of species equivalencies. See <code><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">LandR::sppEquivalencies_CA</a></code>.
 </td>
 </tr>
 <tr>
@@ -603,9 +635,9 @@ and affect cohort biomass (e.g., via <code>cohortData</code> table). You can see
 corresponding years of observed data. It was designed to compare the observed
 data for years 2001 (start point for the simulation) and 2011 (i.e., after 10
 years of simulation) of the kNN forest layers of the Canadian National Forest
-Inventory – these are currently the only available FAIR datasets <span class="citation">(<em>sensu</em> <a href="landr-biomass_validationknn-module.html#ref-StallEtAl2019" role="doc-biblioref">Stall <em>et al.</em> 2019</a>)</span>) on stand biomass and species % cover changes across Canada.
-However, the user can supply other sources of observed data, as long as they
-have an identical format.</p>
+Inventory – these are currently the only available FAIR datasets <span class="citation">(<em>sensu</em> <a href="landr-biomass_validationknn-module.html#ref-StallEtAl2019" role="doc-biblioref">Stall <em>et al.</em> 2019</a>)</span>) on stand biomass and species (ref:percent) cover changes across
+Canada. However, the user can supply other sources of observed data, as long as
+they have an identical format.</p>
 <p>The validation is done both visually (using barplots and boxplots) and using two
 statistics: mean absolute deviation of simulated biomass (per species) and the
 sum of negative log-likelihoods (SNLL) of predictions with respect to observed
@@ -739,11 +771,11 @@ template.</p>
 <span class="header-section-number">8.2.3.1</span> Input objects<a class="anchor" aria-label="anchor" href="#input-objects-4"><i class="fas fa-link"></i></a>
 </h4>
 <p><em>Biomass_validationKNN</em> requires the following input data layers: land-cover
-change (change type and year), fire perimeters, % species cover, stand age and
-stand biomass. By default, the module will take these from National Forest
-Inventory kNN layers for years 2001 and 2011. We recommend that the user
-supplies layers used to initialise the simulation as the starting input layers
-(2001 if that is the starting point) to guarantee that they match. Table
+change (change type and year), fire perimeters, (ref:percent) species cover,
+stand age and stand biomass. By default, the module will take these from
+National Forest Inventory kNN layers for years 2001 and 2011. We recommend that
+the user supplies layers used to initialise the simulation as the starting input
+layers (2001 if that is the starting point) to guarantee that they match. Table
 <a href="landr-biomass_validationknn-module.html#tab:moduleInputs2-Biomass-validationKNN">8.4</a> shows the full list of input
 objects used by the module.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
@@ -913,7 +945,63 @@ simulationOutputs
 data.table
 </td>
 <td style="text-align:left;">
-An OPTIONAL table listing simulation outputs (as passed to <code>spades()</code>, or <code>experiment) that will be used to make</code>allCohortData<code>,</code>pixelGroupMapStk<code>, if these are not provided. &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; speciesLayersStart &lt;/td&gt;    &lt;td style="text-align:left;"&gt; RasterStack &lt;/td&gt;    &lt;td style="text-align:left;"&gt; observed cover percentage raster layers by species in Canada species map, at the first year of the validation period. Defaults to the Canadian Forestry Service, National Forest Inventory, kNN-derived species cover maps from 2001, using a cover threshold of 10% - see https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990 for metadata &lt;/td&gt;    &lt;td style="text-align:left;"&gt; http://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/canada-forests-attributes_attributs-forests-canada/2001-attributes_attributs-2001/ &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; speciesLayersEnd &lt;/td&gt;    &lt;td style="text-align:left;"&gt; RasterStack &lt;/td&gt;    &lt;td style="text-align:left;"&gt; observed percent cover raster layers by species in Canada used for validation at the last year of the validation period. Defaults to the Canadian Forestry Service, National Forest Inventory, kNN-derived species cover maps from 2011 - see https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990 for metadata &lt;/td&gt;    &lt;td style="text-align:left;"&gt; http://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/canada-forests-attributes_attributs-forests-canada/2011-attributes_attributs-2011/ &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; sppColorVect &lt;/td&gt;    &lt;td style="text-align:left;"&gt; character &lt;/td&gt;    &lt;td style="text-align:left;"&gt; A named vector of colors to use for plotting. The names must be in sim$sppEquiv[[sim$sppEquivCol]], and should also contain a color for 'Mixed' &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; sppEquiv &lt;/td&gt;    &lt;td style="text-align:left;"&gt; data.table &lt;/td&gt;    &lt;td style="text-align:left;"&gt; table of species equivalencies. See</code>LandR::sppEquivalencies_CA`.
+An OPTIONAL table listing simulation outputs (as passed to <code>spades()</code>, or <code>experiment</code>) that will be used to make <code>allCohortData</code>, <code>pixelGroupMapStk</code>, if these are not provided.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+speciesLayersStart
+</td>
+<td style="text-align:left;">
+RasterStack
+</td>
+<td style="text-align:left;">
+observed cover percentage raster layers by species in Canada species map, at the first year of the validation period. Defaults to the Canadian Forestry Service, National Forest Inventory, kNN-derived species cover maps from 2001, using a cover threshold of 10% - see <a href="https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990" class="uri">https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990</a> for metadata
+</td>
+<td style="text-align:left;">
+<a href="http://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/canada-forests-attributes_attributs-forests-canada/2001-attributes_attributs-2001/" class="uri">http://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/canada-forests-attributes_attributs-forests-canada/2001-attributes_attributs-2001/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+speciesLayersEnd
+</td>
+<td style="text-align:left;">
+RasterStack
+</td>
+<td style="text-align:left;">
+observed percent cover raster layers by species in Canada used for validation at the last year of the validation period. Defaults to the Canadian Forestry Service, National Forest Inventory, kNN-derived species cover maps from 2011 - see <a href="https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990" class="uri">https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990</a> for metadata
+</td>
+<td style="text-align:left;">
+<a href="http://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/canada-forests-attributes_attributs-forests-canada/2011-attributes_attributs-2011/" class="uri">http://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/canada-forests-attributes_attributs-forests-canada/2011-attributes_attributs-2011/</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppColorVect
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+A named vector of colors to use for plotting. The names must be in sim<span class="math inline">\(sppEquiv[[sim\)</span>sppEquivCol]], and should also contain a color for ‘Mixed’
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppEquiv
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+table of species equivalencies. See <code><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">LandR::sppEquivalencies_CA</a></code>.
 </td>
 <td style="text-align:left;">
 NA
@@ -1000,9 +1088,9 @@ Not used by default. Defaults to <a href="https://opendata.nfis.org/downloads/fo
 map between 1985-2011
 (CFS)</a>.</p></li>
 <li><p><code>speciesLayersStart</code> – same as <code>rawBiomassMapStart</code>, but with respect
-to species % cover data.</p></li>
+to species (ref:percent) cover data.</p></li>
 <li><p><code>speciesLayersEnd</code> – same as <code>rawBiomassMapEnd</code>, but with respect to
-species % cover data.</p></li>
+species (ref:percent) cover data.</p></li>
 <li><p><code>studyArea</code> – shapefile. A <code>SpatialPolygonsDataFrame</code> with a single
 polygon determining the where the simulation will take place. This is
 the only input object that <strong>must be supplied by the user</strong>.</p></li>
@@ -1476,21 +1564,20 @@ GitHub repository. Notice that we are placing all module code, inputs and
 outputs in temporary directories.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tempDir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">spadesModulesDirectory</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"modules"</span><span class="op">)</span>
 <span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>inputPath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"inputs"</span><span class="op">)</span>, 
                  cachePath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"cache"</span><span class="op">)</span>, 
-                 modulePath <span class="op">=</span> <span class="va">spadesModulesDirectory</span>, 
+                 modulePath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"modules"</span><span class="op">)</span>, 
                  outputPath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"outputs"</span><span class="op">)</span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/pkg/SpaDES.install/man/getModule.html">getModule</a></span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_core"</span>, modulePath <span class="op">=</span> <span class="va">spadesModulesDirectory</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/SpaDES.install/man/getModule.html">getModule</a></span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_validationKNN"</span>, modulePath <span class="op">=</span> <span class="va">spadesModulesDirectory</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/SpaDES.install/man/getModule.html">getModule</a></span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_core"</span>, modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/SpaDES.install/man/getModule.html">getModule</a></span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_validationKNN"</span>, modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="co">## by default the repository branch name is appended to the module folder name.</span>
 <span class="co">## so we change the folder name to remove the "-master" suffix.</span>
-<span class="fu"><a href="https://rdrr.io/r/base/files.html">file.rename</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">spadesModulesDirectory</span>, <span class="st">"Biomass_core-master"</span><span class="op">)</span>,
-              <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">spadesModulesDirectory</span>, <span class="st">"Biomass_validationKNN-master"</span><span class="op">)</span><span class="op">)</span>,
-            <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">spadesModulesDirectory</span>, <span class="st">"Biomass_core"</span><span class="op">)</span>,
-              <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">spadesModulesDirectory</span>, <span class="st">"Biomass_validationKNN"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/files.html">file.rename</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, <span class="st">"Biomass_core-master"</span><span class="op">)</span>,
+              <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, <span class="st">"Biomass_validationKNN-master"</span><span class="op">)</span><span class="op">)</span>,
+            <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, <span class="st">"Biomass_core"</span><span class="op">)</span>,
+              <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, <span class="st">"Biomass_validationKNN"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="setup-simulation-3" class="section level3" number="8.3.3">
 <h3>
@@ -1689,8 +1776,11 @@ Scheller, R.M. &amp; Miranda, B.R. (2015a). <em>LANDIS-II biomass succession v3.
 <div id="ref-SchellerMiranda2015" class="csl-entry">
 Scheller, R.M. &amp; Miranda, B.R. (2015b). <em>LANDIS-II biomass succession v3.2 extension <span></span> user guide</em>.
 </div>
+<div id="ref-scheller2004" class="csl-entry">
+Scheller, R.M. &amp; Mladenoff, D.J. (2004b). <a href="https://doi.org/10.1016/j.ecolmodel.2004.01.022">A forest growth and biomass module for a landscape simulation model, LANDIS: Design, validation, and application</a>. <em>Ecological Modelling</em>, 180, 211–229.
+</div>
 <div id="ref-SchellerMladenoff2004" class="csl-entry">
-Scheller, R.M. &amp; Mladenoff, D.J. (2004). <a href="https://doi.org/10.1016/j.ecolmodel.2004.01.022">A forest growth and biomass module for a landscape simulation model, LANDIS: design, validation, and application</a>. <em>Ecological Modelling</em>, 180, 211–229.
+Scheller, R.M. &amp; Mladenoff, D.J. (2004a). <a href="https://doi.org/10.1016/j.ecolmodel.2004.01.022">A forest growth and biomass module for a landscape simulation model, LANDIS: design, validation, and application</a>. <em>Ecological Modelling</em>, 180, 211–229.
 </div>
 <div id="ref-StallEtAl2019" class="csl-entry">
 Stall, S., Yarmey, L., Cutcher-Gershenfeld, J., Hanson, B., Lehnert, K., Nosek, B., <em>et al.</em> (2019). <a href="https://doi.org/10.1038/d41586-019-01720-7">Make scientific data FAIR</a>. <em>Nature</em>, 570, 27–29.
@@ -1762,7 +1852,7 @@ Yang, J., He, H.S., Shifley, S.R., Thompson, F.R. &amp; Zhang, Y. (2011). <a hre
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-03-22.</p>
+    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-03-29.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
