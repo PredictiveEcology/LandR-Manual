@@ -5,6 +5,7 @@ bookdown::bs4_book:
     fg: "#2b2121"
     bg: "#ffffff"
   footnotes_inline: false
+  split_bib: true
   repo:
     base: https://github.com/PredictiveEcology/LandR-Manual
     branch: master
