@@ -47,7 +47,7 @@
       margin-left: 2em;
     }
   </style>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -95,8 +95,8 @@
 
 
 
-<p><a href="http://commonmark.org"><img src="figures/markdownBadge.png" alt="made-with-Markdown"></a>
-<a href="https://github.com/PredictiveEcology/Biomass_speciesData/issues"><img src="figures/genericBadge.png" alt="Generic badge"></a></p>
+<p><a href="http://commonmark.org"><img src="figures/markdownBadge.png" alt="made-with-Markdown"></a></p>
+<p><a href="https://github.com/PredictiveEcology/Biomass_speciesData/issues"><img src="figures/genericBadge.png" alt="Generic badge"></a></p>
 <!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
 <p><strong>This documentation is work in progress. Potential discrepancies and omissions
 may exist for the time being. If you find any, do contact us using the link
@@ -116,7 +116,7 @@ above^^</strong></p>
 <h3>
 <span class="header-section-number">4.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>This module downloads and pre-process species (ref:percent) cover data layers to
+<p>This module downloads and pre-process species % cover data layers to
 be passed to other LandR data modules (e.g., <em>Biomass_borealDataPrep</em>) or to the
 LandR forest simulation module <em>Biomass_core</em>.</p>
 </div>
@@ -148,7 +148,7 @@ desc
 <td style="text-align:left;">
 rasterToMatchLarge
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 a raster of <code>studyAreaLarge</code> in the same resolution and projection the simulation’s. Defaults to the using the Canadian Forestry Service, National Forest Inventory, kNN-derived stand biomass map.
 </td>
 </tr>
@@ -156,7 +156,7 @@ a raster of <code>studyAreaLarge</code> in the same resolution and projection th
 <td style="text-align:left;">
 sppColorVect
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 A named vector of colors to use for plotting. The names must be in sim<span class="math inline">\(sppEquiv[[sim\)</span>sppEquivCol]], and should also contain a color for ‘Mixed’
 </td>
 </tr>
@@ -164,7 +164,7 @@ A named vector of colors to use for plotting. The names must be in sim<span clas
 <td style="text-align:left;">
 sppEquiv
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 table of species equivalencies. See <code><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">LandR::sppEquivalencies_CA</a></code>.
 </td>
 </tr>
@@ -172,7 +172,7 @@ table of species equivalencies. See <code><a href="https://landr.predictiveecolo
 <td style="text-align:left;">
 studyAreaLarge
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 Polygon to use as the parametrisation study area. Must be provided by the user. Note that <code>studyAreaLarge</code> is only used for parameter estimation, and can be larger than the actual study area used for LandR simulations (e.g, larger than <code>studyArea</code> in LandR Biomass_core).
 </td>
 </tr>
@@ -180,7 +180,7 @@ Polygon to use as the parametrisation study area. Must be provided by the user. 
 <td style="text-align:left;">
 studyAreaReporting
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 multipolygon (typically smaller/unbuffered than <code>studyAreaLarge</code> and <code>studyArea</code> in LandR Biomass_core) to use for plotting/reporting. If not provided, will default to <code>studyAreaLarge</code>.
 </td>
 </tr>
@@ -203,7 +203,7 @@ paramDesc
 <td style="text-align:left;">
 coverThresh
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 The minimum % cover a species needs to have (per pixel) in the study area to be considered present
 </td>
 </tr>
@@ -211,7 +211,7 @@ The minimum % cover a species needs to have (per pixel) in the study area to be 
 <td style="text-align:left;">
 dataYear
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 Passed to <code>paste0('prepSpeciesLayers_', types)</code> function to fetch data from that year (if applicable). Defaults to 2001 as the default kNN year.
 </td>
 </tr>
@@ -219,7 +219,7 @@ Passed to <code>paste0('prepSpeciesLayers_', types)</code> function to fetch dat
 <td style="text-align:left;">
 sppEquivCol
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 The column in <code>sim$sppEquiv</code> data.table to group species by and use as a naming convention. If different species in, e.g., the kNN data have the same name in the chosen column, their data are merged into one species by summing their % cover in each raster cell.
 </td>
 </tr>
@@ -227,7 +227,7 @@ The column in <code>sim$sppEquiv</code> data.table to group species by and use a
 <td style="text-align:left;">
 types
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 The possible data sources. These must correspond to a function named paste0(‘prepSpeciesLayers_’, types). Defaults to ‘KNN’ to get the Canadian Forestry Service, National Forest Inventory, kNN-derived species cover maps from year ‘dataYear’, using the <code><a href="https://landr.predictiveecology.org/reference/prepSpeciesLayers.html">LandR::prepSpeciesLayers_KNN</a></code> function (see <a href="https://open.canada.ca/" class="uri">https://open.canada.ca/</a> data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990 for details on these data). Other currently available options are ‘ONFRI’, ‘CASFRI’, ‘Pickell’ and ‘ForestInventory’, which attempt to get proprietary data - the user must be granted access first. A custom function can be used to retrieve any data, just as long as it is accessible by the module (e.g., in the global environment) and is named as paste0(‘prepSpeciesLayers_’, types).
 </td>
 </tr>
@@ -235,7 +235,7 @@ The possible data sources. These must correspond to a function named paste0(‘p
 <td style="text-align:left;">
 vegLeadingProportion
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 a number that defines whether a species is leading for a given pixel. Only used for plotting.
 </td>
 </tr>
@@ -243,7 +243,7 @@ a number that defines whether a species is leading for a given pixel. Only used 
 <td style="text-align:left;">
 .plotInitialTime
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 This describes the simulation time at which the first plot event should occur
 </td>
 </tr>
@@ -251,7 +251,7 @@ This describes the simulation time at which the first plot event should occur
 <td style="text-align:left;">
 .plotInterval
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 This describes the simulation time interval between plot events
 </td>
 </tr>
@@ -259,7 +259,7 @@ This describes the simulation time interval between plot events
 <td style="text-align:left;">
 .saveInitialTime
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 This describes the simulation time at which the first save event should occur
 </td>
 </tr>
@@ -267,7 +267,7 @@ This describes the simulation time at which the first save event should occur
 <td style="text-align:left;">
 .saveInterval
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 This describes the simulation time interval between save events
 </td>
 </tr>
@@ -275,7 +275,7 @@ This describes the simulation time interval between save events
 <td style="text-align:left;">
 .studyAreaName
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 Human-readable name for the study area used. If NA, a hash of <code>studyAreaLarge</code> will be used.
 </td>
 </tr>
@@ -283,7 +283,7 @@ Human-readable name for the study area used. If NA, a hash of <code>studyAreaLar
 <td style="text-align:left;">
 .useCache
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 Controls cache; caches the init event by default
 </td>
 </tr>
@@ -291,7 +291,7 @@ Controls cache; caches the init event by default
 <td style="text-align:left;">
 .useParallel
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 Used in reading csv file with fread. Will be passed to data.table::setDTthreads.
 </td>
 </tr>
@@ -304,7 +304,7 @@ Used in reading csv file with fread. Will be passed to data.table::setDTthreads.
 </h3>
 <p><em>Biomass_speciesData</em> only runs two events:</p>
 <ul>
-<li>Module “initiation” (<code>init</code> event), during which all species (ref:percent)
+<li>Module “initiation” (<code>init</code> event), during which all species %
 cover layers are downloaded and processed.</li>
 <li>Plotting of the processed species cover layers (<code>initPlot</code> event).</li>
 </ul>
@@ -332,7 +332,7 @@ desc
 <td style="text-align:left;">
 speciesLayers
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 biomass percentage raster layers by species in Canada species map
 </td>
 </tr>
@@ -340,7 +340,7 @@ biomass percentage raster layers by species in Canada species map
 <td style="text-align:left;">
 treed
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 Table with one logical column for each species, indicating whether there were non-zero cover values in each pixel.
 </td>
 </tr>
@@ -348,7 +348,7 @@ Table with one logical column for each species, indicating whether there were no
 <td style="text-align:left;">
 numTreed
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 a named vector with number of pixels with non-zero cover values for each species
 </td>
 </tr>
@@ -356,7 +356,7 @@ a named vector with number of pixels with non-zero cover values for each species
 <td style="text-align:left;">
 nonZeroCover
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 A single value indicating how many pixels have non-zero cover
 </td>
 </tr>
@@ -393,16 +393,16 @@ within the LandR ecosystem
 <h3>
 <span class="header-section-number">4.2.1</span> Detailed description<a class="anchor" aria-label="anchor" href="#detailed-description"><i class="fas fa-link"></i></a>
 </h3>
-<p>This module accesses and processes species percent cover ((ref:percent) cover)
+<p>This module accesses and processes species percent cover (% cover)
 data for the parametrisation and initialization of LandR <em>Biomass_core</em>. This
 module ensures 1) all data use the same geospatial geometries and 2) that these
 are correctly re-projected to studyAreaLarge, and 3) attempts to sequentially
 fill-in and replace the lowest quality data with higher quality data when
 several data sources are used. It’s primary output is a <code>RasterStack</code> of species
-(ref:percent) cover, with each layer corresponding to a species.</p>
+% cover, with each layer corresponding to a species.</p>
 <p>Currently, the module can access the Canadian Forest Inventory forest attributes
-kNN dataset [the default; <span class="citation">Beaudoin <em>et al.</em> (<a href="landr-biomass_validationknn-module.html#ref-BeaudoinEtAl2017" role="doc-biblioref">2017</a>)</span>], the Common Attribute Schema for
-Forest Resource Inventories [CASFRI; <span class="citation">Cosco (<a href="landr-biomass_validationknn-module.html#ref-Cosco2011" role="doc-biblioref">2011</a>)</span>] dataset, the Ontario Forest
+kNN dataset [the default; <span class="citation">Beaudoin <em>et al.</em> (<a href="#ref-BeaudoinEtAl2017" role="doc-biblioref">2017</a>)</span>], the Common Attribute Schema for
+Forest Resource Inventories [CASFRI; <span class="citation">Cosco (<a href="#ref-Cosco2011" role="doc-biblioref">2011</a>)</span>] dataset, the Ontario Forest
 Resource Inventory (ONFRI), a dataset specific to Alberta compiled by Paul
 Pickell, and other Alberta forest inventory datasets. However, <strong>only the NFI
 kNN data are freely available</strong> – access to the other datasets must be granted
@@ -413,14 +413,14 @@ module (see <code>types</code> parameter details in <a href="landr-biomass_valid
 <p>When multiple data sources are used, the module will use replace lower quality
 data with higher quality data following the order specified by the parameter
 <code>types</code> (see <a href="landr-biomass_validationknn-module.html#parameters-4">Parameters</a>).</p>
-<p>When multiple species of a given data source are to be grouped, (ref:percent)
+<p>When multiple species of a given data source are to be grouped, %
 cover is summed across species of the same group within each pixel. Please see
 the <code>sppEquiv</code> input in <a href="landr-biomass_validationknn-module.html#input-objects-4">Input objects</a> for information on how species groups
 are defined.</p>
-<p>The module can also exclude species (ref:percent) cover layers if they don’t
-have a minimum (ref:percent) cover value in at least one pixel. This means that
+<p>The module can also exclude species % cover layers if they don’t
+have a minimum % cover value in at least one pixel. This means that
 the user should still inspect in how many pixels the species is deemed present,
-as it is possible that some data have only a few pixels with high (ref:percent)
+as it is possible that some data have only a few pixels with high %
 cover for a given species. In this case, the user may choose to exclude these
 species <em>a posteriori</em>. The summary plot automatically shown by
 <em>Biomass_speciesData</em> can help diagnose whether certain species are present in
@@ -436,7 +436,7 @@ have been previously downloaded and stored in the folder specified by
 <code>options("reproducible.destinationPath")</code>).</p>
 <p>The module defaults to processing cover data fo all species listed in the
 <code>Boreal</code> column of the default <code>sppEquiv</code> input <code>data.table</code> object, for which
-there are available (ref:percent) cover layers in the kNN dataset (Table
+there are available % cover layers in the kNN dataset (Table
 <a href="landr-biomass_speciesdata-module.html#tab:defaultSppBiomass-speciesData">4.4</a>; see <code><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">?LandR::sppEquivalencies_CA</a></code> for
 more information):</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
@@ -858,7 +858,7 @@ coumn chosen for the naming convention used throughout the simulation (the
 </ul>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:mergingSpp-Biomass-speciesData">Table 4.6: </span>Example of species merging for simulation. Here the user wants to model <em>Abies balsamea</em>, <em>A. lasiocarpa</em> and <em>Pinus contorta</em> as separate species, but all <em>Picea spp.</em> as a genus-level group. For this, all six species are identified in the 'KNN' column, so that their (ref:percent) cover layers can be obtained, but in the 'Boreal' column (which defines the naming convention used in the simulation in this example) all <em>Picea spp.</em> have the same name. <em>Biomass_speciesData</em> will merge their (ref:percent) cover data into a single layer by summing their cover per pixel.
+<span id="tab:mergingSpp-Biomass-speciesData">Table 4.6: </span>Example of species merging for simulation. Here the user wants to model <em>Abies balsamea</em>, <em>A. lasiocarpa</em> and <em>Pinus contorta</em> as separate species, but all <em>Picea spp.</em> as a genus-level group. For this, all six species are identified in the 'KNN' column, so that their % cover layers can be obtained, but in the 'Boreal' column (which defines the naming convention used in the simulation in this example) all <em>Picea spp.</em> have the same name. <em>Biomass_speciesData</em> will merge their % cover data into a single layer by summing their cover per pixel.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -1238,14 +1238,14 @@ Used in reading csv file with fread. Will be passed to data.table::setDTthreads.
 <p>Of the parameters listed in Table <a href="landr-biomass_speciesdata-module.html#tab:moduleParams2-Biomass-speciesData">4.7</a>,
 the following are particularly important:</p>
 <ul>
-<li><p><code>coverThresh</code> – integer. Defines a minimum (ref:percent) cover value (from
+<li><p><code>coverThresh</code> – integer. Defines a minimum % cover value (from
 0-100) that the species must have in at least one pixel to be considered
 present in the study area, otherwise it is excluded from the final stack of
 species layers. Note that this will affect what species have data for an
 eventual simulation and the user will need to adjust simulation parameters
 (e.g., species in trait tables will need to match the species in the cover
 layers) accordingly.</p></li>
-<li><p><code>types</code> – character. Which (ref:percent) cover data sources are to be used
+<li><p><code>types</code> – character. Which % cover data sources are to be used
 (see <a href="landr-biomass_validationknn-module.html#detailed-description-3">Detailed description</a>). Several data sources can be passed, in which
 case the module will overlay the lower quality layers with higher quality
 ones <strong>following the order of data sources specified by <code>types</code></strong> – i.e.,
@@ -1293,14 +1293,12 @@ with forest cover are calculated (<code>treed</code>and <code>numTreed</code> ou
 </h3>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"Require"</span><span class="op">)</span>
-  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"Require"</span><span class="op">)</span>
+    <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span><span class="op">)</span>
 <span class="op">}</span>
 
-<span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/SpaDES.install"</span>,
-          <span class="st">"SpaDES"</span>, <span class="st">"PredictiveEcology/SpaDES.core@development"</span>,
-          <span class="st">"PredictiveEcology/LandR"</span><span class="op">)</span>, 
-        install_githubArgs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/SpaDES.install"</span>, <span class="st">"SpaDES"</span>, <span class="st">"PredictiveEcology/SpaDES.core@development"</span>,
+    <span class="st">"PredictiveEcology/LandR"</span><span class="op">)</span>, install_githubArgs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="get-module-necessary-packages-and-set-up-folder-directories" class="section level3" number="4.3.2">
 <h3>
@@ -1308,13 +1306,13 @@ with forest cover are calculated (<code>treed</code>and <code>numTreed</code> ou
 </h3>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tempDir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>inputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"inputs"</span><span class="op">)</span><span class="op">)</span>, 
-              cachePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"cache"</span><span class="op">)</span><span class="op">)</span>, 
-              modulePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"modules"</span><span class="op">)</span><span class="op">)</span>, 
-              outputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"outputs"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>inputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"inputs"</span><span class="op">)</span><span class="op">)</span>,
+    cachePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"cache"</span><span class="op">)</span><span class="op">)</span>, modulePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>,
+        <span class="st">"modules"</span><span class="op">)</span><span class="op">)</span>, outputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>,
+        <span class="st">"outputs"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 
-<span class="fu">getModule</span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_speciesData"</span>, 
-                       modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">getModule</span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_speciesData"</span>, modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>,
+    overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="co">## make sure all necessary packages are installed:</span>
 <span class="fu">makeSureAllPackagesInstalled</span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span><span class="op">)</span></code></pre></div>
@@ -1324,34 +1322,38 @@ with forest cover are calculated (<code>treed</code>and <code>numTreed</code> ou
 <span class="header-section-number">4.3.3</span> Setup simulation<a class="anchor" aria-label="anchor" href="#setup-simulation-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>For this demonstration we are using all default parameter values, except
-<code>coverThresh</code> , which is lowered to 5(ref:percent). The species layers (the
+<code>coverThresh</code> , which is lowered to 5%. The species layers (the
 major output of interest) are saved automatically, so there is no need to tell
 <code>spades</code> what to save using the <code>outputs</code> argument (see
 <code><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-outputs.html">?SpaDES.core::outputs</a></code>).</p>
 <p>We pass the global parameter <code>.plotInitialTime = 1</code> in the <code>simInitAndSpades</code>
 function to activate plotting.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># User may want to set some options -- see ?reproducibleOptions </span>
-<span class="co">#    -- e.g., often the path to the 'inputs' folder will be set outside of project by user:</span>
-<span class="co"># options(reproducible.inputPaths = "E:/Data/LandR_related/") # to re-use datasets across projects</span>
-<span class="va">studyAreaLarge</span> <span class="op">&lt;-</span> <span class="fu">Cache</span><span class="op">(</span><span class="va">randomStudyArea</span>, size <span class="op">=</span> <span class="fl">1e7</span>,
-                        cacheRepo <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">cachePath</span><span class="op">)</span> <span class="co"># cache this so it creates a random one only once on a machine</span>
+<code class="sourceCode R"><span class="co"># User may want to set some options -- see</span>
+<span class="co"># ?reproducibleOptions -- e.g., often the path to the</span>
+<span class="co"># 'inputs' folder will be set outside of project by user:</span>
+<span class="co"># options(reproducible.inputPaths =</span>
+<span class="co"># 'E:/Data/LandR_related/') # to re-use datasets across</span>
+<span class="co"># projects</span>
+<span class="va">studyAreaLarge</span> <span class="op">&lt;-</span> <span class="fu">Cache</span><span class="op">(</span><span class="va">randomStudyArea</span>, size <span class="op">=</span> <span class="fl">1e+07</span>, cacheRepo <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">cachePath</span><span class="op">)</span>  <span class="co"># cache this so it creates a random one only once on a machine</span>
 
-<span class="co"># Pick the species you want to work with -- here we use the naming convention in "Boreal" column of LandR::sppEquivalencies_CA (default)</span>
+<span class="co"># Pick the species you want to work with -- here we use the</span>
+<span class="co"># naming convention in 'Boreal' column of</span>
+<span class="co"># LandR::sppEquivalencies_CA (default)</span>
 <span class="va">speciesNameConvention</span> <span class="op">&lt;-</span> <span class="st">"Boreal"</span>
 <span class="va">speciesToUse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Pice_Gla"</span>, <span class="st">"Popu_Tre"</span>, <span class="st">"Pinu_Con"</span><span class="op">)</span>
 
-<span class="va">sppEquiv</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="va"><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">sppEquivalencies_CA</a></span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/get.html">get</a></span><span class="op">(</span><span class="va">speciesNameConvention</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">speciesToUse</span><span class="op">]</span>
+<span class="va">sppEquiv</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="va"><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">sppEquivalencies_CA</a></span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/get.html">get</a></span><span class="op">(</span><span class="va">speciesNameConvention</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span>
+    <span class="va">speciesToUse</span><span class="op">]</span>
 <span class="co"># Assign a colour convention for graphics for each species</span>
 <span class="va">sppColorVect</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="fu"><a href="https://landr.predictiveecology.org/reference/sppColors.html">sppColors</a></span><span class="op">(</span><span class="va">sppEquiv</span>, <span class="va">speciesNameConvention</span>,
-                                 newVals <span class="op">=</span> <span class="st">"Mixed"</span>, palette <span class="op">=</span> <span class="st">"Set1"</span><span class="op">)</span>
+    newVals <span class="op">=</span> <span class="st">"Mixed"</span>, palette <span class="op">=</span> <span class="st">"Set1"</span><span class="op">)</span>
 
 <span class="co">## Usage example</span>
 <span class="va">modules</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"Biomass_speciesData"</span><span class="op">)</span>
-<span class="va">objects</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"studyAreaLarge"</span> <span class="op">=</span> <span class="va">studyAreaLarge</span>,
-                <span class="st">"sppEquiv"</span> <span class="op">=</span> <span class="va">sppEquiv</span>,
-                <span class="st">"sppColorVect"</span> <span class="op">=</span> <span class="va">sppColorVect</span><span class="op">)</span>
-<span class="va">params</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"Biomass_speciesData"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"coverThresh"</span> <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<span class="va">objects</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>studyAreaLarge <span class="op">=</span> <span class="va">studyAreaLarge</span>, sppEquiv <span class="op">=</span> <span class="va">sppEquiv</span>,
+    sppColorVect <span class="op">=</span> <span class="va">sppColorVect</span><span class="op">)</span>
+<span class="va">params</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Biomass_speciesData <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>coverThresh <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="run-module" class="section level3" number="4.3.4">
 <h3>
@@ -1361,15 +1363,11 @@ function to activate plotting.</p>
 the simulation) we are not iterating it and so both the start and end times are
 set to <code>1</code> here.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">opts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>reproducible.useCache <span class="op">=</span> <span class="cn">TRUE</span>,
-                reproducible.inputPaths <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">inputPath</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">opts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>reproducible.useCache <span class="op">=</span> <span class="cn">TRUE</span>, reproducible.inputPaths <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">inputPath</span><span class="op">)</span>
 
 <span class="va">mySimOut</span> <span class="op">&lt;-</span> <span class="fu">simInitAndSpades</span><span class="op">(</span>times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">1</span>, end <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,
-                             modules <span class="op">=</span> <span class="va">modules</span>, 
-                             parameters <span class="op">=</span> <span class="va">params</span>,
-                             objects <span class="op">=</span> <span class="va">objects</span>, 
-                             paths <span class="op">=</span> <span class="va">paths</span>,
-                             .plotInitialTime <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+    modules <span class="op">=</span> <span class="va">modules</span>, parameters <span class="op">=</span> <span class="va">params</span>, objects <span class="op">=</span> <span class="va">objects</span>,
+    paths <span class="op">=</span> <span class="va">paths</span>, .plotInitialTime <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span><span class="va">opts</span><span class="op">)</span></code></pre></div>
 <p>Here are some of outputs of <em>Biomass_speciesData</em> (dominant species) in a
 randomly generated study area within Canada.</p>
@@ -1386,6 +1384,15 @@ Figure 4.1: <em>Biomass_speciesData</em> automatically generates a plot of speci
 <span class="header-section-number">4.4</span> References<a class="anchor" aria-label="anchor" href="#references-1"><i class="fas fa-link"></i></a>
 </h2>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-BeaudoinEtAl2017" class="csl-entry">
+Beaudoin, A., Bernier, P.Y., Villemaire, P., Guindon, L. &amp; Guo, X.J. (2017). <a href="https://doi.org/10.23687/EC9E2659-1C29-4DDB-87A2-6ACED147A990">Species composition, forest properties and land cover types across canada’s forests at 250m resolution for 2001 and 2011</a>.
+</div>
+<div id="ref-Cosco2011" class="csl-entry">
+Cosco, J. (2011). <em>COMMON ATTRIBUTE SCHEMA (CAS) FOR FOREST INVENTORIES ACROSS CANADA</em>. BOREAL AVIAN MODELLING PROJECT, CANADIAN BEACONs PROJECT.
 </div>
 </div>
   <div class="chapter-nav">
@@ -1438,7 +1445,7 @@ Figure 4.1: <em>Biomass_speciesData</em> automatically generates a plot of speci
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-03-29.</p>
+    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-04-06.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -47,7 +47,7 @@
       margin-left: 2em;
     }
   </style>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -91,8 +91,8 @@
 </h1>
 <!-- the following are text references used in captions for LaTeX compatibility -->
 
-<p><a href="http://commonmark.org"><img src="figures/markdownBadge.png" alt="made-with-Markdown"></a>
-<a href="https://github.com/PredictiveEcology/Biomass_speciesParameters/issues"><img src="figures/genericBadge.png" alt="Generic badge"></a></p>
+<p><a href="http://commonmark.org"><img src="figures/markdownBadge.png" alt="made-with-Markdown"></a></p>
+<p><a href="https://github.com/PredictiveEcology/Biomass_speciesParameters/issues"><img src="figures/genericBadge.png" alt="Generic badge"></a></p>
 <!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
 <p><strong>This documentation is work in progress. Potential discrepancies and omissions
 may exist for the time being. If you find any, do contact us using the link
@@ -126,7 +126,7 @@ module which does so (e.g. <em>Biomass_borealDataPrep</em>). However, it may be
 stand-alone in an initial phase for easier inspection of the statistical
 calibration procedure.</p>
 <p><strong>Note that a Google Account is necessary to access the data.</strong></p>
-<p>As of 2022-03-29, the PSP data needed for this module is not freely
+<p>As of 2022-04-06, the PSP data needed for this module is not freely
 available, and data sharing agreements must be obtained from the governments of
 SK, AB, and BC.</p>
 </div>
@@ -167,7 +167,7 @@ desc
 <td style="text-align:left;">
 speciesTableFactorial
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 table with species traits for matching to factorialCohortData
 </td>
 </tr>
@@ -175,7 +175,7 @@ table with species traits for matching to factorialCohortData
 <td style="text-align:left;">
 cohortDataFactorial
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 results of factorial species trait simulation. This can be found by running SpeciesFactorial.R but requires a specific commit of Boreal_Biomass
 </td>
 </tr>
@@ -183,7 +183,7 @@ results of factorial species trait simulation. This can be found by running Spec
 <td style="text-align:left;">
 PSPmeasure_sppParams
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 merged PSP and TSP individual tree measurements. Must include the following columns: MeasureID, OrigPlotID1, MeasureYear, TreeNumber, Species, DBH and newSpeciesName the latter corresponding to species names in <code>LandR::sppEquivalencies_CA$PSP</code>. Defaults to randomized PSP data stripped of real plotIDs
 </td>
 </tr>
@@ -191,7 +191,7 @@ merged PSP and TSP individual tree measurements. Must include the following colu
 <td style="text-align:left;">
 PSPplot_sppParams
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 merged PSP and TSP plot data. Defaults to randomized PSP data stripped of real plotIDs. Must contain fields ‘MeasureID’, ‘MeasureYear’, ‘OrigPlotID1’, and ‘baseSA’ the latter being stand age at year of first measurement
 </td>
 </tr>
@@ -199,7 +199,7 @@ merged PSP and TSP plot data. Defaults to randomized PSP data stripped of real p
 <td style="text-align:left;">
 PSPgis_sppParams
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 Plot location sf object. Defaults to PSP data stripped of real plotIDs/location. Must include field OrigPlotID1 for joining to PSPplot_sppParams object
 </td>
 </tr>
@@ -207,7 +207,7 @@ Plot location sf object. Defaults to PSP data stripped of real plotIDs/location.
 <td style="text-align:left;">
 species
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 a table of invariant species traits with the following trait colums: ‘species’, ‘Area’, ‘longevity’, ‘sexualmature’, ‘shadetolerance’, ‘firetolerance’, ‘seeddistance_eff’, ‘seeddistance_max’, ‘resproutprob’, ‘mortalityshape’, ‘growthcurve’, ‘resproutage_min’, ‘resproutage_max’, ‘postfireregen’, ‘wooddecayrate’, ‘leaflongevity’ ‘leafLignin’, ‘hardsoft’. Only ‘growthcurve’ and ‘mortalityshape’ are used in this module. Default is from Dominic Cyr and Yan Boulanger’s project
 </td>
 </tr>
@@ -215,7 +215,7 @@ a table of invariant species traits with the following trait colums: ‘species�
 <td style="text-align:left;">
 speciesEcoregion
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 table of spatially-varying species traits (<code>maxB</code>, <code>maxANPP</code>, <code>establishprob</code>), defined by species and <code>ecoregionGroup</code>) Defaults to a dummy table based on dummy data os biomass, age, ecoregion and land cover class
 </td>
 </tr>
@@ -223,7 +223,7 @@ table of spatially-varying species traits (<code>maxB</code>, <code>maxANPP</cod
 <td style="text-align:left;">
 sppEquiv
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 table of species equivalencies. See <code><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">LandR::sppEquivalencies_CA</a></code>.
 </td>
 </tr>
@@ -231,7 +231,7 @@ table of species equivalencies. See <code><a href="https://landr.predictiveecolo
 <td style="text-align:left;">
 studyAreaANPP
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 study area used to crop PSP data before building growth curves
 </td>
 </tr>
@@ -252,65 +252,9 @@ paramDesc
 <tbody>
 <tr>
 <td style="text-align:left;">
-.plots
-</td>
-<td style="text-align:left;">
-Used by Plots function, which can be optionally used here
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-.plotInitialTime
-</td>
-<td style="text-align:left;">
-This describes the simulation time at which the first plot event should occur
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-.plotInterval
-</td>
-<td style="text-align:left;">
-This describes the simulation time interval between plot events
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-.saveInitialTime
-</td>
-<td style="text-align:left;">
-This describes the simulation time at which the first save event should occur
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-.saveInterval
-</td>
-<td style="text-align:left;">
-This describes the simulation time interval between save events
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-.useCache
-</td>
-<td style="text-align:left;">
-Should this entire module be run with caching activated? This is generally intended for data-type modules, where stochasticity and time are not relevant
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-speciesFittingApproach
-</td>
-<td style="text-align:left;">
-Either ‘all’, ‘pairwise’, ‘focal’ or ‘single’, indicating whether to pool all species into one fit, do pairwise species (for multiple cohort situations), do pairwise species, but using a focal species approach where all other species are pooled into ‘other’ or do one species at a time. If ‘all’, all species will have identical species-level traits
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 biomassModel
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 The model used to calculate biomass from DBH. Can be either ‘Lambert2005’ or ‘Ung2008’
 </td>
 </tr>
@@ -318,7 +262,7 @@ The model used to calculate biomass from DBH. Can be either ‘Lambert2005’ or
 <td style="text-align:left;">
 constrainGrowthCurve
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 upper and lower bounds on range of potential growth curves when fitting traits. This module accepts a list of vectors, with names equal to <code>sppEquivCol</code>, so that traits are customizable
 </td>
 </tr>
@@ -326,7 +270,7 @@ upper and lower bounds on range of potential growth curves when fitting traits. 
 <td style="text-align:left;">
 constrainMortalityShape
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 Upper and lower bounds on mortality shape when fitting traits. Low mortality curve needs to excessive cohorts with very little biomass as longevity is approached, adding computation strain. Alternatively accepts a list of vectors, with names equal to <code>sppEquivCol</code>.
 </td>
 </tr>
@@ -334,7 +278,7 @@ Upper and lower bounds on mortality shape when fitting traits. Low mortality cur
 <td style="text-align:left;">
 constrainMaxANPP
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 upper and lower bounds on <code>maxANPP</code> when fitting traits. Cohorts are initiated with <code>B = maxANPP</code>, which may be unreasonably high if <code>mANPP</code> is also high. Both <code>mANPP</code> and <code>growthcurve</code> params control when <code>maxB</code> is reached. High <code>mANPP</code> results in earlier peaks. Alternatively, accepts a list of vectors, with names equal to <code>sppEquivCol</code>.
 </td>
 </tr>
@@ -342,7 +286,7 @@ upper and lower bounds on <code>maxANPP</code> when fitting traits. Cohorts are 
 <td style="text-align:left;">
 GAMMiterations
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 number of iterations for GAMMs. This module accepts a list of vectors, with names equal to <code>sppEquivCol</code>, so that GAMMS are customizable
 </td>
 </tr>
@@ -350,7 +294,7 @@ number of iterations for GAMMs. This module accepts a list of vectors, with name
 <td style="text-align:left;">
 GAMMknots
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 the number of knots to use in the GAMM. Either 3 or 4 is recommended. This module accepts a list of vectors, with names equal to <code>sppEquivCol</code>, so that GAMMS are customizable
 </td>
 </tr>
@@ -358,7 +302,7 @@ the number of knots to use in the GAMM. Either 3 or 4 is recommended. This modul
 <td style="text-align:left;">
 maxBInFactorial
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 The arbitrary maximum biomass for the factorial simulations. This is a per-species maximum within a pixel
 </td>
 </tr>
@@ -366,7 +310,7 @@ The arbitrary maximum biomass for the factorial simulations. This is a per-speci
 <td style="text-align:left;">
 minimumPlotsPerGamm
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 minimum number of PSP plots before building GAMM.
 </td>
 </tr>
@@ -374,7 +318,7 @@ minimum number of PSP plots before building GAMM.
 <td style="text-align:left;">
 minDBH
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 minimum diameter at breast height (DBH) in cm used to filter PSP data. Defaults to 0 cm, i.e. all tree measurements are used.
 </td>
 </tr>
@@ -382,7 +326,7 @@ minimum diameter at breast height (DBH) in cm used to filter PSP data. Defaults 
 <td style="text-align:left;">
 PSPdataTypes
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 Which PSP datasets to source, defaulting to all. Other available options include ‘BC’, ‘AB’, ‘SK’, ‘NFI’, and ‘dummy’. ‘dummy’ should be used for unauthorized users.
 </td>
 </tr>
@@ -390,7 +334,7 @@ Which PSP datasets to source, defaulting to all. Other available options include
 <td style="text-align:left;">
 PSPperiod
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 The years by which to subset sample plot data, if desired. Must be a vector of length 2
 </td>
 </tr>
@@ -398,15 +342,23 @@ The years by which to subset sample plot data, if desired. Must be a vector of l
 <td style="text-align:left;">
 quantileAgeSubset
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 quantile by which to subset PSP data. As older stands are sparsely represented, the oldest measurements become vastly more influential. This parameter accepts both a single value and a list of vectors named by <code>sppEquivCol.</code> The PSP stand ages are found in <code>sim$speciesGAMMs$SPECIES$originalData</code>, where SPECIES is the species ID
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+speciesFittingApproach
+</td>
+<td style="text-align:left;width: 40em; ">
+Either ‘all’, ‘pairwise’, ‘focal’ or ‘single’, indicating whether to pool all species into one fit, do pairwise species (for multiple cohort situations), do pairwise species, but using a focal species approach where all other species are pooled into ‘other’ or do one species at a time. If ‘all’, all species will have identical species-level traits
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 sppEquivCol
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 The column in <code>sim$sppEquiv</code> data.table to group species by. This parameter should share the same name as in Biomass_borealDataPrep. If set to ‘default’ (the default), this module will look in the other modules in the simList to use the same as elsewhere. PSPs are aggregated by names in the PSP column and traits estimated for the corresponding names in the <code>sppEquivCol</code>
 </td>
 </tr>
@@ -414,7 +366,7 @@ The column in <code>sim$sppEquiv</code> data.table to group species by. This par
 <td style="text-align:left;">
 standAgesForFitting
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 The minimum and maximum ages to use while matching NonLinearFit (or GAMM) with LandR curves provided in the factorial. Since the majory of the data that went into fits for the NonLinearFit from PSPs is less than 200, it is likely wise to constrain the range to something smaller than 0 to 200
 </td>
 </tr>
@@ -422,8 +374,56 @@ The minimum and maximum ages to use while matching NonLinearFit (or GAMM) with L
 <td style="text-align:left;">
 useHeight
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 Should height be used to calculate biomass (in addition to DBH). DBH is used by itself when height is missing.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.plots
+</td>
+<td style="text-align:left;width: 40em; ">
+Used by Plots function, which can be optionally used here
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.plotInitialTime
+</td>
+<td style="text-align:left;width: 40em; ">
+This describes the simulation time at which the first plot event should occur
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.plotInterval
+</td>
+<td style="text-align:left;width: 40em; ">
+This describes the simulation time interval between plot events
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.saveInitialTime
+</td>
+<td style="text-align:left;width: 40em; ">
+This describes the simulation time at which the first save event should occur
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.saveInterval
+</td>
+<td style="text-align:left;width: 40em; ">
+This describes the simulation time interval between save events
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.useCache
+</td>
+<td style="text-align:left;width: 40em; ">
+Should this entire module be run with caching activated? This is generally intended for data-type modules, where stochasticity and time are not relevant
 </td>
 </tr>
 </tbody>
@@ -467,7 +467,7 @@ desc
 <td style="text-align:left;">
 species
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 a table that has species traits such as longevity…
 </td>
 </tr>
@@ -475,7 +475,7 @@ a table that has species traits such as longevity…
 <td style="text-align:left;">
 speciesEcoregion
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 table of spatially-varying species traits (<code>maxB</code>, <code>maxANPP</code>, <code>establishprob</code>), defined by species and <code>ecoregionGroup</code>) Defaults to a dummy table based on dummy data os biomass, age, ecoregion and land cover class
 </td>
 </tr>
@@ -483,7 +483,7 @@ table of spatially-varying species traits (<code>maxB</code>, <code>maxANPP</cod
 <td style="text-align:left;">
 speciesGAMMs
 </td>
-<td style="text-align:left;">
+<td style="text-align:left;width: 40em; ">
 a list of mixed-effect general additive models (gamm) for each tree species modeling biomass as a function of age
 </td>
 </tr>
@@ -554,10 +554,10 @@ identifying attributes anonymized.</p>
 <p>The data include individual species and diameter at breast height (DBH)
 measurements for each tree in a plot, as well as stand age. As part of the
 standardization process, dead trees were removed from the dataset. Tree biomass
-was then derived from DBH using the model by <span class="citation">Lambert <em>et al.</em> (<a href="landr-biomass_validationknn-module.html#ref-LambertEtAl2005" role="doc-biblioref">2005</a>)</span> and summed by
+was then derived from DBH using the model by <span class="citation">Lambert <em>et al.</em> (<a href="#ref-LambertEtAl2005" role="doc-biblioref">2005</a>)</span> and summed by
 plot. Lastly, the proportional biomass of each species was calculated for every
 individual measurement of each plot.</p>
-<p>Note that the model used to calculate biomass can be changed to <span class="citation">Ung <em>et al.</em> (<a href="landr-biomass_validationknn-module.html#ref-UngEtAl2008" role="doc-biblioref">2008</a>)</span> via
+<p>Note that the model used to calculate biomass can be changed to <span class="citation">Ung <em>et al.</em> (<a href="#ref-UngEtAl2008" role="doc-biblioref">2008</a>)</span> via
 the <code>P(sim)$biomassModel</code> module parameter.</p>
 </div>
 <div id="simulated-species-data" class="section level4" number="6.2.1.2">
@@ -611,8 +611,8 @@ additive mixed models (GAMMs) that relate species biomass (<span class="math inl
 (<span class="math inline">\(standAge\)</span>), accounting for the random effects of the measurement year
 (<span class="math inline">\(measureYear\)</span>) and plot (<span class="math inline">\(plotID\)</span>) on the intercept:</p>
 <span class="math display" id="eq:GAMM">\[\begin{equation}
-  B \sim f_{1}(standAge) + (\sim 1 | measureYear + plotID)
-  \tag{6.1}
+B \sim f_{1}(standAge) + (\sim 1 | measureYear + plotID)
+\tag{6.1}
 \end{equation}\]</span>
 <p>where <span class="math inline">\(f_{1}\)</span> denotes the smoother function. To avoid overfitting, the module
 constrains the smoother on stand age to a maximum smoothing degree of 3 (i.e. 3
@@ -625,8 +625,8 @@ biomass in a plot &gt; 0.5; <span class="math inline">\(domSpeciesB_{1}\)</span>
 and 2) dividing the species average biomass by the average biomass across all
 <em>n</em> dominant species (<span class="math inline">\(allDomSpeciesB\)</span>):</p>
 <span class="math display" id="eq:Bweights">\[\begin{equation}
-  \frac{\overline{\rm domSpeciesB_{1}}}{\overline{\rm allDomSpeciesB}}
-  \tag{6.2}
+\frac{\overline{\rm domSpeciesB_{1}}}{\overline{\rm allDomSpeciesB}}
+\tag{6.2}
 \end{equation}\]</span>
 <p>For the added 0 age and 0 biomass data the module uses weights equal to 1.</p>
 <p>It is possible that some selected species do not have enough data to allow for
@@ -666,8 +666,8 @@ maximum biomass to the potential maximum biomass (<code>maxBiomass</code>), to r
 <p>Finally, the module calibrates <code>maxANPP</code> using the <code>mANPPproportion</code> value from
 the best matching theoretical growth curve as:</p>
 <span class="math display" id="eq:maxANPPcalib">\[\begin{equation}
-  maxB \times \frac{mANPPproportion}{100}
-  \tag{6.3}
+maxB \times \frac{mANPPproportion}{100}
+\tag{6.3}
 \end{equation}\]</span>
 <p>where <code>maxB</code> is already the calibrated version. In cases where there are not
 sufficient PSP data to fit the GAMMs and perform the calibration,
@@ -839,38 +839,25 @@ NA
 <p>Of these inputs, the following are particularly important and deserve special
 attention:</p>
 <ul>
-<li>
-<p><strong>Spatial layers</strong></p>
-<ul>
-<li>
-<code>studyAreaANPP</code> – shapefile. A <code>SpatialPolygonsDataFrame</code> with a single
+<li><p><strong>Spatial layers</strong></p></li>
+<li><p><code>studyAreaANPP</code> – shapefile. A <code>SpatialPolygonsDataFrame</code> with a single
 polygon determining the where the PSP should be subset to simulation
-will take place. This input object <strong>must be supplied by the user</strong>.</li>
-</ul>
-</li>
-<li>
-<p><strong>Tables</strong></p>
-<ul>
-<li>
-<code>speciesTableFactorial</code> and <code>cohortDataFactorial</code> – a tables of
+will take place. This input object <strong>must be supplied by the user</strong>.</p></li>
+<li><p><strong>Tables</strong></p></li>
+<li><p><code>speciesTableFactorial</code> and <code>cohortDataFactorial</code> – a tables of
 species trait combinations and the theoretical species grwoth curve data
-(respectively)</li>
-<li>
-<code>PSPmeasure_sppParams</code>, <code>PSPplot_sppParams</code> and <code>PSPgis_sppParams</code> – tree measurement, biomass growth
+(respectively)</p></li>
+<li><p><code>PSPmeasure_sppParams</code>, <code>PSPplot_sppParams</code> and <code>PSPgis_sppParams</code> – tree measurement, biomass growth
 and geographical data of the PSP datasets used to buildi observed
-species growth curves.</li>
-<li>
-<code>species</code> – a table of invariant species traits that may have been
+species growth curves.</p></li>
+<li><p><code>species</code> – a table of invariant species traits that may have been
 produced by another module. It <strong>must</strong> contain the columns ‘species’,
-‘growthcurve’ and ‘mortality shape’, whose values will be calibrated.</li>
-<li>
-<code>speciesEcoregion</code> – table of spatially-varying species traits that may
+‘growthcurve’ and ‘mortality shape’, whose values will be calibrated.</p></li>
+<li><p><code>speciesEcoregion</code> – table of spatially-varying species traits that may
 have been produced by another module. It <strong>must</strong> contain the columns
 ‘speciesCode’, ‘maxB’ and ‘maxANPP’ and ‘ecoregionGroup’ (the
 ecolocation ID). ‘maxB’ and ‘maxANPP’ values will be calibrated by
-species.</li>
-</ul>
-</li>
+species.</p></li>
 </ul>
 </div>
 <div id="parameters-3" class="section level4" number="6.2.2.2">
@@ -904,146 +891,6 @@ paramDesc
 </th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-.plots
-</td>
-<td style="text-align:left;">
-character
-</td>
-<td style="text-align:left;">
-screen
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Used by Plots function, which can be optionally used here
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-.plotInitialTime
-</td>
-<td style="text-align:left;">
-numeric
-</td>
-<td style="text-align:left;">
-start(sim)
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-This describes the simulation time at which the first plot event should occur
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-.plotInterval
-</td>
-<td style="text-align:left;">
-numeric
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-This describes the simulation time interval between plot events
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-.saveInitialTime
-</td>
-<td style="text-align:left;">
-numeric
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-This describes the simulation time at which the first save event should occur
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-.saveInterval
-</td>
-<td style="text-align:left;">
-numeric
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-This describes the simulation time interval between save events
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-.useCache
-</td>
-<td style="text-align:left;">
-character
-</td>
-<td style="text-align:left;">
-.inputOb….
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Should this entire module be run with caching activated? This is generally intended for data-type modules, where stochasticity and time are not relevant
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-speciesFittingApproach
-</td>
-<td style="text-align:left;">
-character
-</td>
-<td style="text-align:left;">
-focal
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Either ‘all’, ‘pairwise’, ‘focal’ or ‘single’, indicating whether to pool all species into one fit, do pairwise species (for multiple cohort situations), do pairwise species, but using a focal species approach where all other species are pooled into ‘other’ or do one species at a time. If ‘all’, all species will have identical species-level traits
-</td>
-</tr>
 <tr>
 <td style="text-align:left;">
 biomassModel
@@ -1286,6 +1133,26 @@ quantile by which to subset PSP data. As older stands are sparsely represented, 
 </tr>
 <tr>
 <td style="text-align:left;">
+speciesFittingApproach
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+focal
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Either ‘all’, ‘pairwise’, ‘focal’ or ‘single’, indicating whether to pool all species into one fit, do pairwise species (for multiple cohort situations), do pairwise species, but using a focal species approach where all other species are pooled into ‘other’ or do one species at a time. If ‘all’, all species will have identical species-level traits
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 sppEquivCol
 </td>
 <td style="text-align:left;">
@@ -1344,29 +1211,141 @@ NA
 Should height be used to calculate biomass (in addition to DBH). DBH is used by itself when height is missing.
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+.plots
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+screen
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Used by Plots function, which can be optionally used here
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.plotInitialTime
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+start(sim)
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This describes the simulation time at which the first plot event should occur
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.plotInterval
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This describes the simulation time interval between plot events
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.saveInitialTime
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This describes the simulation time at which the first save event should occur
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.saveInterval
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This describes the simulation time interval between save events
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.useCache
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+.inputOb….
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Should this entire module be run with caching activated? This is generally intended for data-type modules, where stochasticity and time are not relevant
+</td>
+</tr>
 </tbody>
 </table></div>
 <p>Of these parameters, the following are particularly important:</p>
 <ul>
-<li>
-<p><strong>Calibration parameters</strong></p>
-<ul>
+<li><p><strong>Calibration parameters</strong></p></li>
 <li><p><code>GAMMiterations</code> and <code>GAMMknots</code> – control the number of iterattions
 and smoother degree used to fit the GAMMs, respectively.</p></li>
 <li><p><code>constrainGrowthCurve</code>, <code>constrainMortalityShape</code> and <code>constrainMaxANPP</code>
 – determine the upper and lower boundaries of the calibrated values of
 <code>growthcurve</code>, <code>mortalityshape</code> and <code>maxANPP</code>, respectively.</p></li>
-</ul>
-</li>
-<li>
-<p><strong>Data processing</strong></p>
-<ul>
+<li><p><strong>Data processing</strong></p></li>
 <li><p><code>minimumPlotsPerGamm</code> – define a minimum number of PSP plots needed to
 fit the GAMMs.</p></li>
 <li><p><code>PSPperiod</code> – PSP data period to use.</p></li>
 <li><p><code>quantileAgeSubset</code> – upper quantile age value used to subset PSP data.</p></li>
-</ul>
-</li>
 </ul>
 </div>
 <div id="outputs-1" class="section level4" number="6.2.2.3">
@@ -1374,13 +1353,9 @@ fit the GAMMs.</p></li>
 <span class="header-section-number">6.2.2.3</span> Outputs<a class="anchor" aria-label="anchor" href="#outputs-1"><i class="fas fa-link"></i></a>
 </h4>
 <ul>
-<li>
-<p><strong>Tables</strong></p>
-<ul>
+<li><p><strong>Tables</strong></p></li>
 <li><p><code>species</code> and <code>speciesEcoregion</code> – tables with calibrated trait values.</p></li>
 <li><p><code>speciesGAMMs</code> – the fitted GAMM model objects for each species.</p></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
@@ -1417,20 +1392,19 @@ we remind that to run this example you will need a Google Account, and to be
 granted access to the data.</p>
 <p>A realistic usage example of this module and a few others can be found in <a href="https://github.com/CeresBarros/LandRBiomass_publication">this
 repository</a> and in
-<span class="citation">Barros <em>et al.</em> (<a href="landr-biomass_validationknn-module.html#ref-BarrosEtAlinreview" role="doc-biblioref">n.d.b</a>)</span>.</p>
+<span class="citation">Barros <em>et al.</em> (<a href="#ref-BarrosEtAlinreview" role="doc-biblioref">n.d.b</a>)</span>.</p>
 <div id="load-spades-and-other-packages.-1" class="section level3" number="6.3.1">
 <h3>
 <span class="header-section-number">6.3.1</span> Load <code>SpaDES</code> and other packages.<a class="anchor" aria-label="anchor" href="#load-spades-and-other-packages.-1"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"Require"</span><span class="op">)</span>
-  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"Require"</span><span class="op">)</span>
+    <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span><span class="op">)</span>
 <span class="op">}</span>
 
-<span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/SpaDES.install"</span>,
-          <span class="st">"SpaDES"</span>, <span class="st">"PredictiveEcology/SpaDES.core@development"</span><span class="op">)</span>, 
-        install_githubArgs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/SpaDES.install"</span>, <span class="st">"SpaDES"</span>, <span class="st">"PredictiveEcology/SpaDES.core@development"</span><span class="op">)</span>,
+    install_githubArgs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="get-module-necessary-packages-and-set-up-folder-directories-1" class="section level3" number="6.3.2">
 <h3>
@@ -1439,12 +1413,13 @@ repository</a> and in
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tempDir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>
 
-<span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>inputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"inputs"</span><span class="op">)</span><span class="op">)</span>, 
-              cachePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"cache"</span><span class="op">)</span><span class="op">)</span>, 
-              modulePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"modules"</span><span class="op">)</span><span class="op">)</span>, 
-              outputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"outputs"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>inputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"inputs"</span><span class="op">)</span><span class="op">)</span>,
+    cachePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"cache"</span><span class="op">)</span><span class="op">)</span>, modulePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>,
+        <span class="st">"modules"</span><span class="op">)</span><span class="op">)</span>, outputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>,
+        <span class="st">"outputs"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 
-<span class="fu">getModule</span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_speciesParameters@79896a4e3b785e34e5f509798ab6c2204bb334d7"</span>, modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu">getModule</span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_speciesParameters@79896a4e3b785e34e5f509798ab6c2204bb334d7"</span>,
+    modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="co">## make sure all necessary packages are installed:</span>
 <span class="fu">makeSureAllPackagesInstalled</span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span><span class="op">)</span></code></pre></div>
@@ -1460,80 +1435,39 @@ repository</a> and in
 
 <span class="va">modules</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"Biomass_speciesParameters"</span><span class="op">)</span>
 
-<span class="co">#the purpose of this table is experiment with modify longevity - longevity is not estimated by the module</span>
-<span class="co">#but it is used in trait estimation. </span>
-<span class="va">inputSpecies</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="op">(</span>species <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Abie_bal"</span>, <span class="st">'Abie_las'</span>, <span class="st">'Betu_pap'</span>, <span class="st">'Lari_lar'</span>,
-                                        <span class="st">'Pice_eng'</span>, <span class="st">'Pice_gla'</span>, <span class="st">'Pice_mar'</span>, <span class="st">'Pinu_ban'</span>,
-                                       <span class="st">'Pinu_con'</span>, <span class="st">'Pseu_men'</span>, <span class="st">"Popu_tre"</span><span class="op">)</span>,
-                           longevity <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">300</span>, <span class="fl">300</span>, <span class="fl">170</span>, <span class="fl">170</span>, <span class="fl">330</span>, <span class="fl">250</span>, <span class="fl">250</span>, <span class="fl">175</span>, <span class="fl">300</span>, <span class="fl">600</span>, <span class="fl">200</span><span class="op">)</span>,
-                           mortalityshape <span class="op">=</span> <span class="fl">15</span>, growthcurve <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+<span class="co"># the purpose of this table is experiment with modify</span>
+<span class="co"># longevity - longevity is not estimated by the module but</span>
+<span class="co"># it is used in trait estimation.</span>
+<span class="va">inputSpecies</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="op">(</span>species <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Abie_bal"</span>, <span class="st">"Abie_las"</span>,
+    <span class="st">"Betu_pap"</span>, <span class="st">"Lari_lar"</span>, <span class="st">"Pice_eng"</span>, <span class="st">"Pice_gla"</span>, <span class="st">"Pice_mar"</span>,
+    <span class="st">"Pinu_ban"</span>, <span class="st">"Pinu_con"</span>, <span class="st">"Pseu_men"</span>, <span class="st">"Popu_tre"</span><span class="op">)</span>, longevity <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">300</span>,
+    <span class="fl">300</span>, <span class="fl">170</span>, <span class="fl">170</span>, <span class="fl">330</span>, <span class="fl">250</span>, <span class="fl">250</span>, <span class="fl">175</span>, <span class="fl">300</span>, <span class="fl">600</span>, <span class="fl">200</span><span class="op">)</span>, mortalityshape <span class="op">=</span> <span class="fl">15</span>,
+    growthcurve <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
 <span class="va">objects</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>species <span class="op">=</span> <span class="va">inputSpecies</span><span class="op">)</span>
 
 <span class="va">inputs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">outputs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span>
 
-<span class="va">parameters</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Biomass_speciesParameters <span class="op">=</span> 
-                     <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>GAMMiterations <span class="op">=</span> <span class="fl">2</span>, 
-                          GAMMknots <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
-                            <span class="st">"Abie_bal"</span> <span class="op">=</span> <span class="fl">3</span>,
-                            <span class="st">"Abie_las"</span> <span class="op">=</span> <span class="fl">3</span>,
-                            <span class="st">"Betu_pap"</span> <span class="op">=</span> <span class="fl">3</span>,
-                            <span class="st">"Lari_lar"</span> <span class="op">=</span> <span class="fl">4</span>,
-                            <span class="st">"Pice_eng"</span> <span class="op">=</span> <span class="fl">4</span>,
-                            <span class="st">"Pice_gla"</span> <span class="op">=</span> <span class="fl">3</span>,
-                            <span class="st">"Pice_mar"</span> <span class="op">=</span> <span class="fl">4</span>,
-                            <span class="st">"Pinu_ban"</span> <span class="op">=</span> <span class="fl">3</span>,
-                            <span class="st">"Pinu_con"</span> <span class="op">=</span> <span class="fl">4</span>, 
-                            <span class="st">"Popu_tre"</span> <span class="op">=</span> <span class="fl">4</span>,
-                            <span class="st">"Pseu_men"</span> <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>,
-                          minimumPlotsPerGamm <span class="op">=</span> <span class="fl">40</span>,
-                          constrainMortalityShape <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
-                            <span class="st">"Abie_bal"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>,<span class="fl">25</span><span class="op">)</span>,
-                            <span class="st">"Abie_las"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>,<span class="fl">25</span><span class="op">)</span>,
-                            <span class="st">"Betu_pap"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>,<span class="fl">20</span><span class="op">)</span>,
-                            <span class="st">"Lari_lar"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>,<span class="fl">25</span><span class="op">)</span>,
-                            <span class="st">"Pice_eng"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>,<span class="fl">25</span><span class="op">)</span>,
-                            <span class="st">"Pice_gla"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>,<span class="fl">25</span><span class="op">)</span>,
-                            <span class="st">"Pice_mar"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>,<span class="fl">25</span><span class="op">)</span>,
-                            <span class="st">"Pinu_ban"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>,<span class="fl">25</span><span class="op">)</span>,
-                            <span class="st">"Pinu_con"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>,<span class="fl">25</span><span class="op">)</span>, 
-                            <span class="st">"Popu_tre"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>,<span class="fl">25</span><span class="op">)</span>,
-                            <span class="st">"Pseu_men"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>,<span class="fl">25</span><span class="op">)</span>
-                          <span class="op">)</span>,
-                          constrainGrowthCurve <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
-                            <span class="st">"Abie_bal"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,
-                            <span class="st">"Abie_las"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,
-                            <span class="st">"Betu_pap"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,
-                            <span class="st">"Lari_lar"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,
-                            <span class="st">"Pice_eng"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,
-                            <span class="st">"Pice_gla"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,
-                            <span class="st">"Pice_mar"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,
-                            <span class="st">"Pinu_ban"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,
-                            <span class="st">"Pinu_con"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, 
-                            <span class="st">"Popu_tre"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,
-                            <span class="st">"Pseu_men"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>
-                          <span class="op">)</span>,
-                          quantileAgeSubset <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
-                            <span class="st">"Abie_bal"</span> <span class="op">=</span> <span class="fl">95</span>, 
-                            <span class="st">"Abie_las"</span> <span class="op">=</span> <span class="fl">95</span>,
-                            <span class="st">"Betu_pap"</span> <span class="op">=</span> <span class="fl">95</span>,
-                            <span class="st">"Lari_lar"</span> <span class="op">=</span> <span class="fl">95</span>,
-                            <span class="st">"Pice_eng"</span> <span class="op">=</span> <span class="fl">95</span>,
-                            <span class="st">"Pice_gla"</span> <span class="op">=</span> <span class="fl">95</span>,
-                            <span class="st">"Pice_mar"</span> <span class="op">=</span> <span class="fl">95</span>,
-                            <span class="st">"Pinu_ban"</span> <span class="op">=</span> <span class="fl">95</span>,
-                            <span class="st">"Pinu_con"</span> <span class="op">=</span> <span class="fl">99</span>, 
-                            <span class="st">"Popu_tre"</span> <span class="op">=</span> <span class="fl">99</span>,
-                            <span class="st">"Pseu_men"</span> <span class="op">=</span> <span class="fl">99</span>
-                          <span class="op">)</span>
-                     <span class="op">)</span><span class="op">)</span>
+<span class="va">parameters</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Biomass_speciesParameters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>GAMMiterations <span class="op">=</span> <span class="fl">2</span>,
+    GAMMknots <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Abie_bal <span class="op">=</span> <span class="fl">3</span>, Abie_las <span class="op">=</span> <span class="fl">3</span>, Betu_pap <span class="op">=</span> <span class="fl">3</span>,
+        Lari_lar <span class="op">=</span> <span class="fl">4</span>, Pice_eng <span class="op">=</span> <span class="fl">4</span>, Pice_gla <span class="op">=</span> <span class="fl">3</span>, Pice_mar <span class="op">=</span> <span class="fl">4</span>,
+        Pinu_ban <span class="op">=</span> <span class="fl">3</span>, Pinu_con <span class="op">=</span> <span class="fl">4</span>, Popu_tre <span class="op">=</span> <span class="fl">4</span>, Pseu_men <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>,
+    minimumPlotsPerGamm <span class="op">=</span> <span class="fl">40</span>, constrainMortalityShape <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Abie_bal <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>,
+        <span class="fl">25</span><span class="op">)</span>, Abie_las <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">25</span><span class="op">)</span>, Betu_pap <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">20</span><span class="op">)</span>, Lari_lar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>,
+        <span class="fl">25</span><span class="op">)</span>, Pice_eng <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">25</span><span class="op">)</span>, Pice_gla <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">25</span><span class="op">)</span>, Pice_mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>,
+        <span class="fl">25</span><span class="op">)</span>, Pinu_ban <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">25</span><span class="op">)</span>, Pinu_con <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">25</span><span class="op">)</span>, Popu_tre <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>,
+        <span class="fl">25</span><span class="op">)</span>, Pseu_men <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">25</span><span class="op">)</span><span class="op">)</span>, constrainGrowthCurve <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Abie_bal <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,
+        <span class="fl">1</span><span class="op">)</span>, Abie_las <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Betu_pap <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Lari_lar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,
+        <span class="fl">1</span><span class="op">)</span>, Pice_eng <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Pice_gla <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Pice_mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,
+        <span class="fl">1</span><span class="op">)</span>, Pinu_ban <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Pinu_con <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Popu_tre <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,
+        <span class="fl">1</span><span class="op">)</span>, Pseu_men <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>, quantileAgeSubset <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Abie_bal <span class="op">=</span> <span class="fl">95</span>,
+        Abie_las <span class="op">=</span> <span class="fl">95</span>, Betu_pap <span class="op">=</span> <span class="fl">95</span>, Lari_lar <span class="op">=</span> <span class="fl">95</span>, Pice_eng <span class="op">=</span> <span class="fl">95</span>,
+        Pice_gla <span class="op">=</span> <span class="fl">95</span>, Pice_mar <span class="op">=</span> <span class="fl">95</span>, Pinu_ban <span class="op">=</span> <span class="fl">95</span>, Pinu_con <span class="op">=</span> <span class="fl">99</span>,
+        Popu_tre <span class="op">=</span> <span class="fl">99</span>, Pseu_men <span class="op">=</span> <span class="fl">99</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 
 
-<span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">simInitAndSpades</span><span class="op">(</span>times <span class="op">=</span> <span class="va">times</span>, 
-                          params <span class="op">=</span> <span class="va">parameters</span>, 
-                          modules <span class="op">=</span> <span class="va">modules</span>, 
-                          paths <span class="op">=</span> <span class="va">paths</span>, 
-                          objects <span class="op">=</span> <span class="va">objects</span><span class="op">)</span>
+<span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">simInitAndSpades</span><span class="op">(</span>times <span class="op">=</span> <span class="va">times</span>, params <span class="op">=</span> <span class="va">parameters</span>,
+    modules <span class="op">=</span> <span class="va">modules</span>, paths <span class="op">=</span> <span class="va">paths</span>, objects <span class="op">=</span> <span class="va">objects</span><span class="op">)</span>
 
 <span class="co">## to inspect the fitted GAMM models:</span>
 <span class="va">mySim</span><span class="op">$</span><span class="va">speciesGAMMs</span><span class="op">$</span><span class="va">Pice_mar</span></code></pre></div>
@@ -1544,6 +1478,18 @@ repository</a> and in
 <span class="header-section-number">6.4</span> References<a class="anchor" aria-label="anchor" href="#references-3"><i class="fas fa-link"></i></a>
 </h2>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-BarrosEtAlinreview" class="csl-entry">
+Barros, C., Luo, Y., Chubaty, A.M., Eddy, I.M.S., Micheletti, T., Boisvenue, C., <em>et al.</em> (n.d.b). Empowering ecologists with a PERFICT workflow: Seamlessly linking data, parameterization, prediction, validation and visualization.
+</div>
+<div id="ref-LambertEtAl2005" class="csl-entry">
+Lambert, M.C., Ung, C.H. &amp; Raulier, F. (2005). <a href="http://cdnsciencepub.com/doi/abs/10.1139/x05-112">Canadian national tree aboveground biomass equations</a>. <em>Canadian Journal of Forest Research</em>, 35, 1996–2018.
+</div>
+<div id="ref-UngEtAl2008" class="csl-entry">
+Ung, C.-H., Bernier, P. &amp; Guo, X.-J. (2008). <a href="https://doi.org/10.1139/X07-224">Canadian national biomass equations: New parameter estimates that include british columbia data</a>. <em>Canadian Journal of Forest Research</em>, 38, 1123–1132.
 </div>
 </div>
   <div class="chapter-nav">
@@ -1595,7 +1541,7 @@ repository</a> and in
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-03-29.</p>
+    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-04-06.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
