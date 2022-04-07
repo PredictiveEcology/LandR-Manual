@@ -4,18 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 6 LandR Biomass_speciesParameters Module | LandR Manual</title>
+<title>Chapter 4 LandR Biomass_speciesParameters Module | LandR Manual</title>
 <meta name="author" content="Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire">
-<meta name="description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  6.0.0.1 Authors: Ian Eddy...">
+<meta name="description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  4.0.0.1 Authors: Ian Eddy...">
 <meta name="generator" content="bookdown 0.25 with bs4_book()">
-<meta property="og:title" content="Chapter 6 LandR Biomass_speciesParameters Module | LandR Manual">
+<meta property="og:title" content="Chapter 4 LandR Biomass_speciesParameters Module | LandR Manual">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://predictiveecology.github.io/LandR-Manual/landr-biomass_speciesparameters-module.html">
 <meta property="og:image" content="https://predictiveecology.github.io/LandR-Manual/figures/LandRHex.png">
-<meta property="og:description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  6.0.0.1 Authors: Ian Eddy...">
+<meta property="og:description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  4.0.0.1 Authors: Ian Eddy...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 6 LandR Biomass_speciesParameters Module | LandR Manual">
-<meta name="twitter:description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  6.0.0.1 Authors: Ian Eddy...">
+<meta name="twitter:title" content="Chapter 4 LandR Biomass_speciesParameters Module | LandR Manual">
+<meta name="twitter:description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  4.0.0.1 Authors: Ian Eddy...">
 <meta name="twitter:image" content="https://predictiveecology.github.io/LandR-Manual/figures/LandRHex.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -70,14 +70,14 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> Preface</a></li>
-<li><a class="" href="landr-biomass_core-module.html"><span class="header-section-number">2</span> LandR Biomass_core Module</a></li>
-<li><a class="" href="landr-data-modules.html"><span class="header-section-number">3</span> LandR Data Modules</a></li>
-<li><a class="" href="landr-biomass_speciesdata-module.html"><span class="header-section-number">4</span> LandR Biomass_speciesData Module</a></li>
-<li><a class="" href="landr-biomass_borealdataprep-module.html"><span class="header-section-number">5</span> LandR Biomass_borealDataPrep Module</a></li>
-<li><a class="active" href="landr-biomass_speciesparameters-module.html"><span class="header-section-number">6</span> LandR Biomass_speciesParameters Module</a></li>
-<li><a class="" href="landr-validation-modules.html"><span class="header-section-number">7</span> LandR Validation Modules</a></li>
-<li><a class="" href="landr-biomass_validationknn-module.html"><span class="header-section-number">8</span> LandR Biomass_validationKNN Module</a></li>
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="landr-biomass_core-module.html"><span class="header-section-number">1</span> LandR Biomass_core Module</a></li>
+<li><a class="" href="landr-data-modules.html">LandR Data Modules</a></li>
+<li><a class="" href="landr-biomass_speciesdata-module.html"><span class="header-section-number">2</span> LandR Biomass_speciesData Module</a></li>
+<li><a class="" href="landr-biomass_borealdataprep-module.html"><span class="header-section-number">3</span> LandR Biomass_borealDataPrep Module</a></li>
+<li><a class="active" href="landr-biomass_speciesparameters-module.html"><span class="header-section-number">4</span> LandR Biomass_speciesParameters Module</a></li>
+<li><a class="" href="landr-validation-modules.html">LandR Validation Modules</a></li>
+<li><a class="" href="landr-biomass_validationknn-module.html"><span class="header-section-number">5</span> LandR Biomass_validationKNN Module</a></li>
 </ul>
 
         <div class="book-extra">
@@ -85,9 +85,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="landr-biomass_speciesparameters-module" class="section level1" number="6">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="landr-biomass_speciesparameters-module" class="section level1" number="4">
 <h1>
-<span class="header-section-number">6</span> LandR <em>Biomass_speciesParameters</em> Module<a class="anchor" aria-label="anchor" href="#landr-biomass_speciesparameters-module"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4</span> LandR <em>Biomass_speciesParameters</em> Module<a class="anchor" aria-label="anchor" href="#landr-biomass_speciesparameters-module"><i class="fas fa-link"></i></a>
 </h1>
 <!-- the following are text references used in captions for LaTeX compatibility -->
 
@@ -97,20 +97,20 @@
 <p><strong>This documentation is work in progress. Potential discrepancies and omissions
 may exist for the time being. If you find any, do contact us using the link
 above^^</strong></p>
-<div id="authors-3" class="section level4" number="6.0.0.1">
+<div id="authors-3" class="section level4" number="4.0.0.1">
 <h4>
-<span class="header-section-number">6.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors-3"><i class="fas fa-link"></i></a>
 </h4>
 <p>Ian Eddy <a href="mailto:ian.eddy@nrcan-rncan.gc.ca" class="email">ian.eddy@nrcan-rncan.gc.ca</a> [aut, cre], Eliot McIntire <a href="mailto:eliot.mcintire@nrcan-rncan.gc.ca" class="email">eliot.mcintire@nrcan-rncan.gc.ca</a> [aut]
 <!-- ideally separate authors with new lines, '\n' not working --></p>
 </div>
-<div id="module-overview-3" class="section level2" number="6.1">
+<div id="module-overview-3" class="section level2" number="4.1">
 <h2>
-<span class="header-section-number">6.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-3"><i class="fas fa-link"></i></a>
 </h2>
-<div id="module-summary-3" class="section level3" number="6.1.1">
+<div id="module-summary-3" class="section level3" number="4.1.1">
 <h3>
-<span class="header-section-number">6.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-3"><i class="fas fa-link"></i></a>
 </h3>
 <p>This module attempts to calibrate species growth and mortality trait values used
 in <em>Biomass_core</em>, by matching theoretical species’ growth curves obtained with
@@ -126,13 +126,13 @@ module which does so (e.g. <em>Biomass_borealDataPrep</em>). However, it may be
 stand-alone in an initial phase for easier inspection of the statistical
 calibration procedure.</p>
 <p><strong>Note that a Google Account is necessary to access the data.</strong></p>
-<p>As of 2022-04-06, the PSP data needed for this module is not freely
+<p>As of 2022-04-07, the PSP data needed for this module is not freely
 available, and data sharing agreements must be obtained from the governments of
 SK, AB, and BC.</p>
 </div>
-<div id="module-inputs-and-parameters-at-a-glance-2" class="section level3" number="6.1.2">
+<div id="module-inputs-and-parameters-at-a-glance-2" class="section level3" number="4.1.2">
 <h3>
-<span class="header-section-number">6.1.2</span> Module inputs and parameters at a glance<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-at-a-glance-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.2</span> Module inputs and parameters at a glance<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-at-a-glance-2"><i class="fas fa-link"></i></a>
 </h3>
 <p><em>Biomass_speciesParameters</em> requires an internet connection and authorized
 access to the default data used for the calibration (e.g., theoretical species
@@ -141,18 +141,18 @@ growth curves and PSD data).</p>
 inspect what the objects are like before supplying their own data or trying to
 run <em>Biomass_speciesFactorial</em> to generate their own theoretical curves.</p>
 <p>Below are the full lists of input objects (Table
-<a href="landr-biomass_speciesparameters-module.html#tab:moduleInputs-Biomass-speciesParameters">6.1</a>) and parameters (Table
-<a href="landr-biomass_speciesparameters-module.html#tab:moduleParams-Biomass-speciesParameters">6.2</a>) that
+<a href="landr-biomass_speciesparameters-module.html#tab:moduleInputs-Biomass-speciesParameters">4.1</a>) and parameters (Table
+<a href="landr-biomass_speciesparameters-module.html#tab:moduleParams-Biomass-speciesParameters">4.2</a>) that
 <em>Biomass_speciesParameters</em> expects. The only inputs that <strong>must</strong> be provided
 (i.e., <em>Biomass_speciesParameters</em> does not have a default for) is
 <code>studyAreaANPP</code> (the study area used extract the PSP data from). All other input
 objects and parameters have internal defaults, but the user may need to request
 access to their online files (see Tables
-<a href="landr-biomass_speciesparameters-module.html#tab:moduleInputs2-Biomass-speciesParameters">6.4</a> and
-<a href="landr-biomass_speciesparameters-module.html#tab:moduleParams2-Biomass-speciesParameters">6.5</a>).</p>
+<a href="landr-biomass_speciesparameters-module.html#tab:moduleInputs2-Biomass-speciesParameters">4.4</a> and
+<a href="landr-biomass_speciesparameters-module.html#tab:moduleParams2-Biomass-speciesParameters">4.5</a>).</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleInputs-Biomass-speciesParameters">Table 6.1: </span>List of <em>Biomass_speciesParameters</em> input objects and their description.
+<span id="tab:moduleInputs-Biomass-speciesParameters">Table 4.1: </span>List of <em>Biomass_speciesParameters</em> input objects and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -239,7 +239,7 @@ study area used to crop PSP data before building growth curves
 </table></div>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleParams-Biomass-speciesParameters">Table 6.2: </span>List of <em>Biomass_speciesParameters</em> parameters and their description.
+<span id="tab:moduleParams-Biomass-speciesParameters">Table 4.2: </span>List of <em>Biomass_speciesParameters</em> parameters and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -429,9 +429,9 @@ Should this entire module be run with caching activated? This is generally inten
 </tbody>
 </table></div>
 </div>
-<div id="events-3" class="section level3" number="6.1.3">
+<div id="events-3" class="section level3" number="4.1.3">
 <h3>
-<span class="header-section-number">6.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-3"><i class="fas fa-link"></i></a>
 </h3>
 <p>The following events take place during a <em>Biomass_speciesParameters</em> run. Note
 that this module only runs once (in one “time step”) and only executes one event
@@ -444,15 +444,15 @@ objects and parameters for the simulation and performs the calibration (see
 </ul>
 <p>See <a href="landr-biomass_validationknn-module.html#simulation-flow-4">Simulation flow</a> for further detail.</p>
 </div>
-<div id="module-outputs-3" class="section level3" number="6.1.4">
+<div id="module-outputs-3" class="section level3" number="4.1.4">
 <h3>
-<span class="header-section-number">6.1.4</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.4</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-3"><i class="fas fa-link"></i></a>
 </h3>
 <p>The module produces the following outputs (Table
-<a href="landr-biomass_speciesparameters-module.html#tab:moduleOutputs-Biomass-speciesParameters">6.3</a>):</p>
+<a href="landr-biomass_speciesparameters-module.html#tab:moduleOutputs-Biomass-speciesParameters">4.3</a>):</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleOutputs-Biomass-speciesParameters">Table 6.3: </span>List of <em>Biomass_speciesParameters</em> output objects and their description.
+<span id="tab:moduleOutputs-Biomass-speciesParameters">Table 4.3: </span>List of <em>Biomass_speciesParameters</em> output objects and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -490,9 +490,9 @@ a list of mixed-effect general additive models (gamm) for each tree species mode
 </tbody>
 </table></div>
 </div>
-<div id="links-to-other-modules-3" class="section level3" number="6.1.5">
+<div id="links-to-other-modules-3" class="section level3" number="4.1.5">
 <h3>
-<span class="header-section-number">6.1.5</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.5</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-3"><i class="fas fa-link"></i></a>
 </h3>
 <p>Intended to be used with another data module, like <em>Biomass_borealDataPrep</em>,
 which will prepare all other traits and parameters for <em>Biomass_core</em>. You can
@@ -500,22 +500,22 @@ see all <em>potential</em> module linkages within the LandR ecosystem
 <a href="https://rpubs.com/PredictiveEcology/LandR_Module_Ecosystem">here</a>. Select
 <em>Biomass_speciesParameters</em> from the drop-down menu to see linkages.</p>
 </div>
-<div id="getting-help-3" class="section level3" number="6.1.6">
+<div id="getting-help-3" class="section level3" number="4.1.6">
 <h3>
-<span class="header-section-number">6.1.6</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.6</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-3"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><a href="https://github.com/PredictiveEcology/Biomass_speciesParameters/issues" class="uri">https://github.com/PredictiveEcology/Biomass_speciesParameters/issues</a></li>
 </ul>
 </div>
 </div>
-<div id="module-manual-3" class="section level2" number="6.2">
+<div id="module-manual-3" class="section level2" number="4.2">
 <h2>
-<span class="header-section-number">6.2</span> Module manual<a class="anchor" aria-label="anchor" href="#module-manual-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2</span> Module manual<a class="anchor" aria-label="anchor" href="#module-manual-3"><i class="fas fa-link"></i></a>
 </h2>
-<div id="detailed-description-2" class="section level3" number="6.2.1">
+<div id="detailed-description-2" class="section level3" number="4.2.1">
 <h3>
-<span class="header-section-number">6.2.1</span> Detailed description<a class="anchor" aria-label="anchor" href="#detailed-description-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.1</span> Detailed description<a class="anchor" aria-label="anchor" href="#detailed-description-2"><i class="fas fa-link"></i></a>
 </h3>
 <p>Tree cohort growth and mortality in <em>Biomass_core</em> are essentially determined by
 five parameters: <code>growthcurve</code>, <code>mortalityshape</code>, maximum biomass (<code>maxB</code>),
@@ -538,9 +538,9 @@ and <code>mortalityshape</code>, respectively).</p>
 <p>The module generally follows other data modules, like <em>Biomass_boreaDataPrep</em>,
 as it also attempts to calibrate previously estimated spatially varying species
 traits (<code>maxB</code> and <code>maxANPP</code>).</p>
-<div id="permanent-sample-plot-data" class="section level4" number="6.2.1.1">
+<div id="permanent-sample-plot-data" class="section level4" number="4.2.1.1">
 <h4>
-<span class="header-section-number">6.2.1.1</span> Permanent sample plot data<a class="anchor" aria-label="anchor" href="#permanent-sample-plot-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.1.1</span> Permanent sample plot data<a class="anchor" aria-label="anchor" href="#permanent-sample-plot-data"><i class="fas fa-link"></i></a>
 </h4>
 <p><em>Biomass_speciesParameters</em> can use all the PSP data available (note that it may
 span several thousands of kilometres), or select the data based on a shapefile
@@ -560,9 +560,9 @@ individual measurement of each plot.</p>
 <p>Note that the model used to calculate biomass can be changed to <span class="citation">Ung <em>et al.</em> (<a href="#ref-UngEtAl2008" role="doc-biblioref">2008</a>)</span> via
 the <code>P(sim)$biomassModel</code> module parameter.</p>
 </div>
-<div id="simulated-species-data" class="section level4" number="6.2.1.2">
+<div id="simulated-species-data" class="section level4" number="4.2.1.2">
 <h4>
-<span class="header-section-number">6.2.1.2</span> Simulated species data<a class="anchor" aria-label="anchor" href="#simulated-species-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.1.2</span> Simulated species data<a class="anchor" aria-label="anchor" href="#simulated-species-data"><i class="fas fa-link"></i></a>
 </h4>
 <!-- the following need to be revised in light of new methods -->
 <p>The default dataset of theoretical species curves (biomass accumulation curves,
@@ -581,9 +581,9 @@ increments of 0.25; <code>maxBiomass</code> was kept constant at 5000.</p>
 <em>Biomass_speciesParameters</em>, so that the module can be run without needing to
 re-simulate the theoretical curves.</p>
 </div>
-<div id="parameter-estimationcalibration-1" class="section level4" number="6.2.1.3">
+<div id="parameter-estimationcalibration-1" class="section level4" number="4.2.1.3">
 <h4>
-<span class="header-section-number">6.2.1.3</span> Parameter estimation/calibration<a class="anchor" aria-label="anchor" href="#parameter-estimationcalibration-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.1.3</span> Parameter estimation/calibration<a class="anchor" aria-label="anchor" href="#parameter-estimationcalibration-1"><i class="fas fa-link"></i></a>
 </h4>
 <p><em>Biomass_speciesParameters</em> calibrates <code>growthcurve</code>, <code>mortalityshape</code>, <code>maxB</code>
 and <code>maxANPP</code> by matching the theoretical species curves against observed
@@ -611,8 +611,8 @@ additive mixed models (GAMMs) that relate species biomass (<span class="math inl
 (<span class="math inline">\(standAge\)</span>), accounting for the random effects of the measurement year
 (<span class="math inline">\(measureYear\)</span>) and plot (<span class="math inline">\(plotID\)</span>) on the intercept:</p>
 <span class="math display" id="eq:GAMM">\[\begin{equation}
-B \sim f_{1}(standAge) + (\sim 1 | measureYear + plotID)
-\tag{6.1}
+  B \sim f_{1}(standAge) + (\sim 1 | measureYear + plotID)
+  \tag{4.1}
 \end{equation}\]</span>
 <p>where <span class="math inline">\(f_{1}\)</span> denotes the smoother function. To avoid overfitting, the module
 constrains the smoother on stand age to a maximum smoothing degree of 3 (i.e. 3
@@ -625,8 +625,8 @@ biomass in a plot &gt; 0.5; <span class="math inline">\(domSpeciesB_{1}\)</span>
 and 2) dividing the species average biomass by the average biomass across all
 <em>n</em> dominant species (<span class="math inline">\(allDomSpeciesB\)</span>):</p>
 <span class="math display" id="eq:Bweights">\[\begin{equation}
-\frac{\overline{\rm domSpeciesB_{1}}}{\overline{\rm allDomSpeciesB}}
-\tag{6.2}
+  \frac{\overline{\rm domSpeciesB_{1}}}{\overline{\rm allDomSpeciesB}}
+  \tag{4.2}
 \end{equation}\]</span>
 <p>For the added 0 age and 0 biomass data the module uses weights equal to 1.</p>
 <p>It is possible that some selected species do not have enough data to allow for
@@ -666,8 +666,8 @@ maximum biomass to the potential maximum biomass (<code>maxBiomass</code>), to r
 <p>Finally, the module calibrates <code>maxANPP</code> using the <code>mANPPproportion</code> value from
 the best matching theoretical growth curve as:</p>
 <span class="math display" id="eq:maxANPPcalib">\[\begin{equation}
-maxB \times \frac{mANPPproportion}{100}
-\tag{6.3}
+  maxB \times \frac{mANPPproportion}{100}
+  \tag{4.3}
 \end{equation}\]</span>
 <p>where <code>maxB</code> is already the calibrated version. In cases where there are not
 sufficient PSP data to fit the GAMMs and perform the calibration,
@@ -676,22 +676,22 @@ LANDIS-II applications in Canada’s boreal forests. As already stated above, th
 final <code>maxANPP</code> value is constrained between 2.0 and 5.0 by default.</p>
 </div>
 </div>
-<div id="initialization-inputs-and-parameters-3" class="section level3" number="6.2.2">
+<div id="initialization-inputs-and-parameters-3" class="section level3" number="4.2.2">
 <h3>
-<span class="header-section-number">6.2.2</span> Initialization, inputs and parameters<a class="anchor" aria-label="anchor" href="#initialization-inputs-and-parameters-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.2</span> Initialization, inputs and parameters<a class="anchor" aria-label="anchor" href="#initialization-inputs-and-parameters-3"><i class="fas fa-link"></i></a>
 </h3>
 <p><em>Biomass_speciesParameters</em> initializes itself and prepares all inputs provided
 there is an active internet connection and the user has access to the data (and
 a Google Account to do so)</p>
-<div id="input-objects-3" class="section level4" number="6.2.2.1">
+<div id="input-objects-3" class="section level4" number="4.2.2.1">
 <h4>
-<span class="header-section-number">6.2.2.1</span> Input objects<a class="anchor" aria-label="anchor" href="#input-objects-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.2.1</span> Input objects<a class="anchor" aria-label="anchor" href="#input-objects-3"><i class="fas fa-link"></i></a>
 </h4>
-<p>Table <a href="landr-biomass_speciesparameters-module.html#tab:moduleInputs2-Biomass-speciesParameters">6.4</a> shows the full list of
+<p>Table <a href="landr-biomass_speciesparameters-module.html#tab:moduleInputs2-Biomass-speciesParameters">4.4</a> shows the full list of
 input objects used by the module.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleInputs2-Biomass-speciesParameters">Table 6.4: </span>List of <em>Biomass_speciesParameters</em> input objects and their description.
+<span id="tab:moduleInputs2-Biomass-speciesParameters">Table 4.4: </span>List of <em>Biomass_speciesParameters</em> input objects and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -839,36 +839,49 @@ NA
 <p>Of these inputs, the following are particularly important and deserve special
 attention:</p>
 <ul>
-<li><p><strong>Spatial layers</strong></p></li>
-<li><p><code>studyAreaANPP</code> – shapefile. A <code>SpatialPolygonsDataFrame</code> with a single
+<li>
+<p><strong>Spatial layers</strong></p>
+<ul>
+<li>
+<code>studyAreaANPP</code> – shapefile. A <code>SpatialPolygonsDataFrame</code> with a single
 polygon determining the where the PSP should be subset to simulation
-will take place. This input object <strong>must be supplied by the user</strong>.</p></li>
-<li><p><strong>Tables</strong></p></li>
-<li><p><code>speciesTableFactorial</code> and <code>cohortDataFactorial</code> – a tables of
+will take place. This input object <strong>must be supplied by the user</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Tables</strong></p>
+<ul>
+<li>
+<code>speciesTableFactorial</code> and <code>cohortDataFactorial</code> – a tables of
 species trait combinations and the theoretical species grwoth curve data
-(respectively)</p></li>
-<li><p><code>PSPmeasure_sppParams</code>, <code>PSPplot_sppParams</code> and <code>PSPgis_sppParams</code> – tree measurement, biomass growth
+(respectively)</li>
+<li>
+<code>PSPmeasure_sppParams</code>, <code>PSPplot_sppParams</code> and <code>PSPgis_sppParams</code> – tree measurement, biomass growth
 and geographical data of the PSP datasets used to buildi observed
-species growth curves.</p></li>
-<li><p><code>species</code> – a table of invariant species traits that may have been
+species growth curves.</li>
+<li>
+<code>species</code> – a table of invariant species traits that may have been
 produced by another module. It <strong>must</strong> contain the columns ‘species’,
-‘growthcurve’ and ‘mortality shape’, whose values will be calibrated.</p></li>
-<li><p><code>speciesEcoregion</code> – table of spatially-varying species traits that may
+‘growthcurve’ and ‘mortality shape’, whose values will be calibrated.</li>
+<li>
+<code>speciesEcoregion</code> – table of spatially-varying species traits that may
 have been produced by another module. It <strong>must</strong> contain the columns
 ‘speciesCode’, ‘maxB’ and ‘maxANPP’ and ‘ecoregionGroup’ (the
 ecolocation ID). ‘maxB’ and ‘maxANPP’ values will be calibrated by
-species.</p></li>
+species.</li>
+</ul>
+</li>
 </ul>
 </div>
-<div id="parameters-3" class="section level4" number="6.2.2.2">
+<div id="parameters-3" class="section level4" number="4.2.2.2">
 <h4>
-<span class="header-section-number">6.2.2.2</span> Parameters<a class="anchor" aria-label="anchor" href="#parameters-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.2.2</span> Parameters<a class="anchor" aria-label="anchor" href="#parameters-3"><i class="fas fa-link"></i></a>
 </h4>
-<p>Table <a href="landr-biomass_speciesparameters-module.html#tab:moduleParams2-Biomass-speciesParameters">6.5</a> lists all parameters
+<p>Table <a href="landr-biomass_speciesparameters-module.html#tab:moduleParams2-Biomass-speciesParameters">4.5</a> lists all parameters
 used in <em>Biomass_speciesParameters</em> and their detailed information.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleParams2-Biomass-speciesParameters">Table 6.5: </span>List of <em>Biomass_speciesParameters</em> parameters and their description.
+<span id="tab:moduleParams2-Biomass-speciesParameters">Table 4.5: </span>List of <em>Biomass_speciesParameters</em> parameters and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -1335,33 +1348,45 @@ Should this entire module be run with caching activated? This is generally inten
 </table></div>
 <p>Of these parameters, the following are particularly important:</p>
 <ul>
-<li><p><strong>Calibration parameters</strong></p></li>
+<li>
+<p><strong>Calibration parameters</strong></p>
+<ul>
 <li><p><code>GAMMiterations</code> and <code>GAMMknots</code> – control the number of iterattions
 and smoother degree used to fit the GAMMs, respectively.</p></li>
 <li><p><code>constrainGrowthCurve</code>, <code>constrainMortalityShape</code> and <code>constrainMaxANPP</code>
 – determine the upper and lower boundaries of the calibrated values of
 <code>growthcurve</code>, <code>mortalityshape</code> and <code>maxANPP</code>, respectively.</p></li>
-<li><p><strong>Data processing</strong></p></li>
+</ul>
+</li>
+<li>
+<p><strong>Data processing</strong></p>
+<ul>
 <li><p><code>minimumPlotsPerGamm</code> – define a minimum number of PSP plots needed to
 fit the GAMMs.</p></li>
 <li><p><code>PSPperiod</code> – PSP data period to use.</p></li>
 <li><p><code>quantileAgeSubset</code> – upper quantile age value used to subset PSP data.</p></li>
 </ul>
+</li>
+</ul>
 </div>
-<div id="outputs-1" class="section level4" number="6.2.2.3">
+<div id="outputs-1" class="section level4" number="4.2.2.3">
 <h4>
-<span class="header-section-number">6.2.2.3</span> Outputs<a class="anchor" aria-label="anchor" href="#outputs-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.2.3</span> Outputs<a class="anchor" aria-label="anchor" href="#outputs-1"><i class="fas fa-link"></i></a>
 </h4>
 <ul>
-<li><p><strong>Tables</strong></p></li>
+<li>
+<p><strong>Tables</strong></p>
+<ul>
 <li><p><code>species</code> and <code>speciesEcoregion</code> – tables with calibrated trait values.</p></li>
 <li><p><code>speciesGAMMs</code> – the fitted GAMM model objects for each species.</p></li>
 </ul>
+</li>
+</ul>
 </div>
 </div>
-<div id="simulation-flow-3" class="section level3" number="6.2.3">
+<div id="simulation-flow-3" class="section level3" number="4.2.3">
 <h3>
-<span class="header-section-number">6.2.3</span> Simulation flow<a class="anchor" aria-label="anchor" href="#simulation-flow-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.3</span> Simulation flow<a class="anchor" aria-label="anchor" href="#simulation-flow-3"><i class="fas fa-link"></i></a>
 </h3>
 <p>The general flow of <em>Biomass_speciesParameters</em> processes is:</p>
 <ol style="list-style-type: decimal">
@@ -1380,9 +1405,9 @@ values to those in the species traits table (<code>species</code>) and with
 </ol>
 </div>
 </div>
-<div id="usage-example-3" class="section level2" number="6.3">
+<div id="usage-example-3" class="section level2" number="4.3">
 <h2>
-<span class="header-section-number">6.3</span> Usage example<a class="anchor" aria-label="anchor" href="#usage-example-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3</span> Usage example<a class="anchor" aria-label="anchor" href="#usage-example-3"><i class="fas fa-link"></i></a>
 </h2>
 <p>This module can be run stand-alone, but it won’t do much more than calibrate
 species trait values based on dummy input trait values. We provide an example of
@@ -1393,9 +1418,9 @@ granted access to the data.</p>
 <p>A realistic usage example of this module and a few others can be found in <a href="https://github.com/CeresBarros/LandRBiomass_publication">this
 repository</a> and in
 <span class="citation">Barros <em>et al.</em> (<a href="#ref-BarrosEtAlinreview" role="doc-biblioref">n.d.b</a>)</span>.</p>
-<div id="load-spades-and-other-packages.-1" class="section level3" number="6.3.1">
+<div id="load-spades-and-other-packages.-1" class="section level3" number="4.3.1">
 <h3>
-<span class="header-section-number">6.3.1</span> Load <code>SpaDES</code> and other packages.<a class="anchor" aria-label="anchor" href="#load-spades-and-other-packages.-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3.1</span> Load <code>SpaDES</code> and other packages.<a class="anchor" aria-label="anchor" href="#load-spades-and-other-packages.-1"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
@@ -1406,9 +1431,9 @@ repository</a> and in
 <span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/SpaDES.install"</span>, <span class="st">"SpaDES"</span>, <span class="st">"PredictiveEcology/SpaDES.core@development"</span><span class="op">)</span>,
     install_githubArgs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="get-module-necessary-packages-and-set-up-folder-directories-1" class="section level3" number="6.3.2">
+<div id="get-module-necessary-packages-and-set-up-folder-directories-1" class="section level3" number="4.3.2">
 <h3>
-<span class="header-section-number">6.3.2</span> Get module, necessary packages and set up folder directories<a class="anchor" aria-label="anchor" href="#get-module-necessary-packages-and-set-up-folder-directories-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3.2</span> Get module, necessary packages and set up folder directories<a class="anchor" aria-label="anchor" href="#get-module-necessary-packages-and-set-up-folder-directories-1"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tempDir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>
@@ -1424,9 +1449,9 @@ repository</a> and in
 <span class="co">## make sure all necessary packages are installed:</span>
 <span class="fu">makeSureAllPackagesInstalled</span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="setup-simulation-2" class="section level3" number="6.3.3">
+<div id="setup-simulation-2" class="section level3" number="4.3.3">
 <h3>
-<span class="header-section-number">6.3.3</span> Setup simulation<a class="anchor" aria-label="anchor" href="#setup-simulation-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3.3</span> Setup simulation<a class="anchor" aria-label="anchor" href="#setup-simulation-2"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades.predictiveecology.org">SpaDES</a></span><span class="op">)</span>
@@ -1473,9 +1498,9 @@ repository</a> and in
 <span class="va">mySim</span><span class="op">$</span><span class="va">speciesGAMMs</span><span class="op">$</span><span class="va">Pice_mar</span></code></pre></div>
 </div>
 </div>
-<div id="references-3" class="section level2" number="6.4">
+<div id="references-3" class="section level2" number="4.4">
 <h2>
-<span class="header-section-number">6.4</span> References<a class="anchor" aria-label="anchor" href="#references-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4</span> References<a class="anchor" aria-label="anchor" href="#references-3"><i class="fas fa-link"></i></a>
 </h2>
 
 </div>
@@ -1493,37 +1518,37 @@ Ung, C.-H., Bernier, P. &amp; Guo, X.-J. (2008). <a href="https://doi.org/10.113
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="landr-biomass_borealdataprep-module.html"><span class="header-section-number">5</span> LandR Biomass_borealDataPrep Module</a></div>
-<div class="next"><a href="landr-validation-modules.html"><span class="header-section-number">7</span> LandR Validation Modules</a></div>
+<div class="prev"><a href="landr-biomass_borealdataprep-module.html"><span class="header-section-number">3</span> LandR Biomass_borealDataPrep Module</a></div>
+<div class="next"><a href="landr-validation-modules.html">LandR Validation Modules</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#landr-biomass_speciesparameters-module"><span class="header-section-number">6</span> LandR Biomass_speciesParameters Module</a></li>
+<li><a class="nav-link" href="#landr-biomass_speciesparameters-module"><span class="header-section-number">4</span> LandR Biomass_speciesParameters Module</a></li>
 <li>
-<a class="nav-link" href="#module-overview-3"><span class="header-section-number">6.1</span> Module Overview</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#module-summary-3"><span class="header-section-number">6.1.1</span> Module summary</a></li>
-<li><a class="nav-link" href="#module-inputs-and-parameters-at-a-glance-2"><span class="header-section-number">6.1.2</span> Module inputs and parameters at a glance</a></li>
-<li><a class="nav-link" href="#events-3"><span class="header-section-number">6.1.3</span> Events</a></li>
-<li><a class="nav-link" href="#module-outputs-3"><span class="header-section-number">6.1.4</span> Module outputs</a></li>
-<li><a class="nav-link" href="#links-to-other-modules-3"><span class="header-section-number">6.1.5</span> Links to other modules</a></li>
-<li><a class="nav-link" href="#getting-help-3"><span class="header-section-number">6.1.6</span> Getting help</a></li>
+<a class="nav-link" href="#module-overview-3"><span class="header-section-number">4.1</span> Module Overview</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#module-summary-3"><span class="header-section-number">4.1.1</span> Module summary</a></li>
+<li><a class="nav-link" href="#module-inputs-and-parameters-at-a-glance-2"><span class="header-section-number">4.1.2</span> Module inputs and parameters at a glance</a></li>
+<li><a class="nav-link" href="#events-3"><span class="header-section-number">4.1.3</span> Events</a></li>
+<li><a class="nav-link" href="#module-outputs-3"><span class="header-section-number">4.1.4</span> Module outputs</a></li>
+<li><a class="nav-link" href="#links-to-other-modules-3"><span class="header-section-number">4.1.5</span> Links to other modules</a></li>
+<li><a class="nav-link" href="#getting-help-3"><span class="header-section-number">4.1.6</span> Getting help</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#module-manual-3"><span class="header-section-number">6.2</span> Module manual</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#detailed-description-2"><span class="header-section-number">6.2.1</span> Detailed description</a></li>
-<li><a class="nav-link" href="#initialization-inputs-and-parameters-3"><span class="header-section-number">6.2.2</span> Initialization, inputs and parameters</a></li>
-<li><a class="nav-link" href="#simulation-flow-3"><span class="header-section-number">6.2.3</span> Simulation flow</a></li>
+<a class="nav-link" href="#module-manual-3"><span class="header-section-number">4.2</span> Module manual</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#detailed-description-2"><span class="header-section-number">4.2.1</span> Detailed description</a></li>
+<li><a class="nav-link" href="#initialization-inputs-and-parameters-3"><span class="header-section-number">4.2.2</span> Initialization, inputs and parameters</a></li>
+<li><a class="nav-link" href="#simulation-flow-3"><span class="header-section-number">4.2.3</span> Simulation flow</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#usage-example-3"><span class="header-section-number">6.3</span> Usage example</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#load-spades-and-other-packages.-1"><span class="header-section-number">6.3.1</span> Load SpaDES and other packages.</a></li>
-<li><a class="nav-link" href="#get-module-necessary-packages-and-set-up-folder-directories-1"><span class="header-section-number">6.3.2</span> Get module, necessary packages and set up folder directories</a></li>
-<li><a class="nav-link" href="#setup-simulation-2"><span class="header-section-number">6.3.3</span> Setup simulation</a></li>
+<a class="nav-link" href="#usage-example-3"><span class="header-section-number">4.3</span> Usage example</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#load-spades-and-other-packages.-1"><span class="header-section-number">4.3.1</span> Load SpaDES and other packages.</a></li>
+<li><a class="nav-link" href="#get-module-necessary-packages-and-set-up-folder-directories-1"><span class="header-section-number">4.3.2</span> Get module, necessary packages and set up folder directories</a></li>
+<li><a class="nav-link" href="#setup-simulation-2"><span class="header-section-number">4.3.3</span> Setup simulation</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#references-3"><span class="header-section-number">6.4</span> References</a></li>
+<li><a class="nav-link" href="#references-3"><span class="header-section-number">4.4</span> References</a></li>
 </ul>
 
       <div class="book-extra">
@@ -1541,7 +1566,7 @@ Ung, C.-H., Bernier, P. &amp; Guo, X.-J. (2008). <a href="https://doi.org/10.113
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-04-06.</p>
+    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-04-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

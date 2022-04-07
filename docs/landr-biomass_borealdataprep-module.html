@@ -4,18 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 5 LandR Biomass_borealDataPrep Module | LandR Manual</title>
+<title>Chapter 3 LandR Biomass_borealDataPrep Module | LandR Manual</title>
 <meta name="author" content="Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire">
-<meta name="description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  5.0.0.1 Authors: Yong Luo...">
+<meta name="description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  3.0.0.1 Authors: Yong Luo...">
 <meta name="generator" content="bookdown 0.25 with bs4_book()">
-<meta property="og:title" content="Chapter 5 LandR Biomass_borealDataPrep Module | LandR Manual">
+<meta property="og:title" content="Chapter 3 LandR Biomass_borealDataPrep Module | LandR Manual">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://predictiveecology.github.io/LandR-Manual/landr-biomass_borealdataprep-module.html">
 <meta property="og:image" content="https://predictiveecology.github.io/LandR-Manual/figures/LandRHex.png">
-<meta property="og:description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  5.0.0.1 Authors: Yong Luo...">
+<meta property="og:description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  3.0.0.1 Authors: Yong Luo...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 5 LandR Biomass_borealDataPrep Module | LandR Manual">
-<meta name="twitter:description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  5.0.0.1 Authors: Yong Luo...">
+<meta name="twitter:title" content="Chapter 3 LandR Biomass_borealDataPrep Module | LandR Manual">
+<meta name="twitter:description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  3.0.0.1 Authors: Yong Luo...">
 <meta name="twitter:image" content="https://predictiveecology.github.io/LandR-Manual/figures/LandRHex.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -70,14 +70,14 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> Preface</a></li>
-<li><a class="" href="landr-biomass_core-module.html"><span class="header-section-number">2</span> LandR Biomass_core Module</a></li>
-<li><a class="" href="landr-data-modules.html"><span class="header-section-number">3</span> LandR Data Modules</a></li>
-<li><a class="" href="landr-biomass_speciesdata-module.html"><span class="header-section-number">4</span> LandR Biomass_speciesData Module</a></li>
-<li><a class="active" href="landr-biomass_borealdataprep-module.html"><span class="header-section-number">5</span> LandR Biomass_borealDataPrep Module</a></li>
-<li><a class="" href="landr-biomass_speciesparameters-module.html"><span class="header-section-number">6</span> LandR Biomass_speciesParameters Module</a></li>
-<li><a class="" href="landr-validation-modules.html"><span class="header-section-number">7</span> LandR Validation Modules</a></li>
-<li><a class="" href="landr-biomass_validationknn-module.html"><span class="header-section-number">8</span> LandR Biomass_validationKNN Module</a></li>
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="landr-biomass_core-module.html"><span class="header-section-number">1</span> LandR Biomass_core Module</a></li>
+<li><a class="" href="landr-data-modules.html">LandR Data Modules</a></li>
+<li><a class="" href="landr-biomass_speciesdata-module.html"><span class="header-section-number">2</span> LandR Biomass_speciesData Module</a></li>
+<li><a class="active" href="landr-biomass_borealdataprep-module.html"><span class="header-section-number">3</span> LandR Biomass_borealDataPrep Module</a></li>
+<li><a class="" href="landr-biomass_speciesparameters-module.html"><span class="header-section-number">4</span> LandR Biomass_speciesParameters Module</a></li>
+<li><a class="" href="landr-validation-modules.html">LandR Validation Modules</a></li>
+<li><a class="" href="landr-biomass_validationknn-module.html"><span class="header-section-number">5</span> LandR Biomass_validationKNN Module</a></li>
 </ul>
 
         <div class="book-extra">
@@ -85,9 +85,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="landr-biomass_borealdataprep-module" class="section level1" number="5">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="landr-biomass_borealdataprep-module" class="section level1" number="3">
 <h1>
-<span class="header-section-number">5</span> LandR <em>Biomass_borealDataPrep</em> Module<a class="anchor" aria-label="anchor" href="#landr-biomass_borealdataprep-module"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3</span> LandR <em>Biomass_borealDataPrep</em> Module<a class="anchor" aria-label="anchor" href="#landr-biomass_borealdataprep-module"><i class="fas fa-link"></i></a>
 </h1>
 <!-- the following are text references used in captions for LaTeX compatibility -->
 
@@ -97,20 +97,20 @@
 <p><strong>This documentation is work in progress. Potential discrepancies and omissions
 may exist for the time being. If you find any, do contact us using the link
 above^^</strong></p>
-<div id="authors-2" class="section level4" number="5.0.0.1">
+<div id="authors-2" class="section level4" number="3.0.0.1">
 <h4>
-<span class="header-section-number">5.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors-2"><i class="fas fa-link"></i></a>
 </h4>
 <p>Yong Luo <a href="mailto:yong.luo@canada.ca" class="email">yong.luo@canada.ca</a> [aut], Eliot J B McIntire <a href="mailto:eliot.mcintire@canada.ca" class="email">eliot.mcintire@canada.ca</a> [aut, cre], Ceres Barros <a href="mailto:cbarros@mail.ubc.ca" class="email">cbarros@mail.ubc.ca</a> [ctb], Alex M. Chubaty <a href="mailto:achubaty@for-cast.ca" class="email">achubaty@for-cast.ca</a> [ctb]
 <!-- ideally separate authors with new lines, '\n' not working --></p>
 </div>
-<div id="module-overview-2" class="section level2" number="5.1">
+<div id="module-overview-2" class="section level2" number="3.1">
 <h2>
-<span class="header-section-number">5.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-2"><i class="fas fa-link"></i></a>
 </h2>
-<div id="module-summary-2" class="section level3" number="5.1.1">
+<div id="module-summary-2" class="section level3" number="3.1.1">
 <h3>
-<span class="header-section-number">5.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-2"><i class="fas fa-link"></i></a>
 </h3>
 <p>This module converts open datasets that are available for all of Canada’s
 forests, into the input requirements for <em>Biomass_core</em>. It has been designed
@@ -130,9 +130,9 @@ Cyr for LANDIS-II simulations, with some exceptions (see below).</p>
 <p>Keeping data preparation outside of the LandR <em>Biomass_core</em> module maintains
 the modularity of the LandR modules.</p>
 </div>
-<div id="module-inputs-and-parameters-at-a-glance-1" class="section level3" number="5.1.2">
+<div id="module-inputs-and-parameters-at-a-glance-1" class="section level3" number="3.1.2">
 <h3>
-<span class="header-section-number">5.1.2</span> Module inputs and parameters at a glance<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-at-a-glance-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.2</span> Module inputs and parameters at a glance<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-at-a-glance-1"><i class="fas fa-link"></i></a>
 </h3>
 <p><em>Biomass_borealDataPrep</em> requires internet access to retrieve default data. Raw
 data layers downloaded by the module are saved in <code>dataPath(sim)</code>, which can be
@@ -143,18 +143,18 @@ dataURLs. <em>Biomass_borealDataPrep</em> is meant to parametrise <em>Biomass_co
 Western Canadian boreal forests, but provides a good foundation to develop other
 other modules aimed at different geographical contexts.</p>
 <p>Below are the full lists of input objects (Table
-<a href="landr-biomass_borealdataprep-module.html#tab:moduleInputs-Biomass-borealDataPrep">5.1</a>) and parameters (Table
-<a href="landr-biomass_borealdataprep-module.html#tab:moduleParams-Biomass-borealDataPrep">5.2</a>) that <em>Biomass_borealDataPrep</em>
+<a href="landr-biomass_borealdataprep-module.html#tab:moduleInputs-Biomass-borealDataPrep">3.1</a>) and parameters (Table
+<a href="landr-biomass_borealdataprep-module.html#tab:moduleParams-Biomass-borealDataPrep">3.2</a>) that <em>Biomass_borealDataPrep</em>
 expects. The only inputs that <strong>must</strong> be provided (i.e.,
 <em>Biomass_borealDataPrep</em> does not have a default for) are <code>studyArea</code> (the study
 area used to simulate forest dynamics <em>Biomass_core</em>) and <code>studyAreaLarge</code> (a
 potentially larger study area used to derive parameter values – e.g., species
 traits). All other input objects and parameters have internal defaults (see
-Tables <a href="landr-biomass_borealdataprep-module.html#tab:moduleInputs2-Biomass-borealDataPrep">5.5</a> and
-<a href="landr-biomass_borealdataprep-module.html#tab:moduleParams2-Biomass-borealDataPrep">5.6</a>).</p>
+Tables <a href="landr-biomass_borealdataprep-module.html#tab:moduleInputs2-Biomass-borealDataPrep">3.5</a> and
+<a href="landr-biomass_borealdataprep-module.html#tab:moduleParams2-Biomass-borealDataPrep">3.6</a>).</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleInputs-Biomass-borealDataPrep">Table 5.1: </span>List of <em>Biomass_borealDataPrep</em> input objects and their description.
+<span id="tab:moduleInputs-Biomass-borealDataPrep">Table 3.1: </span>List of <em>Biomass_borealDataPrep</em> input objects and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -297,7 +297,7 @@ multipolygon (potentially larger than <code>studyArea</code>) used for parameter
 </table></div>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleParams-Biomass-borealDataPrep">Table 5.2: </span>List of <em>Biomass_borealDataPrep</em> parameters and their description.
+<span id="tab:moduleParams-Biomass-borealDataPrep">Table 3.2: </span>List of <em>Biomass_borealDataPrep</em> parameters and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -591,9 +591,9 @@ Internal. Can be names of events or the whole module name; these will be cached 
 </tbody>
 </table></div>
 </div>
-<div id="events-2" class="section level3" number="5.1.3">
+<div id="events-2" class="section level3" number="3.1.3">
 <h3>
-<span class="header-section-number">5.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-2"><i class="fas fa-link"></i></a>
 </h3>
 <p>The following events take place during a <em>Biomass_borealDataPrep</em> run. Note that
 this module only runs once (in one “time step”).</p>
@@ -611,15 +611,15 @@ succession dynamics) – – see <code><a href="https://landr.predictiveecology.
 </li>
 </ul>
 </div>
-<div id="module-outputs-2" class="section level3" number="5.1.4">
+<div id="module-outputs-2" class="section level3" number="3.1.4">
 <h3>
-<span class="header-section-number">5.1.4</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.4</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-2"><i class="fas fa-link"></i></a>
 </h3>
 <p>The module produces the following outputs (Table
-<a href="landr-biomass_borealdataprep-module.html#tab:moduleOutputs-Biomass-borealDataPrep">5.3</a>):</p>
+<a href="landr-biomass_borealdataprep-module.html#tab:moduleOutputs-Biomass-borealDataPrep">3.3</a>):</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleOutputs-Biomass-borealDataPrep">Table 5.3: </span>List of <em>Biomass_borealDataPrep</em> output objects and their description.
+<span id="tab:moduleOutputs-Biomass-borealDataPrep">Table 3.3: </span>List of <em>Biomass_borealDataPrep</em> output objects and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -753,9 +753,9 @@ Probability of germination for species shade tolerance (in <code>species</code>)
 </tbody>
 </table></div>
 </div>
-<div id="links-to-other-modules-2" class="section level3" number="5.1.5">
+<div id="links-to-other-modules-2" class="section level3" number="3.1.5">
 <h3>
-<span class="header-section-number">5.1.5</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.5</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-2"><i class="fas fa-link"></i></a>
 </h3>
 <p>Intended to be used with <em>Biomass_core</em>, but can also be linked with other data
 modules that prepare inputs (e.g., <em>Biomass_speciesData</em> may be used upstream
@@ -765,22 +765,22 @@ the LandR ecosystem
 <a href="https://rpubs.com/PredictiveEcology/LandR_Module_Ecosystem">here</a>. Select
 <em>Biomass_borealDataPrep</em> from the drop-down menu to see linkages.</p>
 </div>
-<div id="getting-help-2" class="section level3" number="5.1.6">
+<div id="getting-help-2" class="section level3" number="3.1.6">
 <h3>
-<span class="header-section-number">5.1.6</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.6</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-2"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><a href="https://github.com/PredictiveEcology/Biomass_borealDataPrep/issues" class="uri">https://github.com/PredictiveEcology/Biomass_borealDataPrep/issues</a></li>
 </ul>
 </div>
 </div>
-<div id="module-manual-2" class="section level2" number="5.2">
+<div id="module-manual-2" class="section level2" number="3.2">
 <h2>
-<span class="header-section-number">5.2</span> Module manual<a class="anchor" aria-label="anchor" href="#module-manual-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2</span> Module manual<a class="anchor" aria-label="anchor" href="#module-manual-2"><i class="fas fa-link"></i></a>
 </h2>
-<div id="detailed-description-1" class="section level3" number="5.2.1">
+<div id="detailed-description-1" class="section level3" number="3.2.1">
 <h3>
-<span class="header-section-number">5.2.1</span> Detailed description<a class="anchor" aria-label="anchor" href="#detailed-description-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.1</span> Detailed description<a class="anchor" aria-label="anchor" href="#detailed-description-1"><i class="fas fa-link"></i></a>
 </h3>
 <p><em>Biomass_borealDataPrep</em> prepares all inputs necessary to run a realistic
 simulation of forest dynamics in western Canada boreal forests using
@@ -847,9 +847,9 @@ with age equal to the observed stand age and the previously calculated biomass.<
 <p>In the next sections, we describe in greater detail the various data processing
 and parameter estimation steps carried out by <em>Biomass_borealDataPrep</em>.</p>
 </div>
-<div id="data-acquisition-and-treatment" class="section level3" number="5.2.2">
+<div id="data-acquisition-and-treatment" class="section level3" number="3.2.2">
 <h3>
-<span class="header-section-number">5.2.2</span> Data acquisition and treatment<a class="anchor" aria-label="anchor" href="#data-acquisition-and-treatment"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.2</span> Data acquisition and treatment<a class="anchor" aria-label="anchor" href="#data-acquisition-and-treatment"><i class="fas fa-link"></i></a>
 </h3>
 <p>The only two objects that the user must supply are shapefiles that define the
 study area used to derive parameters (<code>studyAreaLarge</code>) and the study area where
@@ -864,9 +864,9 @@ versions of rasterize <code>studyAreaLarge</code> and <code>studyArea</code> (<c
 <code>rasterToMatch</code>, respectively), using the stand biomass map layer
 (<code>rawBiomassMap</code>) as a template (i.e., the source of information for spatial
 resolution)</p>
-<div id="defining-simulation-pixels-and-ecolocations" class="section level4" number="5.2.2.1">
+<div id="defining-simulation-pixels-and-ecolocations" class="section level4" number="3.2.2.1">
 <h4>
-<span class="header-section-number">5.2.2.1</span> Defining simulation pixels and ecolocations<a class="anchor" aria-label="anchor" href="#defining-simulation-pixels-and-ecolocations"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.2.1</span> Defining simulation pixels and ecolocations<a class="anchor" aria-label="anchor" href="#defining-simulation-pixels-and-ecolocations"><i class="fas fa-link"></i></a>
 </h4>
 <p><em>Biomass_borealDataPrep</em> uses land-cover data to define and assign parameter
 values to the pixels where forest dynamics will be simulated (forested pixels).</p>
@@ -889,9 +889,9 @@ vary spatially. By default, they are defined as the combination of
 land cover, but the user can change this by supplying different ecozonation or
 land-cover layers.</p>
 </div>
-<div id="species-cover" class="section level4" number="5.2.2.2">
+<div id="species-cover" class="section level4" number="3.2.2.2">
 <h4>
-<span class="header-section-number">5.2.2.2</span> Species cover<a class="anchor" aria-label="anchor" href="#species-cover"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.2.2</span> Species cover<a class="anchor" aria-label="anchor" href="#species-cover"><i class="fas fa-link"></i></a>
 </h4>
 <p>Species percent cover (% cover) can be automatically obtained and
 pre-processed by <em>Biomass_borealDataPrep</em>. The module ensures that: 1. all data
@@ -902,9 +902,9 @@ cover values above 10% are excluded.</p>
 satellite imagery from 2001, obtained from the Canadian National Forest
 Inventory <span class="citation">(<a href="#ref-BeaudoinEtAl2017" role="doc-biblioref">Beaudoin <em>et al.</em> 2017</a>)</span> – hereafter ‘kNN species data’.</p>
 </div>
-<div id="initial-species-age-and-biomass-per-pixel" class="section level4" number="5.2.2.3">
+<div id="initial-species-age-and-biomass-per-pixel" class="section level4" number="3.2.2.3">
 <h4>
-<span class="header-section-number">5.2.2.3</span> Initial species age and biomass per pixel<a class="anchor" aria-label="anchor" href="#initial-species-age-and-biomass-per-pixel"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.2.3</span> Initial species age and biomass per pixel<a class="anchor" aria-label="anchor" href="#initial-species-age-and-biomass-per-pixel"><i class="fas fa-link"></i></a>
 </h4>
 <p>Stand age and stand aboveground biomass (hereafter ‘stand biomass’) are used to
 derive parameters and define initial species age and biomass across the
@@ -941,9 +941,9 @@ estimated using the remainder of the data to fit the model supplied by
 relationship of conifer and broadleaf species (see <a href="landr-biomass_borealdataprep-module.html#adjustment-of-species-biomass">Adjustment of species
 biomass</a>).</p>
 </div>
-<div id="replacing-initial-biomass-and-age-within-known-fire-perimeters" class="section level4" number="5.2.2.4">
+<div id="replacing-initial-biomass-and-age-within-known-fire-perimeters" class="section level4" number="3.2.2.4">
 <h4>
-<span class="header-section-number">5.2.2.4</span> Replacing initial biomass and age within known fire perimeters<a class="anchor" aria-label="anchor" href="#replacing-initial-biomass-and-age-within-known-fire-perimeters"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.2.4</span> Replacing initial biomass and age within known fire perimeters<a class="anchor" aria-label="anchor" href="#replacing-initial-biomass-and-age-within-known-fire-perimeters"><i class="fas fa-link"></i></a>
 </h4>
 <p>Taking two independent datasets for stand age and stand biomass can causes
 discrepancies, e.g. stand age = 5 and aboveground biomass = 10000 m2/ha. This
@@ -976,9 +976,9 @@ imputation, this step can be bypassed by setting the parameter
 <p><strong>Note that pixels that had data imputation can be removed from the simulation
 by setting <code>P(sim)$rmImputedPix == TRUE</code>.</strong></p>
 </div>
-<div id="invariant-species-traits" class="section level4" number="5.2.2.5">
+<div id="invariant-species-traits" class="section level4" number="3.2.2.5">
 <h4>
-<span class="header-section-number">5.2.2.5</span> Invariant species traits<a class="anchor" aria-label="anchor" href="#invariant-species-traits"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.2.5</span> Invariant species traits<a class="anchor" aria-label="anchor" href="#invariant-species-traits"><i class="fas fa-link"></i></a>
 </h4>
 <p>Most species traits that do not vary spatio-temporally are obtained from
 available species trait tables used in LANDIS-II applications in Canada’s boreal
@@ -1011,13 +1011,13 @@ taken by default from a <a href="https://raw.githubusercontent.com/LANDIS-II-Fou
 table</a>.</p>
 </div>
 </div>
-<div id="parameter-estimationcalibration" class="section level3" number="5.2.3">
+<div id="parameter-estimationcalibration" class="section level3" number="3.2.3">
 <h3>
-<span class="header-section-number">5.2.3</span> Parameter estimation/calibration<a class="anchor" aria-label="anchor" href="#parameter-estimationcalibration"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.3</span> Parameter estimation/calibration<a class="anchor" aria-label="anchor" href="#parameter-estimationcalibration"><i class="fas fa-link"></i></a>
 </h3>
-<div id="adjustment-of-species-biomass" class="section level4" number="5.2.3.1">
+<div id="adjustment-of-species-biomass" class="section level4" number="3.2.3.1">
 <h4>
-<span class="header-section-number">5.2.3.1</span> Adjustment of species biomass<a class="anchor" aria-label="anchor" href="#adjustment-of-species-biomass"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.3.1</span> Adjustment of species biomass<a class="anchor" aria-label="anchor" href="#adjustment-of-species-biomass"><i class="fas fa-link"></i></a>
 </h4>
 <p><em>Biomass_core</em> requires initial values of species-specific aboveground biomass
 (<code>B</code>) for every pixel that is tracked. <em>Biomass_borealDataPrep</em> estimates these
@@ -1042,9 +1042,9 @@ species cover on <code>studyAreaLarge</code>, using an optimization routine that
 for the best conversion factor between broadleaf species cover and <code>B</code> by
 minimizing AIC.</p>
 </div>
-<div id="maximum-biomass-and-maximum-aboveground-net-primary-productivity" class="section level4" number="5.2.3.2">
+<div id="maximum-biomass-and-maximum-aboveground-net-primary-productivity" class="section level4" number="3.2.3.2">
 <h4>
-<span class="header-section-number">5.2.3.2</span> Maximum biomass and maximum aboveground net primary productivity<a class="anchor" aria-label="anchor" href="#maximum-biomass-and-maximum-aboveground-net-primary-productivity"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.3.2</span> Maximum biomass and maximum aboveground net primary productivity<a class="anchor" aria-label="anchor" href="#maximum-biomass-and-maximum-aboveground-net-primary-productivity"><i class="fas fa-link"></i></a>
 </h4>
 <p><em>Biomass_borealDataPrep</em> statistically estimates maximum biomass (<code>maxB</code>),
 maximum aboveground net primary productivity (<code>maxANPP</code>) using the processed
@@ -1089,18 +1089,18 @@ leveraging on the powerful statistical machinery of <code>lme4</code>.</p>
 <p>Finally, we highlight that modelling <code>log(B)</code> is NOT an appropriate solution,
 because it will wrongly assume an <em>exponential</em> relationship between
 <code>B ~ log(age) + cover</code>, leading to a serious overestimation of <code>maxB</code>(Fig.
-<a href="landr-biomass_borealdataprep-module.html#fig:fig-biomassModelLogBtest">5.1</a>) and steep increases in species biomasses
-during the first years of the simulation (Fig. <a href="landr-biomass_borealdataprep-module.html#fig:fig-simBLogBtest">5.2</a>).</p>
+<a href="landr-biomass_borealdataprep-module.html#fig:fig-biomassModelLogBtest">3.1</a>) and steep increases in species biomasses
+during the first years of the simulation (Fig. <a href="landr-biomass_borealdataprep-module.html#fig:fig-simBLogBtest">3.2</a>).</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-biomassModelLogBtest"></span>
 <img src="modules/Biomass_borealDataPrep/figures/biomassModel_logBtest.png" alt="Modelling biomass as a linear vs. exponential relationship. a) `modelBiomass` as `B ~ logAge * speciesCode + cover * speciesCode + (logAge + cover | ecoregionGroup)`. b) `modelBiomass` as `logB ~ logAge * speciesCode + cover * speciesCode + (logAge + cover | ecoregionGroup)`. Blue dots are marginal mean B values (back-transformed in b) cross ages with confidence intervals as the bars." width="265"><p class="caption">
-Figure 5.1: Modelling biomass as a linear vs. exponential relationship. a) <code>modelBiomass</code> as <code>B ~ logAge * speciesCode + cover * speciesCode + (logAge + cover | ecoregionGroup)</code>. b) <code>modelBiomass</code> as <code>logB ~ logAge * speciesCode + cover * speciesCode + (logAge + cover | ecoregionGroup)</code>. Blue dots are marginal mean B values (back-transformed in b) cross ages with confidence intervals as the bars.
+Figure 3.1: Modelling biomass as a linear vs. exponential relationship. a) <code>modelBiomass</code> as <code>B ~ logAge * speciesCode + cover * speciesCode + (logAge + cover | ecoregionGroup)</code>. b) <code>modelBiomass</code> as <code>logB ~ logAge * speciesCode + cover * speciesCode + (logAge + cover | ecoregionGroup)</code>. Blue dots are marginal mean B values (back-transformed in b) cross ages with confidence intervals as the bars.
 </p>
 </div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-simBLogBtest"></span>
 <img src="modules/Biomass_borealDataPrep/figures/simulatedB_logBtest.png" alt="Thirty years of simulation with `maxB` values estimated from a `logB ~ ...` `biomassModel` (see Fig. \@ref(fig:fig-biomassModelLogBtest)). The steep increase in such little time is abnormal." width="195"><p class="caption">
-Figure 5.2: Thirty years of simulation with <code>maxB</code> values estimated from a <code>logB ~ ...</code> <code>biomassModel</code> (see Fig. <a href="landr-biomass_borealdataprep-module.html#fig:fig-biomassModelLogBtest">5.1</a>). The steep increase in such little time is abnormal.
+Figure 3.2: Thirty years of simulation with <code>maxB</code> values estimated from a <code>logB ~ ...</code> <code>biomassModel</code> (see Fig. <a href="landr-biomass_borealdataprep-module.html#fig:fig-biomassModelLogBtest">3.1</a>). The steep increase in such little time is abnormal.
 </p>
 </div>
 <p><code>maxB</code> is then predicted by species and ecolocation combination, by setting
@@ -1114,9 +1114,9 @@ in <span class="citation">Scheller &amp; Mladenoff (<a href="#ref-scheller2004" 
 (and then adjusted the values manually) and from these estimates calculated
 <code>maxB</code> by multiplying the estimated <code>maxANPP</code> by 30.</p>
 </div>
-<div id="minimum-relative-biomass" class="section level4" number="5.2.3.3">
+<div id="minimum-relative-biomass" class="section level4" number="3.2.3.3">
 <h4>
-<span class="header-section-number">5.2.3.3</span> Minimum relative biomass<a class="anchor" aria-label="anchor" href="#minimum-relative-biomass"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.3.3</span> Minimum relative biomass<a class="anchor" aria-label="anchor" href="#minimum-relative-biomass"><i class="fas fa-link"></i></a>
 </h4>
 <p>Minimum relative biomass (<code>minRelativeB</code>) is a spatially-varying parameter used
 to determine the shade level in each pixel.</p>
@@ -1132,9 +1132,9 @@ competition for resources (e.g. higher water limitation) in Western Canadian
 forests with regards to Eastern Canadian forests <span class="citation">(<a href="#ref-MessierEtAl1998" role="doc-biblioref">Messier <em>et al.</em> 1998</a>)</span>.</p>
 <p>The minimum biomass threshold of a shade level of <code>X0</code> is <code>0</code> <code>standB</code>.</p>
 </div>
-<div id="species-establishment-probability" class="section level4" number="5.2.3.4">
+<div id="species-establishment-probability" class="section level4" number="3.2.3.4">
 <h4>
-<span class="header-section-number">5.2.3.4</span> Species establishment probability<a class="anchor" aria-label="anchor" href="#species-establishment-probability"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.3.4</span> Species establishment probability<a class="anchor" aria-label="anchor" href="#species-establishment-probability"><i class="fas fa-link"></i></a>
 </h4>
 <p>Species establishment probability (<code>SEP</code>) is estimated by modelling the
 probability of observing a given species in each ecolocation. For this,
@@ -1155,7 +1155,7 @@ species cover to 100%, and by integrating the predicted values over
 the length of the succession time step (<code>P(sim)$successionTimestep</code>) as:</p>
 <span class="math display" id="eq:SEPintegration">\[\begin{equation}
   integratedSEP = 1-(1-estimatedSEP)^{e^{successionTimestep}}
-  \tag{5.1}
+  \tag{3.1}
 \end{equation}\]</span>
 <p>This is important, since seed establishment only occurs once at every
 <code>P(sim)$successionTimestep</code>, and thus the probabilities of seed establishment
@@ -1168,22 +1168,22 @@ probabilities and species’ probabilities of resprouting (<code>resproutprob</c
 <code>species</code> table) (bounded between 0 and 1):</p>
 <span class="math display" id="eq:SEPfinal">\[\begin{equation}
   SEP = integratedSEP * (1 - resproutprob)
-  \tag{5.2}
+  \tag{3.2}
 \end{equation}\]</span>
 <p>if <span class="math inline">\(SEP &gt; 1\)</span>, then</p>
 <span class="math display" id="eq:SEPfinal2">\[\begin{equation}
   SEP = 1
-  \tag{5.3}
+  \tag{3.3}
 \end{equation}\]</span>
 <p>if <span class="math inline">\(SEP &lt; 0\)</span>, then</p>
 <span class="math display" id="eq:SEPfinal3">\[\begin{equation}
   SEP = 0
-  \tag{5.4}
+  \tag{3.4}
 \end{equation}\]</span>
 </div>
-<div id="calibrating-species-growthmortality-traits-using-biomass_speciesparameters" class="section level4" number="5.2.3.5">
+<div id="calibrating-species-growthmortality-traits-using-biomass_speciesparameters" class="section level4" number="3.2.3.5">
 <h4>
-<span class="header-section-number">5.2.3.5</span> Calibrating species growth/mortality traits using <em>Biomass_speciesParameters</em><a class="anchor" aria-label="anchor" href="#calibrating-species-growthmortality-traits-using-biomass_speciesparameters"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.3.5</span> Calibrating species growth/mortality traits using <em>Biomass_speciesParameters</em><a class="anchor" aria-label="anchor" href="#calibrating-species-growthmortality-traits-using-biomass_speciesparameters"><i class="fas fa-link"></i></a>
 </h4>
 <p>If using <em>Biomass_borealDataPrep</em> and <em>Biomass_speciesParameters</em>, the later
 module calibrates several species traits that are first prepared by
@@ -1222,9 +1222,9 @@ by <code>mANPPproportion</code> (estimated in step 2).</p></li>
 <a href="landr-biomass_borealdataprep-module.html#maximum-biomass-and-maximum-aboveground-net-primary-productivity">Maximum biomass and maximum aboveground net primary productivity</a>).</p>
 </div>
 </div>
-<div id="agregating-species" class="section level3" number="5.2.4">
+<div id="agregating-species" class="section level3" number="3.2.4">
 <h3>
-<span class="header-section-number">5.2.4</span> Agregating species<a class="anchor" aria-label="anchor" href="#agregating-species"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.4</span> Agregating species<a class="anchor" aria-label="anchor" href="#agregating-species"><i class="fas fa-link"></i></a>
 </h3>
 <p><em>Biomass_borealDataPrep</em> will use the input table <code>sppEquiv</code> and the parameter
 <code>P(sim)$sppEquivCol</code> to know what species identities will be used for the
@@ -1236,7 +1236,7 @@ group in <code>sppEquivCol</code> column of the <code>sppEquiv</code> table as m
 species being grouped:</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:mergingSpp-Biomass-borealDataPrep">Table 5.4: </span>Example of species merging for simulation. Here the user wants to model <em>Abies balsamea</em>, <em>A. lasiocarpa</em> and <em>Pinus contorta</em> as separate species, but all <em>Picea spp.</em> as a genus-level group. For this, all six species are identified in the 'KNN' column, so that their % cover layers can be obtained, but in the ‘Boreal’ column (which defines the naming convention used in the simulation in this example) all <em>Picea spp.</em> have the same name. <em>Biomass_borealDataPrep</em> will merge their % cover data into a single layer by summing their cover per pixel.
+<span id="tab:mergingSpp-Biomass-borealDataPrep">Table 3.4: </span>Example of species merging for simulation. Here the user wants to model <em>Abies balsamea</em>, <em>A. lasiocarpa</em> and <em>Pinus contorta</em> as separate species, but all <em>Picea spp.</em> as a genus-level group. For this, all six species are identified in the 'KNN' column, so that their % cover layers can be obtained, but in the ‘Boreal’ column (which defines the naming convention used in the simulation in this example) all <em>Picea spp.</em> have the same name. <em>Biomass_borealDataPrep</em> will merge their % cover data into a single layer by summing their cover per pixel.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -1383,9 +1383,9 @@ value across all species is used. As for the default species % cover
 layers, <em>Biomass_borealDataPrep</em> proceeds in the same way as
 <em>Biomass_speciesData</em> and sums cover across species of the same group per pixel.</p>
 </div>
-<div id="initialization-inputs-and-parameters-2" class="section level3" number="5.2.5">
+<div id="initialization-inputs-and-parameters-2" class="section level3" number="3.2.5">
 <h3>
-<span class="header-section-number">5.2.5</span> Initialization, inputs and parameters<a class="anchor" aria-label="anchor" href="#initialization-inputs-and-parameters-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.5</span> Initialization, inputs and parameters<a class="anchor" aria-label="anchor" href="#initialization-inputs-and-parameters-2"><i class="fas fa-link"></i></a>
 </h3>
 <p><em>Biomass_borealDataPrep</em> initializes itself and prepares all inputs provided it
 has internet access to retrieve the raw datasets used for parametrisation and
@@ -1393,15 +1393,15 @@ preparing input objects for <em>Biomass_core</em>. Future users should run
 <em>Biomass_borealDataPrep</em> with defaults and inspect what the objects are like
 before supplying their own data, or alternative data URLs. Alternatively, user
 may develop their own module using <em>Biomass_borealDataPrep</em> as a template.</p>
-<div id="input-objects-2" class="section level4" number="5.2.5.1">
+<div id="input-objects-2" class="section level4" number="3.2.5.1">
 <h4>
-<span class="header-section-number">5.2.5.1</span> Input objects<a class="anchor" aria-label="anchor" href="#input-objects-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.5.1</span> Input objects<a class="anchor" aria-label="anchor" href="#input-objects-2"><i class="fas fa-link"></i></a>
 </h4>
-<p>Table <a href="landr-biomass_borealdataprep-module.html#tab:moduleInputs2-Biomass-borealDataPrep">5.5</a> shows the full list of
+<p>Table <a href="landr-biomass_borealdataprep-module.html#tab:moduleInputs2-Biomass-borealDataPrep">3.5</a> shows the full list of
 input objects used by the module.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleInputs2-Biomass-borealDataPrep">Table 5.5: </span>List of <em>Biomass_borealDataPrep</em> input objects and their description.
+<span id="tab:moduleInputs2-Biomass-borealDataPrep">Table 3.5: </span>List of <em>Biomass_borealDataPrep</em> input objects and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -1684,15 +1684,15 @@ following columns (even if not all are necessary to the simulation):
 </li>
 </ul>
 </div>
-<div id="parameters-2" class="section level4" number="5.2.5.2">
+<div id="parameters-2" class="section level4" number="3.2.5.2">
 <h4>
-<span class="header-section-number">5.2.5.2</span> Parameters<a class="anchor" aria-label="anchor" href="#parameters-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.5.2</span> Parameters<a class="anchor" aria-label="anchor" href="#parameters-2"><i class="fas fa-link"></i></a>
 </h4>
-<p>Table <a href="landr-biomass_borealdataprep-module.html#tab:moduleParams2-Biomass-borealDataPrep">5.6</a> lists all parameters used
+<p>Table <a href="landr-biomass_borealdataprep-module.html#tab:moduleParams2-Biomass-borealDataPrep">3.6</a> lists all parameters used
 in <em>Biomass_borealDataPrep</em> and their detailed information.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleParams2-Biomass-borealDataPrep">Table 5.6: </span>List of <em>Biomass_borealDataPrep</em> parameters and their description.
+<span id="tab:moduleParams2-Biomass-borealDataPrep">Table 3.6: </span>List of <em>Biomass_borealDataPrep</em> parameters and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -2446,9 +2446,9 @@ are the model used to refit <code>deciduousCoverDiscount</code> in the supplied
 (respectively).</p></li>
 </ul>
 </div>
-<div id="outputs" class="section level4" number="5.2.5.3">
+<div id="outputs" class="section level4" number="3.2.5.3">
 <h4>
-<span class="header-section-number">5.2.5.3</span> Outputs<a class="anchor" aria-label="anchor" href="#outputs"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.5.3</span> Outputs<a class="anchor" aria-label="anchor" href="#outputs"><i class="fas fa-link"></i></a>
 </h4>
 <ul>
 <li><p><strong>Tables</strong></p></li>
@@ -2475,9 +2475,9 @@ conjunction with <code>cohortData</code>.</p></li>
 </ul>
 </div>
 </div>
-<div id="simulation-flow-2" class="section level3" number="5.2.6">
+<div id="simulation-flow-2" class="section level3" number="3.2.6">
 <h3>
-<span class="header-section-number">5.2.6</span> Simulation flow<a class="anchor" aria-label="anchor" href="#simulation-flow-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.6</span> Simulation flow<a class="anchor" aria-label="anchor" href="#simulation-flow-2"><i class="fas fa-link"></i></a>
 </h3>
 <p>The general flow of <em>Biomass_borealDataPrep</em> processes is:</p>
 <ol style="list-style-type: decimal">
@@ -2499,9 +2499,9 @@ biomass.</p></li>
 </ol>
 </div>
 </div>
-<div id="usage-example-2" class="section level2" number="5.3">
+<div id="usage-example-2" class="section level2" number="3.3">
 <h2>
-<span class="header-section-number">5.3</span> Usage example<a class="anchor" aria-label="anchor" href="#usage-example-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.3</span> Usage example<a class="anchor" aria-label="anchor" href="#usage-example-2"><i class="fas fa-link"></i></a>
 </h2>
 <p>This module can be run stand-alone, but it won’t do much more than prepare
 inputs for <code>Biomass_core</code>. Hence, we provide a usage example of this module and
@@ -2509,9 +2509,9 @@ a few others in <a href="https://github.com/CeresBarros/LandRBiomass_publication
 repository</a> and in
 <span class="citation">Barros <em>et al.</em> (<a href="#ref-barros" role="doc-biblioref">n.d.a</a>)</span>.</p>
 </div>
-<div id="references-2" class="section level2" number="5.4">
+<div id="references-2" class="section level2" number="3.4">
 <h2>
-<span class="header-section-number">5.4</span> References<a class="anchor" aria-label="anchor" href="#references-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.4</span> References<a class="anchor" aria-label="anchor" href="#references-2"><i class="fas fa-link"></i></a>
 </h2>
 
 </div>
@@ -2550,34 +2550,34 @@ Wilkinson, M.D., Dumontier, M., Aalbersberg, Ij.J., Appleton, G., Axton, M., Baa
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="landr-biomass_speciesdata-module.html"><span class="header-section-number">4</span> LandR Biomass_speciesData Module</a></div>
-<div class="next"><a href="landr-biomass_speciesparameters-module.html"><span class="header-section-number">6</span> LandR Biomass_speciesParameters Module</a></div>
+<div class="prev"><a href="landr-biomass_speciesdata-module.html"><span class="header-section-number">2</span> LandR Biomass_speciesData Module</a></div>
+<div class="next"><a href="landr-biomass_speciesparameters-module.html"><span class="header-section-number">4</span> LandR Biomass_speciesParameters Module</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#landr-biomass_borealdataprep-module"><span class="header-section-number">5</span> LandR Biomass_borealDataPrep Module</a></li>
+<li><a class="nav-link" href="#landr-biomass_borealdataprep-module"><span class="header-section-number">3</span> LandR Biomass_borealDataPrep Module</a></li>
 <li>
-<a class="nav-link" href="#module-overview-2"><span class="header-section-number">5.1</span> Module Overview</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#module-summary-2"><span class="header-section-number">5.1.1</span> Module summary</a></li>
-<li><a class="nav-link" href="#module-inputs-and-parameters-at-a-glance-1"><span class="header-section-number">5.1.2</span> Module inputs and parameters at a glance</a></li>
-<li><a class="nav-link" href="#events-2"><span class="header-section-number">5.1.3</span> Events</a></li>
-<li><a class="nav-link" href="#module-outputs-2"><span class="header-section-number">5.1.4</span> Module outputs</a></li>
-<li><a class="nav-link" href="#links-to-other-modules-2"><span class="header-section-number">5.1.5</span> Links to other modules</a></li>
-<li><a class="nav-link" href="#getting-help-2"><span class="header-section-number">5.1.6</span> Getting help</a></li>
+<a class="nav-link" href="#module-overview-2"><span class="header-section-number">3.1</span> Module Overview</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#module-summary-2"><span class="header-section-number">3.1.1</span> Module summary</a></li>
+<li><a class="nav-link" href="#module-inputs-and-parameters-at-a-glance-1"><span class="header-section-number">3.1.2</span> Module inputs and parameters at a glance</a></li>
+<li><a class="nav-link" href="#events-2"><span class="header-section-number">3.1.3</span> Events</a></li>
+<li><a class="nav-link" href="#module-outputs-2"><span class="header-section-number">3.1.4</span> Module outputs</a></li>
+<li><a class="nav-link" href="#links-to-other-modules-2"><span class="header-section-number">3.1.5</span> Links to other modules</a></li>
+<li><a class="nav-link" href="#getting-help-2"><span class="header-section-number">3.1.6</span> Getting help</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#module-manual-2"><span class="header-section-number">5.2</span> Module manual</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#detailed-description-1"><span class="header-section-number">5.2.1</span> Detailed description</a></li>
-<li><a class="nav-link" href="#data-acquisition-and-treatment"><span class="header-section-number">5.2.2</span> Data acquisition and treatment</a></li>
-<li><a class="nav-link" href="#parameter-estimationcalibration"><span class="header-section-number">5.2.3</span> Parameter estimation/calibration</a></li>
-<li><a class="nav-link" href="#agregating-species"><span class="header-section-number">5.2.4</span> Agregating species</a></li>
-<li><a class="nav-link" href="#initialization-inputs-and-parameters-2"><span class="header-section-number">5.2.5</span> Initialization, inputs and parameters</a></li>
-<li><a class="nav-link" href="#simulation-flow-2"><span class="header-section-number">5.2.6</span> Simulation flow</a></li>
+<a class="nav-link" href="#module-manual-2"><span class="header-section-number">3.2</span> Module manual</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#detailed-description-1"><span class="header-section-number">3.2.1</span> Detailed description</a></li>
+<li><a class="nav-link" href="#data-acquisition-and-treatment"><span class="header-section-number">3.2.2</span> Data acquisition and treatment</a></li>
+<li><a class="nav-link" href="#parameter-estimationcalibration"><span class="header-section-number">3.2.3</span> Parameter estimation/calibration</a></li>
+<li><a class="nav-link" href="#agregating-species"><span class="header-section-number">3.2.4</span> Agregating species</a></li>
+<li><a class="nav-link" href="#initialization-inputs-and-parameters-2"><span class="header-section-number">3.2.5</span> Initialization, inputs and parameters</a></li>
+<li><a class="nav-link" href="#simulation-flow-2"><span class="header-section-number">3.2.6</span> Simulation flow</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#usage-example-2"><span class="header-section-number">5.3</span> Usage example</a></li>
-<li><a class="nav-link" href="#references-2"><span class="header-section-number">5.4</span> References</a></li>
+<li><a class="nav-link" href="#usage-example-2"><span class="header-section-number">3.3</span> Usage example</a></li>
+<li><a class="nav-link" href="#references-2"><span class="header-section-number">3.4</span> References</a></li>
 </ul>
 
       <div class="book-extra">
@@ -2595,7 +2595,7 @@ Wilkinson, M.D., Dumontier, M., Aalbersberg, Ij.J., Appleton, G., Axton, M., Baa
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-04-06.</p>
+    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-04-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

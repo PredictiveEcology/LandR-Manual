@@ -25,7 +25,7 @@ lof: yes
 
 <!-- manual version TODO: link to date and commit of manual/project repo -->
 
-# Preface
+# Preface {-}
 
 ```{r figLandRHex, eval = TRUE, echo = FALSE, fig.align = 'center', fig.dim = c(10,10)}
 knitr::include_graphics(normalizePath(c("figures/LandRHex.png"), winslash = "/"))

@@ -4,18 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 8 LandR Biomass_validationKNN Module | LandR Manual</title>
+<title>Chapter 5 LandR Biomass_validationKNN Module | LandR Manual</title>
 <meta name="author" content="Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire">
-<meta name="description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  8.0.0.1 Authors: Ceres Barros...">
+<meta name="description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  5.0.0.1 Authors: Ceres Barros...">
 <meta name="generator" content="bookdown 0.25 with bs4_book()">
-<meta property="og:title" content="Chapter 8 LandR Biomass_validationKNN Module | LandR Manual">
+<meta property="og:title" content="Chapter 5 LandR Biomass_validationKNN Module | LandR Manual">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://predictiveecology.github.io/LandR-Manual/landr-biomass_validationknn-module.html">
 <meta property="og:image" content="https://predictiveecology.github.io/LandR-Manual/figures/LandRHex.png">
-<meta property="og:description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  8.0.0.1 Authors: Ceres Barros...">
+<meta property="og:description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  5.0.0.1 Authors: Ceres Barros...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 8 LandR Biomass_validationKNN Module | LandR Manual">
-<meta name="twitter:description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  8.0.0.1 Authors: Ceres Barros...">
+<meta name="twitter:title" content="Chapter 5 LandR Biomass_validationKNN Module | LandR Manual">
+<meta name="twitter:description" content="This documentation is work in progress. Potential discrepancies and omissions may exist for the time being. If you find any, do contact us using the link above^^  5.0.0.1 Authors: Ceres Barros...">
 <meta name="twitter:image" content="https://predictiveecology.github.io/LandR-Manual/figures/LandRHex.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -70,14 +70,14 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> Preface</a></li>
-<li><a class="" href="landr-biomass_core-module.html"><span class="header-section-number">2</span> LandR Biomass_core Module</a></li>
-<li><a class="" href="landr-data-modules.html"><span class="header-section-number">3</span> LandR Data Modules</a></li>
-<li><a class="" href="landr-biomass_speciesdata-module.html"><span class="header-section-number">4</span> LandR Biomass_speciesData Module</a></li>
-<li><a class="" href="landr-biomass_borealdataprep-module.html"><span class="header-section-number">5</span> LandR Biomass_borealDataPrep Module</a></li>
-<li><a class="" href="landr-biomass_speciesparameters-module.html"><span class="header-section-number">6</span> LandR Biomass_speciesParameters Module</a></li>
-<li><a class="" href="landr-validation-modules.html"><span class="header-section-number">7</span> LandR Validation Modules</a></li>
-<li><a class="active" href="landr-biomass_validationknn-module.html"><span class="header-section-number">8</span> LandR Biomass_validationKNN Module</a></li>
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="landr-biomass_core-module.html"><span class="header-section-number">1</span> LandR Biomass_core Module</a></li>
+<li><a class="" href="landr-data-modules.html">LandR Data Modules</a></li>
+<li><a class="" href="landr-biomass_speciesdata-module.html"><span class="header-section-number">2</span> LandR Biomass_speciesData Module</a></li>
+<li><a class="" href="landr-biomass_borealdataprep-module.html"><span class="header-section-number">3</span> LandR Biomass_borealDataPrep Module</a></li>
+<li><a class="" href="landr-biomass_speciesparameters-module.html"><span class="header-section-number">4</span> LandR Biomass_speciesParameters Module</a></li>
+<li><a class="" href="landr-validation-modules.html">LandR Validation Modules</a></li>
+<li><a class="active" href="landr-biomass_validationknn-module.html"><span class="header-section-number">5</span> LandR Biomass_validationKNN Module</a></li>
 </ul>
 
         <div class="book-extra">
@@ -85,9 +85,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="landr-biomass_validationknn-module" class="section level1" number="8">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="landr-biomass_validationknn-module" class="section level1" number="5">
 <h1>
-<span class="header-section-number">8</span> LandR <em>Biomass_validationKNN</em> Module<a class="anchor" aria-label="anchor" href="#landr-biomass_validationknn-module"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5</span> LandR <em>Biomass_validationKNN</em> Module<a class="anchor" aria-label="anchor" href="#landr-biomass_validationknn-module"><i class="fas fa-link"></i></a>
 </h1>
 <!-- the following are text references used in captions for LaTeX compatibility -->
 
@@ -97,20 +97,20 @@
 <p><strong>This documentation is work in progress. Potential discrepancies and omissions
 may exist for the time being. If you find any, do contact us using the link
 above^^</strong></p>
-<div id="authors-4" class="section level4" number="8.0.0.1">
+<div id="authors-4" class="section level4" number="5.0.0.1">
 <h4>
-<span class="header-section-number">8.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors-4"><i class="fas fa-link"></i></a>
 </h4>
 <p>Ceres Barros <a href="mailto:cbarros@mail.ubc.ca" class="email">cbarros@mail.ubc.ca</a> [aut, cre]
 <!-- ideally separate authors with new lines, '\n' not working --></p>
 </div>
-<div id="module-overview-4" class="section level2" number="8.1">
+<div id="module-overview-4" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">8.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-4"><i class="fas fa-link"></i></a>
 </h2>
-<div id="module-summary-4" class="section level3" number="8.1.1">
+<div id="module-summary-4" class="section level3" number="5.1.1">
 <h3>
-<span class="header-section-number">8.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-4"><i class="fas fa-link"></i></a>
 </h3>
 <p>An approach to validating outputs from LandR Biomass - notably the
 <em>Biomass_core</em> vegetation simulation module - using publicly available data for
@@ -120,9 +120,9 @@ presence/absence in the landscape. To do so, it downloads and prepares all
 necessary data (observed and simulated), calculates validation statistics and
 produces/saves validation plots.</p>
 </div>
-<div id="module-inputs-and-parameters-at-a-glance-3" class="section level3" number="8.1.2">
+<div id="module-inputs-and-parameters-at-a-glance-3" class="section level3" number="5.1.2">
 <h3>
-<span class="header-section-number">8.1.2</span> Module inputs and parameters at a glance<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-at-a-glance-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.2</span> Module inputs and parameters at a glance<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-at-a-glance-3"><i class="fas fa-link"></i></a>
 </h3>
 <p><em>Biomass_validationKNN</em> requires access to outputs of simulations from
 <em>Biomass_core</em>, and internet access to retrieve the observed kNN datasets used
@@ -142,20 +142,20 @@ object. Alternatively, the user may pass the pre-compiled outputs (namely the
 (<code>validationYears</code>, <code>validationReps</code>) and plot control (<code>.plots</code>). Here’s the
 full list of parameters:</p>
 <p>Below are the full lists of input objects (Table
-<a href="landr-biomass_validationknn-module.html#tab:moduleInputs-Biomass-validationKNN">8.1</a>) and parameters (Table
-<a href="landr-biomass_validationknn-module.html#tab:moduleParams-Biomass-validationKNN">8.2</a>) that <em>Biomass_validationKNN</em>
+<a href="landr-biomass_validationknn-module.html#tab:moduleInputs-Biomass-validationKNN">5.1</a>) and parameters (Table
+<a href="landr-biomass_validationknn-module.html#tab:moduleParams-Biomass-validationKNN">5.2</a>) that <em>Biomass_validationKNN</em>
 expects. The only input that <strong>must</strong> be provided (i.e., <em>Biomass_validationKNN</em>
 does not have a default for) is <code>studyArea</code>. All other input objects and
 parameters have internal defaults (see Tables
-<a href="landr-biomass_validationknn-module.html#tab:moduleInputs2-Biomass-validationKNN">8.4</a> and
-<a href="landr-biomass_validationknn-module.html#tab:moduleParams2-Biomass-validationKNN">8.5</a>). Objects suffixed with <code>*Start</code>
+<a href="landr-biomass_validationknn-module.html#tab:moduleInputs2-Biomass-validationKNN">5.4</a> and
+<a href="landr-biomass_validationknn-module.html#tab:moduleParams2-Biomass-validationKNN">5.5</a>). Objects suffixed with <code>*Start</code>
 correspond to the same objects in the simulation without this suffix (e.g.
 <code>rawBiomassMapStart</code> is <code>rawBiomassMap</code> in the simulation), whereas other
 objects like <code>studyArea</code> and <code>rasterToMatch</code> have the same names in the
 simulation and should be exactly the same object.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleInputs-Biomass-validationKNN">Table 8.1: </span>List of <em>Biomass_validationKNN</em> input objects and their description.
+<span id="tab:moduleInputs-Biomass-validationKNN">Table 5.1: </span>List of <em>Biomass_validationKNN</em> input objects and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -314,7 +314,7 @@ Polygon to use as the study area. Must be provided by the user
 </table></div>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleParams-Biomass-validationKNN">Table 8.2: </span>List of <em>Biomass_validationKNN</em> parameters and their description.
+<span id="tab:moduleParams-Biomass-validationKNN">Table 5.2: </span>List of <em>Biomass_validationKNN</em> parameters and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -448,9 +448,9 @@ Controls cache; caches the init event by default
 </tbody>
 </table></div>
 </div>
-<div id="events-4" class="section level3" number="8.1.3">
+<div id="events-4" class="section level3" number="5.1.3">
 <h3>
-<span class="header-section-number">8.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-4"><i class="fas fa-link"></i></a>
 </h3>
 <p>The following events take place during a <em>Biomass_validationKNN</em> run. Note that
 this module only runs once (in one “time step”).</p>
@@ -461,23 +461,27 @@ data to be compared</p></li>
 <li><p>Calculation of validation statistics (<code>validationStats</code> event)</p></li>
 <li><p>Optional diagnostic plots of biomass and age changes (<span class="math inline">\(\Delta\)</span>B,
 <span class="math inline">\(\Delta\)</span>Age) in the observed data (<code>obsDeltaMaps</code> event).</p></li>
-<li><p>Plotting events:</p></li>
+<li>
+<p>Plotting events:</p>
+<ul>
 <li><p>Plots of landscape-wide (<code>landscapeWidePlots</code> event), pixel-level
 (<code>pixelLevelPlots</code> events) comparisons of all summary variables</p></li>
 <li><p>Plots of biomass and age changes (<span class="math inline">\(\Delta\)</span>B, <span class="math inline">\(\Delta\)</span>Age) in observed
 and simulated data, with respect to the first year. (<code>deltaBComparisons</code>
 event)</p></li>
 </ul>
+</li>
+</ul>
 </div>
-<div id="module-outputs-4" class="section level3" number="8.1.4">
+<div id="module-outputs-4" class="section level3" number="5.1.4">
 <h3>
-<span class="header-section-number">8.1.4</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.4</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-4"><i class="fas fa-link"></i></a>
 </h3>
 <p>The module produces the following outputs (Table
-<a href="landr-biomass_validationknn-module.html#tab:moduleOutputs-Biomass-validationKNN">8.3</a>):</p>
+<a href="landr-biomass_validationknn-module.html#tab:moduleOutputs-Biomass-validationKNN">5.3</a>):</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleOutputs-Biomass-validationKNN">Table 8.3: </span>List of <em>Biomass_validationKNN</em> output objects and their description.
+<span id="tab:moduleOutputs-Biomass-validationKNN">Table 5.3: </span>List of <em>Biomass_validationKNN</em> output objects and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -600,9 +604,9 @@ not saved unless specified via <code>spades(..., outputs = data.frame(...))</cod
 saving objects to disk (such as tables), these can be looked at using, e.g.,
 <code>mySimValidation$logLikelihood</code>.</p>
 </div>
-<div id="links-to-other-modules-4" class="section level3" number="8.1.5">
+<div id="links-to-other-modules-4" class="section level3" number="5.1.5">
 <h3>
-<span class="header-section-number">8.1.5</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.5</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-4"><i class="fas fa-link"></i></a>
 </h3>
 <p>Intended to be used with <em>Biomass_core</em> and any other modules that link to it
 and affect cohort biomass (e.g., via <code>cohortData</code> table). You can see all
@@ -610,22 +614,22 @@ and affect cohort biomass (e.g., via <code>cohortData</code> table). You can see
 <a href="https://rpubs.com/PredictiveEcology/LandR_Module_Ecosystem">here</a>. Select
 <em>Biomass_validationKNN</em> from the drop-down menu to see linkages.</p>
 </div>
-<div id="getting-help-4" class="section level3" number="8.1.6">
+<div id="getting-help-4" class="section level3" number="5.1.6">
 <h3>
-<span class="header-section-number">8.1.6</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.6</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-4"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><a href="https://github.com/PredictiveEcology/Biomass_validationKNN/issues" class="uri">https://github.com/PredictiveEcology/Biomass_validationKNN/issues</a></li>
 </ul>
 </div>
 </div>
-<div id="module-manual-4" class="section level2" number="8.2">
+<div id="module-manual-4" class="section level2" number="5.2">
 <h2>
-<span class="header-section-number">8.2</span> Module manual<a class="anchor" aria-label="anchor" href="#module-manual-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2</span> Module manual<a class="anchor" aria-label="anchor" href="#module-manual-4"><i class="fas fa-link"></i></a>
 </h2>
-<div id="detailed-description-3" class="section level3" number="8.2.1">
+<div id="detailed-description-3" class="section level3" number="5.2.1">
 <h3>
-<span class="header-section-number">8.2.1</span> Detailed description<a class="anchor" aria-label="anchor" href="#detailed-description-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1</span> Detailed description<a class="anchor" aria-label="anchor" href="#detailed-description-3"><i class="fas fa-link"></i></a>
 </h3>
 <p>This module compares simulated outputs of two years (across replicates), with
 corresponding years of observed data. It was designed to compare the observed
@@ -672,22 +676,22 @@ Finally, (<span class="math inline">\(\Delta\)</span>B) is calculated per specie
 2011) minus the initial biomass (e.g., year 2001), either at the pixel- or
 landscape-level. All calculations were done per replicate.</p>
 </div>
-<div id="validation-approaches" class="section level3" number="8.2.2">
+<div id="validation-approaches" class="section level3" number="5.2.2">
 <h3>
-<span class="header-section-number">8.2.2</span> Validation approaches<a class="anchor" aria-label="anchor" href="#validation-approaches"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.2</span> Validation approaches<a class="anchor" aria-label="anchor" href="#validation-approaches"><i class="fas fa-link"></i></a>
 </h3>
-<div id="visual-validation" class="section level4" number="8.2.2.1">
+<div id="visual-validation" class="section level4" number="5.2.2.1">
 <h4>
-<span class="header-section-number">8.2.2.1</span> Visual validation<a class="anchor" aria-label="anchor" href="#visual-validation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.2.1</span> Visual validation<a class="anchor" aria-label="anchor" href="#visual-validation"><i class="fas fa-link"></i></a>
 </h4>
 <p>The module plots the above metrics as barplots showing landscape-level values
 (averaged across replicates for the simulated data) or boxplots showing
 pixel-level values. Plotting can be live and/or in the form of exported images
 (or both turned off completely).</p>
 </div>
-<div id="mean-absolute-deviation" class="section level4" number="8.2.2.2">
+<div id="mean-absolute-deviation" class="section level4" number="5.2.2.2">
 <h4>
-<span class="header-section-number">8.2.2.2</span> Mean absolute deviation<a class="anchor" aria-label="anchor" href="#mean-absolute-deviation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.2.2</span> Mean absolute deviation<a class="anchor" aria-label="anchor" href="#mean-absolute-deviation"><i class="fas fa-link"></i></a>
 </h4>
 <p>Mean absolute deviance (MAD) values are calculated on landscape- and pixel-level
 species relative abundances and <span class="math inline">\(\Delta\)</span>B, and landscape-level species presences
@@ -696,9 +700,9 @@ across years). Output tables with MAD values are exported as <code>landscapeMAD<
 <code>pixelMAD</code>, and the module also produces visual inspection of these values as
 dot-and-whisker plots.</p>
 </div>
-<div id="sum-of-negative-log-likelihood-snll" class="section level4" number="8.2.2.3">
+<div id="sum-of-negative-log-likelihood-snll" class="section level4" number="5.2.2.3">
 <h4>
-<span class="header-section-number">8.2.2.3</span> Sum of negative log-likelihood (SNLL)<a class="anchor" aria-label="anchor" href="#sum-of-negative-log-likelihood-snll"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.2.3</span> Sum of negative log-likelihood (SNLL)<a class="anchor" aria-label="anchor" href="#sum-of-negative-log-likelihood-snll"><i class="fas fa-link"></i></a>
 </h4>
 <p>To provide a measure of overall goodness of fit of the simulation model, given a
 given set of starting conditions and simulation mechanisms (i.e., the
@@ -711,18 +715,18 @@ let <span class="math inline">\(\ell\)</span> be the log-likelihood function den
 <span class="math inline">\(x\)</span> of <span class="math inline">\(X\)</span> (a random variable following a continuous probability distribution
 <span class="math inline">\(f(x)\)</span>), given a parameter <span class="math inline">\(\theta\)</span>:</p>
 <span class="math display" id="eq:loglik">\[\begin{equation}
-\ell(\theta \mid x) = f(x)
-\tag{8.1}
+  \ell(\theta \mid x) = f(x)
+  \tag{5.1}
 \end{equation}\]</span>
 <p>In our case, <span class="math inline">\(\theta\)</span> is equivalent to the model’s starting conditions and
 structure, <span class="math inline">\(X\)</span> is the observed data with <span class="math inline">\(x\)</span> being the simulated values, and
 <span class="math inline">\(f(x)\)</span> the continuous probability distribution of <span class="math inline">\(X\)</span>. For each variable that we
-wanted to evaluate and for each simulation replicate, Equation <a href="landr-biomass_validationknn-module.html#eq:loglik">(8.1)</a>
+wanted to evaluate and for each simulation replicate, Equation <a href="landr-biomass_validationknn-module.html#eq:loglik">(5.1)</a>
 is applied to calculate the SNLL estimated for each value of <span class="math inline">\(x\)</span> at the pixel or
 landscape-level, <span class="math inline">\(i\)</span>:</p>
 <span class="math display" id="eq:negsumloglik">\[\begin{equation}
--\sum_{i = 1}^{N} \ell(\theta \mid x_{i})
-\tag{8.2}
+  -\sum_{i = 1}^{N} \ell(\theta \mid x_{i})
+  \tag{5.2}
 \end{equation}\]</span>
 <p>where <span class="math inline">\(N\)</span> is equal to total number of pixels. At the landscape scale <span class="math inline">\(N = 1\)</span>.</p>
 <p>For species biomass and species presences, we draw the probability of observing
@@ -751,9 +755,9 @@ distribution</a>
 for a good summary of these two distributions and their use in SNLL estimation.</p>
 </div>
 </div>
-<div id="initialization-inputs-and-parameters-4" class="section level3" number="8.2.3">
+<div id="initialization-inputs-and-parameters-4" class="section level3" number="5.2.3">
 <h3>
-<span class="header-section-number">8.2.3</span> Initialization, inputs and parameters<a class="anchor" aria-label="anchor" href="#initialization-inputs-and-parameters-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.3</span> Initialization, inputs and parameters<a class="anchor" aria-label="anchor" href="#initialization-inputs-and-parameters-4"><i class="fas fa-link"></i></a>
 </h3>
 <p><em>Biomass_validationKNN</em> initializes itself and prepares all inputs provided that
 it has access to outputs of simulations from <em>Biomass_core</em>, and internet access
@@ -762,9 +766,9 @@ run <em>Biomass_validationKNN</em> with defaults and inspect what the objects ar
 before supplying their own data, or alternative data URLs. Alternatively, users
 may develop their own validation modules using <em>Biomass_validationKNN</em> as a
 template.</p>
-<div id="input-objects-4" class="section level4" number="8.2.3.1">
+<div id="input-objects-4" class="section level4" number="5.2.3.1">
 <h4>
-<span class="header-section-number">8.2.3.1</span> Input objects<a class="anchor" aria-label="anchor" href="#input-objects-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.3.1</span> Input objects<a class="anchor" aria-label="anchor" href="#input-objects-4"><i class="fas fa-link"></i></a>
 </h4>
 <p><em>Biomass_validationKNN</em> requires the following input data layers: land-cover
 change (change type and year), fire perimeters, % species cover,
@@ -772,11 +776,11 @@ stand age and stand biomass. By default, the module will take these from
 National Forest Inventory kNN layers for years 2001 and 2011. We recommend that
 the user supplies layers used to initialise the simulation as the starting input
 layers (2001 if that is the starting point) to guarantee that they match. Table
-<a href="landr-biomass_validationknn-module.html#tab:moduleInputs2-Biomass-validationKNN">8.4</a> shows the full list of input
+<a href="landr-biomass_validationknn-module.html#tab:moduleInputs2-Biomass-validationKNN">5.4</a> shows the full list of input
 objects used by the module.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleInputs2-Biomass-validationKNN">Table 8.4: </span>List of <em>Biomass_validationKNN</em> input objects and their description.
+<span id="tab:moduleInputs2-Biomass-validationKNN">Table 5.4: </span>List of <em>Biomass_validationKNN</em> input objects and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -1047,10 +1051,12 @@ NA
 </tr>
 </tbody>
 </table></div>
-<p>Of the inputs in Table <a href="landr-biomass_validationknn-module.html#tab:moduleInputs2-Biomass-validationKNN">8.4</a>, the
+<p>Of the inputs in Table <a href="landr-biomass_validationknn-module.html#tab:moduleInputs2-Biomass-validationKNN">5.4</a>, the
 following are particularly important and deserve special attention:</p>
 <ul>
-<li><p><strong>Spatial layers</strong></p></li>
+<li>
+<p><strong>Spatial layers</strong></p>
+<ul>
 <li><p><code>biomassMap</code> – a map of simulated stand biomass (in <span class="math inline">\(g/m^2\)</span> ) filtered
 for the pixels where cohort dynamics were simulated. This corresponds to
 the <code>sim$biomassMap</code> object produced by <em>Biomass_borealDataPrep</em> or to
@@ -1088,7 +1094,11 @@ species % cover data.</p></li>
 <li><p><code>studyArea</code> – shapefile. A <code>SpatialPolygonsDataFrame</code> with a single
 polygon determining the where the simulation will take place. This is
 the only input object that <strong>must be supplied by the user</strong>.</p></li>
-<li><p><strong>Simulation-related objects</strong></p></li>
+</ul>
+</li>
+<li>
+<p><strong>Simulation-related objects</strong></p>
+<ul>
 <li><p><code>allCohortData</code> – OPTIONAL. A <code>data.table</code> containing all <code>cohortData</code>
 objects relevant for the validation (e.g., as many <code>cohortData</code> objects
 as simulation replicates times 2, for the beginning and end year). If
@@ -1112,16 +1122,18 @@ Pixels are always grouped based on identical <em>ecoregionGroup</em>,
 other initial groupings (e.g., this is possible in the
 <em>Biomass_borealDataPrep</em> data module).</p></li>
 </ul>
+</li>
+</ul>
 </div>
-<div id="parameters-4" class="section level4" number="8.2.3.2">
+<div id="parameters-4" class="section level4" number="5.2.3.2">
 <h4>
-<span class="header-section-number">8.2.3.2</span> Parameters<a class="anchor" aria-label="anchor" href="#parameters-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.3.2</span> Parameters<a class="anchor" aria-label="anchor" href="#parameters-4"><i class="fas fa-link"></i></a>
 </h4>
-<p>Table <a href="landr-biomass_validationknn-module.html#tab:moduleParams2-Biomass-validationKNN">8.5</a> lists all parameters used
+<p>Table <a href="landr-biomass_validationknn-module.html#tab:moduleParams2-Biomass-validationKNN">5.5</a> lists all parameters used
 in <em>Biomass_validationKNN</em> and their detailed information.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleParams2-Biomass-validationKNN">Table 8.5: </span>List of <em>Biomass_validationKNN</em> parameters and their description.
+<span id="tab:moduleParams2-Biomass-validationKNN">Table 5.5: </span>List of <em>Biomass_validationKNN</em> parameters and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -1446,7 +1458,7 @@ Controls cache; caches the init event by default
 </tbody>
 </table></div>
 <p>Of the parameters listed in Table
-<a href="landr-biomass_validationknn-module.html#tab:moduleParams2-Biomass-validationKNN">8.5</a>, the following are particularly
+<a href="landr-biomass_validationknn-module.html#tab:moduleParams2-Biomass-validationKNN">5.5</a>, the following are particularly
 important:</p>
 <ul>
 <li><p><code>LCChangeYr</code> – integer. Optional parameter defining the years of
@@ -1465,9 +1477,9 @@ simulation year.</p></li>
 </ul>
 </div>
 </div>
-<div id="simulation-flow-4" class="section level3" number="8.2.4">
+<div id="simulation-flow-4" class="section level3" number="5.2.4">
 <h3>
-<span class="header-section-number">8.2.4</span> Simulation flow<a class="anchor" aria-label="anchor" href="#simulation-flow-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.4</span> Simulation flow<a class="anchor" aria-label="anchor" href="#simulation-flow-4"><i class="fas fa-link"></i></a>
 </h3>
 <p>The general flow of <em>Biomass_validationKNN</em> processes is:</p>
 <ol style="list-style-type: decimal">
@@ -1475,8 +1487,8 @@ simulation year.</p></li>
 layers from online repositories (or if available stored local copies) and
 the compiling simulated data if the user has not done so previously (see
 <a href="landr-biomass_validationknn-module.html#input-objects-4">Input objects</a>).</p></li>
-<li><p>Calculation of summary variables for validation, namely:</p></li>
-</ol>
+<li>
+<p>Calculation of summary variables for validation, namely:</p>
 <ul>
 <li><p>relative biomass per species per pixel and across the landscape (per
 year and per replicate)</p></li>
@@ -1485,13 +1497,13 @@ replicate), with respect to the first year.</p></li>
 <li><p>species dominance across the landscape</p></li>
 <li><p>species presences across the landscape</p></li>
 </ul>
-<ol start="3" style="list-style-type: decimal">
+</li>
 <li><p>Calculation of validation statistics, namely mean absolute deviations (MAD)
 and sum of negative log-likelihoods (SNLL).</p></li>
-<li><p>Assessment of the relationship between observed <span class="math inline">\(\Delta\)</span>B and observed
+<li>
+<p>Assessment of the relationship between observed <span class="math inline">\(\Delta\)</span>B and observed
 <span class="math inline">\(\Delta\)</span>Age – this is an optional visual diagnostic of the observed data
-that produces scatterplots of <span class="math inline">\(\Delta\)</span>B ~ <span class="math inline">\(\Delta\)</span>Age of three types:</p></li>
-</ol>
+that produces scatterplots of <span class="math inline">\(\Delta\)</span>B ~ <span class="math inline">\(\Delta\)</span>Age of three types:</p>
 <ul>
 <li><p>With raw observed values of <span class="math inline">\(\Delta\)</span>B and <span class="math inline">\(\Delta\)</span>Age</p></li>
 <li><p>With <span class="math inline">\(\Delta\)</span>B and <span class="math inline">\(\Delta\)</span>Age calculated on observed data <em>after</em>
@@ -1509,9 +1521,9 @@ remind the user that disturbed pixels should be removed from the
 analyses when validating succession dynamics in the absence of
 disturbance - the default option.</p></li>
 </ul>
-<ol start="5" style="list-style-type: decimal">
-<li>Plots:</li>
-</ol>
+</li>
+<li>
+<p>Plots:</p>
 <ul>
 <li><p>Barplots of landscape-wide and pixel-level comparisons between observed
 and simulated data, with respect to relative biomass, dominance and
@@ -1521,17 +1533,19 @@ with respect to the first year.</p></li>
 <li><p>Maps of biomass and age changes (<span class="math inline">\(\Delta\)</span>B, <span class="math inline">\(\Delta\)</span>Age) with respect to
 the first year, in observed and simulated data.</p></li>
 </ul>
+</li>
+</ol>
 <p>All module default outputs are in the form of plots, but the user can chose to
-save any objects (see Table <a href="landr-biomass_validationknn-module.html#tab:moduleOutputs-Biomass-validationKNN">8.3</a>).</p>
+save any objects (see Table <a href="landr-biomass_validationknn-module.html#tab:moduleOutputs-Biomass-validationKNN">5.3</a>).</p>
 </div>
 </div>
-<div id="usage-example-4" class="section level2" number="8.3">
+<div id="usage-example-4" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">8.3</span> Usage example<a class="anchor" aria-label="anchor" href="#usage-example-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> Usage example<a class="anchor" aria-label="anchor" href="#usage-example-4"><i class="fas fa-link"></i></a>
 </h2>
-<div id="load-spades-and-other-packages.-2" class="section level3" number="8.3.1">
+<div id="load-spades-and-other-packages.-2" class="section level3" number="5.3.1">
 <h3>
-<span class="header-section-number">8.3.1</span> Load <code>SpaDES</code> and other packages.<a class="anchor" aria-label="anchor" href="#load-spades-and-other-packages.-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3.1</span> Load <code>SpaDES</code> and other packages.<a class="anchor" aria-label="anchor" href="#load-spades-and-other-packages.-2"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades.predictiveecology.org">SpaDES</a></span><span class="op">)</span>
@@ -1539,9 +1553,9 @@ save any objects (see Table <a href="landr-biomass_validationknn-module.html#tab
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">SpaDES.experiment</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://future.futureverse.org">future</a></span><span class="op">)</span></code></pre></div>
 </div>
-<div id="get-the-modules" class="section level3" number="8.3.2">
+<div id="get-the-modules" class="section level3" number="5.3.2">
 <h3>
-<span class="header-section-number">8.3.2</span> Get the modules<a class="anchor" aria-label="anchor" href="#get-the-modules"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3.2</span> Get the modules<a class="anchor" aria-label="anchor" href="#get-the-modules"><i class="fas fa-link"></i></a>
 </h3>
 <p>Because <em>Biomass_validationKNN</em> is meant to validate simulation outputs against
 observed data, we need to first run a simulation of forest dynamics with
@@ -1567,9 +1581,9 @@ outputs in temporary directories.</p>
     <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, <span class="st">"Biomass_core"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>,
         <span class="st">"Biomass_validationKNN"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="setup-simulation-3" class="section level3" number="8.3.3">
+<div id="setup-simulation-3" class="section level3" number="5.3.3">
 <h3>
-<span class="header-section-number">8.3.3</span> Setup simulation<a class="anchor" aria-label="anchor" href="#setup-simulation-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3.3</span> Setup simulation<a class="anchor" aria-label="anchor" href="#setup-simulation-3"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">2001</span>, end <span class="op">=</span> <span class="fl">2011</span><span class="op">)</span>
@@ -1607,9 +1621,9 @@ outputs in temporary directories.</p>
 <span class="va">outputs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">outputs</span>, <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>objectName <span class="op">=</span> <span class="st">"pixelGroupMap"</span>,
     saveTime <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">times</span><span class="op">$</span><span class="va">start</span>, <span class="va">times</span><span class="op">$</span><span class="va">end</span>, by <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>, eventPriority <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="run-simulation-1" class="section level3" number="8.3.4">
+<div id="run-simulation-1" class="section level3" number="5.3.4">
 <h3>
-<span class="header-section-number">8.3.4</span> Run simulation<a class="anchor" aria-label="anchor" href="#run-simulation-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3.4</span> Run simulation<a class="anchor" aria-label="anchor" href="#run-simulation-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>Here we run a simulation with three replicates using the <code>experiment2</code> function
 of the <code>SpaDES.experiment</code> R package <span class="citation">(<a href="#ref-McIntireChubaty2021" role="doc-biblioref">McIntire &amp; Chubaty 2021</a>)</span>, which builds a
@@ -1623,9 +1637,9 @@ folder structure where simulation outputs are conveniently organised.</p>
 <span class="va">mySimExperiment</span> <span class="op">&lt;-</span> <span class="fu">experiment2</span><span class="op">(</span>sim1 <span class="op">=</span> <span class="va">mySimInit</span>, clearSimEnv <span class="op">=</span> <span class="cn">FALSE</span>,
     replicates <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="validate-simulation-outputs-with-biomass_validationknn" class="section level3" number="8.3.5">
+<div id="validate-simulation-outputs-with-biomass_validationknn" class="section level3" number="5.3.5">
 <h3>
-<span class="header-section-number">8.3.5</span> Validate simulation outputs with <em>Biomass_validationKNN</em><a class="anchor" aria-label="anchor" href="#validate-simulation-outputs-with-biomass_validationknn"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3.5</span> Validate simulation outputs with <em>Biomass_validationKNN</em><a class="anchor" aria-label="anchor" href="#validate-simulation-outputs-with-biomass_validationknn"><i class="fas fa-link"></i></a>
 </h3>
 <p>Note that because we ran <em>Biomass_core</em> by itself using theoretical input data,
 we can expect the validation to reveal that the module didn’t do a great job at
@@ -1668,26 +1682,26 @@ reproducing observed patterns.</p>
 <div class="figure">
 <span style="display:block;" id="fig:fig-Biomass-validationKNNOutPlots"></span>
 <img src="modules/Biomass_validationKNN/figures/LandscapeComparisons_PresAbs.png" alt="Biomass_validationKNN automatically generates plots showing a visual comparison between simulated and observed species presences (right) across the landscape, and relative species biomass per pixel (left)." width="50%"><img src="modules/Biomass_validationKNN/figures/PixelComparisons_relB.png" alt="Biomass_validationKNN automatically generates plots showing a visual comparison between simulated and observed species presences (right) across the landscape, and relative species biomass per pixel (left)." width="50%"><p class="caption">
-Figure 8.1: <em>Biomass_validationKNN</em> automatically generates plots showing a visual comparison between simulated and observed species presences (right) across the landscape, and relative species biomass per pixel (left).
+Figure 5.1: <em>Biomass_validationKNN</em> automatically generates plots showing a visual comparison between simulated and observed species presences (right) across the landscape, and relative species biomass per pixel (left).
 </p>
 </div>
 <div class="figure">
 <span style="display:block;" id="fig:fig-Biomass-validationKNNOutPlots2"></span>
 <img src="modules/Biomass_validationKNN/figures/landscapeMAD.png" alt="A plot of landscape-wide mean absolute deviations (MAD) from (top to bottom) observed mean relative abundance, no. of presences, no. of pixels where the species is dominant and $\Delta$B." width="336"><p class="caption">
-Figure 8.2: A plot of landscape-wide mean absolute deviations (MAD) from (top to bottom) observed mean relative abundance, no. of presences, no. of pixels where the species is dominant and <span class="math inline">\(\Delta\)</span>B.
+Figure 5.2: A plot of landscape-wide mean absolute deviations (MAD) from (top to bottom) observed mean relative abundance, no. of presences, no. of pixels where the species is dominant and <span class="math inline">\(\Delta\)</span>B.
 </p>
 </div>
 <div class="figure">
 <span style="display:block;" id="fig:fig-Biomass-validationKNNOutPlots3"></span>
 <img src="modules/Biomass_validationKNN/figures/observedDeltaBDeltaAge.png" alt="Diagnostic plot of observed changes in biomass and age $\Delta$B and $\Delta$Age, respectively)." width="336"><p class="caption">
-Figure 8.3: Diagnostic plot of observed changes in biomass and age <span class="math inline">\(\Delta\)</span>B and <span class="math inline">\(\Delta\)</span>Age, respectively).
+Figure 5.3: Diagnostic plot of observed changes in biomass and age <span class="math inline">\(\Delta\)</span>B and <span class="math inline">\(\Delta\)</span>Age, respectively).
 </p>
 </div>
 </div>
 </div>
-<div id="references-4" class="section level2" number="8.4">
+<div id="references-4" class="section level2" number="5.4">
 <h2>
-<span class="header-section-number">8.4</span> References<a class="anchor" aria-label="anchor" href="#references-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4</span> References<a class="anchor" aria-label="anchor" href="#references-4"><i class="fas fa-link"></i></a>
 </h2>
 
 <div id="refs" class="references csl-bib-body hanging-indent">
@@ -1776,40 +1790,40 @@ Stall, S., Yarmey, L., Cutcher-Gershenfeld, J., Hanson, B., Lehnert, K., Nosek, 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="landr-validation-modules.html"><span class="header-section-number">7</span> LandR Validation Modules</a></div>
+<div class="prev"><a href="landr-validation-modules.html">LandR Validation Modules</a></div>
 <div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#landr-biomass_validationknn-module"><span class="header-section-number">8</span> LandR Biomass_validationKNN Module</a></li>
+<li><a class="nav-link" href="#landr-biomass_validationknn-module"><span class="header-section-number">5</span> LandR Biomass_validationKNN Module</a></li>
 <li>
-<a class="nav-link" href="#module-overview-4"><span class="header-section-number">8.1</span> Module Overview</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#module-summary-4"><span class="header-section-number">8.1.1</span> Module summary</a></li>
-<li><a class="nav-link" href="#module-inputs-and-parameters-at-a-glance-3"><span class="header-section-number">8.1.2</span> Module inputs and parameters at a glance</a></li>
-<li><a class="nav-link" href="#events-4"><span class="header-section-number">8.1.3</span> Events</a></li>
-<li><a class="nav-link" href="#module-outputs-4"><span class="header-section-number">8.1.4</span> Module outputs</a></li>
-<li><a class="nav-link" href="#links-to-other-modules-4"><span class="header-section-number">8.1.5</span> Links to other modules</a></li>
-<li><a class="nav-link" href="#getting-help-4"><span class="header-section-number">8.1.6</span> Getting help</a></li>
+<a class="nav-link" href="#module-overview-4"><span class="header-section-number">5.1</span> Module Overview</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#module-summary-4"><span class="header-section-number">5.1.1</span> Module summary</a></li>
+<li><a class="nav-link" href="#module-inputs-and-parameters-at-a-glance-3"><span class="header-section-number">5.1.2</span> Module inputs and parameters at a glance</a></li>
+<li><a class="nav-link" href="#events-4"><span class="header-section-number">5.1.3</span> Events</a></li>
+<li><a class="nav-link" href="#module-outputs-4"><span class="header-section-number">5.1.4</span> Module outputs</a></li>
+<li><a class="nav-link" href="#links-to-other-modules-4"><span class="header-section-number">5.1.5</span> Links to other modules</a></li>
+<li><a class="nav-link" href="#getting-help-4"><span class="header-section-number">5.1.6</span> Getting help</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#module-manual-4"><span class="header-section-number">8.2</span> Module manual</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#detailed-description-3"><span class="header-section-number">8.2.1</span> Detailed description</a></li>
-<li><a class="nav-link" href="#validation-approaches"><span class="header-section-number">8.2.2</span> Validation approaches</a></li>
-<li><a class="nav-link" href="#initialization-inputs-and-parameters-4"><span class="header-section-number">8.2.3</span> Initialization, inputs and parameters</a></li>
-<li><a class="nav-link" href="#simulation-flow-4"><span class="header-section-number">8.2.4</span> Simulation flow</a></li>
+<a class="nav-link" href="#module-manual-4"><span class="header-section-number">5.2</span> Module manual</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#detailed-description-3"><span class="header-section-number">5.2.1</span> Detailed description</a></li>
+<li><a class="nav-link" href="#validation-approaches"><span class="header-section-number">5.2.2</span> Validation approaches</a></li>
+<li><a class="nav-link" href="#initialization-inputs-and-parameters-4"><span class="header-section-number">5.2.3</span> Initialization, inputs and parameters</a></li>
+<li><a class="nav-link" href="#simulation-flow-4"><span class="header-section-number">5.2.4</span> Simulation flow</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#usage-example-4"><span class="header-section-number">8.3</span> Usage example</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#load-spades-and-other-packages.-2"><span class="header-section-number">8.3.1</span> Load SpaDES and other packages.</a></li>
-<li><a class="nav-link" href="#get-the-modules"><span class="header-section-number">8.3.2</span> Get the modules</a></li>
-<li><a class="nav-link" href="#setup-simulation-3"><span class="header-section-number">8.3.3</span> Setup simulation</a></li>
-<li><a class="nav-link" href="#run-simulation-1"><span class="header-section-number">8.3.4</span> Run simulation</a></li>
-<li><a class="nav-link" href="#validate-simulation-outputs-with-biomass_validationknn"><span class="header-section-number">8.3.5</span> Validate simulation outputs with Biomass_validationKNN</a></li>
+<a class="nav-link" href="#usage-example-4"><span class="header-section-number">5.3</span> Usage example</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#load-spades-and-other-packages.-2"><span class="header-section-number">5.3.1</span> Load SpaDES and other packages.</a></li>
+<li><a class="nav-link" href="#get-the-modules"><span class="header-section-number">5.3.2</span> Get the modules</a></li>
+<li><a class="nav-link" href="#setup-simulation-3"><span class="header-section-number">5.3.3</span> Setup simulation</a></li>
+<li><a class="nav-link" href="#run-simulation-1"><span class="header-section-number">5.3.4</span> Run simulation</a></li>
+<li><a class="nav-link" href="#validate-simulation-outputs-with-biomass_validationknn"><span class="header-section-number">5.3.5</span> Validate simulation outputs with Biomass_validationKNN</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#references-4"><span class="header-section-number">8.4</span> References</a></li>
+<li><a class="nav-link" href="#references-4"><span class="header-section-number">5.4</span> References</a></li>
 </ul>
 
       <div class="book-extra">
@@ -1827,7 +1841,7 @@ Stall, S., Yarmey, L., Cutcher-Gershenfeld, J., Hanson, B., Lehnert, K., Nosek, 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-04-06.</p>
+    <p>"<strong>LandR Manual</strong>: v. 0.0.9000" was written by Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire. It was last built on Last updated: 2022-04-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
