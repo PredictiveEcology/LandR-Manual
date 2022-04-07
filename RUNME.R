@@ -101,7 +101,7 @@ copyModuleRmds <- sapply(moduleRmds, function(x) {
   }
 
   ## if missing add chapter bibliography at the end of each module chapter:
-  chapterBibLine <- grep("printbibliography", linesModuleRmd, fixed = TRUE)
+  chapterBibLine <- grep("printbibliography|## References|# References", linesModuleRmd)
   needChapterBibLine <- TRUE
 
   if (length(chapterBibLine)) {

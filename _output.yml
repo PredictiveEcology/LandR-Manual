@@ -37,23 +37,24 @@ bookdown::bs4_book:
 #     vk: false
 #     whatsapp: false
 #   github-repo: PredictiveEcology/LandR-Manual
-
 bookdown::pdf_book:
   includes:
     in_header: latex/preamble.tex
     # before_body: latex/before_body.tex
     after_body: latex/after_body.tex
-  keep_tex: no
-  # dev: "cairo_pdf"
+  fig_crop: false
   latex_engine: xelatex
+  dev: "cairo_pdf"
   citation_package: biblatex
-  reference-section-title: ""
-  # template: null
-  # pandoc_args: [--listings, --top-level-division=chapter]
+  template: null
+  reference-section-title: "References"
+  # pandoc_args: [--top-level-division=chapter, --wrap=none]
   pandoc_args: --top-level-division=chapter
   toc_depth: 3
-  toc_unnumbered: no
-  toc_appendix: yes
+  toc_unnumbered: false
+  toc_appendix: true
+  highlight_bw: false
+  quote_footer: ["\\VA{", "}{}"]
 
 bookdown::epub_book:
   dev: svglite
