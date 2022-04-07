@@ -1,5 +1,5 @@
 bookdown::bs4_book:
-  css: style.css
+  css: css/style.css
   theme:
     primary: "#01665e"
     fg: "#2b2121"
@@ -13,7 +13,7 @@ bookdown::bs4_book:
 
 # bookdown::gitbook:
 #   description: "A manual to the LandR Ecosystem of SpaDES modules"
-#   css: style.css
+#   css: css/style.css
 #   number_sections: false
 #   split-bib: true
 #   config:
@@ -57,4 +57,4 @@ bookdown::pdf_book:
 
 bookdown::epub_book:
   dev: svglite
-  stylesheet: style.css
+  stylesheet: css/style.css
