@@ -6,15 +6,14 @@ date: "Last updated: `r Sys.Date()`"
 description: "A manual for the LandR ecosystem of SpaDES modules"
 documentclass: krantz
 site: bookdown::bookdown_site
+github-repo: PredictiveEcology/LandR-Manual
+url: 'https\://predictiveecology.github.io/LandR-Manual'
 knit: "bookdown::render_book"
 bibliography:
   - citations/referencesLandRManual.bib
 csl: citations/ecology-letters.csl
 biblatexoptions: [refsegment=chapter]
 link-citations: true
-documentclass: book
-github-repo: PredictiveEcology/LandR-Manual
-url: 'https\://predictiveecology.github.io/LandR-Manual'
 cover-image: "figures/LandRHex.png"
 always_allow_html: true
 colorlinks: yes
