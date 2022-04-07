@@ -10,6 +10,7 @@ if (!require("Require")) {
   install.packages("Require")
 }
 
+library(data.table)
 Require::pkgSnapshot("packages/pkgSnapshot.txt")
 # Much later on a different or same machine
 # Require::Require(pkgSnapshot = "packages/pkgSnapshot.txt")
