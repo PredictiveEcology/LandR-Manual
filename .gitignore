@@ -9,6 +9,9 @@
 *.R.save
 *.swp
 
+LandRManual*
+!LandRManual.Rproj
+
 nul
 
 _bookdown_files
