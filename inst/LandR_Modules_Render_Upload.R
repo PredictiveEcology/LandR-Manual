@@ -1,6 +1,7 @@
 #library(rsconnect)
 #library(knitr)
 Require::Require("rmarkdown")
+setwd("inst")
 source("LandR_Modules.R")
 rmarkdown::render(input = "LandR_Modules.Rmd", output_file="LandR_Modules.html")
 # result <- markdown::rpubsUpload("LandR module ecosystem", "LandR_Modules.html")
