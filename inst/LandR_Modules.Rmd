@@ -38,8 +38,13 @@ DT <- moduleDepenencies(mods, modulePath = "testMods")
 
 graph <- moduleDependenciesToGraph(DT)
 
-
-vn <- PlotModuleGraph(graph)  
+groupBy <- c(Biomass = "Biomass", fireSense = "FireSense",
+             CBM = "CBM", ROF = "Ontario|rof", Wildlife = "bird|caribou",
+             ws3 = "ws3"
+)
+ignoreCase <- c(FALSE, TRUE, TRUE, TRUE, TRUE) # these must correspond to previous
+cols <- c("lightgreen", "red", "purple", "orange", "yellow", "salmon3")
+vn <- PlotModuleGraph(graph, groupBy, ignoreCase, cols = cols) 
 
 ```
 
