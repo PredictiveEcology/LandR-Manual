@@ -6,29 +6,32 @@ moduleDependenciesToGraph <- function(md) {
 }
 
 
-PlotModuleGraph <- function(graph) {
+PlotModuleGraph <- function(graph, groupBy = c(Biomass = "Biomass", FireSense = "fireSense",
+                                               CBM = "CBM", RoF = "Ontario"),
+                            ignoreCase = TRUE, cols = c("orange", "red", "green", "lightgreen")) {
   graph <- simplify(graph)
 
   names <- V(graph)$name
-  groups <- ifelse(grepl("Biomass", names), "Biomass",
-                   ifelse (grepl("fireSense", ignore.case = TRUE, names), "FireSense",
-                           ifelse (grepl("CBM", ignore.case = TRUE, names), "CBM",
-                                   ifelse (grepl("ROF", ignore.case = TRUE, names), "RoF", "Other"))))
+  groups <- groups(names, groupBy, ignoreCase)
+  # groups <- ifelse(grepl("Biomass", names), "Biomass",
+  #                  ifelse (grepl("fireSense", ignore.case = TRUE, names), "FireSense",
+  #                          ifelse (grepl("CBM", ignore.case = TRUE, names), "CBM",
+  #                                  ifelse (grepl("ROF", ignore.case = TRUE, names), "RoF", "Other"))))
 
   nodes <- data.frame(id = V(graph)$name, title = V(graph)$name, group = groups)
   nodes <- nodes[order(nodes$id, decreasing = F),]
   edges <- get.data.frame(graph, what="edges")[1:2]
 
+  nams <- names(groupBy) # unique names
+  if (length(cols) != length(nams))
+    stop("cols must be same length as groupBy")
 
-  visNetwork(nodes, edges, width = "100%") %>%
-    visIgraphLayout(layout = "layout_with_fr", type = "full") %>%
-    visGroups(groupname = "Biomass", color = "orange",
-              shadow = list(enabled = TRUE)) %>%
-    # red triangle for group "B"
-    visGroups(groupname = "FireSense", color = "red") %>%
-    visGroups(groupname = "CBM", color = "green") %>%
-    visGroups(groupname = "RoF", color = "lightgreen") %>%
-    # visPhysics(repulsion = list(nodeDistance = 100)) %>%
+  p <- visNetwork(nodes, edges, width = "100%") %>%
+    visIgraphLayout(layout = "layout_with_fr", type = "full")
+  for (i in seq(nams))
+    p <- visGroups(graph = p, groupname = nams[i], color = cols[i], shadow = list(enabled = TRUE))
+  # visPhysics(repulsion = list(nodeDistance = 100)) %>%
+  p %>%
     visOptions(highlightNearest = TRUE,
                nodesIdSelection = TRUE,
                height="800px", width = "130%",
@@ -145,4 +148,26 @@ listModules <- function(moduleGreps, accounts, ignore = c("fireSense_dataPrepFit
     grep(paste(ignore, collapse = "|"), unlist(out), invert = TRUE, value = TRUE)
   })
   outs
+}
+
+groups <- function(names, groupBy = c(Biomass = "Biomass", FireSense = "fireSense",
+                               CBM = "CBM", RoF = "ROF"), ignoreCase = c(FALSE, TRUE, TRUE, TRUE)) {
+  groupBy <- c(groupBy, c("Other" = "Other"))
+  if (length(ignoreCase) == 1) ignoreCase <- rep(ignoreCase, length(groupBy))
+  groups <- ifelseIter(names, groupBy, ignoreCase)
+  # groups <- ifelse(grepl("Biomass", names), "Biomass",
+  #                  ifelse (grepl("fireSense", ignore.case = TRUE, names), "FireSense",
+  #                          ifelse (grepl("CBM", ignore.case = TRUE, names), "CBM",
+  #                                  ifelse (grepl("ROF", ignore.case = TRUE, names), "RoF", "Other"))))
+  return(groups)
+
+}
+
+ifelseIter <- function(names, groupBy, ignoreCase) {
+  nams <- names(groupBy)
+  if (length(nams) > 2) {
+    ifelse(grepl(groupBy[1], names, ignore.case = ignoreCase[1]), nams[1], ifelseIter(names, groupBy[-1], ignoreCase = ignoreCase[-1]))
+  } else {
+    ifelse(grepl(groupBy[1], names, ignore.case = ignoreCase[1]), nams[1], nams[-1])
+  }
 }
