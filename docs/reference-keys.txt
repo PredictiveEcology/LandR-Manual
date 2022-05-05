@@ -42,8 +42,9 @@ tab:moduleParams2-Biomass-borealDataPrep
 tab:moduleInputs-Biomass-speciesParameters
 tab:moduleParams-Biomass-speciesParameters
 tab:moduleOutputs-Biomass-speciesParameters
-eq:GAMM
-eq:Bweights
+eq:Chapman
+eq:Gompertz
+eq:Logistic
 eq:maxANPPcalib
 tab:moduleInputs2-Biomass-speciesParameters
 tab:moduleParams2-Biomass-speciesParameters
