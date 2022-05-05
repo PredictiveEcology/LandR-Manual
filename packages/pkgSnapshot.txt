@@ -227,6 +227,7 @@
 "cluster","C:/Program Files/R/R-4.0.4/library","2.1.2",NA,NA,NA,NA
 "codetools","C:/Program Files/R/R-4.0.4/library","0.2-18",NA,NA,NA,NA
 "compiler","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
+"data.table","C:/Program Files/R/R-4.0.4/library","1.14.2",NA,NA,NA,NA
 "datasets","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
 "foreign","C:/Program Files/R/R-4.0.4/library","0.8-82",NA,NA,NA,NA
 "graphics","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
@@ -241,6 +242,8 @@
 "nlme","C:/Program Files/R/R-4.0.4/library","3.1-155",NA,NA,NA,NA
 "nnet","C:/Program Files/R/R-4.0.4/library","7.3-17",NA,NA,NA,NA
 "parallel","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
+"remotes","C:/Program Files/R/R-4.0.4/library","2.4.2",NA,NA,NA,NA
+"Require","C:/Program Files/R/R-4.0.4/library","0.0.13.9007","Require","PredictiveEcology","development","ab28ac9f3e6cd47f0ef2a6ee4d456b4ac45fdc6f"
 "rpart","C:/Program Files/R/R-4.0.4/library","4.1.16",NA,NA,NA,NA
 "spatial","C:/Program Files/R/R-4.0.4/library","7.3-15",NA,NA,NA,NA
 "splines","C:/Program Files/R/R-4.0.4/library","4.0.4",NA,NA,NA,NA
