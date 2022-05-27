@@ -10,6 +10,7 @@ if (!require("Require")) {
   install.packages("Require")
 }
 
+library(data.table)
 Require::pkgSnapshot("packages/pkgSnapshot.txt")
 # Much later on a different or same machine
 # Require::Require(pkgSnapshot = "packages/pkgSnapshot.txt")
@@ -101,7 +102,7 @@ copyModuleRmds <- sapply(moduleRmds, function(x) {
   }
 
   ## if missing add chapter bibliography at the end of each module chapter:
-  chapterBibLine <- grep("printbibliography", linesModuleRmd, fixed = TRUE)
+  chapterBibLine <- grep("printbibliography|## References|# References", linesModuleRmd)
   needChapterBibLine <- TRUE
 
   if (length(chapterBibLine)) {
@@ -122,12 +123,51 @@ copyModuleRmds <- sapply(moduleRmds, function(x) {
   return(copyModuleRmd)
 })
 
+## make sure there aren't repeated text references across modules
+## first get module order
+bkdwnYML <- readLines("_bookdown.yml")
+bkdwnYMLsub <- bkdwnYML[grepl("modules\\/", bkdwnYML)]
+bkdwnYMLsub <- sub(".*(modules)", "\\1", bkdwnYMLsub)
+
+## now read all module lines and put the list in the right order
+allModules <- lapply(copyModuleRmds, readLines)
+names(allModules) <- copyModuleRmds
+allModules <- allModules[bkdwnYMLsub]
+
+## get the text ref lines and their line IDs
+refTextLinesID <- lapply(allModules, function(x) {
+  data.table(lineText = grep("^\\(ref\\:.*\\)", x, value = TRUE),
+             lineID = grep("^\\(ref\\:.*\\)", x))
+})
+refTextLinesID <- rbindlist(refTextLinesID, idcol = "file", use.names = TRUE)
+refTextLinesID[, dups := duplicated(lineText)]
+
+lapply(split(refTextLinesID, by = "file"), function(dupsTab, allModules) {
+  if (any(dupsTab$dups)) {
+    modLines <- allModules[[unique(dupsTab$file)]]
+    modLines <- modLines[-dupsTab[which(dups), lineID]]
+
+    ## if now we have two empty lines, remove one
+    for (i in dupsTab[which(dups), lineID]) {
+      if (all(modLines[c(i, i + 1)] == "")) {
+        modLines <- modLines[-i]
+      }
+      if (all(modLines[c(i - 1, i)] == "")) {
+        modLines <- modLines[-i]
+      }
+    }
+
+    writeLines(modLines, con = unique(dupsTab$file))
+  }
+}, allModules = allModules)
+
 ## prevents GitHub from rendering book using Jekyll
 if (!file.exists("docs/.nojekyll")) {
   file.create("docs/.nojekyll")
 }
 
 bookdown::render_book(output_format = "all")
+# bookdown::render_book(output_format = "bookdown::pdf_book")
 
 ## remove temporary .Rmds
 file.remove(copyModuleRmds)
