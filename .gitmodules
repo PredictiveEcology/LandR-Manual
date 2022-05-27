@@ -3,7 +3,7 @@
 	url = https://github.com/PredictiveEcology/Biomass_core
 [submodule "modules/Biomass_validationKNN"]
 	path = modules/Biomass_validationKNN
-	url = https://github.com/PredictiveEcology/Biomass_validationKNN
+	url = git@github.com:PredictiveEcology/Biomass_validationKNN.git
 [submodule "modules/Biomass_speciesData"]
 	path = modules/Biomass_speciesData
 	url = https://github.com/PredictiveEcology/Biomass_speciesData.git
