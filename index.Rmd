@@ -26,11 +26,21 @@ always_allow_html: true
 knitr::include_graphics(normalizePath(c("figures/LandRHex.png"), winslash = "/"))
 ```
 
-LandR is a collection of `SpaDES` modules [see @ChubatyMcIntire2019] aimed at simulating forest dynamics across large spatial scales, while taking into account various disturbances that affect them (e.g., wildfire and climate change), as well as interactions with other components of forest systems, such as bird communities and ungulates (via changes in the habitat of these species), and carbon cycling.
+LandR is a collection of `SpaDES` modules [see @ChubatyMcIntire2019] aimed at
+simulating forest dynamics across large spatial scales, while taking into
+account various disturbances that affect them (e.g., wildfire and climate
+change), as well as interactions with other components of forest systems, such
+as bird communities and ungulates (via changes in the habitat of these species),
+and carbon cycling.
 
-The present manual is a "live" document, in that grows and changes according to the existing number of LandR modules, as well as their development. In addition, sub-manuals may be produced describing smaller collections of LandR modules -- e.g., a LandR Biomass manual would describe only the LandR modules that are essential for the simulation of the vegetation components of forest succession, excluding disturbances or carbon cycling.
+The present manual is a "live" document, in that grows and changes according to
+the existing number of LandR modules, as well as their development. In addition,
+sub-manuals may be produced describing smaller collections of LandR modules --
+e.g., a LandR Biomass manual would describe only the LandR modules that are
+essential for the simulation of the vegetation components of forest succession,
+excluding disturbances or carbon cycling.
 
-This manual does not cover the `SpaDES` toolkit, which we use to create and run LandR modules. To learn more about `SpaDES`
-go to the [SpaDES webpage](https://spades.predictiveecology.org/).
-
+This manual does not cover the `SpaDES` toolkit, which we use to create and run
+LandR modules. To learn more about `SpaDES` go to the [SpaDES
+webpage](https://spades.predictiveecology.org/).
 
