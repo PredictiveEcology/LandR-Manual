@@ -10,10 +10,15 @@ if (!require("Require")) {
   install.packages("Require")
 }
 
-library(data.table)
-Require::pkgSnapshot("packages/pkgSnapshot.txt")
-# Much later on a different or same machine
-# Require::Require(pkgSnapshot = "packages/pkgSnapshot.txt")
+if (FALSE) {
+  Require::pkgSnapshot("packages/pkgSnapshot.txt")
+  # Much later on a different or same machine
+  # Require::Require(packageVersionFile = "packages/pkgSnapshot.txt")
+}
+
+Require::Require(data.table)
+Require::Require(knitr)
+Require::Require(bookdown)
 
 ## REFERENCES ---------------------------------------
 ## automatically create a bib database for R packages
