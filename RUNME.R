@@ -22,7 +22,7 @@ Require::Require(bookdown)
 
 ## REFERENCES ---------------------------------------
 ## automatically create a bib database for R packages
-knitr::write_bib(c(
+write_bib(c(
   .packages(), "bookdown", "knitr", "rmarkdown",
   "SpaDES.core", "SpaDES", "SpaDES.experiment", "reproducible",
   "LandR", "Require"
@@ -186,8 +186,9 @@ if (!file.exists("docs/.nojekyll")) {
   file.create("docs/.nojekyll")
 }
 
-bookdown::render_book(output_format = "all")
-# bookdown::render_book(output_format = "bookdown::pdf_book")
+# render_book(output_format = "all")
+# render_book(output_format = "pdf_book")
+render_book(output_format = "bs4_book")
 
 ## remove temporary .Rmds
 file.remove(copyModuleRmds)
