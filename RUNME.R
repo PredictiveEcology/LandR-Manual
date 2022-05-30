@@ -39,19 +39,24 @@ if (!file.exists("citations/ecology-letters.csl")) {
 ## add these to main figures/ folder so they can be used throughout module manuals when knitting to pdf
 dir.create("figures", showWarnings = FALSE)
 
-download.file(url = "https://img.shields.io/badge/Made%20with-Markdown-1f425f.png",
-              destfile = "figures/markdownBadge.png",
-              mode = 'wb')
-download.file(url = "https://img.shields.io/badge/Get%20help-Report%20issues-%3CCOLOR%3E.png",
-              destfile = "figures/genericBadge.png",
-              mode = 'wb')
+if (!file.exists("figures/markdownBadge.png")) {
+  download.file(url = "https://img.shields.io/badge/Made%20with-Markdown-1f425f.png",
+                destfile = "figures/markdownBadge.png",
+                mode = 'wb')
+}
+
+if (!file.exists("figures/genericBadge.png")) {
+  download.file(url = "https://img.shields.io/badge/Get%20help-Report%20issues-%3CCOLOR%3E.png",
+                destfile = "figures/genericBadge.png",
+                mode = 'wb')
+}
 
 ## RMD PREP ------------------------------------------
-## strip module.Rmd YAML headers -----
 moduleRmds <- list.dirs("modules", recursive = FALSE)
 moduleRmds <- paste0(file.path(moduleRmds, basename(moduleRmds)), ".Rmd")
 
-copyModuleRmds <- sapply(moduleRmds, function(x) {
+copyModuleRmds <- sapply(moduleRmds, rebuildCache = FALSE,
+                         FUN = function(x, rebuildCache) {
   copyModuleRmd <- sub("(.*)(\\.Rmd)", "\\12\\2", x)
   file.copy(x, copyModuleRmd, overwrite = TRUE)
 
