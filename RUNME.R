@@ -121,6 +121,26 @@ copyModuleRmds <- sapply(moduleRmds, rebuildCache = FALSE,
     linesModuleRmd <- c(beforeSetupChunkStart, addedCode, afterSetupChunkStart)
   }
 
+  ## add cache rebuild options for each .Rmd
+  existsCacheRebuildSetup <- any(grepl("cache.rebuild", linesModuleRmd))
+  if (existsCacheRebuildSetup) {
+    ## overwrite option
+    cacheRebuildLine <- which(grepl(",*[[:space:]]*cache.rebuild[[:space:]]*=[[:space:]]*(TRUE|FALSE)[[:space:]]*(,|\\})", linesModuleRmd))
+    code2replace <- sub("(.*cache\\.rebuild.*=[[:space:]]*)(TRUE|FALSE)(.*)",
+                        paste0("\\1", rebuildCache, "\\3"),
+                        linesModuleRmd[cacheRebuildLine])
+    linesModuleRmd[cacheRebuildLine] <- code2replace
+  } else {
+    ## break lines into 2 to add a cache rebuild dir setup line (it doesn't matter if there
+    ## is another call to `knitr::opts_chunk$set`)
+    beforeSetupChunkStart <- linesModuleRmd[1:setupChunkStart]
+    afterSetupChunkStart <- linesModuleRmd[(setupChunkStart + 1):length(linesModuleRmd)]
+
+    addedCode <- paste0("knitr::opts_chunk$set(cache.rebuild = ", rebuildCache, ")")
+
+    linesModuleRmd <- c(beforeSetupChunkStart, addedCode, afterSetupChunkStart)
+  }
+
   ## if missing add chapter bibliography at the end of each module chapter:
   chapterBibLine <- grep("printbibliography|## References|# References", linesModuleRmd)
   needChapterBibLine <- TRUE
