@@ -55,9 +55,19 @@ copyModuleRmds <- sapply(moduleRmds, function(x) {
   copyModuleRmd <- sub("(.*)(\\.Rmd)", "\\12\\2", x)
   file.copy(x, copyModuleRmd, overwrite = TRUE)
 
+  ## strip module.Rmd YAML headers -----
   linesModuleRmd <- readLines(copyModuleRmd)
   lines2Rm <- modelr::seq_range(which(linesModuleRmd == "---"), by = 1)
   linesModuleRmd <- linesModuleRmd[-lines2Rm]
+
+  ## add chapter title if not present
+  nonEmptyLines <- linesModuleRmd[linesModuleRmd != ""]
+  if (!grepl("^# ", nonEmptyLines[1])) {
+    modName <- sub(".Rmd", "" ,basename(x))
+    chapterTitle <- paste0("# LandR *", modName, "* Module")
+
+    linesModuleRmd <- c("", chapterTitle, linesModuleRmd)
+  }
 
   ## make sure that setup chunk will be evaluated again
   ## (a previous setup chunk may have set "eval = FALSE" and "cache = TRUE")
