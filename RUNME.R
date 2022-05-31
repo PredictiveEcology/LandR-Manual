@@ -36,7 +36,7 @@ Require(c("downlit", "rmarkdown", "xml2",
           "PredictiveEcology/SpaDES@development",
           "PredictiveEcology/SpaDES.experiment@development",
           "PredictiveEcology/LandR@development"), require = FALSE)
-Require(c("bookdown", "data.table", "knitr"))
+Require(c("bookdown", "data.table", "knitr", "RefManageR", "ROpenSci/bibtex"))
 
 ## END WORKAROUND
 
@@ -54,9 +54,11 @@ bibFiles <- c(list.files("modules", "references_", recursive = TRUE, full.names 
               "citations/packages.bib",
               "citations/referencesLandRManual.bib")
 bibdata <- lapply(bibFiles, function(f) {
-  if (file.exists(f)) readLines(f)
+  if (file.exists(f)) ReadBib(f)
 })
-write(unlist(bibdata), file = "citations/referencesLandRManual.bib")
+bibdata <- Reduce(merge, bibdata)
+
+WriteBib(bibdata, file = "citations/referencesLandRManual.bib")
 
 if (!file.exists("citations/ecology-letters.csl")) {
   download.file("https://www.zotero.org/styles/ecology-letters?source=1", destfile = "citations/ecology-letters.csl")
