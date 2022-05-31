@@ -1,5 +1,5 @@
 ## clean workspace
-rm(list = ls())
+rm(list = ls(all.names = FALSE))
 
 # example R options set globally
 options("width" = 60,
@@ -44,5 +44,4 @@ options(knitr.table.format = function() {
     "latex" else "pipe"
 })
 
-require("kableExtra")
-
+require("kableExtra") ## TODO: why is this necessary?
