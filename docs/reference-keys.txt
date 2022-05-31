@@ -51,7 +51,6 @@ tab:moduleOutputs-Biomass-validationKNN
 fig:fig-Biomass-validationKNNOutPlots
 fig:fig-Biomass-validationKNNOutPlots2
 fig:fig-Biomass-validationKNNOutPlots3
-preface
 landr-biomass_core-module
 authors
 module-overview
