@@ -8,20 +8,41 @@
 ## Make sure necessary packages are installed
 if (!require("Require")) {
   install.packages("Require")
+  library("Require")
 }
 
 if (FALSE) {
   Require::pkgSnapshot("packages/pkgSnapshot.txt")
-  # Much later on a different or same machine
-  # Require::Require(packageVersionFile = "packages/pkgSnapshot.txt")
+  ## Much later on a different or same machine
+  #Require(packageVersionFile = "packages/pkgSnapshot.txt") ## TODO: doesn't work (Require#41)
+  ## - uses absolute paths, uses machine-specific package location, uses R 4.0;
+  ## - installing binaries of pkgs needed from source;
+  ## - RandomFields and gdalUtils n/a on CRAN.
 }
 
-Require::Require(data.table)
-Require::Require(knitr)
-Require::Require(bookdown)
+## BEGIN WORKAROUND for package installation
+
+## install archived CRAN packages, which are N/A as April 2022
+if (!all(c("gdalUtils", "RandomFields") %in% rownames(installed.packages()))) {
+  install.packages(c("https://cran.r-project.org/src/contrib/Archive/gdalUtils/gdalUtils_2.0.3.2.tar.gz",
+                     "https://cran.r-project.org/src/contrib/Archive/RandomFields/RandomFields_3.3.13.tar.gz"), repos = NULL)
+}
+
+Require("PredictiveEcology/SpaDES.install@development")
+installSpatialPackages()
+installSpaDES()
+
+Require(c("downlit", "rmarkdown", "xml2",
+          "PredictiveEcology/SpaDES@development",
+          "PredictiveEcology/SpaDES.experiment@development",
+          "PredictiveEcology/LandR@development"), require = FALSE)
+Require(c("bookdown", "data.table", "knitr"))
+
+## END WORKAROUND
 
 ## REFERENCES ---------------------------------------
 ## automatically create a bib database for R packages
+checkPath("citations", create = TRUE)
 write_bib(c(
   .packages(), "bookdown", "knitr", "rmarkdown",
   "SpaDES.core", "SpaDES", "SpaDES.experiment", "reproducible",
@@ -29,32 +50,32 @@ write_bib(c(
 ), "citations/packages.bib")
 
 ## collapse all chapter .bib files into one ------
-dir.create("citations", showWarnings = FALSE)
 bibFiles <- c(list.files("modules", "references_", recursive = TRUE, full.names = TRUE),
               "citations/packages.bib",
               "citations/referencesLandRManual.bib")
-bibdata <- lapply(bibFiles, readLines)
+bibdata <- lapply(bibFiles, function(f) {
+  if (file.exists(f)) readLines(f)
+})
 write(unlist(bibdata), file = "citations/referencesLandRManual.bib")
 
 if (!file.exists("citations/ecology-letters.csl")) {
-  dir.create("citations", showWarnings = FALSE)
   download.file("https://www.zotero.org/styles/ecology-letters?source=1", destfile = "citations/ecology-letters.csl")
 }
 
 ## BADGE IMAGES --------------------------------------
 ## add these to main figures/ folder so they can be used throughout module manuals when knitting to pdf
-dir.create("figures", showWarnings = FALSE)
+checkPath("figures", create = TRUE)
 
 if (!file.exists("figures/markdownBadge.png")) {
   download.file(url = "https://img.shields.io/badge/Made%20with-Markdown-1f425f.png",
                 destfile = "figures/markdownBadge.png",
-                mode = 'wb')
+                mode = "wb")
 }
 
 if (!file.exists("figures/genericBadge.png")) {
   download.file(url = "https://img.shields.io/badge/Get%20help-Report%20issues-%3CCOLOR%3E.png",
                 destfile = "figures/genericBadge.png",
-                mode = 'wb')
+                mode = "wb")
 }
 
 ## RMD PREP ------------------------------------------
@@ -107,7 +128,7 @@ copyModuleRmds <- sapply(moduleRmds, rebuildCache = FALSE,
   if (existsRootDirsSetup) {
     ## make sure the root.dir is the right one
     rootDirLine <- which(grepl("root\\.dir", linesModuleRmd))
-    dir2replace <- normalizePath(dirname(copyModuleRmd), winslash = "/")
+    dir2replace <- normPath(dirname(copyModuleRmd))
     code2replace <-  sub("(.*root\\.dir.*=[[:space:]]*)(.*)(\\))",
                          paste0("\\1", "'",  dir2replace, "'", "\\3"),
                          linesModuleRmd[rootDirLine])
@@ -117,7 +138,7 @@ copyModuleRmds <- sapply(moduleRmds, rebuildCache = FALSE,
     beforeSetupChunkStart <- linesModuleRmd[1:setupChunkStart]
     afterSetupChunkStart <- linesModuleRmd[(setupChunkStart + 1):length(linesModuleRmd)]
 
-    addedCode <- paste0("knitr::opts_knit$set(root.dir = '", normalizePath(dirname(copyModuleRmd), winslash = "/"), "')")
+    addedCode <- paste0("knitr::opts_knit$set(root.dir = '", normPath(dirname(copyModuleRmd)), "')")
 
     linesModuleRmd <- c(beforeSetupChunkStart, addedCode, afterSetupChunkStart)
   }
@@ -148,7 +169,7 @@ copyModuleRmds <- sapply(moduleRmds, rebuildCache = FALSE,
 
   if (length(chapterBibLine)) {
     ## if not in one of the last two lines, "move to the end"
-    if (!chapterBibLine %in% c(length(linesModuleRmd), length(linesModuleRmd)-1)) {
+    if (!chapterBibLine %in% c(length(linesModuleRmd), length(linesModuleRmd) - 1)) {
       linesModuleRmd[chapterBibLine] <- NULL
     } else {
       needChapterBibLine <- FALSE

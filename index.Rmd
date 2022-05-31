@@ -13,7 +13,7 @@ biblatexoptions: [refsegment=chapter]
 link-citations: true
 documentclass: book
 github-repo: PredictiveEcology/LandR-Manual
-url: 'https\://predictiveecology.github.io/LandR-Manual'
+url: "https://landr-manual.predictiveecology.org"
 cover-image: "figures/LandRHex.png"
 always_allow_html: true
 ---
@@ -23,7 +23,7 @@ always_allow_html: true
 # Preface
 
 ```{r figLandRHex, eval = TRUE, echo = FALSE, fig.align = 'center', fig.dim = c(10,10)}
-knitr::include_graphics(normalizePath(c("figures/LandRHex.png"), winslash = "/"))
+knitr::include_graphics(Require::normPath(c("figures/LandRHex.png")))
 ```
 
 LandR is a collection of `SpaDES` modules [see @ChubatyMcIntire2019] aimed at
