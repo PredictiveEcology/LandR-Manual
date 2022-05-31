@@ -1,26 +1,31 @@
 ---
 title: "LandR Manual"
 subtitle: "v. 0.0.0.9000"
-author: "Edited by: Ceres Barros, Alex M. Chubaty, Yong Luo, Ian M. S. Eddy, Eliot J. B. McIntire"
+author: "Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire"
 date: "Last updated: `r Sys.Date()`"
 description: "A manual for the LandR ecosystem of SpaDES modules"
+documentclass: krantz
 site: bookdown::bookdown_site
+github-repo: PredictiveEcology/LandR-Manual
+url: 'https\://predictiveecology.github.io/LandR-Manual'
 knit: "bookdown::render_book"
 bibliography:
   - citations/referencesLandRManual.bib
 csl: citations/ecology-letters.csl
 biblatexoptions: [refsegment=chapter]
 link-citations: true
-documentclass: book
-github-repo: PredictiveEcology/LandR-Manual
-url: "https://landr-manual.predictiveecology.org"
 cover-image: "figures/LandRHex.png"
 always_allow_html: true
+colorlinks: yes
+graphics: yes
+fontsize: 11pt
+lot: yes
+lof: yes
 ---
 
 <!-- manual version TODO: link to date and commit of manual/project repo -->
 
-# Preface
+# Preface {-}
 
 ```{r figLandRHex, eval = TRUE, echo = FALSE, fig.align = 'center', fig.dim = c(10,10)}
 knitr::include_graphics(Require::normPath(c("figures/LandRHex.png")))

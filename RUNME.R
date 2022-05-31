@@ -233,9 +233,9 @@ if (!file.exists("docs/.nojekyll")) {
   file.create("docs/.nojekyll")
 }
 
-# render_book(output_format = "all")
-# render_book(output_format = "pdf_book")
-render_book(output_format = "bs4_book")
+render_book(output_format = "all")
+# render_book(output_format = "bookdown::pdf_book")
+# render_book(output_format = "bookdown::bs4_book")
 
 ## remove temporary .Rmds
 file.remove(copyModuleRmds)
