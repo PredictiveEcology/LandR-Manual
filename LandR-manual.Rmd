@@ -12,6 +12,8 @@ documentclass: book
 github-repo: https://github.com/CeresBarros/LandR-Manual
 description: "A manual for the LandR ecosystem of SpaDES modules"
 cover-image: "figures/LandRHex.png"
+editor_options: 
+  chunk_output_type: console
 ---
 
 <!-- manual version TODO: link to date and commit of manual/project repo -->
@@ -36,21 +38,18 @@ The present manual is a "live" document, in that will grow and change according 
 (ref:Biomass-core) *Biomass_core*
 
 ```{r setup-Biomass-core, include=FALSE, eval = TRUE}
-knitr::opts_knit$set(root.dir = 'D:/GitHub/LandR-Manual/modules/Biomass_core')
+knitr::opts_knit$set(root.dir = "modules/Biomass_core")
 ## set cache.rebuild = TRUE whenever there are changes to the module code/metadata
 knitr::opts_chunk$set(echo = TRUE, eval = FALSE, warning = FALSE, 
                       cache = 2, cache.rebuild = FALSE, results = "hold", dpi = 300)
 
 ## get citation style
 if (!file.exists("citations/ecology-letters.csl")) {
-  dir.create("citations", showWarnings = FALSE)
+  Require::checkPath("citations", create = TRUE)
   download.file("https://www.zotero.org/styles/ecology-letters", destfile = "citations/ecology-letters.csl")
 }
 
-if (!require(dplyr)) {
-  install.packages("dplyr")
-  library(dplyr)
-}
+Require(c("dplyr", "kableExtra"))
 ```
 
 [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.png)](http://commonmark.org)
@@ -746,24 +745,19 @@ The LandR ecosystem of SpaDES modules has a variety of 'data modules' that are u
 (ref:Biomass-speciesData) *Biomass_speciesData*
 
 ```{r setup-Biomass-speciesData, include=FALSE, eval = TRUE}
-knitr::opts_knit$set(root.dir = 'D:/GitHub/LandR-Manual/modules/Biomass_speciesData')
+knitr::opts_knit$set(root.dir = "modules/Biomass_speciesData")
 ## set cache.rebuild = TRUE whenever there are changes to the module code/metadata
 knitr::opts_chunk$set(echo = TRUE, eval = FALSE, warning = FALSE, 
                       cache = 2, cache.rebuild = TRUE, results = "hold", dpi = 300)
 
 ## get citation style
 if (!file.exists("citations/ecology-letters.csl")) {
-  dir.create("citations", showWarnings = FALSE)
+  Require::checkPath("citations", create = TRUE)
   download.file("https://www.zotero.org/styles/ecology-letters?source=1", destfile = "citations/ecology-letters.csl")
 }
 ```
 
 ```{r loadPkgs, include = FALSE, cache = FALSE}
-if (!require(Require)) {
-  install.packages("Require")
-  library(Require)
-}
-
 Require(c("dplyr", "data.table"), install = TRUE)
 ```
 
@@ -1140,13 +1134,8 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE, warning = FALSE,
 
 ## get citation style
 if (!file.exists("citations/ecology-letters.csl")) {
-  dir.create("citations", showWarnings = FALSE)
+  Require::checkPath("citations", create = TRUE)
   download.file("https://www.zotero.org/styles/ecology-letters?source=1", destfile = "citations/ecology-letters.csl")
-}
-
-if (!require(dplyr)) {
-  install.packages("dplyr")
-  library(dplyr)
 }
 ```
 

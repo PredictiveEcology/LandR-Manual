@@ -10,4 +10,3 @@ knitr::opts_chunk$set(
   tidy = TRUE,
   tidy.opts = list(width.cutoff = 60)
 )
-
