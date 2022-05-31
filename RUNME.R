@@ -28,17 +28,19 @@ if (!all(c("gdalUtils", "RandomFields") %in% rownames(installed.packages()))) {
                      "https://cran.r-project.org/src/contrib/Archive/RandomFields/RandomFields_3.3.13.tar.gz"), repos = NULL)
 }
 
-Require("PredictiveEcology/SpaDES.install@development")
-installSpatialPackages()
-installSpaDES()
+if (FALSE) {
+  Require("PredictiveEcology/SpaDES.install@development")
+  installSpatialPackages()
+  installSpaDES()
+}
+
+## END WORKAROUND
 
 Require(c("downlit", "rmarkdown", "xml2",
           "PredictiveEcology/SpaDES@development",
           "PredictiveEcology/SpaDES.experiment@development",
           "PredictiveEcology/LandR@development"), require = FALSE)
 Require(c("bookdown", "data.table", "knitr", "RefManageR", "ROpenSci/bibtex"))
-
-## END WORKAROUND
 
 ## REFERENCES ---------------------------------------
 ## automatically create a bib database for R packages
