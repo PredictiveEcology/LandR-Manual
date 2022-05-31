@@ -39,5 +39,10 @@ knitr::opts_chunk$set(
   out.extra = ""
 )
 
+options(knitr.table.format = function() {
+  if (knitr::is_latex_output())
+    "latex" else "pipe"
+})
+
 require("kableExtra")
 

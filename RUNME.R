@@ -40,7 +40,8 @@ Require(c("downlit", "formatR", "git2r", "rmarkdown", "xml2",
           "PredictiveEcology/SpaDES@development",
           "PredictiveEcology/SpaDES.experiment@development",
           "PredictiveEcology/LandR@development"), require = FALSE)
-Require(c("bookdown", "data.table", "knitr", "RefManageR", "ROpenSci/bibtex"))
+Require(c("bookdown", "data.table", "knitr", "RefManageR", "ROpenSci/bibtex",
+          "kableExtra"))
 
 ## REFERENCES ---------------------------------------
 ## automatically create a bib database for R packages
@@ -233,8 +234,8 @@ if (!file.exists("docs/.nojekyll")) {
   file.create("docs/.nojekyll")
 }
 
-render_book(output_format = "all")
-# render_book(output_format = "bookdown::pdf_book")
+# render_book(output_format = "all")
+render_book(output_format = "bookdown::pdf_book")
 # render_book(output_format = "bookdown::bs4_book")
 
 ## remove temporary .Rmds
