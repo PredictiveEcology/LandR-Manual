@@ -2,8 +2,10 @@
 rm(list = ls(all.names = FALSE))
 
 # example R options set globally
-options("width" = 60,
-        "repos" = c(CRAN = "https://cran.rstudio.com"))
+options(
+  repos = c(CRAN = "https://cran.rstudio.com"),
+  width = 60
+)
 
 options(bookdown.post.latex = function(x) {
   # substitute nonbreaking spaces in \texttt{} with normal spaces

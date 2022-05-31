@@ -1,5 +1,3 @@
-\usepackage{booktabs}
-\usepackage{longtable}
 \usepackage{tabu}
 \usepackage{float}
 \usepackage[bf,singlelinecheck=off]{caption}
@@ -17,7 +15,7 @@
 
 \renewenvironment{quote}{\begin{VF}}{\end{VF}}
 \let\oldhref\href
-\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}} %% puts hrefs into footnotes
 
 \makeatletter
 \newenvironment{kframe}{%

@@ -38,6 +38,7 @@ bookdown::bs4_book:
 #     vk: false
 #     whatsapp: false
 #   github-repo: PredictiveEcology/LandR-Manual
+
 bookdown::pdf_book:
   includes:
     in_header: latex/preamble.tex
