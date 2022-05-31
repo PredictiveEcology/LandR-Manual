@@ -7,7 +7,7 @@
 ## PACKAGES -----------------------------------------
 ## Make sure necessary packages are installed
 if (!require("Require")) {
-  devtools::install_github("PredictiveEcology/Require@development")
+  remotes::install_github("PredictiveEcology/Require@development")
   library("Require")
 }
 
@@ -40,8 +40,7 @@ Require(c("downlit", "formatR", "git2r", "rmarkdown", "xml2",
           "PredictiveEcology/SpaDES@development",
           "PredictiveEcology/SpaDES.experiment@development",
           "PredictiveEcology/LandR@development"), require = FALSE)
-Require(c("bookdown", "data.table", "knitr", "RefManageR", "ROpenSci/bibtex",
-          "kableExtra"))
+Require(c("bookdown", "data.table", "kableExtra", "knitr", "RefManageR", "ROpenSci/bibtex"))
 
 ## REFERENCES ---------------------------------------
 ## automatically create a bib database for R packages
