@@ -36,7 +36,7 @@ if (FALSE) {
 
 ## END WORKAROUND
 
-Require(c("downlit", "rmarkdown", "xml2",
+Require(c("downlit", "formatR", "git2r", "rmarkdown", "xml2",
           "PredictiveEcology/SpaDES@development",
           "PredictiveEcology/SpaDES.experiment@development",
           "PredictiveEcology/LandR@development"), require = FALSE)
