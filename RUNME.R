@@ -7,7 +7,7 @@
 ## PACKAGES -----------------------------------------
 ## Make sure necessary packages are installed
 if (!require("Require")) {
-  install.packages("Require")
+  devtools::install_github("PredictiveEcology/Require@development")
   library("Require")
 }
 
