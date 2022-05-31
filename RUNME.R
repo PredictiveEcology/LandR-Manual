@@ -29,6 +29,7 @@ write_bib(c(
 ), "citations/packages.bib")
 
 ## collapse all chapter .bib files into one ------
+dir.create("citations", showWarnings = FALSE)
 bibFiles <- c(list.files("modules", "references_", recursive = TRUE, full.names = TRUE),
               "citations/packages.bib",
               "citations/referencesLandRManual.bib")
@@ -201,6 +202,7 @@ lapply(split(refTextLinesID, by = "file"), function(dupsTab, allModules) {
   }
 }, allModules = allModules)
 
+## RENDER BOOK ------------------------------------------
 ## prevents GitHub from rendering book using Jekyll
 if (!file.exists("docs/.nojekyll")) {
   file.create("docs/.nojekyll")
