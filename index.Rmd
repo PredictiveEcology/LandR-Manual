@@ -1,6 +1,6 @@
 ---
 title: "LandR Manual"
-subtitle: "v. 0.0.0.9000"
+subtitle: "v. 1.0.0"
 author: >
   Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire
 date: "Last updated: `r Sys.Date()`"
