@@ -46,4 +46,6 @@ options(knitr.table.format = function() {
     "latex" else "pipe"
 })
 
+options("knitr.graphics.rel_path" = FALSE)
+
 require("kableExtra") ## TODO: why is this necessary?
