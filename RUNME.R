@@ -245,3 +245,18 @@ render_book(output_format = "bookdown::pdf_book")
 
 ## remove temporary .Rmds
 file.remove(.copyModuleRmds)
+
+## SAVE CURRENT VERSION PDF TO manuals/ --------------------
+checkPath("manuals", create = TRUE)
+
+indexLines <- readLines("index.Rmd")
+version <- grep("^subtitle", indexLines, value = TRUE)
+version <- sub(".*(v.*[[:digit:]])([[:punct:]]*$)", "\\1", version)
+version <- sub("v[.]", "v", version)
+version <- gsub("[[:space:]]", "", version)
+
+newPDFname <- sub("(.*)([.]pdf)", paste0("\\1", "_",  version,"\\2"),
+                  basename("docs/LandRManual.pdf"))
+
+file.copy("docs/LandRManual.pdf", to = file.path("manuals", newPDFname))
+

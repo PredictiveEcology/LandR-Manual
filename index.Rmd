@@ -1,6 +1,6 @@
 ---
 title: "LandR Manual"
-subtitle: "v. 1.0.0"
+subtitle: "v. 1.0.1"
 author: >
   Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire
 date: "Last updated: `r Sys.Date()`"
@@ -50,6 +50,5 @@ This manual does not cover the `SpaDES` toolkit, which we use to create and run
 LandR modules. To learn more about `SpaDES` go to the [SpaDES
 webpage](https://spades.predictiveecology.org/).
 
-```{r global-setup, eval = TRUE, echo = FALSE}
-options("knitr.graphics.rel_path" = FALSE)
-```
+**Previous versions:**
+-   [LandR Manual v. 1.0.0](manuals/LandRManual_v1.0.0.pdf)
