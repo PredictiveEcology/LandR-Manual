@@ -51,4 +51,5 @@ LandR modules. To learn more about `SpaDES` go to the [SpaDES
 webpage](https://spades.predictiveecology.org/).
 
 **Previous versions:**
+
 -   [LandR Manual v. 1.0.0](manuals/LandRManual_v1.0.0.pdf)
