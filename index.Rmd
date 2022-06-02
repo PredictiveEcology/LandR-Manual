@@ -1,7 +1,7 @@
 ---
 title: "LandR Manual"
-subtitle: "v. 1.0.1"
-author: >
+subtitle: "`r paste('v.', Sys.getenv('LANDR_MAN_VERSION'))`"
+author: |
   Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire
 date: "Last updated: `r Sys.Date()`"
 description: "A manual for the LandR ecosystem of SpaDES modules"

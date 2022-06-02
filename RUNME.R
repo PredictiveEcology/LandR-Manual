@@ -239,9 +239,17 @@ if (!file.exists("docs/.nojekyll")) {
   file.create("docs/.nojekyll")
 }
 
-# render_book(output_format = "all")
-render_book(output_format = "bookdown::pdf_book")
+## set manual version
+Sys.setenv(LANDR_MAN_VERSION = "1.0.0") ## update this for each new release
+
+render_book(output_format = "all")
+# render_book(output_format = "bookdown::pdf_book")
 # render_book(output_format = "bookdown::bs4_book")
+
+pdfArchiveDir <- checkPath(file.path("archive", "pdf"), create = TRUE)
+file.copy(from = file.path("docs", "LandRManual.pdf"),
+          to = file.path(pdfArchiveDir, paste0("LandR-manual-v", Sys.getenv("LANDR_MAN_VERSION"))),
+          overwrite = TRUE)
 
 ## remove temporary .Rmds
 file.remove(.copyModuleRmds)
