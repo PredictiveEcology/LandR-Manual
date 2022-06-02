@@ -242,9 +242,9 @@ if (!file.exists("docs/.nojekyll")) {
 ## set manual version
 Sys.setenv(LANDR_MAN_VERSION = "1.0.0") ## update this for each new release
 
-render_book(output_format = "all")
-# render_book(output_format = "bookdown::pdf_book")
-# render_book(output_format = "bookdown::bs4_book")
+# render_book(output_format = "all")
+render_book(output_format = "bookdown::pdf_book", envir = new.env())  ## see https://stackoverflow.com/questions/46080853/why-does-rendering-a-pdf-from-rmarkdown-require-closing-rstudio-between-renders/46083308#46083308
+# render_book(output_format = "bookdown::bs4_book", envir = new.env())
 
 pdfArchiveDir <- checkPath(file.path("archive", "pdf"), create = TRUE)
 file.copy(from = file.path("docs", "LandRManual.pdf"),
