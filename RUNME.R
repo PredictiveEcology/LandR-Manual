@@ -248,7 +248,7 @@ render_book(output_format = "all")
 
 pdfArchiveDir <- checkPath(file.path("archive", "pdf"), create = TRUE)
 file.copy(from = file.path("docs", "LandRManual.pdf"),
-          to = file.path(pdfArchiveDir, paste0("LandR-manual-v", Sys.getenv("LANDR_MAN_VERSION"))),
+          to = file.path(pdfArchiveDir, paste0("LandR-manual-v", Sys.getenv("LANDR_MAN_VERSION"), ".pdf")),
           overwrite = TRUE)
 
 ## remove temporary .Rmds
