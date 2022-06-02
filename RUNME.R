@@ -6,6 +6,11 @@
 
 ## PACKAGES -----------------------------------------
 ## Make sure necessary packages are installed
+
+if (!"remotes" %in% rownames(installed.packages())) {
+  install.packages("remotes")
+}
+
 if (!require("Require")) {
   remotes::install_github("PredictiveEcology/Require@development")
   library("Require")
@@ -24,8 +29,11 @@ if (FALSE) {
 
 ## install archived CRAN packages, which are N/A as April 2022
 if (!all(c("gdalUtils", "RandomFields") %in% rownames(installed.packages()))) {
+  install.packages("RandomFieldsUtils")
   install.packages(c("https://cran.r-project.org/src/contrib/Archive/gdalUtils/gdalUtils_2.0.3.2.tar.gz",
-                     "https://cran.r-project.org/src/contrib/Archive/RandomFields/RandomFields_3.3.13.tar.gz"), repos = NULL)
+                     "https://cran.r-project.org/src/contrib/Archive/RandomFields/RandomFields_3.3.13.tar.gz"),
+                   type = "source", ## needed when repos = NULL (at least in Win OS)
+                   repos = NULL)
 }
 
 if (FALSE) {
@@ -35,12 +43,13 @@ if (FALSE) {
 }
 
 ## END WORKAROUND
-
-Require(c("downlit", "formatR", "git2r", "rmarkdown", "xml2",
+Require(c("downlit", "formatR", "git2r", "rmarkdown", "xml2", "modelr",
           "PredictiveEcology/SpaDES@development",
           "PredictiveEcology/SpaDES.experiment@development",
           "PredictiveEcology/LandR@development"), require = FALSE)
-Require(c("bookdown", "data.table", "kableExtra", "knitr", "RefManageR", "ROpenSci/bibtex"))
+Require(c("bookdown", "data.table", "kableExtra",
+          "yihui/knitr",
+          "RefManageR", "ROpenSci/bibtex"))
 
 ## REFERENCES ---------------------------------------
 ## automatically create a bib database for R packages
