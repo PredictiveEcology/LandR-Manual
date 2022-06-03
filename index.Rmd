@@ -54,4 +54,3 @@ webpage](https://spades.predictiveecology.org/).
 
 -   [LandR Manual v. 1.0.0](archive/pdf/LandR-manual-v1.0.0.pdf)
 
-
