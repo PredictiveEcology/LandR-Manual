@@ -44,11 +44,11 @@ if (FALSE) {
 
 ## END WORKAROUND
 Require(c("downlit", "formatR", "git2r", "rmarkdown", "xml2", "modelr",
+          "pander", "kableExtra", "yihui/knitr",
           "PredictiveEcology/SpaDES@development",
           "PredictiveEcology/SpaDES.experiment@development",
           "PredictiveEcology/LandR@development"), require = FALSE)
-Require(c("bookdown", "data.table", "kableExtra",
-          "yihui/knitr",
+Require(c("bookdown", "data.table",
           "RefManageR", "ROpenSci/bibtex"))
 
 source("R/miscFunctions.R")
