@@ -15,11 +15,12 @@
 #' @importFrom Require normPath
 #' @importFrom modelr seq_range
 
-.prepRmds <- function(modulePath) {
+.prepRmds <- function(modulePath, rebuildCache = FALSE) {
   moduleRmds <- list.dirs(modulePath, recursive = FALSE)
   moduleRmds <- paste0(file.path(moduleRmds, basename(moduleRmds)), ".Rmd")
 
-  copyModuleRmds <- sapply(moduleRmds, rebuildCache = FALSE, FUN = function(x, rebuildCache) {
+  copyModuleRmds <- sapply(moduleRmds, rebuildCache = rebuildCache,
+                           FUN = function(x, rebuildCache) {
     copyModuleRmd <- sub("(.*)(\\.Rmd)", "\\12\\2", x)
     file.copy(x, copyModuleRmd, overwrite = TRUE)
 
