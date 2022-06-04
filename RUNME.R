@@ -105,11 +105,11 @@ if (!file.exists("docs/.nojekyll")) {
 }
 
 ## set manual version
-Sys.setenv(LANDR_MAN_VERSION = "1.0.0") ## update this for each new release
+Sys.setenv(LANDR_MAN_VERSION = "1.0.1") ## update this for each new release
 
 ## render the book using new env -- see <https://stackoverflow.com/a/46083308>
-# render_book(output_format = "all", envir = new.env())
-render_book(output_format = "bookdown::pdf_book", envir = new.env())
+render_book(output_format = "all", envir = new.env())
+# render_book(output_format = "bookdown::pdf_book", envir = new.env())
 # render_book(output_format = "bookdown::bs4_book", envir = new.env())
 
 pdfArchiveDir <- checkPath(file.path("archive", "pdf"), create = TRUE)
