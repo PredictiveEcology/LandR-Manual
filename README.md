@@ -17,3 +17,8 @@ Manual of the LandR ecosystem of SpaDES modules - available at <https://LandR-ma
 ## Archived versions
 
 -   [PDF](https://github.com/PredictiveEcology/LandR-Manual/archive/pdf)
+
+## News
+
+-   v. 1.0.1 -- manual improvements, mostly related with table formatting
+-   v. 1.0.0 -- first manual release

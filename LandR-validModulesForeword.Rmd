@@ -1,4 +1,4 @@
-# LandR Validation Modules
+# LandR Validation Modules {-}
 
 LandR 'validation modules' differ from 'data modules' in that their objective is not to obtain input data and estimate parameters to run a simulation, but rather to confront simulation outputs against observed data -- even if these modules can potentially obtain and pre-process the validation data.
 At the moment, only one validation module is available, *Biomass_validationKNN*, but we expect an increment in the number of validation modules as LandR usage expands.

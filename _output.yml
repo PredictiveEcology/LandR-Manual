@@ -5,7 +5,7 @@ bookdown::bs4_book:
     fg: "#2b2121"
     bg: "#ffffff"
   footnotes_inline: false
-  split_bib: true
+  split_bib: false   # otherwise the references will be printed twice given that the LaTex command is necessary for PDF
   repo:
     base: https://github.com/PredictiveEcology/LandR-Manual
     branch: master
@@ -49,7 +49,6 @@ bookdown::pdf_book:
   dev: "cairo_pdf"
   citation_package: biblatex
   template: null
-  reference-section-title: "References"
   # pandoc_args: [--top-level-division=chapter, --wrap=none]
   pandoc_args: --top-level-division=chapter
   toc_depth: 3
