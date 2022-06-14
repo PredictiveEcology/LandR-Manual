@@ -43,15 +43,14 @@ if (FALSE) {
 }
 
 ## END WORKAROUND
-Require(c("downlit", "formatR", "git2r", "rmarkdown", "xml2", "modelr",
+Require(c("downlit", "formatR", "git2r", "rmarkdown", "xml2",
           "pander", "kableExtra", "yihui/knitr",
           "PredictiveEcology/SpaDES@development",
+          "PredictiveEcology/SpaDES.docs@development",
           "PredictiveEcology/SpaDES.experiment@development",
           "PredictiveEcology/LandR@development"), require = FALSE)
 Require(c("bookdown", "data.table",
           "RefManageR", "ROpenSci/bibtex"))
-
-source("R/miscFunctions.R")
 
 ## REFERENCES ---------------------------------------
 ## automatically create a bib database for R packages
@@ -96,7 +95,7 @@ if (!file.exists("figures/genericBadge.png")) {
 ## RMD PREP ------------------------------------------
 
 ## NOTE: need dot because knitting is doing `rm(list = ls())`
-.copyModuleRmds <- .prepRmds("modules", rebuildCache = TRUE)
+.copyModuleRmds <- SpaDES.docs::prepLandRRmds("modules", rebuildCache = FALSE)
 
 ## RENDER BOOK ------------------------------------------
 ## prevents GitHub from rendering book using Jekyll
