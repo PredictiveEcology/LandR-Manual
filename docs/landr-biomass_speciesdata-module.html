@@ -93,7 +93,7 @@
 
 
 
-<p><a href="https://github.com/PredictiveEcology/Biomass_speciesData/commit//tree/2f14fa1ac6caf86ad79badae5902846d12c72937"><img src="modules/Biomass_speciesData/figures/moduleVersionBadge.png" alt="module-version-Badge"></a></p>
+<p><a href="https://github.com/PredictiveEcology/Biomass_speciesData/commit//tree/2614a6fe8b6230b13013650d25d63cd204cc4755"><img src="modules/Biomass_speciesData/figures/moduleVersionBadge.png" alt="module-version-Badge"></a></p>
 <p><a href="https://github.com/PredictiveEcology/Biomass_speciesData/issues"><img src="modules/Biomass_speciesData/figures/issuesBadge.png" alt="Issues-badge"></a></p>
 <div id="authors-1" class="section level4" number="2.0.0.1">
 <h4>
@@ -168,8 +168,8 @@ the lowest quality data with higher quality data when several data sources are
 used. It’s primary output is a <code>RasterStack</code> of species % cover,
 with each layer corresponding to a species.</p>
 <p>Currently, the module can access the Canadian National Forest Inventory (NFI)
-forest attributes kNN dataset [the default; <span class="citation">Beaudoin <em>et al.</em> (<a href="#ref-BeaudoinEtAl2017" role="doc-biblioref">2017</a>)</span>], the Common
-Attribute Schema for Forest Resource Inventories dataset [CASFRI; <span class="citation">Cosco (<a href="#ref-Cosco2011" role="doc-biblioref">2011</a>)</span>],
+forest attributes kNN dataset [the default; <span class="citation">Beaudoin <em>et al.</em> (<a href="landr-biomass_validationknn-module.html#ref-BeaudoinEtAl2017" role="doc-biblioref">2017</a>)</span>], the Common
+Attribute Schema for Forest Resource Inventories dataset [CASFRI; <span class="citation">Cosco (<a href="landr-biomass_validationknn-module.html#ref-Cosco2011" role="doc-biblioref">2011</a>)</span>],
 the Ontario Forest Resource Inventory (ONFRI), a dataset specific to Alberta
 compiled by Paul Pickell, and other Alberta forest inventory datasets. However,
 <strong>only the NFI kNN data are freely available</strong> and access to the other datasets
@@ -222,149 +222,197 @@ convention used throughout the simulation (defined by the <code>sppEquivCol</cod
 parameter). See Table <a href="landr-biomass_speciesdata-module.html#tab:mergingSpp-Biomass-speciesData">2.1</a> for an
 example.</p></li>
 </ul>
-<div class="inline-table"><table style="width:90%;" class="table table-sm">
+<div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:mergingSpp-Biomass-speciesData">Table 2.1: </span>Example of species merging for simulation. Here the user wants to model <em>Abies balsamea</em>, <em>A. lasiocarpa</em> and <em>Pinus contorta</em> as separate species, but all <em>Picea spp.</em> as a genus-level group. For this, all six species are separately identified in the ‘KNN’ column, so that their % cover layers can be obtained, but in the ‘Boreal’ column (which defines the naming convention used in the simulation in this example) all <em>Picea spp.</em> have the same name. <em>Biomass_speciesData</em> will merge their % cover data into a single layer by summing their cover per pixel.</caption>
-<colgroup>
-<col width="30%">
-<col width="15%">
-<col width="15%">
-<col width="29%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">Species</th>
-<th align="left">KNN</th>
-<th align="left">Boreal</th>
-<th align="left">Modelled as</th>
+<span id="tab:mergingSpp-Biomass-speciesData">Table 2.1: </span>Example of species merging for simulation. Here the user wants to model <em>Abies balsamea</em>, <em>A. lasiocarpa</em> and <em>Pinus contorta</em> as separate species, but all <em>Picea spp.</em> as a genus-level group. For this, all six species are separately identified in the ‘KNN’ column, so that their % cover layers can be obtained, but in the ‘Boreal’ column (which defines the naming convention used in the simulation in this example) all <em>Picea spp.</em> have the same name. <em>Biomass_speciesData</em> will merge their % cover data into a single layer by summing their cover per pixel.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:left;">
+KNN
+</th>
+<th style="text-align:left;">
+Boreal
+</th>
+<th style="text-align:left;">
+Modelled as
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left"><em>Abies balsamea</em></td>
-<td align="left">Abie_Bal</td>
-<td align="left">Abie_Bal</td>
-<td align="left"><em>Abies balsamea</em></td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Abies balsamea
+</td>
+<td style="text-align:left;">
+Abie_Bal
+</td>
+<td style="text-align:left;">
+Abie_Bal
+</td>
+<td style="text-align:left;font-style: italic;">
+Abies balsamea
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Abies lasiocarpa</em></td>
-<td align="left">Abie_Las</td>
-<td align="left">Abie_Las</td>
-<td align="left"><em>Abies lasiocarpa</em></td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Abies lasiocarpa
+</td>
+<td style="text-align:left;">
+Abie_Las
+</td>
+<td style="text-align:left;">
+Abie_Las
+</td>
+<td style="text-align:left;font-style: italic;">
+Abies lasiocarpa
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Picea engelmannii</em></td>
-<td align="left">Pice_Eng</td>
-<td align="left">Pice_Spp</td>
-<td align="left"><em>Picea spp.</em></td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Picea engelmannii
+</td>
+<td style="text-align:left;">
+Pice_Eng
+</td>
+<td style="text-align:left;">
+Pice_Spp
+</td>
+<td style="text-align:left;font-style: italic;">
+Picea spp.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Picea glauca</em></td>
-<td align="left">Pice_Gla</td>
-<td align="left">Pice_Spp</td>
-<td align="left"><em>Picea spp.</em></td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Picea glauca
+</td>
+<td style="text-align:left;">
+Pice_Gla
+</td>
+<td style="text-align:left;">
+Pice_Spp
+</td>
+<td style="text-align:left;font-style: italic;">
+Picea spp.
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Picea mariana</em></td>
-<td align="left">Pice_Mar</td>
-<td align="left">Pice_Spp</td>
-<td align="left"><em>Picea spp.</em></td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Picea mariana
+</td>
+<td style="text-align:left;">
+Pice_Mar
+</td>
+<td style="text-align:left;">
+Pice_Spp
+</td>
+<td style="text-align:left;font-style: italic;">
+Picea spp.
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Pinus contorta</em></td>
-<td align="left">Pinu_Con</td>
-<td align="left">Pinu_Con</td>
-<td align="left"><em>Pinus contorta</em></td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Pinus contorta
+</td>
+<td style="text-align:left;">
+Pinu_Con
+</td>
+<td style="text-align:left;">
+Pinu_Con
+</td>
+<td style="text-align:left;font-style: italic;">
+Pinus contorta
+</td>
 </tr>
 </tbody>
 </table></div>
-<div class="inline-table"><table style="width:100%;" class="table table-sm">
+<div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:moduleInputs2-Biomass-speciesData">Table 2.2: </span>List of <em>Biomass_speciesData</em> input objects and their description.</caption>
-<colgroup>
-<col width="18%">
-<col width="19%">
-<col width="45%">
-<col width="16%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">objectName</th>
-<th align="left">objectClass</th>
-<th align="left">desc</th>
-<th align="left">sourceURL</th>
+<span id="tab:moduleInputs2-Biomass-speciesData">Table 2.2: </span>List of <em>Biomass_speciesData</em> input objects and their description.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+objectName
+</th>
+<th style="text-align:left;">
+objectClass
+</th>
+<th style="text-align:left;">
+desc
+</th>
+<th style="text-align:left;">
+sourceURL
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">rasterToMa
-tchLarge</td>
-<td align="left">RasterLaye
-r</td>
-<td align="left">a raster of <code>studyAreaLarge</code>
-in the same
-resolution and projection the
-simulatio
-n’s. Defaults to the using the
-Canadian
-Forestry Service, National
-Forest Invent
-ory, kNN-derived stand biomass
-map.</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+rasterToMatchLarge
+</td>
+<td style="text-align:left;">
+RasterLayer
+</td>
+<td style="text-align:left;">
+a raster of <code>studyAreaLarge</code> in the same resolution and projection the simulation’s. Defaults to the using the Canadian Forestry Service, National Forest Inventory, kNN-derived stand biomass map.
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">sppColorVe
-ct</td>
-<td align="left">character</td>
-<td align="left">A named vector of colors to
-use for plot
-ting. The names must be in
-<code>sim$sppEquiv [[sim$sppEquivCol]]</code>, and
-should also co
-ntain a color for ‘Mixed’</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+sppColorVect
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+A named vector of colors to use for plotting. The names must be in <code>sim$sppEquiv[[sim$sppEquivCol]]</code>, and should also contain a color for ‘Mixed’
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="left">sppEquiv</td>
-<td align="left">data.table</td>
-<td align="left">table of species
-equivalencies. See <code>Lan dR::sppEquivalencies_CA</code>.</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+sppEquiv
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+table of species equivalencies. See <code><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">LandR::sppEquivalencies_CA</a></code>.
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">studyAreaL
-arge</td>
-<td align="left">SpatialPol
-ygonsDataF
-rame</td>
-<td align="left">Polygon to use as the
-parametrisation st
-udy area. Must be provided by
-the user.
-Note that <code>studyAreaLarge</code> is
-only used
-for parameter estimation, and
-can be lar
-ger than the actual study area
-used for
-LandR simulations (e.g, larger
-than <code>stu dyArea</code> in LandR
-Biomass_core).</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+studyAreaLarge
+</td>
+<td style="text-align:left;">
+SpatialPolygonsDataFrame
+</td>
+<td style="text-align:left;">
+Polygon to use as the parametrisation study area. Must be provided by the user. Note that <code>studyAreaLarge</code> is only used for parameter estimation, and can be larger than the actual study area used for LandR simulations (e.g, larger than <code>studyArea</code> in LandR Biomass_core).
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="left">studyAreaR
-eporting</td>
-<td align="left">SpatialPol
-ygonsDataF
-rame</td>
-<td align="left">multipolygon (typically
-smaller/unbuffer
-ed than <code>studyAreaLarge</code> and
-<code>studyArea</code>
-in LandR Biomass_core) to use
-for plott
-ing/reporting. If not
-provided, will def
-ault to <code>studyAreaLarge</code>.</td>
-<td align="left">NA</td>
+<tr>
+<td style="text-align:left;">
+studyAreaReporting
+</td>
+<td style="text-align:left;">
+SpatialPolygonsDataFrame
+</td>
+<td style="text-align:left;">
+multipolygon (typically smaller/unbuffered than <code>studyAreaLarge</code> and <code>studyArea</code> in LandR Biomass_core) to use for plotting/reporting. If not provided, will default to <code>studyAreaLarge</code>.
+</td>
+<td style="text-align:left;">
+NA
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -396,162 +444,270 @@ layers are replaced with overlapping values from CASFRI layers and values
 from KNN and CASFRI layers are replaced with overlapping values of
 ForestInventory layers.</p></li>
 </ul>
-<div class="inline-table"><table style="width:100%;" class="table table-sm">
+<div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:moduleParams2-Biomass-speciesData">Table 2.3: </span>List of <em>Biomass_speciesData</em> parameters and their description.</caption>
-<colgroup>
-<col width="20%">
-<col width="11%">
-<col width="8%">
-<col width="5%">
-<col width="5%">
-<col width="48%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">paramName</th>
-<th align="left">paramClass</th>
-<th align="left">default</th>
-<th align="left">min</th>
-<th align="left">max</th>
-<th align="left">paramDesc</th>
+<span id="tab:moduleParams2-Biomass-speciesData">Table 2.3: </span>List of <em>Biomass_speciesData</em> parameters and their description.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+paramName
+</th>
+<th style="text-align:left;">
+paramClass
+</th>
+<th style="text-align:left;">
+default
+</th>
+<th style="text-align:left;">
+min
+</th>
+<th style="text-align:left;">
+max
+</th>
+<th style="text-align:left;">
+paramDesc
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">coverThresh</td>
-<td align="left">integer</td>
-<td align="left">10</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">The minimum % cover a species needs to
-have (per pixel) in the study area to be
-considered present</td>
+<tr>
+<td style="text-align:left;">
+coverThresh
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+The minimum % cover a species needs to have (per pixel) in the study area to be considered present
+</td>
 </tr>
-<tr class="even">
-<td align="left">dataYear</td>
-<td align="left">numeric</td>
-<td align="left">2001</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">Passed to <code>paste0('prepSpeciesLayers_', types)</code> function to fetch data from that
-year (if applicable). Defaults to 2001
-as the default kNN year.</td>
+<tr>
+<td style="text-align:left;">
+dataYear
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+2001
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Passed to <code>paste0('prepSpeciesLayers_', types)</code> function to fetch data from that year (if applicable). Defaults to 2001 as the default kNN year.
+</td>
 </tr>
-<tr class="odd">
-<td align="left">sppEquivCol</td>
-<td align="left">character</td>
-<td align="left">Boreal</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">The column in <code>sim$sppEquiv</code> data.table
-to group species by and use as a naming
-convention. If different species in,
-e.g., the kNN data have the same name in
-the chosen column, their data are merged
-into one species by summing their %
-cover in each raster cell.</td>
+<tr>
+<td style="text-align:left;">
+sppEquivCol
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Boreal
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+The column in <code>sim$sppEquiv</code> data.table to group species by and use as a naming convention. If different species in, e.g., the kNN data have the same name in the chosen column, their data are merged into one species by summing their % cover in each raster cell.
+</td>
 </tr>
-<tr class="even">
-<td align="left">types</td>
-<td align="left">character</td>
-<td align="left">KNN</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">The possible data sources. These must
-correspond to a function named
-<code>paste0('prepSpeciesLayers_', types)</code>.
-Defaults to ‘KNN’ to get the Canadian
-Forestry Service, National Forest
-Inventory, kNN-derived species cover
-maps from year ‘dataYear’, using the
-<code><a href="https://landr.predictiveecology.org/reference/prepSpeciesLayers.html">LandR::prepSpeciesLayers_KNN</a></code> function
-(see <a href="https://open.canada.ca/" class="uri">https://open.canada.ca/</a>
-data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990
-for details on these data). Other
-currently available options are ‘ONFRI’,
-‘CASFRI’, ‘Pickell’ and
-‘ForestInventory’, which attempt to get
-proprietary data - the user must be
-granted access first. A custom function
-can be used to retrieve any data, just
-as long as it is accessible by the
-module (e.g., in the global environment)
-and is named as
-<code>paste0('prepSpeciesLayers_', types)</code>.</td>
+<tr>
+<td style="text-align:left;">
+types
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+KNN
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+The possible data sources. These must correspond to a function named <code>paste0('prepSpeciesLayers_', types)</code>. Defaults to ‘KNN’ to get the Canadian Forestry Service, National Forest Inventory, kNN-derived species cover maps from year ‘dataYear’, using the <code><a href="https://landr.predictiveecology.org/reference/prepSpeciesLayers.html">LandR::prepSpeciesLayers_KNN</a></code> function (see <a href="https://open.canada.ca/" class="uri">https://open.canada.ca/</a> data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990 for details on these data). Other currently available options are ‘ONFRI’, ‘CASFRI’, ‘Pickell’ and ‘ForestInventory’, which attempt to get proprietary data - the user must be granted access first. A custom function can be used to retrieve any data, just as long as it is accessible by the module (e.g., in the global environment) and is named as <code>paste0('prepSpeciesLayers_', types)</code>.
+</td>
 </tr>
-<tr class="odd">
-<td align="left">vegLeadingProportion</td>
-<td align="left">numeric</td>
-<td align="left">0.8</td>
-<td align="left">0</td>
-<td align="left">1</td>
-<td align="left">a number that defines whether a species
-is leading for a given pixel. Only used
-for plotting.</td>
+<tr>
+<td style="text-align:left;">
+vegLeadingProportion
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+0.8
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+a number that defines whether a species is leading for a given pixel. Only used for plotting.
+</td>
 </tr>
-<tr class="even">
-<td align="left">.plotInitialTime</td>
-<td align="left">numeric</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">This describes the simulation time at
-which the first plot event should occur</td>
+<tr>
+<td style="text-align:left;">
+.plotInitialTime
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This describes the simulation time at which the first plot event should occur
+</td>
 </tr>
-<tr class="odd">
-<td align="left">.plotInterval</td>
-<td align="left">numeric</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">This describes the simulation time
-interval between plot events</td>
+<tr>
+<td style="text-align:left;">
+.plotInterval
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This describes the simulation time interval between plot events
+</td>
 </tr>
-<tr class="even">
-<td align="left">.saveInitialTime</td>
-<td align="left">numeric</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">This describes the simulation time at
-which the first save event should occur</td>
+<tr>
+<td style="text-align:left;">
+.saveInitialTime
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This describes the simulation time at which the first save event should occur
+</td>
 </tr>
-<tr class="odd">
-<td align="left">.saveInterval</td>
-<td align="left">numeric</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">This describes the simulation time
-interval between save events</td>
+<tr>
+<td style="text-align:left;">
+.saveInterval
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This describes the simulation time interval between save events
+</td>
 </tr>
-<tr class="even">
-<td align="left">.studyAreaName</td>
-<td align="left">character</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">Human-readable name for the study area
-used. If NA, a hash of <code>studyAreaLarge</code>
-will be used.</td>
+<tr>
+<td style="text-align:left;">
+.studyAreaName
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Human-readable name for the study area used. If NA, a hash of <code>studyAreaLarge</code> will be used.
+</td>
 </tr>
-<tr class="odd">
-<td align="left">.useCache</td>
-<td align="left">logical</td>
-<td align="left">init</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">Controls cache; caches the init event by
-default</td>
+<tr>
+<td style="text-align:left;">
+.useCache
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+init
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Controls cache; caches the init event by default
+</td>
 </tr>
-<tr class="even">
-<td align="left">.useParallel</td>
-<td align="left">numeric</td>
-<td align="left">16</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">Used in reading csv file with fread.
-Will be passed to
-<code><a href="https://Rdatatable.gitlab.io/data.table/reference/openmp-utils.html">data.table::setDTthreads</a></code>.</td>
+<tr>
+<td style="text-align:left;">
+.useParallel
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+16
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Used in reading csv file with fread. Will be passed to <code><a href="https://Rdatatable.gitlab.io/data.table/reference/openmp-utils.html">data.table::setDTthreads</a></code>.
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -564,45 +720,65 @@ Will be passed to
 <a href="landr-biomass_speciesdata-module.html#tab:moduleOutputs-Biomass-speciesData">2.4</a>, and automatically saves the
 processed species cover layers in the output path defined in
 <code>getPaths(sim)$outputPath</code>.</p>
-<div class="inline-table"><table style="width:99%;" class="table table-sm">
+<div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:moduleOutputs-Biomass-speciesData">Table 2.4: </span>List of <em>Biomass_speciesData</em> output objects and their description.</caption>
-<colgroup>
-<col width="22%">
-<col width="19%">
-<col width="56%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">objectName</th>
-<th align="left">objectClass</th>
-<th align="left">desc</th>
+<span id="tab:moduleOutputs-Biomass-speciesData">Table 2.4: </span>List of <em>Biomass_speciesData</em> output objects and their description.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+objectName
+</th>
+<th style="text-align:left;">
+objectClass
+</th>
+<th style="text-align:left;">
+desc
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">speciesLayers</td>
-<td align="left">RasterStack</td>
-<td align="left">biomass percentage raster layers by
-species in Canada species map</td>
+<tr>
+<td style="text-align:left;">
+speciesLayers
+</td>
+<td style="text-align:left;">
+RasterStack
+</td>
+<td style="text-align:left;">
+biomass percentage raster layers by species in Canada species map
+</td>
 </tr>
-<tr class="even">
-<td align="left">treed</td>
-<td align="left">data.table</td>
-<td align="left">Table with one logical column for each
-species, indicating whether there were
-non-zero cover values in each pixel.</td>
+<tr>
+<td style="text-align:left;">
+treed
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+Table with one logical column for each species, indicating whether there were non-zero cover values in each pixel.
+</td>
 </tr>
-<tr class="odd">
-<td align="left">numTreed</td>
-<td align="left">numeric</td>
-<td align="left">a named vector with number of pixels
-with non-zero cover values for each
-species</td>
+<tr>
+<td style="text-align:left;">
+numTreed
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+a named vector with number of pixels with non-zero cover values for each species
+</td>
 </tr>
-<tr class="even">
-<td align="left">nonZeroCover</td>
-<td align="left">numeric</td>
-<td align="left">A single value indicating how many
-pixels have non-zero cover</td>
+<tr>
+<td style="text-align:left;">
+nonZeroCover
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+A single value indicating how many pixels have non-zero cover
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -620,162 +796,306 @@ have been previously downloaded and stored in the folder specified by
 there are available % cover layers in the kNN dataset (Table
 <a href="landr-biomass_speciesdata-module.html#tab:defaultSppBiomass-speciesData">2.5</a>; see <code><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">?LandR::sppEquivalencies_CA</a></code> for
 more information):</p>
-<div class="inline-table"><table style="width:65%;" class="table table-sm">
+<div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:defaultSppBiomass-speciesData">Table 2.5: </span>List of species cover data downloaded by default by <em>Biomass_speciesData</em>.</caption>
-<colgroup>
-<col width="36%">
-<col width="29%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">Species</th>
-<th align="left">Generic name</th>
+<span id="tab:defaultSppBiomass-speciesData">Table 2.5: </span>List of species cover data downloaded by default by <em>Biomass_speciesData</em>.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:left;">
+Generic name
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left"><em>Abies balsamea</em></td>
-<td align="left">Balsam Fir</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Abies balsamea
+</td>
+<td style="text-align:left;">
+Balsam Fir
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Abies lasiocarpa</em></td>
-<td align="left">Fir</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Abies lasiocarpa
+</td>
+<td style="text-align:left;">
+Fir
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Acer negundo</em></td>
-<td align="left">Boxelder maple</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Acer negundo
+</td>
+<td style="text-align:left;">
+Boxelder maple
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Acer pensylvanicum</em></td>
-<td align="left">Striped maple</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Acer pensylvanicum
+</td>
+<td style="text-align:left;">
+Striped maple
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Acer saccharum</em></td>
-<td align="left">Sugar maple</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Acer saccharum
+</td>
+<td style="text-align:left;">
+Sugar maple
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Acer spicatum</em></td>
-<td align="left">Mountain maple</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Acer spicatum
+</td>
+<td style="text-align:left;">
+Mountain maple
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Acer spp.</em></td>
-<td align="left">Maple</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Acer spp.
+</td>
+<td style="text-align:left;">
+Maple
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Alnus spp</em></td>
-<td align="left">Alder</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Alnus spp
+</td>
+<td style="text-align:left;">
+Alder
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Betula alleghaniensis</em></td>
-<td align="left">Swamp birch</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Betula alleghaniensis
+</td>
+<td style="text-align:left;">
+Swamp birch
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Betula papyrifera</em></td>
-<td align="left">Paper birch</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Betula papyrifera
+</td>
+<td style="text-align:left;">
+Paper birch
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Betula populifolia</em></td>
-<td align="left">Gray birch</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Betula populifolia
+</td>
+<td style="text-align:left;">
+Gray birch
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Betula spp.</em></td>
-<td align="left">Birch</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Betula spp.
+</td>
+<td style="text-align:left;">
+Birch
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Fagus grandifolia</em></td>
-<td align="left">American beech</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Fagus grandifolia
+</td>
+<td style="text-align:left;">
+American beech
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Fraxinus americana</em></td>
-<td align="left">American ash</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Fraxinus americana
+</td>
+<td style="text-align:left;">
+American ash
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Fraxinus nigra</em></td>
-<td align="left">Black ash</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Fraxinus nigra
+</td>
+<td style="text-align:left;">
+Black ash
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Larix laricina</em></td>
-<td align="left">Tamarack</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Larix laricina
+</td>
+<td style="text-align:left;">
+Tamarack
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Larix lyallii</em></td>
-<td align="left">Alpine larch</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Larix lyallii
+</td>
+<td style="text-align:left;">
+Alpine larch
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Larix occidentalis</em></td>
-<td align="left">Western larch</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Larix occidentalis
+</td>
+<td style="text-align:left;">
+Western larch
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Larix spp.</em></td>
-<td align="left">Larch</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Larix spp.
+</td>
+<td style="text-align:left;">
+Larch
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Picea engelmannii</em></td>
-<td align="left">Engelmann’s spruce</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Picea engelmannii
+</td>
+<td style="text-align:left;">
+Engelmann’s spruce
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Picea glauca</em></td>
-<td align="left">White.Spruce</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Picea glauca
+</td>
+<td style="text-align:left;">
+White.Spruce
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Picea mariana</em></td>
-<td align="left">Black.Spruce</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Picea mariana
+</td>
+<td style="text-align:left;">
+Black.Spruce
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Picea spp.</em></td>
-<td align="left">Spruce</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Picea spp.
+</td>
+<td style="text-align:left;">
+Spruce
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Pinus albicaulis</em></td>
-<td align="left">Whitebark pine</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Pinus albicaulis
+</td>
+<td style="text-align:left;">
+Whitebark pine
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Pinus banksiana</em></td>
-<td align="left">Jack pine</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Pinus banksiana
+</td>
+<td style="text-align:left;">
+Jack pine
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Pinus contorta</em></td>
-<td align="left">Lodgepole pine</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Pinus contorta
+</td>
+<td style="text-align:left;">
+Lodgepole pine
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Pinus monticola</em></td>
-<td align="left">Western white pine</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Pinus monticola
+</td>
+<td style="text-align:left;">
+Western white pine
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Pinus resinosa</em></td>
-<td align="left">Red pine</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Pinus resinosa
+</td>
+<td style="text-align:left;">
+Red pine
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Pinus spp.</em></td>
-<td align="left">Pine</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Pinus spp.
+</td>
+<td style="text-align:left;">
+Pine
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Populus balsamifera v.
-balsamifera</em></td>
-<td align="left">Balsam poplar</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Populus balsamifera v. balsamifera
+</td>
+<td style="text-align:left;">
+Balsam poplar
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Populus trichocarpa</em></td>
-<td align="left">Black cottonwood</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Populus trichocarpa
+</td>
+<td style="text-align:left;">
+Black cottonwood
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Populus grandidentata</em></td>
-<td align="left">White poplar</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Populus grandidentata
+</td>
+<td style="text-align:left;">
+White poplar
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Populus spp.</em></td>
-<td align="left">Poplar</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Populus spp.
+</td>
+<td style="text-align:left;">
+Poplar
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Populus tremuloides</em></td>
-<td align="left">Trembling poplar</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Populus tremuloides
+</td>
+<td style="text-align:left;">
+Trembling poplar
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><em>Tsuga canadensis</em></td>
-<td align="left">Eastern hemlock</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Tsuga canadensis
+</td>
+<td style="text-align:left;">
+Eastern hemlock
+</td>
 </tr>
-<tr class="even">
-<td align="left"><em>Tsuga spp.</em></td>
-<td align="left">Hemlock</td>
+<tr>
+<td style="text-align:left;font-style: italic;">
+Tsuga spp.
+</td>
+<td style="text-align:left;">
+Hemlock
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -908,15 +1228,6 @@ Figure 2.1: <em>Biomass_speciesData</em> automatically generates a plot of speci
 
 </div>
 </div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-BeaudoinEtAl2017" class="csl-entry">
-Beaudoin, A., Bernier, P.Y., Villemaire, P., Guindon, L. &amp; Guo, X.J. (2017). <a href="https://doi.org/10.23687/EC9E2659-1C29-4DDB-87A2-6ACED147A990">Species composition, forest properties and land cover types across canada’s forests at 250m resolution for 2001 and 2011</a>.
-</div>
-<div id="ref-Cosco2011" class="csl-entry">
-Cosco, J. (2011). <em>COMMON ATTRIBUTE SCHEMA (CAS) FOR FOREST INVENTORIES ACROSS CANADA</em>. BOREAL AVIAN MODELLING PROJECT, CANADIAN BEACONs PROJECT.
-</div>
-</div>
 <div class="footnotes">
 <hr>
 <ol start="7">
@@ -975,7 +1286,7 @@ Cosco, J. (2011). <em>COMMON ATTRIBUTE SCHEMA (CAS) FOR FOREST INVENTORIES ACROS
 
   <div class="col-12 col-md-6 mt-3">
     <p>"<strong>LandR Manual</strong>: v. 1.0.1" was written by </p>
-<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-06-04.
+<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-06-14.
   </div>
 
   <div class="col-12 col-md-6 mt-3">
