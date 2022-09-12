@@ -178,7 +178,7 @@ simulation of forest dynamics in Western Canadian boreal forests using
 <em>Biomass_core</em>. Part of this process involves cleaning up the input data and
 imputing missing data in some cases, which are presented thoroughly in <a href="landr-biomass_borealdataprep-module.html#bboreal-dataprep">Data
 acquisition and treatment</a>.</p>
-<p>After the cleaning and formatting the raw input data, the module:</p>
+<p>After cleaning and formatting the raw input data, the module:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>calculates species biomass per pixel</strong> by multiplying the observed species
 % cover by the observed stand biomass and an adjustment factor,
@@ -196,8 +196,8 @@ traits</a>);</p></li>
 conditions. By default, ecolocations are defined as the spatial combination
 of ecodistricts of the National Ecological Framework for Canada, and the
 Land Cover of Canada 2010 map (see <a href="landr-biomass_borealdataprep-module.html#bboreal-forestedPix-ecolocations">Defining simulation pixels and
-ecolocations</a>). <strong>Note that ecolocations
-are called <code>ecoregionGroup</code>’s across LandR modules</strong>.</p></li>
+ecolocations</a>). <strong>Note that ecolocation
+is termed <code>ecoregionGroup</code> across LandR modules</strong>.</p></li>
 <li><p>prepares <strong>ecolocation-specific parameters</strong> and <strong>probabilities of
 germination</strong> – only one ecolocation-specific parameter is used, the
 <a href="landr-biomass_borealdataprep-module.html#bboreal-minRelB">minimum relative biomass thresholds</a>, which defines the
@@ -301,9 +301,7 @@ Inventory <span class="citation">(<a href="landr-biomass_validationknn-module.ht
 derive parameters and define initial species age and biomass across the
 landscape. These are also derived from MODIS satellite imagery from 2001
 prepared by the NFI <span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-BeaudoinEtAl2017" role="doc-biblioref">Beaudoin <em>et al.</em> 2017</a>)</span> by default.</p>
-<p><em>Biomass_borealDataPrep</em> downloads these data and performs a number of data h
-armonization operations to deal with data inconsistencies. It first searches for
-mismatches between stand age (<code>standAge</code>), stand biomass (<code>standB</code>) and total
+<p><em>Biomass_borealDataPrep</em> downloads these data and performs a number of data harmonization operations to deal with data inconsistencies. It first searches for mismatches between stand age (<code>standAge</code>), stand biomass (<code>standB</code>) and total
 stand cover (<code>standCover</code>), assuming that cover is the most accurate of the
 three, and biomass the least, and in the following order:</p>
 <ol style="list-style-type: decimal">
@@ -341,7 +339,7 @@ up to the first year of the simulation.</p>
 perimeter data. If the user does not want to assume 1), this data imputation
 step can be bypassed by setting the parameter <code>P(sim)$overrideBiomassInFires</code> to
 <code>FALSE</code> or <code>P(sim)$fireURL</code> to <code>NULL</code> or <code>NA</code>.</p>
-<p>In pixels were ages are changed to match time since the last fire, cohort
+<p>In pixels where ages are changed to match time since the last fire, cohort
 biomass needs to be corrected – in our default datasets we have noticed how it
 biomass is inflated in pixels with recent burnts. For this, the module uses a
 spin-up simulation that grows cohorts to their fixed age inside each pixel using
