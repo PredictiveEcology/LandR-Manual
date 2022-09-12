@@ -20,7 +20,7 @@
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
-    
+
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
 <style type="text/css">
@@ -176,14 +176,13 @@ from <em>Biomass_borealDataPrep</em>.</p></li>
 <p><em>Biomass_borealDataPrep</em> prepares all inputs necessary to run a realistic
 simulation of forest dynamics in Western Canadian boreal forests using
 <em>Biomass_core</em>. Part of this process involves cleaning up the input data and
-imputing missing data in some cases, which are presented thoroughly in <a href="landr-biomass_borealdataprep-module.html#bboreal-dataprep">Data
+imputing missing data in some cases, both of which are discussed in detail in <a href="landr-biomass_borealdataprep-module.html#bboreal-dataprep">Data
 acquisition and treatment</a>.</p>
 <p>After cleaning and formatting the raw input data, the module:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>calculates species biomass per pixel</strong> by multiplying the observed species
 % cover by the observed stand biomass and an adjustment factor,
-which can be statistically calibrated for the study area. Given that this
-adjusts the species biomass, this calibration step contributes to the
+which can be statistically calibrated for the study area. This calibration step contributes to the
 calibration of <code>maxB</code> and <code>maxANPP</code> trait values, whose estimation is also
 based on species biomass (see <a href="landr-biomass_borealdataprep-module.html#bboreal-init-B-age">Initial species age and biomass per
 pixel</a> and <a href="landr-biomass_borealdataprep-module.html#bboreal-adjustB">Adjustment of species
@@ -217,7 +216,7 @@ establishment probability</a>). <strong>By default,
 performs data-based landscape initialisation, by creating the species cohort
 table (<code>cohortData</code>) and corresponding map (<code>pixelGroupMap</code>; both used to
 initialise and track cohorts across the landscape) based on observed stand
-age and species biomass (after data clean-up and dealing with mismatches).</p></li>
+age and species biomass.</p></li>
 </ol>
 <p>As <em>Biomass_core</em> only simulates tree species dynamics, <em>Biomass_borealDataPrep</em>
 prepares all inputs and estimates parameters in pixels within forested
@@ -237,7 +236,7 @@ study area used to derive parameters (<code>studyAreaLarge</code>) and the study
 the simulation will happen (<code>studyArea</code>). The two objects can be identical if
 the user chooses to parametrise and run the simulations in the same area. If not
 identical, <code>studyArea</code> must be fully within <code>studyAreaLarge</code>. If
-<code>studyAreaLarge</code> and <code>studyArea</code> are in Canada, the module is able to
+<code>studyAreaLarge</code> and <code>studyArea</code> are in Canada, the module can
 automatically estimate and prepare all input parameters and objects for
 <em>Biomass_core</em>, as the default raw data are FAIR data <span class="citation">(<em>sensu</em> <a href="landr-biomass_validationknn-module.html#ref-WilkinsonEtAl2016" role="doc-biblioref">Wilkinson <em>et al.</em> 2016</a>)</span> at the national-scale.</p>
 <p>If no other inputs are supplied, <em>Biomass_borealDataPrep</em> will create raster
@@ -280,7 +279,7 @@ this by supplying different ecozonation or land-cover layers.</p>
 <h4>
 <span class="header-section-number">3.2.2.2</span> Species cover<a class="anchor" aria-label="anchor" href="#bboreal-sppcover"><i class="fas fa-link"></i></a>
 </h4>
-<p>Species percent cover (% cover) raster layers (<code>speciesLayers</code>) can
+<p>Species cover (% cover) raster layers (<code>speciesLayers</code>) can
 be automatically obtained and pre-processed by <em>Biomass_borealDataPrep</em>. The
 module ensures that:</p>
 <ol style="list-style-type: decimal">
@@ -324,13 +323,13 @@ estimated using the remainder of the data to fit the model supplied by
 <code>P(sim)$imputeBadAgeModel</code>, which defaults to:</p></li>
 </ol>
 <pre><code>## [[1]]
-## lme4::lmer(age ~ log(totalBiomass) * cover * speciesCode + (log(totalBiomass) | 
+## lme4::lmer(age ~ log(totalBiomass) * cover * speciesCode + (log(totalBiomass) |
 ##     initialEcoregionCode))</code></pre>
 <p>Cohort biomass is then adjusted to reflect the different cover to biomass
 relationship of conifer and broadleaf species (see <a href="landr-biomass_borealdataprep-module.html#bboreal-adjustB">Adjustment of initial
 species biomass</a>).</p>
 <p>Finally, <em>Biomass_borealDataPrep</em> can use fire perimeters to correct stand ages.
-For this, it downloads the latest fire perimeter data from the <a href="https://cwfis.cfs.nrcan.gc.ca/datamart">Canadian
+To do so, it downloads the latest fire perimeter data from the <a href="https://cwfis.cfs.nrcan.gc.ca/datamart">Canadian
 Wildfire Data Base</a> and changes pixel
 age inside fire perimeters to match the time since last fire, using fire years
 up to the first year of the simulation.</p>
@@ -340,8 +339,8 @@ perimeter data. If the user does not want to assume 1), this data imputation
 step can be bypassed by setting the parameter <code>P(sim)$overrideBiomassInFires</code> to
 <code>FALSE</code> or <code>P(sim)$fireURL</code> to <code>NULL</code> or <code>NA</code>.</p>
 <p>In pixels where ages are changed to match time since the last fire, cohort
-biomass needs to be corrected – in our default datasets we have noticed how it
-biomass is inflated in pixels with recent burnts. For this, the module uses a
+biomass must be corrected – in our default datasets we have noticed
+biomass is inflated in pixels with recent burnts. Consequently, the module uses a
 spin-up simulation that grows cohorts to their fixed age inside each pixel using
 estimated <code>maxB</code> and <code>maxANPP</code> parameters (see <a href="landr-biomass_borealdataprep-module.html#bboreal-maxB-maxANPP">Maximum biomass and maximum
 aboveground net primary productivity</a>).</p>
@@ -414,7 +413,7 @@ the user can chose to re-estimate it by setting
 <code>P(sim)$fitDeciduousCoverDiscount == TRUE</code>. In this case, by default
 <em>Biomass_borealDataPrep</em> will fit the the following model:</p>
 <pre><code>## [[1]]
-## glm(I(log(B/100)) ~ logAge * I(log(totalBiomass/100)) * speciesCode * 
+## glm(I(log(B/100)) ~ logAge * I(log(totalBiomass/100)) * speciesCode *
 ##     lcc)</code></pre>
 <p>which relates the estimated biomass (<code>B</code>) with an interaction term between
 log-age (<code>logAge</code>), <code>standB</code> (‘totalBiomass’), <code>speciesCode</code> (i.e. species ID)
@@ -433,7 +432,7 @@ species ages and biomass.</p>
 species age and cover, while accounting for variation between ecolocations
 (<code>ecoregionGroup</code> below):</p>
 <pre><code>## [[1]]
-## lme4::lmer(B ~ logAge * speciesCode + cover * speciesCode + (logAge + 
+## lme4::lmer(B ~ logAge * speciesCode + cover * speciesCode + (logAge +
 ##     cover | ecoregionGroup))</code></pre>
 <p>The coefficients are estimated by maximum likelihood and model fit is calculated
 as the proportion of explained variance explained by fixed effects only
@@ -511,7 +510,7 @@ ecolocation. For this, <em>Biomass_borealDataPrep</em> models the relationship b
 probability of occurrence of a species (<span class="math inline">\(\pi\)</span>) using the following model by
 default:</p>
 <pre><code>## [[1]]
-## glm(cbind(coverPres, coverNum - coverPres) ~ speciesCode * ecoregionGroup, 
+## glm(cbind(coverPres, coverNum - coverPres) ~ speciesCode * ecoregionGroup,
 ##     family = binomial)</code></pre>
 <p>whereby the probability of occurrence of a species (<span class="math inline">\(\pi\)</span>) – calculated as the
 number of pixels with % cover &gt; 0 divided by the total number of
