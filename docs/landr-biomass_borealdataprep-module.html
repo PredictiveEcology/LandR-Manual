@@ -625,7 +625,7 @@ productivity</a>) and <code>inflationFactor</code> and
 </div>
 <div id="aggregating-species" class="section level3" number="3.2.4">
 <h3>
-<span class="header-section-number">3.2.4</span> Agregating species<a class="anchor" aria-label="anchor" href="#agregating-species"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.4</span> Aggregating species<a class="anchor" aria-label="anchor" href="#aggregating-species"><i class="fas fa-link"></i></a>
 </h3>
 <p><em>Biomass_borealDataPrep</em> will use the input table <code>sppEquiv</code> and the parameter
 <code>P(sim)$sppEquivCol</code> to select the naming convention to use for the
@@ -812,7 +812,7 @@ must match those available in default (or provided) species traits tables
 determining the where the simulation will take place. This input object
 <strong>must be supplied by the user</strong>.</p></li>
 <li><p><code>studyAreaLarge</code> – shapefile. A <code>SpatialPolygonsDataFrame</code> with a single
-polygon determining the where the statistical models for parameter
+polygon determining where the statistical models for parameter
 estimation will be fitted. It <strong>must</strong> contain <code>studyArea</code> fully, if they
 are not identical. This object <strong>must be supplied by the user</strong>.</p></li>
 </ul>
@@ -911,7 +911,7 @@ rstLCC
 RasterLayer
 </td>
 <td style="text-align:left;">
-A land classification map in study area. It must be ‘corrected’, in the sense that: 1) Every class must not conflict with any other map in this module (e.g., <code>speciesLayers</code> should not have data in LCC classes that are non-treed); 2) It can have treed and non-treed classes. The non-treed will be removed within this module if <code>P(sim)$omitNonTreedPixels</code> is <code>TRUE</code>; 3) It can have transient pixels, such as ‘young fire’. These will be converted to a the nearest non-transient class, probabilistically if there is more than 1 nearest neighbour class, based on <code>P(sim)$LCCClassesToReplaceNN</code>. The default layer used, if not supplied, is Canada national land classification in 2010. The metadata (res, proj, ext, origin) need to match <code>rasterToMatchLarge</code>.
+A landcover classification map of the study area. It must be ‘corrected’, in the sense that: 1) Every class must not conflict with any other map in this module (e.g., <code>speciesLayers</code> should not have data in LCC classes that are non-treed); 2) It can have treed and non-treed classes. The non-treed will be removed within this module if <code>P(sim)$omitNonTreedPixels</code> is <code>TRUE</code>; 3) It can have transient pixels, such as ‘young fire’. These will be converted to a the nearest non-transient class, probabilistically if there is more than 1 nearest neighbour class, based on <code>P(sim)$LCCClassesToReplaceNN</code>. The default layer used, if not supplied, is 2010 Canada National Land Classification. The metadata (res, proj, ext, origin) need to match <code>rasterToMatchLarge</code>.
 </td>
 <td style="text-align:left;">
 NA
@@ -953,7 +953,7 @@ rawBiomassMap
 RasterLayer
 </td>
 <td style="text-align:left;">
-total biomass raster layer in study area. Defaults to the Canadian Forestry Service, National Forest Inventory, kNN-derived total aboveground biomass map from 2001 (in tonnes/ha), unless ‘dataYear’ != 2001. If necessary, biomass values are rescaled to match changes in resolution. See <a href="https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990" class="uri">https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990</a> for metadata.
+total biomass raster layer in study area. Defaults to the Canadian Forestry Service, National Forest Inventory, kNN-derived total aboveground biomass map from 2001 (in tonnes/ha), unless ‘dataYear’ != 2001. See <a href="https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990" class="uri">https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990</a> for metadata.
 </td>
 <td style="text-align:left;">
 <a href="http://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/canada-forests-attributes_attributs-forests-canada/2001-attributes_attributs-2001/NFI_MODIS250m_2001_kNN_Structure_Biomass_TotalLiveAboveGround_v1.tif" class="uri">http://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/canada-forests-attributes_attributs-forests-canada/2001-attributes_attributs-2001/NFI_MODIS250m_2001_kNN_Structure_Biomass_TotalLiveAboveGround_v1.tif</a>
@@ -981,7 +981,7 @@ speciesTable
 data.table
 </td>
 <td style="text-align:left;">
-a table of invariant species traits with the following trait colums: ‘species’, ‘Area’, ‘longevity’, ‘sexualmature’, ‘shadetolerance’, ‘firetolerance’, ‘seeddistance_eff’, ‘seeddistance_max’, ‘resproutprob’, ‘resproutage_min’, ‘resproutage_max’, ‘postfireregen’, ‘leaflongevity’, ‘wooddecayrate’, ‘mortalityshape’, ‘growthcurve’, ‘leafLignin’, ‘hardsoft’. Names can differ, but not the column order. Default is from Dominic Cyr and Yan Boulanger’s project
+a table of invariant species traits with the following trait colums: ‘species’, ‘Area’, ‘longevity’, ‘sexualmature’, ‘shadetolerance’, ‘firetolerance’, ‘seeddistance_eff’, ‘seeddistance_max’, ‘resproutprob’, ‘resproutage_min’, ‘resproutage_max’, ‘postfireregen’, ‘leaflongevity’, ‘wooddecayrate’, ‘mortalityshape’, ‘growthcurve’, ‘leafLignin’, ‘hardsoft’. The column order may differ but the names cannot. Default is from Dominic Cyr and Yan Boulanger’s project
 </td>
 <td style="text-align:left;">
 <a href="https://raw.githubusercontent.com/dcyr/LANDIS-II_IA_generalUseFiles/master/speciesTraits.csv" class="uri">https://raw.githubusercontent.com/dcyr/LANDIS-II_IA_generalUseFiles/master/speciesTraits.csv</a>
@@ -2058,9 +2058,9 @@ Probability of germination for species shade tolerance (in <code>species</code>)
 <h3>
 <span class="header-section-number">3.2.8</span> Simulation flow and module events<a class="anchor" aria-label="anchor" href="#bboreal-sim-flow"><i class="fas fa-link"></i></a>
 </h3>
-<p><em>Biomass_borealDataPrep</em> initialises itself and prepares all inputs provided it
-has internet access to retrieve the raw datasets used for parametrisation and
-preparing input objects for <em>Biomass_core</em>.</p>
+<p><em>Biomass_borealDataPrep</em> initialises itself and prepares all inputs, provided it
+has internet access, for parametrisation and
+use by <em>Biomass_core</em>.</p>
 <p>The module runs only for one time step and contains The general flow of
 <em>Biomass_borealDataPrep</em> processes is:</p>
 <ol style="list-style-type: decimal">
