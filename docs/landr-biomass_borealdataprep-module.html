@@ -425,7 +425,7 @@ conversion factor between broadleaf species cover and <code>B</code> by minimizi
 <h4>
 <span class="header-section-number">3.2.3.2</span> Maximum biomass and maximum aboveground net primary productivity<a class="anchor" aria-label="anchor" href="#bboreal-maxB-maxANPP"><i class="fas fa-link"></i></a>
 </h4>
-<p><em>Biomass_borealDataPrep</em> statistically estimates maximum biomass (<code>maxB</code>),
+<p><em>Biomass_borealDataPrep</em> statistically estimates maximum biomass (<code>maxB</code>) and
 maximum aboveground net primary productivity (<code>maxANPP</code>) using the processed
 species ages and biomass.</p>
 <p><code>maxB</code> is estimated by modelling the response of species biomass (<code>B</code>) to
@@ -445,17 +445,17 @@ each species and ecolocation combination (sample size defined by the
 attempts to refit the model by re-sampling the data, re-fitting <code>lmer</code> with the
 <code>bobyqa</code> optimizer, and re-scaling the continuous predictors (by default,
 <code>cover</code> and <code>logAge</code>). These steps are tried additively until the convergence
-issue is resolved. If the module is still unable to solve the converge issue a
+issue is resolved. If the module is still unable to solve the convergence issue, a
 message is printed and the module uses the last fitted model.</p>
 <p>Note that convergence issues are not usually problematic for the estimation of
 coefficient values, only for estimation of their standard errors. However, the
 user should always inspect the final model (especially if not converged) and
 make sure that the problems are not significant and that the fitted model meets
-residual assumptions. For this, the user should make sure model objects are
+residual assumptions. For this, the user should ensure model objects are
 exported to the <code>simList</code> using the <code>exportModels</code> parameter.</p>
 <p>Alternative model calls/formulas can be supplied via the <code>P(sim)$biomassModel</code>
 parameter. Note that if supplying a model call that does not use <code><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lme4::lmer</a></code>
-the refitting process is likely to fail and may have to be turned off (via the
+the refitting process is likely to fail and may have to be disabled (via the
 <code>P(sim)$fixModelBiomass</code> parameter).</p>
 <p>Another consideration to add with respect to the estimation of <code>maxB</code>, is that
 we are choosing a linear model to relate <code>B ~ log(age) + cover</code>. This is not
@@ -517,7 +517,7 @@ number of pixels with % cover &gt; 0 divided by the total number of
 pixels, by species within each ecolocation – is modelled per species and
 ecolocation following a binomial distribution with a logit link function. There
 is no data sub-sampling done before fitting the SEP statistical model, as the
-model fits quite fast even for very large sample sizes (e.g., &gt; 20 million
+model fits quickly even for very large sample sizes (e.g., &gt; 20 million
 points).</p>
 <p>SEP is then predicted by species and ecolocation combination and predicted
 values are integrated over the length of the succession time step
@@ -565,8 +565,8 @@ thresholds, default values are based on publicly available values used in
 LANDIS-II applications in Canada’s boreal forests (available in <a href="https://github.com/dcyr/LANDIS-II_IA_generalUseFiles">Dominic Cyr’s
 GitHub repository</a>), and
 all ecolocations share the same values.</p>
-<p>Initial runs revealed excessive recruitment of moderately shade intolerant
-species even as stand biomass increased, so values for shade levels X4 and X5
+<p>Initial runs revealed excessive recruitment of moderately shade-intolerant
+species, even as stand biomass increased, so values for shade levels X4 and X5
 are adjusted downwards (X4: 0.8 to 0.75; X5: 0.90 to 0.85) to reflect higher
 competition for resources (e.g. higher water limitation) in Western Canadian
 forests with regards to Eastern Canadian forests <span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-MessierEtAl1998" role="doc-biblioref">Messier <em>et al.</em> 1998</a>)</span>, which are
@@ -617,14 +617,14 @@ empirically estimated <code>maxB</code>.</p></li>
 <li><p>Estimates species-specific <code>maxANPP</code> by multiplying the final <code>maxB</code> above
 by <code>mANPPproportion</code> (estimated in step 2).</p></li>
 </ol>
-<p>In cases were there is insufficient PSP data to perform the above steps, <code>maxB</code>
+<p>In cases where there is insufficient PSP data to perform the above steps, <code>maxB</code>
 and <code>maxANPP</code> are left as estimated by <em>Biomass_borealDataPrep</em> (see <a href="landr-biomass_borealdataprep-module.html#bboreal-maxB-maxANPP">Maximum
 biomass and maximum aboveground net primary
 productivity</a>) and <code>inflationFactor</code> and
 <code>mANPPproportion</code> take default values of 1 and 3.33.</p>
 </div>
 </div>
-<div id="agregating-species" class="section level3" number="3.2.4">
+<div id="aggregating-species" class="section level3" number="3.2.4">
 <h3>
 <span class="header-section-number">3.2.4</span> Agregating species<a class="anchor" aria-label="anchor" href="#agregating-species"><i class="fas fa-link"></i></a>
 </h3>
