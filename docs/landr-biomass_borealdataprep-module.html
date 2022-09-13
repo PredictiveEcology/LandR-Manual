@@ -513,13 +513,12 @@ default:</p>
 ## glm(cbind(coverPres, coverNum - coverPres) ~ speciesCode * ecoregionGroup,
 ##     family = binomial)</code></pre>
 <p>whereby the probability of occurrence of a species (<span class="math inline">\(\pi\)</span>) – calculated as the
-number of pixels with % cover &gt; 0 divided by the total number of
-pixels, by species within each ecolocation – is modelled per species and
+proportion of pixels with cover &gt; 0 – is modelled per species and
 ecolocation following a binomial distribution with a logit link function. There
 is no data sub-sampling done before fitting the SEP statistical model, as the
 model fits quickly even for very large sample sizes (e.g., &gt; 20 million
 points).</p>
-<p>SEP is then predicted by species and ecolocation combination and predicted
+<p>SEP is then predicted by species and ecolocation combination and the resulting
 values are integrated over the length of the succession time step
 (<code>successionTimestep</code> parameter) as:</p>
 <span class="math display" id="eq:SEPintegration">\[\begin{equation}
@@ -629,17 +628,16 @@ productivity</a>) and <code>inflationFactor</code> and
 <span class="header-section-number">3.2.4</span> Agregating species<a class="anchor" aria-label="anchor" href="#agregating-species"><i class="fas fa-link"></i></a>
 </h3>
 <p><em>Biomass_borealDataPrep</em> will use the input table <code>sppEquiv</code> and the parameter
-<code>P(sim)$sppEquivCol</code> to know what species identities will be used for the
+<code>P(sim)$sppEquivCol</code> to select the naming convention to use for the
 simulation (see full list of <a href="landr-biomass_borealdataprep-module.html#bboreal-inputs-list">input objects</a> and
 <a href="landr-biomass_borealdataprep-module.html#bboreal-params-list">parameters</a> for details). The user can use this table and
-parameter to define grouping that “merge” species that have their own invariant
+parameter to define groupings that “merge” similar species that have their own invariant
 trait values (see <a href="landr-biomass_borealdataprep-module.html#bboreal-invariant-traits">Invariant species traits</a>) (e.g.
-genus-level group or a functional group). To do so, the user must repeat the
-name of the species group in <code>sppEquivCol</code> column of the <code>sppEquiv</code> table as
-many times as the species being grouped:</p>
+genus-level group or a functional group). To do so, the
+name of the species group in <code>sppEquivCol</code> column of the <code>sppEquiv</code> table must be identical for each grouped species:</p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:mergingSpp-Biomass-borealDataPrep">Table 3.1: </span>Example of species merging for simulation. Here the user wants to model <em>Abies balsamea</em>, <em>A. lasiocarpa</em> and <em>Pinus contorta</em> as separate species, but all <em>Picea spp.</em> as a genus-level group. For this, all six species are identified in the ‘KNN’ column, so that their % cover layers can be obtained, but in the ‘Boreal’ column (which defines the naming convention used in the simulation in this example) all <em>Picea spp.</em> have the same name. <em>Biomass_borealDataPrep</em> will merge their % cover data into a single layer by summing their cover per pixel.
+<span id="tab:mergingSpp-Biomass-borealDataPrep">Table 3.1: </span>Example of species merging for simulation. Here the user wants to model <em>Abies balsamea</em>, <em>A. lasiocarpa</em> and <em>Pinus contorta</em> as separate species, but all <em>Picea spp.</em> as a genus-level group. For this, all six species are identified in the ‘KNN’ column, so that their % cover layers can be obtained, but in the ‘Boreal’ column (which defines the naming convention used in the simulation in this example) all <em>Picea spp.</em> have the same name. <em>Biomass_borealDataPrep</em> will merge their cover data into a single layer by summing their cover per pixel.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
