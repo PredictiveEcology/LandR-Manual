@@ -124,7 +124,7 @@ bboreal-maxB-maxANPP
 bboreal-SEP
 bboreal-minRelB
 bboreal-B_sppParams-calib
-agregating-species
+aggregating-species
 bboreal-inputs-list
 bboreal-params-list
 bboreal-outputs-list

@@ -5,20 +5,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 4 LandR Biomass_speciesParameters Module | LandR Manual</title>
-<meta name="description" content="4.0.0.1 Authors: Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut, cre], Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut], Ceres Barros ceres.barros@ubc.ca [ctb] This documentation is work in...">
-<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta name="description" content="4.0.0.1 Authors: Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut, cre], Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut], Ceres Barros ceres.barros@ubc.ca [ctb] This documentation is a work in...">
+<meta name="generator" content="bookdown 0.28 with bs4_book()">
 <meta property="og:title" content="Chapter 4 LandR Biomass_speciesParameters Module | LandR Manual">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://predictiveecology.github.io/LandR-Manual/landr-biomass_speciesparameters-module.html">
 <meta property="og:image" content="https://predictiveecology.github.io/LandR-Manual/figures/LandRHex.png">
-<meta property="og:description" content="4.0.0.1 Authors: Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut, cre], Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut], Ceres Barros ceres.barros@ubc.ca [ctb] This documentation is work in...">
+<meta property="og:description" content="4.0.0.1 Authors: Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut, cre], Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut], Ceres Barros ceres.barros@ubc.ca [ctb] This documentation is a work in...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 4 LandR Biomass_speciesParameters Module | LandR Manual">
-<meta name="twitter:description" content="4.0.0.1 Authors: Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut, cre], Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut], Ceres Barros ceres.barros@ubc.ca [ctb] This documentation is work in...">
+<meta name="twitter:description" content="4.0.0.1 Authors: Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut, cre], Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut], Ceres Barros ceres.barros@ubc.ca [ctb] This documentation is a work in...">
 <meta name="twitter:image" content="https://predictiveecology.github.io/LandR-Manual/figures/LandRHex.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -89,7 +89,7 @@
 </h1>
 <!-- the following are text references used in captions for LaTeX compatibility -->
 
-<p><a href="https://github.com/PredictiveEcology/Biomass_speciesParameters/commit//tree/77e8530c7186d93fd5278e2e9b1ca5246c693734"><img src="modules/Biomass_speciesParameters/figures/moduleVersionBadge.png" alt="module-version-Badge"></a></p>
+<p><a href="https://github.com/PredictiveEcology/Biomass_speciesParameters.git"><img src="modules/Biomass_speciesParameters/figures/moduleVersionBadge.png" alt="module-version-Badge"></a></p>
 <p><a href="https://github.com/PredictiveEcology/Biomass_speciesParameters/issues"><img src="modules/Biomass_speciesParameters/figures/issuesBadge.png" alt="Issues-badge"></a></p>
 <!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
 <div id="authors-3" class="section level4" number="4.0.0.1">
@@ -98,7 +98,7 @@
 </h4>
 <p>Ian Eddy <a href="mailto:ian.eddy@nrcan-rncan.gc.ca" class="email">ian.eddy@nrcan-rncan.gc.ca</a> [aut, cre], Eliot McIntire <a href="mailto:eliot.mcintire@nrcan-rncan.gc.ca" class="email">eliot.mcintire@nrcan-rncan.gc.ca</a> [aut], Ceres Barros <a href="mailto:ceres.barros@ubc.ca" class="email">ceres.barros@ubc.ca</a> [ctb]
 <!-- ideally separate authors with new lines, '\n' not working --></p>
-<p><strong>This documentation is work in progress. Potential discrepancies and omissions
+<p><strong>This documentation is a work in progress. Potential discrepancies and omissions
 may exist for the time being. If you find any, contact us using the “Get help”
 link above.</strong></p>
 </div>
@@ -123,23 +123,23 @@ link above.</strong></p>
 <span class="header-section-number">4.1.2</span> Summary<a class="anchor" aria-label="anchor" href="#summary-2"><i class="fas fa-link"></i></a>
 </h3>
 <p>LandR <em>Biomass_speciesParameters</em> (hereafter <em>Biomass_speciesParameters</em>)
-calibrates species growth and mortality trait values used in <em>Biomass_core</em>, by
+calibrates the species’ growth and mortality traits used in <em>Biomass_core</em>, by
 matching theoretical species’ growth curves obtained with different trait values
 (see <a href="landr-biomass_speciesparameters-module.html#bsppparam-simdata">Simulated species data</a>) against observed growth
 curves derived from Permanent Sample Plots (PSP data) across Canada (see
 <a href="landr-biomass_speciesparameters-module.html#bsppparam-PSPdata">Permanent sample plot data</a>), to find the combination of
-trait values that allows a better match to the observed curves.</p>
-<p>In particular, it directly calibrates the <code>growthcurve</code>, <code>mortalityshape</code>
-invariant species traits and two new traits <code>inflationFactor</code> and
+trait values that most closely match the observed curves.</p>
+<p>In particular, it directly calibrates the <code>growthcurve</code> and <code>mortalityshape</code>
+invariant species traits as well as two new traits <code>inflationFactor</code> and
 <code>mANPPproportion</code>, which are used to calibrate previously estimated species
 maximum biomass (<code>maxB</code>) and maximum aboveground net primary productivity
 (<code>maxANPP</code>) values (see <a href="landr-biomass_speciesparameters-module.html#bsppparam-calib">Parameter estimation/calibration</a>).</p>
-<p>This module <strong>will not</strong> obtain other traits or parameters used in
+<p>This module <strong>will not</strong> obtain other traits nor parameters used in
 <em>Biomass_core</em> and so must be used in conjunction with another data/calibration
-module that does so (e.g., <em>Biomass_borealDataPrep</em>).</p>
-<p>It can however be used stand-alone in an initial developmental phase for easier
+module that does so (e.g., <em>Biomass_borealDataPrep</em>). It can however be used
+stand-alone in an initial developmental phase for easier
 inspection of the statistical calibration procedure employed.</p>
-<p>As of June 14, 2022, the <em>raw</em> PSP data used in this module is not freely
+<p>As of September 14, 2022, the <em>raw</em> PSP data used in this module is not freely
 available, and data sharing agreements must be obtained from the governments of
 SK, AB, and BC to obtain it. However, the <em>processed and anonymized</em> PSP data is
 provided via a Google Drive folder accessed automatically by the module.</p>
@@ -185,15 +185,18 @@ varying traits maximum biomass (<code>maxB</code>) and maximum aboveground net p
 productivity (<code>maxANPP</code>).</p>
 <p>All five traits strongly modulate the shape of species growth curves and so it
 is important that they are calibrated to the study area in question.</p>
-<p>Also, the growth and mortality equations used in <em>Biomass_core</em> are non-linear
+<p>In addition, the growth and mortality equations used in <em>Biomass_core</em> are non-linear
 and their resulting actual biomass accumulation curve is an emergent phenomenon
 due to competition effects. This means that the ideal trait/parameter values
-should not be estimated on pure single species growth conditions, as their
+should not be estimated solely from single-species growth conditions, as their
 resulting dynamics will be different in a multi-species context.</p>
 <p><em>Biomass_speciesParameters</em> attempts to address these issues (at
-least partially) using a “curve-matching” approach. It compares a GAMM fitted to
-permanent sample plot (PSP) data to a large collection of theoretical species
-curves, each representing a different set of growth and mortality parameters.
+least partially) using a “curve-matching” approach. It fits three non-linear models
+(Chapman-Richards, Gompertz, Logistic) as well as a GAMM to<br>
+species-level stand biomass derived from permanent sample plot (PSP).
+The resulting curves are compared against a large collection of theoretical species
+curves, each representing a different set of growth and mortality parameters,
+to find the most likely combination of traits.
 This also provides a means to calibrate these traits using a dataset that is
 independent from the one used to derive initial landscape conditions and initial
 values of <code>maxB</code> and <code>maxANPP</code>.</p>
@@ -405,13 +408,13 @@ sourceURL
 <tbody>
 <tr>
 <td style="text-align:left;">
-factorialSpeciesTable
+speciesTableFactorial
 </td>
 <td style="text-align:left;">
 data.table
 </td>
 <td style="text-align:left;">
-table with species traits for matching to <code>reducedFactorialCohortData</code>
+table with species traits for matching to <code>cohortDataFactorial</code>
 </td>
 <td style="text-align:left;">
 <a href="https://drive.google.com/open?id=1q0ou0CBzD9GqGSparpHqf318IWK6ycty" class="uri">https://drive.google.com/open?id=1q0ou0CBzD9GqGSparpHqf318IWK6ycty</a>
@@ -419,7 +422,7 @@ table with species traits for matching to <code>reducedFactorialCohortData</code
 </tr>
 <tr>
 <td style="text-align:left;">
-reducedFactorialCohortData
+cohortDataFactorial
 </td>
 <td style="text-align:left;">
 data.table
@@ -433,7 +436,7 @@ results of factorial species trait simulation. This can be found by running <cod
 </tr>
 <tr>
 <td style="text-align:left;">
-PSPmeasure
+PSPmeasure_sppParams
 </td>
 <td style="text-align:left;">
 data.table
@@ -461,7 +464,7 @@ merged PSP and TSP plot data. Defaults to randomized PSP data stripped of real p
 </tr>
 <tr>
 <td style="text-align:left;">
-PSPgis
+PSPgis_sppParams
 </td>
 <td style="text-align:left;">
 sf
@@ -1227,7 +1230,7 @@ repository</a> and in
 
   <div class="col-12 col-md-6 mt-3">
     <p>"<strong>LandR Manual</strong>: v. 1.0.1" was written by </p>
-<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-06-14.
+<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-09-14.
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -1240,7 +1243,7 @@ repository</a> and in
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
