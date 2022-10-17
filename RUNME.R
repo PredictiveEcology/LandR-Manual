@@ -7,28 +7,54 @@
 ## PACKAGES -----------------------------------------
 ## Make sure necessary packages are installed
 
-if (!"remotes" %in% rownames(installed.packages())) {
+## Sets up project library and renders book
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+
+## note that "rmarkdown", "bookdown", "htmlwidgets" need to be installed in the default
+## libraries, because each .Rmd starts from a clean R session
+needPkgs <- c("rmarkdown", "bookdown", "htmlwidgets", "tinytex")
+needPkgs <- needPkgs[!needPkgs %in% installed.packages()]
+for (pkg in needPkgs) {
+  install.packages(pkg, dependencies = TRUE)
+}
+
+tinytex::install_tinytex()
+
+pkgPath <- normalizePath(file.path("packages", version$platform,
+                                   paste0(version$major, ".", strsplit(version$minor, "[.]")[[1]][1])),
+                         winslash = "/")
+dir.create(pkgPath, recursive = TRUE)
+.libPaths(pkgPath, include.site = FALSE)
+
+if (!"remotes" %in% installed.packages(lib.loc = pkgPath))
   install.packages("remotes")
+
+if (!"Require" %in% installed.packages(lib.loc = pkgPath) ||
+    packageVersion("Require", lib.loc = pkgPath) < "0.1.6.9004") {
+  remotes::install_github("PredictiveEcology/Require@132f5f44553f6dae936633282ff0f505a1031afe",
+                          upgrade = FALSE, force = TRUE)
 }
 
-if (!require("Require")) {
-  remotes::install_github("PredictiveEcology/Require@development")
-  library("Require")
-}
+## use binary linux packages if on Ubuntu
+Require::setLinuxBinaryRepo()
 
-if (FALSE) {
-  Require::pkgSnapshot("packages/pkgSnapshot.txt")
+filePath <- file.path("packages",
+                      paste0("pkgSnapshot_",
+                             paste0(version$major, "_", strsplit(version$minor, "[.]")[[1]][1]),
+                             ".txt"))
+
+Require::Require(packageVersionFile = filePath,
+                 standAlone = TRUE, upgrade = FALSE)
+
+if (FALSE) {  ## don't run this; only here if pkgSnapshot needs to be rebuilt
+  Require::pkgSnapshot(filePath, libPaths = .libPaths()[1], standAlone = TRUE)
   ## Much later on a different or same machine
-  #Require(packageVersionFile = "packages/pkgSnapshot.txt") ## TODO: doesn't work (Require#41)
-  ## - uses absolute paths, uses machine-specific package location, uses R 4.0;
-  ## - installing binaries of pkgs needed from source;
+  # Require(packageVersionFile = filePath)
   ## - RandomFields and gdalUtils n/a on CRAN.
 }
 
-## BEGIN WORKAROUND for package installation
-
 ## install archived CRAN packages, which are N/A as April 2022
-if (!all(c("gdalUtils", "RandomFields") %in% rownames(installed.packages()))) {
+if (!all(c("gdalUtils", "RandomFields") %in% rownames(installed.packages(lib.loc = .libPaths()[1])))) {
   install.packages("RandomFieldsUtils")
   install.packages(c("https://cran.r-project.org/src/contrib/Archive/gdalUtils/gdalUtils_2.0.3.2.tar.gz",
                      "https://cran.r-project.org/src/contrib/Archive/RandomFields/RandomFields_3.3.13.tar.gz"),
@@ -36,25 +62,28 @@ if (!all(c("gdalUtils", "RandomFields") %in% rownames(installed.packages()))) {
                    repos = NULL)
 }
 
-if (FALSE) {
-  Require("PredictiveEcology/SpaDES.install@development")
-  installSpatialPackages()
-  installSpaDES()
-}
+# if (FALSE) {
+#   Require("PredictiveEcology/SpaDES.install@development")
+#   installSpatialPackages()
+#   installSpaDES()
+# }
 
 ## END WORKAROUND
-Require(c("downlit", "formatR", "git2r", "rmarkdown", "xml2",
-          "pander", "kableExtra", "yihui/knitr",
-          "PredictiveEcology/SpaDES@development",
-          "PredictiveEcology/SpaDES.docs@development",
-          "PredictiveEcology/SpaDES.experiment@development",
-          "PredictiveEcology/LandR@development"), require = FALSE)
-Require(c("bookdown", "data.table",
-          "RefManageR", "ROpenSci/bibtex"))
+# Require(c("downlit", "formatR", "git2r", "rmarkdown", "xml2",
+#           "pander", "kableExtra", "yihui/knitr",
+#           "PredictiveEcology/SpaDES@development",
+#           "PredictiveEcology/SpaDES.docs@development",
+#           "PredictiveEcology/SpaDES.experiment@development",
+#           "PredictiveEcology/LandR@development"), require = FALSE)
+# Require(c("bookdown", "data.table",
+#           "RefManageR", "ROpenSci/bibtex"))
+
+Require::Require(c("bookdown", "data.table", "RefManageR", "ROpenSci/bibtex"),
+                 install = FALSE, upgrade = FALSE)
 
 ## REFERENCES ---------------------------------------
 ## automatically create a bib database for R packages
-checkPath("citations", create = TRUE)
+Require::checkPath("citations", create = TRUE)
 write_bib(c(
   .packages(), "bookdown", "knitr", "rmarkdown",
   "SpaDES.core", "SpaDES", "SpaDES.experiment", "reproducible",
@@ -78,7 +107,7 @@ if (!file.exists("citations/ecology-letters.csl")) {
 
 ## BADGE IMAGES --------------------------------------
 ## add these to main figures/ folder so they can be used throughout module manuals when knitting to pdf
-checkPath("figures", create = TRUE)
+Require::checkPath("figures", create = TRUE)
 
 if (!file.exists("figures/markdownBadge.png")) {
   download.file(url = "https://img.shields.io/badge/Made%20with-Markdown-1f425f.png",
