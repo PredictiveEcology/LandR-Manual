@@ -84,7 +84,7 @@ Require::Require(c("bookdown", "data.table", "RefManageR", "ROpenSci/bibtex"),
 ## REFERENCES ---------------------------------------
 ## automatically create a bib database for R packages
 Require::checkPath("citations", create = TRUE)
-write_bib(c(
+write.bib(c(
   .packages(), "bookdown", "knitr", "rmarkdown",
   "SpaDES.core", "SpaDES", "SpaDES.experiment", "reproducible",
   "LandR", "Require"
