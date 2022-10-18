@@ -133,7 +133,7 @@ if (!file.exists("docs/.nojekyll")) {
 }
 
 ## set manual version
-Sys.setenv(LANDR_MAN_VERSION = "1.0.1") ## update this for each new release
+Sys.setenv(LANDR_MAN_VERSION = "1.0.1.9000") ## update this for each new release
 
 ## render the book using new env -- see <https://stackoverflow.com/a/46083308>
 render_book(output_format = "all", envir = new.env())
