@@ -197,7 +197,7 @@
 "sp","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.2","1.4-6",NA,NA,NA,NA
 "SpaDES","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.2","2.0.8",NA,NA,NA,NA
 "SpaDES.core","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.2","1.0.10",NA,NA,NA,NA
-"SpaDES.docs","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.2","0.0.0.9001","SpaDES.docs","PredictiveEcology","2e7720e48cc915820143636f03a35fb3748bbb00","2e7720e48cc915820143636f03a35fb3748bbb00"
+"SpaDES.docs","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.2","0.0.0.9002","SpaDES.docs","PredictiveEcology","c4f73cdbb6b39acc4a74c85dfc1156c6fecacdd7","c4f73cdbb6b39acc4a74c85dfc1156c6fecacdd7"
 "SpaDES.experiment","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.2","0.0.2.9003","SpaDES.experiment","PredictiveEcology","91bfad98d67ea2b7fcee3ea0115f8746e47534ad","91bfad98d67ea2b7fcee3ea0115f8746e47534ad"
 "SpaDES.install","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.2","0.0.6.9008","SpaDES.install","PredictiveEcology","2ad93cd85e3dd3b7d42ad1e731503ea85a494f3a","2ad93cd85e3dd3b7d42ad1e731503ea85a494f3a"
 "SpaDES.tools","D:/GitHub/LandR-Manual/packages/x86_64-w64-mingw32/4.2","0.3.10.9000","SpaDES.tools","PredictiveEcology","8f17961649b7553299ea31dcaf79ade0bcb06d41","8f17961649b7553299ea31dcaf79ade0bcb06d41"

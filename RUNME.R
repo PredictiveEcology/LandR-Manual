@@ -124,7 +124,7 @@ if (!file.exists("figures/genericBadge.png")) {
 ## RMD PREP ------------------------------------------
 
 ## NOTE: need dot because knitting is doing `rm(list = ls())`
-.copyModuleRmds <- SpaDES.docs::prepLandRRmds("modules", rebuildCache = FALSE)
+.copyModuleRmds <- SpaDES.docs::prepManualRmds("modules", rebuildCache = FALSE)
 
 ## RENDER BOOK ------------------------------------------
 ## prevents GitHub from rendering book using Jekyll
