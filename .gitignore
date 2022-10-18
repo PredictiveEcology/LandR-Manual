@@ -41,3 +41,6 @@ figures/*Badge.png
 
 # R Environment Variables
 .Renviron
+
+# misc
+reprex.R
