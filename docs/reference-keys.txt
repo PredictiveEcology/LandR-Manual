@@ -86,7 +86,6 @@ example-runSim
 appendix
 appendix-tables
 refs
-landr-data-and-calibration-modules
 landr-biomass_speciesdata-module
 authors-1
 module-overview-1
@@ -153,7 +152,6 @@ load-spades-and-other-packages.-1
 get-module-necessary-packages-and-set-up-folder-directories-1
 setup-simulation-1
 bsppparam-refs
-landr-validation-modules
 landr-biomass_validationknn-module
 authors-4
 module-overview-4

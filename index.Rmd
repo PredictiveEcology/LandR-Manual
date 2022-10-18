@@ -50,6 +50,7 @@ This manual does not cover the `SpaDES` toolkit, which we use to create and run
 LandR modules. To learn more about `SpaDES` go to the [SpaDES
 webpage](https://spades.predictiveecology.org/).
 
-```{r global-setup, eval = TRUE, echo = FALSE}
-options("knitr.graphics.rel_path" = FALSE)
-```
+**Previous versions:**
+
+-   [LandR Manual v. 1.0.0](archive/pdf/LandR-manual-v1.0.0.pdf)
+

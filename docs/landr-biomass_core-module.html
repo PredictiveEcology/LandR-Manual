@@ -55,8 +55,8 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="v. 1.0.0">LandR Manual</a>:
-        <small class="text-muted">v. 1.0.0</small>
+        <a href="index.html" title="v. 1.0.1">LandR Manual</a>:
+        <small class="text-muted">v. 1.0.1</small>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -70,12 +70,12 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Preface</a></li>
 <li><a class="active" href="landr-biomass_core-module.html"><span class="header-section-number">1</span> LandR Biomass_core Module</a></li>
-<li><a class="" href="landr-data-and-calibration-modules.html"><span class="header-section-number">2</span> LandR Data and Calibration Modules</a></li>
-<li><a class="" href="landr-biomass_speciesdata-module.html"><span class="header-section-number">3</span> LandR Biomass_speciesData Module</a></li>
-<li><a class="" href="landr-biomass_borealdataprep-module.html"><span class="header-section-number">4</span> LandR Biomass_borealDataPrep Module</a></li>
-<li><a class="" href="landr-biomass_speciesparameters-module.html"><span class="header-section-number">5</span> LandR Biomass_speciesParameters Module</a></li>
-<li><a class="" href="landr-validation-modules.html"><span class="header-section-number">6</span> LandR Validation Modules</a></li>
-<li><a class="" href="landr-biomass_validationknn-module.html"><span class="header-section-number">7</span> LandR Biomass_validationKNN Module</a></li>
+<li><a class="" href="landr-data-and-calibration-modules.html">LandR Data and Calibration Modules</a></li>
+<li><a class="" href="landr-biomass_speciesdata-module.html"><span class="header-section-number">2</span> LandR Biomass_speciesData Module</a></li>
+<li><a class="" href="landr-biomass_borealdataprep-module.html"><span class="header-section-number">3</span> LandR Biomass_borealDataPrep Module</a></li>
+<li><a class="" href="landr-biomass_speciesparameters-module.html"><span class="header-section-number">4</span> LandR Biomass_speciesParameters Module</a></li>
+<li><a class="" href="landr-validation-modules.html">LandR Validation Modules</a></li>
+<li><a class="" href="landr-biomass_validationknn-module.html"><span class="header-section-number">5</span> LandR Biomass_validationKNN Module</a></li>
 </ul>
 
         <div class="book-extra">
@@ -98,7 +98,7 @@
 
 
 
-<p><a href="https://github.com/PredictiveEcology/Biomass_core"><img src="modules/Biomass_core/figures/moduleVersionBadge.png" alt="module-version-Badge"></a></p>
+<p><a href="https://github.com:PredictiveEcology/Biomass_core/commit//tree/b3f075c238ebcc980f4e630f62690b03a4ffaeba"><img src="modules/Biomass_core/figures/moduleVersionBadge.png" alt="module-version-Badge"></a></p>
 <div id="authors" class="section level4" number="1.0.0.1">
 <h4>
 <span class="header-section-number">1.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors"><i class="fas fa-link"></i></a>
@@ -130,19 +130,19 @@ link above.</strong></p>
 <span class="header-section-number">1.1.2</span> Summary<a class="anchor" aria-label="anchor" href="#summary"><i class="fas fa-link"></i></a>
 </h3>
 <p>LandR <em>Biomass_core</em> (hereafter <em>Biomass_core</em>) is the core forest succession
-simulation module of the LandR ecosystem of <code>SpaDES</code> modules <span class="citation">(see <a href="#ref-ChubatyMcIntire2019" role="doc-biblioref">Chubaty &amp; McIntire 2019</a>)</span>. It simulates tree cohort ageing, growth, mortality and
+simulation module of the LandR ecosystem of <code>SpaDES</code> modules <span class="citation">(see <a href="landr-biomass_validationknn-module.html#ref-ChubatyMcIntire2019" role="doc-biblioref">Chubaty &amp; McIntire 2019</a>)</span>. It simulates tree cohort ageing, growth, mortality and
 competition for light resources, as well as seed dispersal (Fig.
 <a href="landr-biomass_core-module.html#fig:fig-Biomass-core">1.1</a>), in a spatially explicit manner and using a yearly
 time step. The model is based on the LANDIS-II Biomass Succession Extension
-v.3.2.1 <span class="citation">(LBSE, <a href="#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>, with a few changes (see <a href="landr-biomass_core-module.html#biomass-core-vs-lbse">Differences
+v.3.2.1 <span class="citation">(LBSE, <a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>, with a few changes (see <a href="landr-biomass_core-module.html#biomass-core-vs-lbse">Differences
 between <em>Biomass_core</em> and LBSE</a>). Nonetheless, the
 essential functioning of the succession model still largely follows its
 LANDIS-II counterpart, and we refer the reader to the corresponding LBSE manual
-<span class="citation">(<a href="#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span> for a detailed reading of the mechanisms implemented in
+<span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span> for a detailed reading of the mechanisms implemented in
 the model.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-Biomass-core"></span>
-<img src="modules/Biomass_core/figures/Biomass_coreSchematic.png" alt="Biomass_core simulates tree cohort growth, mortality, recruitment and dispersal dynamics, as a function of  cohort ageing and competition for light (shading) and space, as well as disturbances like fire (simulated using other modules)." width="60%"><p class="caption">
+<img src="modules/Biomass_core/figures/Biomass_coreSchematic.png" alt="Biomass_core simulates tree cohort growth, mortality, recruitment and dispersal dynamics, as a function of  cohort ageing and competition for light (shading) and space, as well as disturbances like fire (simulated using other modules)." width="80%"><p class="caption">
 Figure 1.1: <em>Biomass_core</em> simulates tree cohort growth, mortality, recruitment and dispersal dynamics, as a function of cohort ageing and competition for light (shading) and space, as well as disturbances like fire (simulated using other modules).
 </p>
 </div>
@@ -181,7 +181,7 @@ including cohort mortality and regeneration through resprouting and/or
 serotiny;</p></li>
 <li><p><a href="https://github.com/PredictiveEcology/Biomass_regenerationPM"><em>Biomass_regenerationPM</em></a>:
 like <em>Biomass_regeneration</em>, but allowing partial mortality. Based on the
-LANDIS-II Dynamic Fuels &amp; Fire System extension <span class="citation">(<a href="#ref-SturtevantEtAl2018" role="doc-biblioref">Sturtevant <em>et al.</em> 2018</a>)</span>;</p></li>
+LANDIS-II Dynamic Fuels &amp; Fire System extension <span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-SturtevantEtAl2018" role="doc-biblioref">Sturtevant <em>et al.</em> 2018</a>)</span>;</p></li>
 <li><p><em>fireSense</em>: climate- and land-cover-sensitive fire model simulating fire
 ignition, escape and spread processes as a function of climate and
 land-cover. Includes built-in parameterisation of these processes using
@@ -218,7 +218,7 @@ independent dataset of species % cover and stand biomass for
 <span class="header-section-number">1.2.1</span> General functioning<a class="anchor" aria-label="anchor" href="#general-functioning"><i class="fas fa-link"></i></a>
 </h3>
 <p><em>Biomass_core</em> is a forest landscape model based on the LANDIS-II Biomass
-Succession Extension v.3.2.1 model <span class="citation">(LBSE, <a href="#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>. It is the core
+Succession Extension v.3.2.1 model <span class="citation">(LBSE, <a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>. It is the core
 forest succession model of the LandR ecosystem of <code>SpaDES</code> modules. Similarly to
 LBSE, <em>Biomass_core</em> simulates changes in tree cohort aboveground biomass
 (<span class="math inline">\(g/m^2\)</span>) by calculating growth, mortality and recruitment as functions of pixel
@@ -246,7 +246,7 @@ serotiny, resprouting and germination.</p>
 <p>Disturbances (e.g., fire) can cause cohort mortality and trigger
 post-disturbance regeneration. Two post-disturbance regeneration mechanisms have
 been implemented, following LBSE: serotiny and resprouting
-<span class="citation">(<a href="#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>. Post-disturbance mortality and regeneration only occur
+<span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>. Post-disturbance mortality and regeneration only occur
 in response to fire and are simulated in two separate, but interchangeable
 modules, <em>Biomass_regeneration</em> and <em>Biomass_regenerationPM</em> that differ with
 respect to the level of post-fire mortality they simulate (complete or partial
@@ -254,7 +254,7 @@ mortality, respectively).</p>
 <p>Cohort germination (also called cohort establishment) occurs if seeds are
 available from local sources (the pixel), or via seed dispersal. Seed dispersal
 can be of three modes: ‘no dispersal’, ‘universal dispersal’ (arguably, only
-interesting for dummy case studies) or ‘ward dispersal’ <span class="citation">(<a href="#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>.
+interesting for dummy case studies) or ‘ward dispersal’ <span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>.
 Briefly, the ‘ward dispersal’ algorithm describes a flexible kernel that
 calculates the probability of a species colonising a neighbour pixel as a
 function of distance from the source and dispersal-related (and invariant)
@@ -262,8 +262,8 @@ species traits, and is used by default.</p>
 <p>Finally, both germination and regeneration success depend on the species’
 probability of germination in a given pixel (<a href="landr-biomass_core-module.html#prob-germ">probabilities of
 germination</a>).</p>
-<p>We refer the reader to <span class="citation">Scheller &amp; Miranda (<a href="#ref-SchellerMiranda2015" role="doc-biblioref">2015b</a>)</span>, <span class="citation">Scheller &amp; Domingo (<a href="#ref-SchellerDomingo2011" role="doc-biblioref">2011</a>)</span> and
-<span class="citation">Scheller &amp; Domingo (<a href="#ref-SchellerDomingo2012" role="doc-biblioref">2012</a>)</span> for further details with respect to the above mentioned
+<p>We refer the reader to <span class="citation">Scheller &amp; Miranda (<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">2015b</a>)</span>, <span class="citation">Scheller &amp; Domingo (<a href="landr-biomass_validationknn-module.html#ref-SchellerDomingo2011" role="doc-biblioref">2011</a>)</span> and
+<span class="citation">Scheller &amp; Domingo (<a href="landr-biomass_validationknn-module.html#ref-SchellerDomingo2012" role="doc-biblioref">2012</a>)</span> for further details with respect to the above mentioned
 mechanisms implemented in <em>Biomass_core</em>. In a later section of this manual, we
 highlight existing <a href="landr-biomass_core-module.html#biomass-core-vs-lbse">differences between <em>Biomass_core</em> and
 LBSE</a>, together with <a href="landr-biomass_core-module.html#biomass-core-vs-lbse-comparisons">comparisons between the two
@@ -340,7 +340,7 @@ tolerance and regeneration).</p>
 (see Table <a href="landr-biomass_core-module.html#tab:moduleInputs2-Biomass-core">1.5</a>), but traits can be
 adjusted/supplied by the user or by other modules. For instance, using
 <em>Biomass_borealDataPrep</em> will adjust some trait values for Western Canadian
-boreal forests <span class="citation">(e.g., longevity values are adjusted following <a href="#ref-BurtonCumming1995" role="doc-biblioref">Burton &amp; Cumming 1995a</a>)</span>, while using <em>Biomass_speciesParameters</em> calibrates the
+boreal forests <span class="citation">(e.g., longevity values are adjusted following <a href="landr-biomass_validationknn-module.html#ref-BurtonCumming1995" role="doc-biblioref">Burton &amp; Cumming 1995a</a>)</span>, while using <em>Biomass_speciesParameters</em> calibrates the
 <code>growthcurve</code> and <code>mortalityshape</code> parameters and estimates two additional
 species traits (<code>inflationFactor</code> and <code>mANPPproportion</code>) to calibrate <code>maxB</code> and
 <code>maxANPP</code> (respectively).</p>
@@ -350,149 +350,299 @@ species traits. Note that <em>Biomass_core</em> (alone) requires all the columns
 <code>firetolerance</code>, <code>postfireregen</code>, <code>resproutprob</code>, <code>resproutage_min</code> and
 <code>resproutage_max</code>, which are used by the post-fire regeneration modules
 (<em>Biomass_regeneration</em> and <em>Biomass_regenerationPM</em>).</p>
-<p>Please see <span class="citation">Scheller &amp; Domingo (<a href="#ref-SchellerDomingo2011" role="doc-biblioref">2011</a>)</span> and <span class="citation">Scheller &amp; Miranda (<a href="#ref-SchellerMiranda2015" role="doc-biblioref">2015b</a>)</span> for
+<p>Please see <span class="citation">Scheller &amp; Domingo (<a href="landr-biomass_validationknn-module.html#ref-SchellerDomingo2011" role="doc-biblioref">2011</a>)</span> and <span class="citation">Scheller &amp; Miranda (<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">2015b</a>)</span> for
 further detail.</p>
-<!--
-::: fullwidth
-| speciesCode | longevity | sexualmature | shadetolerance | firetolerance | postfireregen | resproutprob | resproutage_min | resproutage_max | seeddistance_eff | seeddistance_max | mortalityshape | growthcurve |
-|:-------|:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|
-| Abie_sp     | 200       | 20           | 2.3            | 1             | none          | 0            | 0               | 0               | 25               | 100              | 15             | 0           |
-| Pice_eng    | 460       | 30           | 2.1            | 2             | none          | 0            | 0               | 0               | 30               | 250              | 15             | 1.0         |
-| Pice_gla    | 400       | 30           | 1.6            | 2             | none          | 0            | 0               | 0               | 100              | 303              | 15             | 1.0         |
-| Pinu_sp     | 150       | 15           | 1              | 2             | serotiny      | 0            | 0               | 0               | 30               | 100              | 15             | 0           |
-| Popu_sp     | 140       | 20           | 1              | 1             | resprout      | 0.5          | 10              | 70              | 200              | 5000             | 25             | 0           |
-| Pseu_men    | 525       | 25           | 2              | 3             | none          | 0            | 0               | 0               | 100              | 500              | 15             | 1.0         |
-
-: (#tab:invariantSpptraits) Example of an invariant species traits table (the
-`species` table object in the module), with species *Abies sp.* (Abie_sp),
-*Picea engelmannii* (Pice_eng), *Picea glauca* (Pice_gla), *Pinus sp.*
-(Pinu_sp), *Populus sp.* (Popu_sp) and *Pseudotsuga menziesii* (Pseu_men). Note
-that these are theoretical values.
-:::
--->
-<div class="inline-table"><table style="width:100%;" class="table table-sm">
+<div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:invariantSpptraits">Table 1.1: </span>Example of an invariant species traits table (the <code>species</code> table object in the module), with species <em>Abies sp.</em> (Abie_sp), <em>Picea engelmannii</em> (Pice_eng), <em>Picea glauca</em> (Pice_gla), <em>Pinus sp.</em> (Pinu_sp), <em>Populus sp.</em> (Popu_sp) and <em>Pseudotsuga menziesii</em> (Pseu_men). Note that these are theoretical values.</caption>
-<colgroup>
-<col width="6%">
-<col width="5%">
-<col width="7%">
-<col width="8%">
-<col width="7%">
-<col width="7%">
-<col width="7%">
-<col width="8%">
-<col width="8%">
-<col width="9%">
-<col width="9%">
-<col width="8%">
-<col width="6%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">speciesCode</th>
-<th align="right">longevity</th>
-<th align="right">sexualmature</th>
-<th align="right">shadetolerance</th>
-<th align="right">firetolerance</th>
-<th align="left">postfireregen</th>
-<th align="right">resproutprob</th>
-<th align="right">resproutage_min</th>
-<th align="right">resproutage_max</th>
-<th align="right">seeddistance_eff</th>
-<th align="right">seeddistance_max</th>
-<th align="right">mortalityshape</th>
-<th align="right">growthcurve</th>
+<span id="tab:invariantSpptraits">Table 1.1: </span>Example of an invariant species traits table (the <code>species</code> table object in the module), with species <em>Abies sp.</em> (Abie_sp), <em>Picea engelmannii</em> (Pice_eng), <em>Picea glauca</em> (Pice_gla), <em>Pinus sp.</em> (Pinu_sp), <em>Populus sp.</em> (Popu_sp) and <em>Pseudotsuga menziesii</em> (Pseu_men). Note that these are theoretical values.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+speciesCode
+</th>
+<th style="text-align:right;">
+longevity
+</th>
+<th style="text-align:right;">
+sexualmature
+</th>
+<th style="text-align:right;">
+shadetolerance
+</th>
+<th style="text-align:right;">
+firetolerance
+</th>
+<th style="text-align:left;">
+postfireregen
+</th>
+<th style="text-align:right;">
+resproutprob
+</th>
+<th style="text-align:right;">
+resproutage_min
+</th>
+<th style="text-align:right;">
+resproutage_max
+</th>
+<th style="text-align:right;">
+seeddistance_eff
+</th>
+<th style="text-align:right;">
+seeddistance_max
+</th>
+<th style="text-align:right;">
+mortalityshape
+</th>
+<th style="text-align:right;">
+growthcurve
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">Abie_sp</td>
-<td align="right">200</td>
-<td align="right">20</td>
-<td align="right">2.3</td>
-<td align="right">1</td>
-<td align="left">none</td>
-<td align="right">0.0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">25</td>
-<td align="right">100</td>
-<td align="right">15</td>
-<td align="right">0</td>
+<tr>
+<td style="text-align:left;">
+Abie_sp
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+2.3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+none
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
-<tr class="even">
-<td align="left">Pice_eng</td>
-<td align="right">460</td>
-<td align="right">30</td>
-<td align="right">2.1</td>
-<td align="right">2</td>
-<td align="left">none</td>
-<td align="right">0.0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">30</td>
-<td align="right">250</td>
-<td align="right">15</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+Pice_eng
+</td>
+<td style="text-align:right;">
+460
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+2.1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+none
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+250
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Pice_gla</td>
-<td align="right">400</td>
-<td align="right">30</td>
-<td align="right">1.6</td>
-<td align="right">2</td>
-<td align="left">none</td>
-<td align="right">0.0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">100</td>
-<td align="right">303</td>
-<td align="right">15</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+Pice_gla
+</td>
+<td style="text-align:right;">
+400
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+1.6
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+none
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+303
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="even">
-<td align="left">Pinu_sp</td>
-<td align="right">150</td>
-<td align="right">15</td>
-<td align="right">1.0</td>
-<td align="right">2</td>
-<td align="left">serotiny</td>
-<td align="right">0.0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">30</td>
-<td align="right">100</td>
-<td align="right">15</td>
-<td align="right">0</td>
+<tr>
+<td style="text-align:left;">
+Pinu_sp
+</td>
+<td style="text-align:right;">
+150
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+1.0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+serotiny
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Popu_sp</td>
-<td align="right">140</td>
-<td align="right">20</td>
-<td align="right">1.0</td>
-<td align="right">1</td>
-<td align="left">resprout</td>
-<td align="right">0.5</td>
-<td align="right">10</td>
-<td align="right">70</td>
-<td align="right">200</td>
-<td align="right">5000</td>
-<td align="right">25</td>
-<td align="right">0</td>
+<tr>
+<td style="text-align:left;">
+Popu_sp
+</td>
+<td style="text-align:right;">
+140
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+1.0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+resprout
+</td>
+<td style="text-align:right;">
+0.5
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+5000
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
-<tr class="even">
-<td align="left">Pseu_men</td>
-<td align="right">525</td>
-<td align="right">25</td>
-<td align="right">2.0</td>
-<td align="right">3</td>
-<td align="left">none</td>
-<td align="right">0.0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">100</td>
-<td align="right">500</td>
-<td align="right">15</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+Pseu_men
+</td>
+<td style="text-align:right;">
+525
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+none
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+500
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -513,191 +663,390 @@ applications), or passing a custom table directly. <em>Biomass_speciesParameters
 further calibrates <code>maxB</code> and <code>maxANPP</code> by estimating two additional invariant
 species traits (<code>inflationFactor</code> and <code>mANPPproportion</code>; also for Western
 Canadian forests). See Table <a href="landr-biomass_core-module.html#tab:varyingSpptraits">1.2</a> for an example.</p>
-<!--
-| ecoregionGroup | speciesCode | establishprob | maxB  | maxANPP | year |
-|:---------------|:------------|:--------------|:------|:--------|:-----|
-| 1_03           | Abie_sp     | 1.000         | 8567  | 285     | 1    |
-| 1_03           | Pice_eng    | 0.983         | 10156 | 305     | 1    |
-| 1_03           | Popu_sp     | 0.737         | 8794  | 293     | 1    |
-| 1_03           | Pseu_men    | 1.000         | 17534 | 132     | 1    |
-| 1_09           | Abie_sp     | 0.112         | 1499  | 50      | 1    |
-| 1_09           | Pice_gla    | 0.302         | 3143  | 102     | 1    |
-| 1_09           | Pinu_sp     | 0.714         | 2569  | 86      | 1    |
-| 1_09           | Popu_sp     | 0.607         | 3292  | 110     | 1    |
-| 1_09           | Pseu_men    | 0.997         | 6020  | 45      | 1    |
-| 1_03           | Abie_sp     | 0.989         | 8943  | 225     | 2    |
-| 1_03           | Pice_eng    | 0.985         | 9000  | 315     | 2    |
-| 1_03           | Popu_sp     | 0.600         | 8600  | 273     | 2    |
-| 1_03           | Pseu_men    | 1.000         | 13534 | 142     | 2    |
-| 1_09           | Abie_sp     | 0.293         | 2099  | 45      | 2    |
-| 1_09           | Pice_gla    | 0.745         | 3643  | 90      | 2    |
-| 1_09           | Pinu_sp     | 0.500         | 2569  | 80      | 2    |
-| 1_09           | Popu_sp     | 0.670         | 3262  | 111     | 2    |
-| 1_09           | Pseu_men    | 1.000         | 6300  | 43      | 2    |
-
-: (#tab:varyingSpptraits) Example of a spatio-temporally varying species traits
-table (the `speciesEcoregion` table object in the module), with two ecolocations
-(called `ecoregionGroups`) and species *Abies sp.* (Abie_sp), *Picea
-engelmannii* (Pice_eng), *Picea glauca* (Pice_gla), *Pinus sp.* (Pinu_sp),
-*Populus sp.* (Popu_sp) and *Pseudotsuga menziesii* (Pseu_men). If a simulation
-runs for 10 year using this table, trait values from year 2 would be used during
-simulation years 2 through 10.
--->
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:varyingSpptraits">Table 1.2: </span>Example of a spatio-temporally varying species traits table (the <code>speciesEcoregion</code> table object in the module), with two ecolocations (called <code>ecoregionGroups</code>) and species <em>Abies sp.</em> (Abie_sp), <em>Picea engelmannii</em> (Pice_eng), <em>Picea glauca</em> (Pice_gla), <em>Pinus sp.</em> (Pinu_sp), <em>Populus sp.</em> (Popu_sp) and <em>Pseudotsuga menziesii</em> (Pseu_men). If a simulation runs for 10 year using this table, trait values from year 2 would be used during simulation years 2-10.</caption>
-<thead><tr class="header">
-<th align="left">ecoregionGroup</th>
-<th align="left">speciesCode</th>
-<th align="right">establishprob</th>
-<th align="right">maxB</th>
-<th align="right">maxANPP</th>
-<th align="right">year</th>
+<span id="tab:varyingSpptraits">Table 1.2: </span>Example of a spatio-temporally varying species traits table (the <code>speciesEcoregion</code> table object in the module), with two ecolocations (called <code>ecoregionGroups</code>) and species <em>Abies sp.</em> (Abie_sp), <em>Picea engelmannii</em> (Pice_eng), <em>Picea glauca</em> (Pice_gla), <em>Pinus sp.</em> (Pinu_sp), <em>Populus sp.</em> (Popu_sp) and <em>Pseudotsuga menziesii</em> (Pseu_men). If a simulation runs for 10 year using this table, trait values from year 2 would be used during simulation years 2-10.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+ecoregionGroup
+</th>
+<th style="text-align:left;">
+speciesCode
+</th>
+<th style="text-align:right;">
+establishprob
+</th>
+<th style="text-align:right;">
+maxB
+</th>
+<th style="text-align:right;">
+maxANPP
+</th>
+<th style="text-align:right;">
+year
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">1_03</td>
-<td align="left">Abie_sp</td>
-<td align="right">1.000</td>
-<td align="right">8567</td>
-<td align="right">285</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+1_03
+</td>
+<td style="text-align:left;">
+Abie_sp
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+<td style="text-align:right;">
+8567
+</td>
+<td style="text-align:right;">
+285
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="even">
-<td align="left">1_03</td>
-<td align="left">Pice_eng</td>
-<td align="right">0.983</td>
-<td align="right">10156</td>
-<td align="right">305</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+1_03
+</td>
+<td style="text-align:left;">
+Pice_eng
+</td>
+<td style="text-align:right;">
+0.983
+</td>
+<td style="text-align:right;">
+10156
+</td>
+<td style="text-align:right;">
+305
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="odd">
-<td align="left">1_03</td>
-<td align="left">Popu_sp</td>
-<td align="right">0.737</td>
-<td align="right">8794</td>
-<td align="right">293</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+1_03
+</td>
+<td style="text-align:left;">
+Popu_sp
+</td>
+<td style="text-align:right;">
+0.737
+</td>
+<td style="text-align:right;">
+8794
+</td>
+<td style="text-align:right;">
+293
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="even">
-<td align="left">1_03</td>
-<td align="left">Pseu_men</td>
-<td align="right">1.000</td>
-<td align="right">17534</td>
-<td align="right">132</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+1_03
+</td>
+<td style="text-align:left;">
+Pseu_men
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+<td style="text-align:right;">
+17534
+</td>
+<td style="text-align:right;">
+132
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="odd">
-<td align="left">1_09</td>
-<td align="left">Abie_sp</td>
-<td align="right">0.112</td>
-<td align="right">1499</td>
-<td align="right">50</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+1_09
+</td>
+<td style="text-align:left;">
+Abie_sp
+</td>
+<td style="text-align:right;">
+0.112
+</td>
+<td style="text-align:right;">
+1499
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="even">
-<td align="left">1_09</td>
-<td align="left">Pice_gla</td>
-<td align="right">0.302</td>
-<td align="right">3143</td>
-<td align="right">102</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+1_09
+</td>
+<td style="text-align:left;">
+Pice_gla
+</td>
+<td style="text-align:right;">
+0.302
+</td>
+<td style="text-align:right;">
+3143
+</td>
+<td style="text-align:right;">
+102
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="odd">
-<td align="left">1_09</td>
-<td align="left">Pinu_sp</td>
-<td align="right">0.714</td>
-<td align="right">2569</td>
-<td align="right">86</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+1_09
+</td>
+<td style="text-align:left;">
+Pinu_sp
+</td>
+<td style="text-align:right;">
+0.714
+</td>
+<td style="text-align:right;">
+2569
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="even">
-<td align="left">1_09</td>
-<td align="left">Popu_sp</td>
-<td align="right">0.607</td>
-<td align="right">3292</td>
-<td align="right">110</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+1_09
+</td>
+<td style="text-align:left;">
+Popu_sp
+</td>
+<td style="text-align:right;">
+0.607
+</td>
+<td style="text-align:right;">
+3292
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="odd">
-<td align="left">1_09</td>
-<td align="left">Pseu_men</td>
-<td align="right">0.997</td>
-<td align="right">6020</td>
-<td align="right">45</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+1_09
+</td>
+<td style="text-align:left;">
+Pseu_men
+</td>
+<td style="text-align:right;">
+0.997
+</td>
+<td style="text-align:right;">
+6020
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
-<tr class="even">
-<td align="left">1_03</td>
-<td align="left">Abie_sp</td>
-<td align="right">0.989</td>
-<td align="right">8943</td>
-<td align="right">225</td>
-<td align="right">2</td>
+<tr>
+<td style="text-align:left;">
+1_03
+</td>
+<td style="text-align:left;">
+Abie_sp
+</td>
+<td style="text-align:right;">
+0.989
+</td>
+<td style="text-align:right;">
+8943
+</td>
+<td style="text-align:right;">
+225
+</td>
+<td style="text-align:right;">
+2
+</td>
 </tr>
-<tr class="odd">
-<td align="left">1_03</td>
-<td align="left">Pice_eng</td>
-<td align="right">0.985</td>
-<td align="right">9000</td>
-<td align="right">315</td>
-<td align="right">2</td>
+<tr>
+<td style="text-align:left;">
+1_03
+</td>
+<td style="text-align:left;">
+Pice_eng
+</td>
+<td style="text-align:right;">
+0.985
+</td>
+<td style="text-align:right;">
+9000
+</td>
+<td style="text-align:right;">
+315
+</td>
+<td style="text-align:right;">
+2
+</td>
 </tr>
-<tr class="even">
-<td align="left">1_03</td>
-<td align="left">Popu_sp</td>
-<td align="right">0.600</td>
-<td align="right">8600</td>
-<td align="right">273</td>
-<td align="right">2</td>
+<tr>
+<td style="text-align:left;">
+1_03
+</td>
+<td style="text-align:left;">
+Popu_sp
+</td>
+<td style="text-align:right;">
+0.600
+</td>
+<td style="text-align:right;">
+8600
+</td>
+<td style="text-align:right;">
+273
+</td>
+<td style="text-align:right;">
+2
+</td>
 </tr>
-<tr class="odd">
-<td align="left">1_03</td>
-<td align="left">Pseu_men</td>
-<td align="right">1.000</td>
-<td align="right">13534</td>
-<td align="right">142</td>
-<td align="right">2</td>
+<tr>
+<td style="text-align:left;">
+1_03
+</td>
+<td style="text-align:left;">
+Pseu_men
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+<td style="text-align:right;">
+13534
+</td>
+<td style="text-align:right;">
+142
+</td>
+<td style="text-align:right;">
+2
+</td>
 </tr>
-<tr class="even">
-<td align="left">1_09</td>
-<td align="left">Abie_sp</td>
-<td align="right">0.293</td>
-<td align="right">2099</td>
-<td align="right">45</td>
-<td align="right">2</td>
+<tr>
+<td style="text-align:left;">
+1_09
+</td>
+<td style="text-align:left;">
+Abie_sp
+</td>
+<td style="text-align:right;">
+0.293
+</td>
+<td style="text-align:right;">
+2099
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+2
+</td>
 </tr>
-<tr class="odd">
-<td align="left">1_09</td>
-<td align="left">Pice_gla</td>
-<td align="right">0.745</td>
-<td align="right">3643</td>
-<td align="right">90</td>
-<td align="right">2</td>
+<tr>
+<td style="text-align:left;">
+1_09
+</td>
+<td style="text-align:left;">
+Pice_gla
+</td>
+<td style="text-align:right;">
+0.745
+</td>
+<td style="text-align:right;">
+3643
+</td>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:right;">
+2
+</td>
 </tr>
-<tr class="even">
-<td align="left">1_09</td>
-<td align="left">Pinu_sp</td>
-<td align="right">0.500</td>
-<td align="right">2569</td>
-<td align="right">80</td>
-<td align="right">2</td>
+<tr>
+<td style="text-align:left;">
+1_09
+</td>
+<td style="text-align:left;">
+Pinu_sp
+</td>
+<td style="text-align:right;">
+0.500
+</td>
+<td style="text-align:right;">
+2569
+</td>
+<td style="text-align:right;">
+80
+</td>
+<td style="text-align:right;">
+2
+</td>
 </tr>
-<tr class="odd">
-<td align="left">1_09</td>
-<td align="left">Popu_sp</td>
-<td align="right">0.670</td>
-<td align="right">3262</td>
-<td align="right">111</td>
-<td align="right">2</td>
+<tr>
+<td style="text-align:left;">
+1_09
+</td>
+<td style="text-align:left;">
+Popu_sp
+</td>
+<td style="text-align:right;">
+0.670
+</td>
+<td style="text-align:right;">
+3262
+</td>
+<td style="text-align:right;">
+111
+</td>
+<td style="text-align:right;">
+2
+</td>
 </tr>
-<tr class="even">
-<td align="left">1_09</td>
-<td align="left">Pseu_men</td>
-<td align="right">1.000</td>
-<td align="right">6300</td>
-<td align="right">43</td>
-<td align="right">2</td>
+<tr>
+<td style="text-align:left;">
+1_09
+</td>
+<td style="text-align:left;">
+Pseu_men
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+<td style="text-align:right;">
+6300
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+2
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -712,7 +1061,7 @@ each pixel (i.e., site shade) with respect to the total potential maximum
 biomass for that pixel (i.e., the sum of all <code>maxB</code> values in the pixel’s
 ecolocation). If relative biomass in the stand (with regards to the total
 potential maximum biomass) is above the minimum relative biomass thresholds, the
-pixel is assigned that threshold’s site shade value <span class="citation">(<a href="#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>.</p>
+pixel is assigned that threshold’s site shade value <span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>.</p>
 <p>The shade level then influences the germination and regeneration of new cohorts,
 depending on their shade tolerance (see <a href="landr-biomass_core-module.html#prob-germ">Probabilities of
 germination</a>).</p>
@@ -724,43 +1073,65 @@ Western Canada boreal forest dynamics (see Table <a href="landr-biomass_core-mod
 <em>Biomass_borealDataPrep</em> does the same adjustment by default. As with other
 inputs, these values can be adjusted by using other modules or by passing
 user-defined tables.</p>
-<!--
-| ecoregionGroup | X1   | X2   | X3  | X4   | X5   |
-|:---------------|:-----|:-----|:----|:-----|:-----|
-| 1_03           | 0.15 | 0.25 | 0.5 | 0.75 | 0.85 |
-| 1_09           | 0.15 | 0.25 | 0.5 | 0.75 | 0.85 |
-
-: (#tab:minRelB) Example of a minimum relative biomass table (the `minRelativeB`
-table object in the module), with two ecolocations (`ecoregionGroups`) sharing
-the same values.
--->
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:minRelB">Table 1.3: </span>Example of a minimum relative biomass table (the <code>minRelativeB</code> table object in the module), with two ecolocations (<code>ecoregionGroups</code>) sharing the same values</caption>
-<thead><tr class="header">
-<th align="left">ecoregionGroup</th>
-<th align="right"></th>
-<th align="right"></th>
-<th align="right"></th>
-<th align="right"></th>
-<th align="right"></th>
+<span id="tab:minRelB">Table 1.3: </span>Example of a minimum relative biomass table (the <code>minRelativeB</code> table object in the module), with two ecolocations (<code>ecoregionGroups</code>) sharing the same values
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+ecoregionGroup
+</th>
+<th style="text-align:right;">
+</th>
+<th style="text-align:right;">
+</th>
+<th style="text-align:right;">
+</th>
+<th style="text-align:right;">
+</th>
+<th style="text-align:right;">
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">1_03</td>
-<td align="right">0.15</td>
-<td align="right">0.25</td>
-<td align="right">0.5</td>
-<td align="right">0.75</td>
-<td align="right">0.85</td>
+<tr>
+<td style="text-align:left;">
+1_03
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.5
+</td>
+<td style="text-align:right;">
+0.75
+</td>
+<td style="text-align:right;">
+0.85
+</td>
 </tr>
-<tr class="even">
-<td align="left">1_09</td>
-<td align="right">0.15</td>
-<td align="right">0.25</td>
-<td align="right">0.5</td>
-<td align="right">0.75</td>
-<td align="right">0.85</td>
+<tr>
+<td style="text-align:left;">
+1_09
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.5
+</td>
+<td style="text-align:right;">
+0.75
+</td>
+<td style="text-align:right;">
+0.85
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -771,82 +1142,153 @@ the same values.
 </h4>
 <p>A species’ probability of germination results from the combination of its shade
 tolerance level (an invariant species trait in the <code>species</code> table; Table
-@(tab:invariantSpptraits)) and the site shade <span class="citation">(defined by the amount of
+<a href="landr-biomass_core-module.html#tab:invariantSpptraits">1.1</a>) and the site shade <span class="citation">(defined by the amount of
 biomass in the pixel – see <a href="landr-biomass_core-module.html#ecolocation-traits" role="doc-biblioref">minimum relative biomass
-parameter</a> and <a href="#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>. By default, both
+parameter</a> and <a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>. By default, both
 <em>Biomass_core</em> and <em>Biomass_borealDataPrep</em> use a publicly available LANDIS-II
 table (called <code>sufficientLight</code> in the module; Table <a href="landr-biomass_core-module.html#tab:suffLight">1.4</a>).</p>
-<!--
-| species shade tolerance | X0  | X1  | X2  | X3  | X4  | X5  |
-|:------------------------|:----|:----|:----|:----|:----|:----|
-| 1                       | 1   | 0   | 0   | 0   | 0   | 0   |
-| 2                       | 1   | 1   | 0   | 0   | 0   | 0   |
-| 3                       | 1   | 1   | 1   | 0   | 0   | 0   |
-| 4                       | 1   | 1   | 1   | 1   | 0   | 0   |
-| 5                       | 0   | 0   | 1   | 1   | 1   | 1   |
-
-: (#tab:suffLight) Default species probability of germination values used by
-*Biomass_core* and *Biomass_borealDataPrep*. Columns X0-X5 are different site
-shade levels and each line has the probability of germination for each site
-shade and species shade tolerance combination.
--->
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:suffLight">Table 1.4: </span>Default species probability of germination values used by <em>Biomass_core</em> and <em>Biomass_borealDataPrep</em>. Columns X0-X5 are different site shade levels and each line has the probability of germination for each site shade and species shade tolerance combination.</caption>
-<thead><tr class="header">
-<th align="right">species shade tolerance</th>
-<th align="right"></th>
-<th align="right"></th>
-<th align="right"></th>
-<th align="right"></th>
-<th align="right"></th>
-<th align="right"></th>
+<span id="tab:suffLight">Table 1.4: </span>Default species probability of germination values used by <em>Biomass_core</em> and <em>Biomass_borealDataPrep</em>. Columns X0-X5 are different site shade levels and each line has the probability of germination for each site shade and species shade tolerance combination.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+species shade tolerance
+</th>
+<th style="text-align:right;">
+X0
+</th>
+<th style="text-align:right;">
+X1
+</th>
+<th style="text-align:right;">
+X2
+</th>
+<th style="text-align:right;">
+X3
+</th>
+<th style="text-align:right;">
+X4
+</th>
+<th style="text-align:right;">
+X5
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -960,7 +1402,7 @@ columns:</p></li>
 current year in <span class="math inline">\(g/m^2\)</span>. <code>B</code> is the result of the previous year’s <code>B</code>
 minus the current year’s <code>mortality</code> plus <code>aNPPAct</code>. Usually filled with
 0s in initial conditions. See “<em>1.1.3 Cohort growth and ageing</em>” section
-of <span class="citation">Scheller &amp; Miranda (<a href="#ref-SchellerMiranda2015" role="doc-biblioref">2015b</a>)</span>.</p></li>
+of <span class="citation">Scheller &amp; Miranda (<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">2015b</a>)</span>.</p></li>
 <li><p><code>pixelGroupMap</code> – a raster layer with <code>pixelGroup</code> IDs per pixel. Pixels
 are always grouped based on identical <code>ecoregionGroup</code>, <code>speciesCode</code>, <code>age</code>
 and <code>B</code> composition, even if the user supplies other initial groupings
@@ -1419,151 +1861,307 @@ mortality and reproductive success (i.e, new biomass) on a yearly basis.</p>
 <p>However, any of the objects changed/output by <em>Biomass_core</em> (listed in Table
 <a href="landr-biomass_core-module.html#tab:moduleOutputs-Biomass-core">1.7</a>) can be saved via the <code>outputs</code> argument
 in <code>simInit</code><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
-<div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleOutputs-Biomass-core">Table 1.7: </span>List of <em>Biomass_core</em> output objects and their description.</caption>
-<colgroup>
-<col width="5%">
-<col width="1%">
-<col width="92%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">objectName</th>
-<th align="left">objectClass</th>
-<th align="left">desc</th>
+<span id="tab:moduleOutputs-Biomass-core">Table 1.7: </span>List of <em>Biomass_core</em> output objects and their description.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+objectName
+</th>
+<th style="text-align:left;">
+objectClass
+</th>
+<th style="text-align:left;">
+desc
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">activePixelIndex</td>
-<td align="left">integer</td>
-<td align="left">internal use. Keeps track of which pixels are active</td>
-</tr>
-<tr class="even">
-<td align="left">activePixelIndexReporting</td>
-<td align="left">integer</td>
-<td align="left">internal use. Keeps track of which pixels are active in the reporting study area</td>
-</tr>
-<tr class="odd">
-<td align="left">ANPPMap</td>
-<td align="left">RasterLayer</td>
-<td align="left">ANPP map at each succession time step (in g /m^2)</td>
-</tr>
-<tr class="even">
-<td align="left">cohortData</td>
-<td align="left">data.table</td>
-<td align="left">
-<code>data.table</code> with cohort-level information on age, biomass, aboveground primary productivity (year’s biomass gain) and mortality (year’s biomass loss), by <code>pixelGroup</code> and ecolocation (i.e., <code>ecoregionGroup</code>). Contains at least the following columns: <code>pixelGroup</code> (integer), <code>ecoregionGroup</code> (factor), <code>speciesCode</code> (factor), <code>B</code> (integer in g/m^2), <code>age</code> (integer in years), <code>mortality</code> (integer in g/m^2), <code>aNPPAct</code> (integer in g/m^2). May have other columns depending on additional simulated processes (i.e., cliamte sensitivity; see, e.g., <code>P(sim)$keepClimateCols</code>).</td>
-</tr>
-<tr class="odd">
-<td align="left">ecoregionMap</td>
-<td align="left">RasterLayer</td>
-<td align="left">map with mapcodes match <code>ecoregion</code> table and <code>speciesEcoregion</code> table. Defaults to a dummy map matching rasterToMatch with two regions</td>
-</tr>
-<tr class="even">
-<td align="left">inactivePixelIndex</td>
-<td align="left">logical</td>
-<td align="left">internal use. Keeps track of which pixels are inactive</td>
-</tr>
-<tr class="odd">
-<td align="left">inactivePixelIndexReporting</td>
-<td align="left">integer</td>
-<td align="left">internal use. Keeps track of which pixels are inactive in the reporting study area</td>
-</tr>
-<tr class="even">
-<td align="left">lastFireYear</td>
-<td align="left">numeric</td>
-<td align="left">Year of the most recent fire year</td>
-</tr>
-<tr class="odd">
-<td align="left">lastReg</td>
-<td align="left">numeric</td>
-<td align="left">an internal counter keeping track of when the last regeneration event occurred</td>
-</tr>
-<tr class="even">
-<td align="left">minRelativeB</td>
-<td align="left">data.frame</td>
-<td align="left">define the relative biomass cut points to classify stand shade</td>
-</tr>
-<tr class="odd">
-<td align="left">mortalityMap</td>
-<td align="left">RasterLayer</td>
-<td align="left">map of biomass lost (in g/m^2) at each succession time step</td>
-</tr>
-<tr class="even">
-<td align="left">pixelGroupMap</td>
-<td align="left">RasterLayer</td>
-<td align="left">updated community map at each succession time step</td>
-</tr>
-<tr class="odd">
-<td align="left">regenerationOutput</td>
-<td align="left">data.table</td>
-<td align="left">If <code>P(sim)$calibrate == TRUE</code>, an summary of seed dispersal and germination success (i.e., number of pixels where seeds successfully germinated) per species and year.</td>
-</tr>
-<tr class="even">
-<td align="left">reproductionMap</td>
-<td align="left">RasterLayer</td>
-<td align="left">Regeneration map (biomass gains in g/m^2) at each succession time step</td>
-</tr>
-<tr class="odd">
-<td align="left">simulatedBiomassMap</td>
-<td align="left">RasterLayer</td>
-<td align="left">Biomass map at each succession time step (in g/m^2)</td>
-</tr>
-<tr class="even">
-<td align="left">simulationOutput</td>
-<td align="left">data.table</td>
-<td align="left">contains simulation results by <code>ecoregionGroup</code> (main output)</td>
-</tr>
-<tr class="odd">
-<td align="left">simulationTreeOutput</td>
-<td align="left">data.table</td>
-<td align="left">Summary of several characteristics about the stands, derived from <code>cohortData</code>
+<tr>
+<td style="text-align:left;">
+activePixelIndex
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+internal use. Keeps track of which pixels are active
 </td>
 </tr>
-<tr class="even">
-<td align="left">species</td>
-<td align="left">data.table</td>
-<td align="left">a table that has species traits such as longevity, shade tolerance, etc. Currently obtained from LANDIS-II Biomass Succession v.6.0-2.0 inputs</td>
+<tr>
+<td style="text-align:left;">
+activePixelIndexReporting
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+internal use. Keeps track of which pixels are active in the reporting study area
+</td>
 </tr>
-<tr class="odd">
-<td align="left">speciesEcoregion</td>
-<td align="left">data.table</td>
-<td align="left">define the maxANPP, maxB and SEP change with both ecoregion and simulation time</td>
+<tr>
+<td style="text-align:left;">
+ANPPMap
+</td>
+<td style="text-align:left;">
+RasterLayer
+</td>
+<td style="text-align:left;">
+ANPP map at each succession time step (in g /m^2)
+</td>
 </tr>
-<tr class="even">
-<td align="left">speciesLayers</td>
-<td align="left">RasterStack</td>
-<td align="left">species percent cover raster layers, based on input <code>speciesLayers</code> object. Not changed by this module.</td>
+<tr>
+<td style="text-align:left;">
+cohortData
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+<code>data.table</code> with cohort-level information on age, biomass, aboveground primary productivity (year’s biomass gain) and mortality (year’s biomass loss), by <code>pixelGroup</code> and ecolocation (i.e., <code>ecoregionGroup</code>). Contains at least the following columns: <code>pixelGroup</code> (integer), <code>ecoregionGroup</code> (factor), <code>speciesCode</code> (factor), <code>B</code> (integer in g/m^2), <code>age</code> (integer in years), <code>mortality</code> (integer in g/m^2), <code>aNPPAct</code> (integer in g/m^2). May have other columns depending on additional simulated processes (i.e., cliamte sensitivity; see, e.g., <code>P(sim)$keepClimateCols</code>).
+</td>
 </tr>
-<tr class="odd">
-<td align="left">spinupOutput</td>
-<td align="left">data.table</td>
-<td align="left">Spin-up output. Currently deactivated.</td>
+<tr>
+<td style="text-align:left;">
+ecoregionMap
+</td>
+<td style="text-align:left;">
+RasterLayer
+</td>
+<td style="text-align:left;">
+map with mapcodes match <code>ecoregion</code> table and <code>speciesEcoregion</code> table. Defaults to a dummy map matching rasterToMatch with two regions
+</td>
 </tr>
-<tr class="even">
-<td align="left">summaryBySpecies</td>
-<td align="left">data.table</td>
-<td align="left">The total species biomass (in g/m^2 as in <code>cohortData</code>), average age and aNPP (in g/m^2 as in <code>cohortData</code>), across the landscape (used for plotting and reporting).</td>
+<tr>
+<td style="text-align:left;">
+inactivePixelIndex
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+internal use. Keeps track of which pixels are inactive
+</td>
 </tr>
-<tr class="odd">
-<td align="left">summaryBySpecies1</td>
-<td align="left">data.table</td>
-<td align="left">No. pixels of each leading vegetation type (used for plotting and reporting).</td>
+<tr>
+<td style="text-align:left;">
+inactivePixelIndexReporting
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+internal use. Keeps track of which pixels are inactive in the reporting study area
+</td>
 </tr>
-<tr class="even">
-<td align="left">summaryLandscape</td>
-<td align="left">data.table</td>
-<td align="left">The averages of total biomass (in tonnes/ha , not g/m^2 like in <code>cohortData</code>), age and aNPP (also in tonnes/ha) across the landscape (used for plotting and reporting).</td>
+<tr>
+<td style="text-align:left;">
+lastFireYear
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Year of the most recent fire year
+</td>
 </tr>
-<tr class="odd">
-<td align="left">treedFirePixelTableSinceLastDisp</td>
-<td align="left">data.table</td>
-<td align="left">3 columns: <code>pixelIndex</code>, <code>pixelGroup</code>, and <code>burnTime</code>. Each row represents a forested pixel that was burned up to and including this year, since last dispersal event, with its corresponding <code>pixelGroup</code> and time it occurred</td>
+<tr>
+<td style="text-align:left;">
+lastReg
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+an internal counter keeping track of when the last regeneration event occurred
+</td>
 </tr>
-<tr class="even">
-<td align="left">vegTypeMap</td>
-<td align="left">RasterLayer</td>
-<td align="left">Map of leading species in each pixel, colored according to <code>sim$sppColorVect</code>. Species mixtures calculated according to <code>P(sim)$vegLeadingProportion</code> and <code>P(sim)$mixedType</code>.</td>
+<tr>
+<td style="text-align:left;">
+minRelativeB
+</td>
+<td style="text-align:left;">
+data.frame
+</td>
+<td style="text-align:left;">
+define the relative biomass cut points to classify stand shade
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mortalityMap
+</td>
+<td style="text-align:left;">
+RasterLayer
+</td>
+<td style="text-align:left;">
+map of biomass lost (in g/m^2) at each succession time step
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pixelGroupMap
+</td>
+<td style="text-align:left;">
+RasterLayer
+</td>
+<td style="text-align:left;">
+updated community map at each succession time step
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+regenerationOutput
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+If <code>P(sim)$calibrate == TRUE</code>, an summary of seed dispersal and germination success (i.e., number of pixels where seeds successfully germinated) per species and year.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+reproductionMap
+</td>
+<td style="text-align:left;">
+RasterLayer
+</td>
+<td style="text-align:left;">
+Regeneration map (biomass gains in g/m^2) at each succession time step
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+simulatedBiomassMap
+</td>
+<td style="text-align:left;">
+RasterLayer
+</td>
+<td style="text-align:left;">
+Biomass map at each succession time step (in g/m^2)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+simulationOutput
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+contains simulation results by <code>ecoregionGroup</code> (main output)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+simulationTreeOutput
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+Summary of several characteristics about the stands, derived from <code>cohortData</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+species
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+a table that has species traits such as longevity, shade tolerance, etc. Currently obtained from LANDIS-II Biomass Succession v.6.0-2.0 inputs
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+speciesEcoregion
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+define the maxANPP, maxB and SEP change with both ecoregion and simulation time
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+speciesLayers
+</td>
+<td style="text-align:left;">
+RasterStack
+</td>
+<td style="text-align:left;">
+species percent cover raster layers, based on input <code>speciesLayers</code> object. Not changed by this module.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+spinupOutput
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+Spin-up output. Currently deactivated.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+summaryBySpecies
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+The total species biomass (in g/m^2 as in <code>cohortData</code>), average age and aNPP (in g/m^2 as in <code>cohortData</code>), across the landscape (used for plotting and reporting).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+summaryBySpecies1
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+No. pixels of each leading vegetation type (used for plotting and reporting).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+summaryLandscape
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+The averages of total biomass (in tonnes/ha , not g/m^2 like in <code>cohortData</code>), age and aNPP (also in tonnes/ha) across the landscape (used for plotting and reporting).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+treedFirePixelTableSinceLastDisp
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+3 columns: <code>pixelIndex</code>, <code>pixelGroup</code>, and <code>burnTime</code>. Each row represents a forested pixel that was burned up to and including this year, since last dispersal event, with its corresponding <code>pixelGroup</code> and time it occurred
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegTypeMap
+</td>
+<td style="text-align:left;">
+RasterLayer
+</td>
+<td style="text-align:left;">
+Map of leading species in each pixel, colored according to <code>sim$sppColorVect</code>. Species mixtures calculated according to <code>P(sim)$vegLeadingProportion</code> and <code>P(sim)$mixedType</code>.
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -1598,14 +2196,14 @@ regeneration module (e.g., <em>Biomass_regeneration</em>);</p></li>
 more/less often, with the caveat that if using <em>Biomass_borealDataPrep</em>
 to estimate species establishment probabilities, these values are
 integrated over 10 years.</li>
-<li>see <span class="citation">Scheller &amp; Domingo (<a href="#ref-SchellerDomingo2012" role="doc-biblioref">2012</a>)</span> for details on dispersal algorithms.</li>
+<li>see <span class="citation">Scheller &amp; Domingo (<a href="landr-biomass_validationknn-module.html#ref-SchellerDomingo2012" role="doc-biblioref">2012</a>)</span> for details on dispersal algorithms.</li>
 </ul>
 <ol start="5" style="list-style-type: decimal">
 <li>Growth and mortality (<code>mortalityAndGrowth</code> event):</li>
 </ol>
 <ul>
 <li>unlike dispersal, growth and mortality always occur time step (year).</li>
-<li>see <span class="citation">Scheller &amp; Mladenoff (<a href="#ref-SchellerMladenoff2004" role="doc-biblioref">2004</a>)</span> for further detail.</li>
+<li>see <span class="citation">Scheller &amp; Mladenoff (<a href="landr-biomass_validationknn-module.html#ref-SchellerMladenoff2004" role="doc-biblioref">2004</a>)</span> for further detail.</li>
 </ul>
 <ol start="6" style="list-style-type: decimal">
 <li>Cohort age binning (every <code>successionTimestep</code>; <code>cohortAgeReclassification</code>
@@ -1615,7 +2213,7 @@ event):</li>
 <li>follows the same frequency as dispersal, collapsing cohorts (i.e.,
 summing their biomass/mortality/aNPP) to ages classes with resolution
 equal to <code>successionTimestep</code>.</li>
-<li>see <span class="citation">Scheller &amp; Miranda (<a href="#ref-SchellerMiranda2015" role="doc-biblioref">2015b</a>)</span> for further detail.</li>
+<li>see <span class="citation">Scheller &amp; Miranda (<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">2015b</a>)</span> for further detail.</li>
 </ul>
 <ol start="7" style="list-style-type: decimal">
 <li><p>Summary tables of regeneration (<code>summaryRegen</code> event), biomass, age, growth
@@ -1650,7 +2248,7 @@ growing space given their greater height (Scheller pers. comm.). We felt that
 within-year sequential growth, death and recruitment may be not ecologically
 accurate, and that the size-asymmetric competition was being accounted for
 twice, as the calculation of the competition index already considers the
-competitive advantage of older cohorts <span class="citation">(as shown in the User’s Guide, <a href="#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>. Hence, in <em>Biomass_core</em> growth, mortality, recruitment
+competitive advantage of older cohorts <span class="citation">(as shown in the User’s Guide, <a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>. Hence, in <em>Biomass_core</em> growth, mortality, recruitment
 and the competition index are calculated at the same time across all cohorts and
 species.</p>
 <p>Second, the unknown species-level sorting mechanism contained within LBSE (which
@@ -1671,7 +2269,7 @@ calculated) biomass of other new cohorts when succession time step = 1, but not
 when time step was &gt; 1. This does not reflect the documentation in the User’s
 Guide, which stated that “<em>Bsum [total pixel biomass] is the current total
 biomass for the site (not including other new cohorts)</em>”
-<span class="citation">(<a href="#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>, when the succession time step was set to 1.
+<span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>, when the succession time step was set to 1.
 Additionally, together with the lack of explicit ordering, this generated
 different results in terms of the biomass assigned to each new cohort (e.g.,
 Table <a href="landr-biomass_core-module.html#tab:tableLBSEtest2">1.9</a> and Fig. <a href="landr-biomass_core-module.html#fig:figLBSEtest2">1.3</a>). In
@@ -1747,7 +2345,7 @@ growth/mortality are calculated, they can provide new compatible functions
 <span class="header-section-number">1.2.7.2.2</span> Hashing<a class="anchor" aria-label="anchor" href="#biomass-core-vs-lbse-enhan2"><i class="fas fa-link"></i></a>
 </h5>
 <p>Our first strategy to improve simulation efficiency in <em>Biomass_core</em> was to use
-a hashing mechanism <span class="citation">(<a href="#ref-YangEtAl2011" role="doc-biblioref">Yang <em>et al.</em> 2011</a>)</span>. Instead of assigning a key to each pixel in
+a hashing mechanism <span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-YangEtAl2011" role="doc-biblioref">Yang <em>et al.</em> 2011</a>)</span>. Instead of assigning a key to each pixel in
 a raster and tracking the simulation for each pixel in a lookup table, we
 indexed pixels using a <em>pixelGroup</em> key that contained unique combinations of
 ecolocation and community composition (i.e., species, age and biomass
@@ -1772,7 +2370,7 @@ caching during data-driven parametrisation and initialisation. Caching
 automatically archives outputs of a given function to disk (or memory) and reads
 them back when subsequent calls of this function are given identical inputs. All
 caching operations were achieved using the <code>reproducible</code> R package
-<span class="citation">(<a href="#ref-McIntireChubaty2020" role="doc-biblioref">McIntire &amp; Chubaty 2020</a>)</span>.</p>
+<span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-McIntireChubaty2020" role="doc-biblioref">McIntire &amp; Chubaty 2020</a>)</span>.</p>
 <p>In the current version of <em>Biomass_core</em>, the spin-up phase was replaced by
 data-driven landscape initialisation and many model parameters were derived from
 data, using data and calibration modules (e.g., <em>Biomass_borealDataPrep</em>). To
@@ -1791,7 +2389,7 @@ inputs.</p>
 <span class="header-section-number">1.2.7.2.4</span> Testing<a class="anchor" aria-label="anchor" href="#biomass-core-vs-lbse-enhan4"><i class="fas fa-link"></i></a>
 </h5>
 <p>Finally, we implemented code testing to facilitate bug detection by comparing
-the outputs of functions (etc.) to expected outputs <span class="citation">(<a href="#ref-Wickham2011" role="doc-biblioref">Wickham 2011</a>)</span>. We built and
+the outputs of functions (etc.) to expected outputs <span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-Wickham2011" role="doc-biblioref">Wickham 2011</a>)</span>. We built and
 integrated code tests in <em>Biomass_core</em> and across all LandR modules and the
 <code>LandR</code> R package <!-- package name may change --> in the form of assertions,
 unit tests and integration tests. Assertions and unit tests are run
@@ -1893,21 +2491,21 @@ Figure 1.6: Simulation efficiencies of LBSE and <em>Biomass_core</em> with incre
 <h3>
 <span class="header-section-number">1.3.2</span> Get the module and module dependencies<a class="anchor" aria-label="anchor" href="#example-pkg-mods"><i class="fas fa-link"></i></a>
 </h3>
-<p>We can use the <code><a href="https://rdrr.io/pkg/SpaDES.install/man/getModule.html">SpaDES.install::getModule</a></code> function to download the module to
+<p>We can use the <code>SpaDES.install::getModule</code> function to download the module to
 the module folder specified above. Alternatively, see <a href="https://github.com/PredictiveEcology/SpaDES-modules">SpaDES-modules
 repository</a> to see how to
 download this and other <code>SpaDES</code> modules, or fork/clone from its <a href="https://github.com/PredictiveEcology/Biomass_core/">GitHub
 repository</a> directly.</p>
 <p>After downloading the module, it is important to make sure all module R package
 dependencies are installed in their correct version.
-<code><a href="https://rdrr.io/pkg/SpaDES.install/man/makeSureAllPackagesInstalled.html">SpaDES.install::makeSureAllPackagesInstalled</a></code> takes care of this for any module
+<code>SpaDES.install::makeSureAllPackagesInstalled</code> takes care of this for any module
 in the <code>paths$modulePath</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">SpaDES.install</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/SpaDES.install/man/getModule.html">getModule</a></span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_core"</span>, modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>,
+<code class="sourceCode R"><span class="fu">SpaDES.install</span><span class="fu">::</span><span class="fu">getModule</span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_core"</span>, modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>,
     overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="co">## make sure all necessary packages are installed:</span>
-<span class="fu">SpaDES.install</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/SpaDES.install/man/makeSureAllPackagesInstalled.html">makeSureAllPackagesInstalled</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span><span class="op">)</span></code></pre></div>
+<span class="fu">SpaDES.install</span><span class="fu">::</span><span class="fu">makeSureAllPackagesInstalled</span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="example-setupSim" class="section level3" number="1.3.3">
 <h3>
@@ -1986,36 +2584,6 @@ Figure 1.7: <em>Biomass_core</em> automatically generates simulation visuals of 
 <h3>
 <span class="header-section-number">1.4.1</span> Tables<a class="anchor" aria-label="anchor" href="#appendix-tables"><i class="fas fa-link"></i></a>
 </h3>
-<!--
-| Input order 1 |          |     |            | Input order 2 |          |     |            |
-|:--------------|:---------|:----|:-----------|:--------------|:---------|:----|:-----------|
-| Community     | Input    | Age | Processing | Community     | Input    | Age | Processing |
-|               | order    |     | order      |               | order    |     | order      |
-| 1             | abiebals | 20  | poputrem   | 1             | pinustro | 20  | thujocci   |
-| 1             | acerrubr | 20  | querelli   | 1             | poputrem | 20  | tiliamer   |
-| 1             | acersacc | 20  | pinuresi   | 1             | acerrubr | 20  | querelli   |
-| 1             | betualle | 20  | pinustro   | 1             | pinubank | 20  | querrubr   |
-| 1             | betupapy | 20  | tiliamer   | 1             | betualle | 20  | betupapy   |
-| 1             | fraxamer | 20  | tsugcana   | 1             | piceglau | 20  | fraxamer   |
-| 1             | piceglau | 20  | querrubr   | 1             | pinuresi | 20  | tsugcana   |
-| 1             | pinubank | 20  | thujocci   | 1             | acersacc | 20  | abiebals   |
-| 1             | pinuresi | 20  | acersacc   | 1             | querelli | 20  | acerrubr   |
-| 1             | pinustro | 20  | betualle   | 1             | querrubr | 20  | pinubank   |
-| 1             | poputrem | 20  | abiebals   | 1             | thujocci | 20  | pinustro   |
-| 1             | querelli | 20  | acerrubr   | 1             | tiliamer | 20  | poputrem   |
-| 1             | querrubr | 20  | piceglau   | 1             | tsugcana | 20  | pinuresi   |
-| 1             | thujocci | 20  | pinubank   | 1             | abiebals | 20  | acersacc   |
-| 1             | tiliamer | 20  | betupapy   | 1             | betupapy | 20  | betualle   |
-| 1             | tsugcana | 20  | fraxamer   | 1             | fraxamer | 20  | piceglau   |
-
-: (#tab:tableLBSEtest1) Input order and processing order (as determined by LBSE)
-for the same community used to assess the impact of sequential calculation of
-the competition index, combined with a lack of explicit species ordering. The
-input order was the order of species in the initial communities table input
-file. The processing order was the order used in the simulation, which was
-obtained from `Landis-log.txt` when `CalibrateMode` was set to 'yes'. Species
-starting ages are also shown.
--->
 <div class="inline-table"><table class="table table-sm">
 <caption>
 <span id="tab:tableLBSEtest1">Table 1.8: </span>Input order and processing order (as determined by LBSE) for the same community used to assess the impact of sequential calculation of the competition index, combined with a lack of explicit species ordering. The input order was the order of species in the initial communities table input file. The processing order was the order used in the simulation, which was obtained from <code>Landis-log.txt</code> when <code>CalibrateMode</code> was set to ‘yes’. Species starting ages are also shown.</caption>
@@ -2212,36 +2780,7 @@ starting ages are also shown.
 </tr>
 </tbody>
 </table></div>
-<!--
-| Input order 1 |          |     |            | Input order 2 |          |     |            |
-|:--------------|:---------|:----|:-----------|:--------------|:---------|:----|:-----------|
-| Community     | Input    | Age | Processing | Community     | Input    | Age | Processing |
-|               | order    |     | order      |               | order    |     | order      |
-| 1             | abiebals | 1   | poputrem   | 1             | pinustro | 1   | thujocci   |
-| 1             | acerrubr | 1   | querelli   | 1             | poputrem | 1   | tiliamer   |
-| 1             | acersacc | 1   | pinuresi   | 1             | acerrubr | 1   | querelli   |
-| 1             | betualle | 1   | pinustro   | 1             | pinubank | 1   | querrubr   |
-| 1             | betupapy | 1   | tiliamer   | 1             | betualle | 1   | betupapy   |
-| 1             | fraxamer | 1   | tsugcana   | 1             | piceglau | 1   | fraxamer   |
-| 1             | piceglau | 1   | querrubr   | 1             | pinuresi | 1   | tsugcana   |
-| 1             | pinubank | 1   | thujocci   | 1             | acersacc | 1   | abiebals   |
-| 1             | pinuresi | 1   | acersacc   | 1             | querelli | 1   | acerrubr   |
-| 1             | pinustro | 1   | betualle   | 1             | querrubr | 1   | pinubank   |
-| 1             | poputrem | 1   | abiebals   | 1             | thujocci | 1   | pinustro   |
-| 1             | querelli | 1   | acerrubr   | 1             | tiliamer | 1   | poputrem   |
-| 1             | querrubr | 1   | piceglau   | 1             | tsugcana | 1   | pinuresi   |
-| 1             | thujocci | 1   | pinubank   | 1             | abiebals | 1   | acersacc   |
-| 1             | tiliamer | 1   | betupapy   | 1             | betupapy | 1   | betualle   |
-| 1             | tsugcana | 1   | fraxamer   | 1             | fraxamer | 1   | piceglau   |
-
-: (#tab:tableLBSEtest2) Input order and processing order (as determined by LBSE)
-for the same community used to assess the impact of setting the succession time
-step to 1, combined with a lack of explicit species ordering. The input order
-was the order of species in the initial communities table input file. The
-processing order was the order used in the simulation, which was obtained from
-`Landis-log.txt` when `CalibrateMode` was set to 'yes'. Species starting ages
-are also shown.
---><div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table table-sm">
 <caption>
 <span id="tab:tableLBSEtest2">Table 1.9: </span>Input order and processing order (as determined by LBSE) for the same community used to assess the impact of setting the succession time step to 1, combined with a lack of explicit species ordering. The input order was the order of species in the initial communities table input file. The processing order was the order used in the simulation, which was obtained from <code>Landis-log.txt</code> when <code>CalibrateMode</code> was set to ‘yes’. Species starting ages are also shown.</caption>
 <colgroup>
@@ -2437,481 +2976,2022 @@ are also shown.
 </tr>
 </tbody>
 </table></div>
-<!--
-| Community | Species  | Age 1 | Age 2 | Age 3 | Age 4 | Age 5 | Age 6 | Age 7 |
-|:----------|:---------|:------|:------|:------|:------|:------|:------|:------|
-| 0         | betupapy | 1     | 37    | 45    | 46    | 85    | NA    | NA    |
-| 0         | piceglau | 27    | 73    | 153   | 256   | 270   | NA    | NA    |
-| 0         | pinustro | 157   | 159   | 181   | 220   | 223   | 303   | 307   |
-| 0         | querrubr | 80    | 102   | 127   | 152   | 206   | 227   | NA    |
-| 1         | acerrubr | 3     | 91    | 126   | 145   | NA    | NA    | NA    |
-| 1         | acersacc | 138   | 144   | 276   | NA    | NA    | NA    | NA    |
-| 1         | betualle | 24    | 106   | 136   | 149   | 279   | NA    | NA    |
-| 1         | piceglau | 27    | 67    | 70    | 153   | NA    | NA    | NA    |
-| 1         | pinubank | 3     | 10    | 24    | 31    | 71    | NA    | NA    |
-| 1         | querelli | 92    | 224   | 234   | NA    | NA    | NA    | NA    |
-| 1         | thujocci | 73    | 146   | 262   | NA    | NA    | NA    | NA    |
-| 2         | fraxamer | 108   | 118   | 137   | 147   | 204   | NA    | NA    |
-| 2         | piceglau | 40    | 128   | 131   | 159   | 174   | NA    | NA    |
-| 2         | pinustro | 78    | 156   | 237   | 245   | 270   | NA    | NA    |
-| 2         | querelli | 67    | 97    | 186   | 292   | NA    | NA    | NA    |
-| 2         | tiliamer | 70    | 103   | 121   | 152   | 178   | 180   | 245   |
-| 3         | acerrubr | 5     | 83    | 125   | 126   | 127   | NA    | NA    |
-| 3         | pinuresi | 1     | 25    | 42    | 49    | 76    | 79    | 103   |
-| 3         | poputrem | 4     | 9     | 62    | NA    | NA    | NA    | NA    |
-| 3         | querelli | 101   | 104   | 167   | 226   | NA    | NA    | NA    |
-| 3         | tsugcana | 37    | 135   | 197   | 404   | 405   | NA    | NA    |
-| 4         | acerrubr | 15    | 29    | 63    | 70    | 105   | 133   | NA    |
-| 4         | piceglau | 67    | 132   | 189   | NA    | NA    | NA    | NA    |
-| 4         | tsugcana | 21    | 26    | 110   | 146   | 341   | 462   | 463   |
-| 5         | acerrubr | 128   | 137   | 145   | 147   | NA    | NA    | NA    |
-| 5         | acersacc | 241   | 245   | 261   | 277   | NA    | NA    | NA    |
-| 5         | querrubr | 23    | 72    | 120   | 142   | 188   | NA    | NA    |
-| 5         | tiliamer | 4     | 68    | 98    | 118   | 139   | 197   | NA    |
-| 6         | betualle | 5     | 23    | 31    | 249   | NA    | NA    | NA    |
-| 6         | pinubank | 67    | 70    | 89    | NA    | NA    | NA    | NA    |
-| 6         | querelli | 194   | 217   | 257   | NA    | NA    | NA    | NA    |
-
-: (#tab:tableLBSEtest3) Randomly generated community combination no. 1 used in
-the recruitment comparison runs.
---><div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:tableLBSEtest3">Table 1.10: </span>Randomly generated community combination no. 1 used in the recruitment comparison runs.</caption>
-<thead><tr class="header">
-<th align="right">Community</th>
-<th align="left">Species</th>
-<th align="right">Age 1</th>
-<th align="right">Age 2</th>
-<th align="right">Age 3</th>
-<th align="right">Age 4</th>
-<th align="right">Age 5</th>
-<th align="right">Age 6</th>
-<th align="right">Age 7</th>
+<span id="tab:tableLBSEtest3">Table 1.10: </span>Randomly generated community combination no. 1 used in the recruitment comparison runs.
+</caption>
+<thead><tr>
+<th style="text-align:right;">
+Community
+</th>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:right;">
+Age 1
+</th>
+<th style="text-align:right;">
+Age 2
+</th>
+<th style="text-align:right;">
+Age 3
+</th>
+<th style="text-align:right;">
+Age 4
+</th>
+<th style="text-align:right;">
+Age 5
+</th>
+<th style="text-align:right;">
+Age 6
+</th>
+<th style="text-align:right;">
+Age 7
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="right">0</td>
-<td align="left">betupapy</td>
-<td align="right">1</td>
-<td align="right">37</td>
-<td align="right">45</td>
-<td align="right">46</td>
-<td align="right">85</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+betupapy
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:right;">
+85
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="right">0</td>
-<td align="left">piceglau</td>
-<td align="right">27</td>
-<td align="right">73</td>
-<td align="right">153</td>
-<td align="right">256</td>
-<td align="right">270</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+piceglau
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+73
+</td>
+<td style="text-align:right;">
+153
+</td>
+<td style="text-align:right;">
+256
+</td>
+<td style="text-align:right;">
+270
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="right">0</td>
-<td align="left">pinustro</td>
-<td align="right">157</td>
-<td align="right">159</td>
-<td align="right">181</td>
-<td align="right">220</td>
-<td align="right">223</td>
-<td align="right">303</td>
-<td align="right">307</td>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+pinustro
+</td>
+<td style="text-align:right;">
+157
+</td>
+<td style="text-align:right;">
+159
+</td>
+<td style="text-align:right;">
+181
+</td>
+<td style="text-align:right;">
+220
+</td>
+<td style="text-align:right;">
+223
+</td>
+<td style="text-align:right;">
+303
+</td>
+<td style="text-align:right;">
+307
+</td>
 </tr>
-<tr class="even">
-<td align="right">0</td>
-<td align="left">querrubr</td>
-<td align="right">80</td>
-<td align="right">102</td>
-<td align="right">127</td>
-<td align="right">152</td>
-<td align="right">206</td>
-<td align="right">227</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+querrubr
+</td>
+<td style="text-align:right;">
+80
+</td>
+<td style="text-align:right;">
+102
+</td>
+<td style="text-align:right;">
+127
+</td>
+<td style="text-align:right;">
+152
+</td>
+<td style="text-align:right;">
+206
+</td>
+<td style="text-align:right;">
+227
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">acerrubr</td>
-<td align="right">3</td>
-<td align="right">91</td>
-<td align="right">126</td>
-<td align="right">145</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+acerrubr
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+91
+</td>
+<td style="text-align:right;">
+126
+</td>
+<td style="text-align:right;">
+145
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="left">acersacc</td>
-<td align="right">138</td>
-<td align="right">144</td>
-<td align="right">276</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+acersacc
+</td>
+<td style="text-align:right;">
+138
+</td>
+<td style="text-align:right;">
+144
+</td>
+<td style="text-align:right;">
+276
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">betualle</td>
-<td align="right">24</td>
-<td align="right">106</td>
-<td align="right">136</td>
-<td align="right">149</td>
-<td align="right">279</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+betualle
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+106
+</td>
+<td style="text-align:right;">
+136
+</td>
+<td style="text-align:right;">
+149
+</td>
+<td style="text-align:right;">
+279
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="left">piceglau</td>
-<td align="right">27</td>
-<td align="right">67</td>
-<td align="right">70</td>
-<td align="right">153</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+piceglau
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+67
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+153
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">pinubank</td>
-<td align="right">3</td>
-<td align="right">10</td>
-<td align="right">24</td>
-<td align="right">31</td>
-<td align="right">71</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+pinubank
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+71
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="left">querelli</td>
-<td align="right">92</td>
-<td align="right">224</td>
-<td align="right">234</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+querelli
+</td>
+<td style="text-align:right;">
+92
+</td>
+<td style="text-align:right;">
+224
+</td>
+<td style="text-align:right;">
+234
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">thujocci</td>
-<td align="right">73</td>
-<td align="right">146</td>
-<td align="right">262</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+thujocci
+</td>
+<td style="text-align:right;">
+73
+</td>
+<td style="text-align:right;">
+146
+</td>
+<td style="text-align:right;">
+262
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="left">fraxamer</td>
-<td align="right">108</td>
-<td align="right">118</td>
-<td align="right">137</td>
-<td align="right">147</td>
-<td align="right">204</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+fraxamer
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+118
+</td>
+<td style="text-align:right;">
+137
+</td>
+<td style="text-align:right;">
+147
+</td>
+<td style="text-align:right;">
+204
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="right">2</td>
-<td align="left">piceglau</td>
-<td align="right">40</td>
-<td align="right">128</td>
-<td align="right">131</td>
-<td align="right">159</td>
-<td align="right">174</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+piceglau
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+128
+</td>
+<td style="text-align:right;">
+131
+</td>
+<td style="text-align:right;">
+159
+</td>
+<td style="text-align:right;">
+174
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="left">pinustro</td>
-<td align="right">78</td>
-<td align="right">156</td>
-<td align="right">237</td>
-<td align="right">245</td>
-<td align="right">270</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+pinustro
+</td>
+<td style="text-align:right;">
+78
+</td>
+<td style="text-align:right;">
+156
+</td>
+<td style="text-align:right;">
+237
+</td>
+<td style="text-align:right;">
+245
+</td>
+<td style="text-align:right;">
+270
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="right">2</td>
-<td align="left">querelli</td>
-<td align="right">67</td>
-<td align="right">97</td>
-<td align="right">186</td>
-<td align="right">292</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+querelli
+</td>
+<td style="text-align:right;">
+67
+</td>
+<td style="text-align:right;">
+97
+</td>
+<td style="text-align:right;">
+186
+</td>
+<td style="text-align:right;">
+292
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="left">tiliamer</td>
-<td align="right">70</td>
-<td align="right">103</td>
-<td align="right">121</td>
-<td align="right">152</td>
-<td align="right">178</td>
-<td align="right">180</td>
-<td align="right">245</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+tiliamer
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+103
+</td>
+<td style="text-align:right;">
+121
+</td>
+<td style="text-align:right;">
+152
+</td>
+<td style="text-align:right;">
+178
+</td>
+<td style="text-align:right;">
+180
+</td>
+<td style="text-align:right;">
+245
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="left">acerrubr</td>
-<td align="right">5</td>
-<td align="right">83</td>
-<td align="right">125</td>
-<td align="right">126</td>
-<td align="right">127</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+acerrubr
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+83
+</td>
+<td style="text-align:right;">
+125
+</td>
+<td style="text-align:right;">
+126
+</td>
+<td style="text-align:right;">
+127
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="right">3</td>
-<td align="left">pinuresi</td>
-<td align="right">1</td>
-<td align="right">25</td>
-<td align="right">42</td>
-<td align="right">49</td>
-<td align="right">76</td>
-<td align="right">79</td>
-<td align="right">103</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+pinuresi
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+49
+</td>
+<td style="text-align:right;">
+76
+</td>
+<td style="text-align:right;">
+79
+</td>
+<td style="text-align:right;">
+103
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="left">poputrem</td>
-<td align="right">4</td>
-<td align="right">9</td>
-<td align="right">62</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+poputrem
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+62
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="right">3</td>
-<td align="left">querelli</td>
-<td align="right">101</td>
-<td align="right">104</td>
-<td align="right">167</td>
-<td align="right">226</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+querelli
+</td>
+<td style="text-align:right;">
+101
+</td>
+<td style="text-align:right;">
+104
+</td>
+<td style="text-align:right;">
+167
+</td>
+<td style="text-align:right;">
+226
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="left">tsugcana</td>
-<td align="right">37</td>
-<td align="right">135</td>
-<td align="right">197</td>
-<td align="right">404</td>
-<td align="right">405</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+tsugcana
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+135
+</td>
+<td style="text-align:right;">
+197
+</td>
+<td style="text-align:right;">
+404
+</td>
+<td style="text-align:right;">
+405
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="left">acerrubr</td>
-<td align="right">15</td>
-<td align="right">29</td>
-<td align="right">63</td>
-<td align="right">70</td>
-<td align="right">105</td>
-<td align="right">133</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+acerrubr
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+29
+</td>
+<td style="text-align:right;">
+63
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+105
+</td>
+<td style="text-align:right;">
+133
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="right">4</td>
-<td align="left">piceglau</td>
-<td align="right">67</td>
-<td align="right">132</td>
-<td align="right">189</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+piceglau
+</td>
+<td style="text-align:right;">
+67
+</td>
+<td style="text-align:right;">
+132
+</td>
+<td style="text-align:right;">
+189
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="left">tsugcana</td>
-<td align="right">21</td>
-<td align="right">26</td>
-<td align="right">110</td>
-<td align="right">146</td>
-<td align="right">341</td>
-<td align="right">462</td>
-<td align="right">463</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+tsugcana
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+146
+</td>
+<td style="text-align:right;">
+341
+</td>
+<td style="text-align:right;">
+462
+</td>
+<td style="text-align:right;">
+463
+</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="left">acerrubr</td>
-<td align="right">128</td>
-<td align="right">137</td>
-<td align="right">145</td>
-<td align="right">147</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+acerrubr
+</td>
+<td style="text-align:right;">
+128
+</td>
+<td style="text-align:right;">
+137
+</td>
+<td style="text-align:right;">
+145
+</td>
+<td style="text-align:right;">
+147
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="right">5</td>
-<td align="left">acersacc</td>
-<td align="right">241</td>
-<td align="right">245</td>
-<td align="right">261</td>
-<td align="right">277</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+acersacc
+</td>
+<td style="text-align:right;">
+241
+</td>
+<td style="text-align:right;">
+245
+</td>
+<td style="text-align:right;">
+261
+</td>
+<td style="text-align:right;">
+277
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="left">querrubr</td>
-<td align="right">23</td>
-<td align="right">72</td>
-<td align="right">120</td>
-<td align="right">142</td>
-<td align="right">188</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+querrubr
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+72
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:right;">
+142
+</td>
+<td style="text-align:right;">
+188
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="right">5</td>
-<td align="left">tiliamer</td>
-<td align="right">4</td>
-<td align="right">68</td>
-<td align="right">98</td>
-<td align="right">118</td>
-<td align="right">139</td>
-<td align="right">197</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+tiliamer
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+68
+</td>
+<td style="text-align:right;">
+98
+</td>
+<td style="text-align:right;">
+118
+</td>
+<td style="text-align:right;">
+139
+</td>
+<td style="text-align:right;">
+197
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="right">6</td>
-<td align="left">betualle</td>
-<td align="right">5</td>
-<td align="right">23</td>
-<td align="right">31</td>
-<td align="right">249</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+betualle
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+249
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="right">6</td>
-<td align="left">pinubank</td>
-<td align="right">67</td>
-<td align="right">70</td>
-<td align="right">89</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+pinubank
+</td>
+<td style="text-align:right;">
+67
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+89
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="right">6</td>
-<td align="left">querelli</td>
-<td align="right">194</td>
-<td align="right">217</td>
-<td align="right">257</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+querelli
+</td>
+<td style="text-align:right;">
+194
+</td>
+<td style="text-align:right;">
+217
+</td>
+<td style="text-align:right;">
+257
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
 </tbody>
 </table></div>
-<!--
-| Community | Species  | Age 1 | Age 2 | Age 3 | Age 4 | Age 5 | Age 6 | Age 7 |
-|:----------|:---------|:------|:------|:------|:------|:------|:------|:------|
-| 0         | acerrubr | 22    | 26    | 30    | 40    | 47    | 145   | 146   |
-| 0         | betualle | 23    | 41    | 43    | 120   | 209   | 227   | 270   |
-| 0         | fraxamer | 25    | 90    | 119   | 173   | 185   | 282   | NA    |
-| 0         | pinuresi | 48    | 53    | 70    | 121   | 157   | NA    | NA    |
-| 0         | pinustro | 5     | 82    | 126   | 298   | 352   | NA    | NA    |
-| 0         | querrubr | 2     | 30    | 34    | 74    | 77    | 162   | 245   |
-| 1         | acerrubr | 2     | 39    | 43    | 84    | 116   | 127   | 143   |
-| 1         | pinubank | 34    | 57    | 75    | NA    | NA    | NA    | NA    |
-| 1         | querelli | 108   | 202   | 218   | 243   | NA    | NA    | NA    |
-| 1         | querrubr | 5     | 117   | 131   | 186   | 189   | 246   | NA    |
-| 1         | tiliamer | 10    | 19    | 46    | 80    | 133   | 148   | 231   |
-| 1         | tsugcana | 31    | 48    | 190   | 246   | 330   | NA    | NA    |
-| 2         | pinubank | 11    | 37    | 38    | 47    | 67    | 93    | NA    |
-| 2         | querrubr | 11    | 48    | 57    | 177   | 180   | 228   | 236   |
-| 2         | tiliamer | 28    | 42    | 78    | 79    | 223   | 250   | NA    |
-| 2         | tsugcana | 140   | 202   | 372   | 381   | 451   | NA    | NA    |
-| 3         | acersacc | 48    | 107   | 262   | 265   | NA    | NA    | NA    |
-| 3         | betupapy | 4     | 12    | 45    | 65    | 83    | 96    | NA    |
-| 3         | poputrem | 13    | 20    | 37    | 75    | 90    | NA    | NA    |
-| 3         | querelli | 72    | 90    | 104   | 115   | 116   | 265   | 278   |
-| 3         | tiliamer | 20    | 21    | 56    | 98    | 237   | NA    | NA    |
-| 3         | tsugcana | 86    | 224   | 425   | 429   | NA    | NA    | NA    |
-| 4         | fraxamer | 77    | 133   | 181   | NA    | NA    | NA    | NA    |
-| 4         | pinustro | 13    | 37    | 67    | 220   | 287   | 293   | 375   |
-| 4         | querrubr | 27    | 48    | 89    | 97    | NA    | NA    | NA    |
-| 4         | thujocci | 91    | 244   | 305   | 390   | NA    | NA    | NA    |
-| 5         | abiebals | 86    | 95    | 119   | 121   | 127   | 158   | NA    |
-| 5         | betualle | 83    | 113   | 136   | 161   | 216   | 231   | NA    |
-| 5         | betupapy | 10    | 38    | 64    | NA    | NA    | NA    | NA    |
-| 5         | piceglau | 16    | 63    | 70    | 102   | NA    | NA    | NA    |
-| 6         | acerrubr | 8     | 34    | 112   | NA    | NA    | NA    | NA    |
-| 6         | betupapy | 1     | 31    | 57    | 61    | 74    | 80    | 91    |
-| 6         | fraxamer | 63    | 100   | 108   | 140   | 196   | 294   | NA    |
-| 6         | pinubank | 15    | 19    | 44    | 47    | 51    | 80    | NA    |
-| 6         | thujocci | 78    | 146   | 163   | 213   | 214   | 228   | NA    |
-| 6         | tsugcana | 47    | 108   | 387   | 389   | 449   | NA    | NA    |
-
-: (#tab:tableLBSEtest4) Randomly generated community combination no. 2 used in
-the recruitment comparison runs.
---><!--
-| Community | Species  | Age 1 | Age 2 | Age 3 | Age 4 | Age 5 | Age 6 | Age 7 |
-|:----------|:---------|:------|:------|:------|:------|:------|:------|:------|
-| 0         | pinubank | 7     | 26    | 32    | 37    | 48    | 85    | 90    |
-| 0         | pinuresi | 11    | 103   | 109   | 179   | 188   | 197   | NA    |
-| 0         | querrubr | 89    | 139   | 180   | 206   | NA    | NA    | NA    |
-| 1         | betupapy | 36    | 39    | 45    | 49    | 66    | 68    | NA    |
-| 1         | piceglau | 13    | 165   | 254   | NA    | NA    | NA    | NA    |
-| 1         | pinubank | 3     | 19    | 54    | 64    | 76    | NA    | NA    |
-| 1         | poputrem | 22    | 59    | 93    | NA    | NA    | NA    | NA    |
-| 1         | thujocci | 68    | 98    | 274   | 275   | 363   | 378   | NA    |
-| 1         | tiliamer | 13    | 20    | 105   | 124   | 248   | NA    | NA    |
-| 1         | tsugcana | 36    | 90    | 142   | NA    | NA    | NA    | NA    |
-| 2         | fraxamer | 11    | 241   | 279   | NA    | NA    | NA    | NA    |
-| 2         | piceglau | 16    | 42    | 129   | 177   | 200   | 244   | NA    |
-| 2         | pinustro | 200   | 342   | 384   | NA    | NA    | NA    | NA    |
-| 3         | abiebals | 31    | 57    | 61    | 92    | 108   | 162   | 183   |
-| 3         | piceglau | 126   | 255   | 261   | 267   | NA    | NA    | NA    |
-| 3         | poputrem | 28    | 41    | 57    | NA    | NA    | NA    | NA    |
-| 3         | querrubr | 83    | 91    | 144   | 173   | 184   | 238   | NA    |
-| 3         | thujocci | 6     | 66    | 68    | 204   | NA    | NA    | NA    |
-| 4         | fraxamer | 12    | 110   | 266   | 270   | NA    | NA    | NA    |
-| 4         | pinustro | 174   | 270   | 359   | 379   | NA    | NA    | NA    |
-| 4         | poputrem | 4     | 7     | 18    | 24    | 63    | 76    | NA    |
-| 4         | tiliamer | 126   | 136   | 197   | NA    | NA    | NA    | NA    |
-| 4         | tsugcana | 49    | 91    | 128   | 194   | 411   | 487   | NA    |
-| 5         | abiebals | 35    | 53    | 108   | 114   | 147   | 174   | 195   |
-| 5         | acerrubr | 1     | 2     | 101   | 145   | NA    | NA    | NA    |
-| 5         | pinubank | 14    | 15    | 38    | 40    | 59    | 69    | 83    |
-| 6         | acerrubr | 4     | 46    | 117   | NA    | NA    | NA    | NA    |
-| 6         | betualle | 36    | 41    | 116   | 213   | 253   | NA    | NA    |
-| 6         | betupapy | 4     | 6     | 76    | NA    | NA    | NA    | NA    |
-| 6         | pinuresi | 43    | 68    | 85    | 171   | NA    | NA    | NA    |
-| 6         | querrubr | 84    | 86    | 113   | 185   | 193   | 223   | 228   |
-| 6         | tiliamer | 13    | 106   | 181   | 199   | 246   | NA    | NA    |
-
-: (#tab:tableLBSEtest5) Randomly generated community combination no. 3 used in the recruitment comparison runs.
---><div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:tableLBSEtest4">Table 1.11: </span>Randomly generated community combination no. 2 used in the recruitment comparison runs.
+</caption>
+<thead><tr>
+<th style="text-align:right;">
+Community
+</th>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:right;">
+Age 1
+</th>
+<th style="text-align:right;">
+Age 2
+</th>
+<th style="text-align:right;">
+Age 3
+</th>
+<th style="text-align:right;">
+Age 4
+</th>
+<th style="text-align:right;">
+Age 5
+</th>
+<th style="text-align:right;">
+Age 6
+</th>
+<th style="text-align:right;">
+Age 7
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+acerrubr
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+145
+</td>
+<td style="text-align:right;">
+146
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+betualle
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+41
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:right;">
+209
+</td>
+<td style="text-align:right;">
+227
+</td>
+<td style="text-align:right;">
+270
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+fraxamer
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:right;">
+119
+</td>
+<td style="text-align:right;">
+173
+</td>
+<td style="text-align:right;">
+185
+</td>
+<td style="text-align:right;">
+282
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+pinuresi
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+53
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+121
+</td>
+<td style="text-align:right;">
+157
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+pinustro
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+82
+</td>
+<td style="text-align:right;">
+126
+</td>
+<td style="text-align:right;">
+298
+</td>
+<td style="text-align:right;">
+352
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+querrubr
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+74
+</td>
+<td style="text-align:right;">
+77
+</td>
+<td style="text-align:right;">
+162
+</td>
+<td style="text-align:right;">
+245
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+acerrubr
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+39
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+84
+</td>
+<td style="text-align:right;">
+116
+</td>
+<td style="text-align:right;">
+127
+</td>
+<td style="text-align:right;">
+143
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+pinubank
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+57
+</td>
+<td style="text-align:right;">
+75
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+querelli
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+202
+</td>
+<td style="text-align:right;">
+218
+</td>
+<td style="text-align:right;">
+243
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+querrubr
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+117
+</td>
+<td style="text-align:right;">
+131
+</td>
+<td style="text-align:right;">
+186
+</td>
+<td style="text-align:right;">
+189
+</td>
+<td style="text-align:right;">
+246
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+tiliamer
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:right;">
+80
+</td>
+<td style="text-align:right;">
+133
+</td>
+<td style="text-align:right;">
+148
+</td>
+<td style="text-align:right;">
+231
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+tsugcana
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+190
+</td>
+<td style="text-align:right;">
+246
+</td>
+<td style="text-align:right;">
+330
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+pinubank
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+67
+</td>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+querrubr
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+57
+</td>
+<td style="text-align:right;">
+177
+</td>
+<td style="text-align:right;">
+180
+</td>
+<td style="text-align:right;">
+228
+</td>
+<td style="text-align:right;">
+236
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+tiliamer
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+78
+</td>
+<td style="text-align:right;">
+79
+</td>
+<td style="text-align:right;">
+223
+</td>
+<td style="text-align:right;">
+250
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+tsugcana
+</td>
+<td style="text-align:right;">
+140
+</td>
+<td style="text-align:right;">
+202
+</td>
+<td style="text-align:right;">
+372
+</td>
+<td style="text-align:right;">
+381
+</td>
+<td style="text-align:right;">
+451
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+acersacc
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:right;">
+262
+</td>
+<td style="text-align:right;">
+265
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+betupapy
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+65
+</td>
+<td style="text-align:right;">
+83
+</td>
+<td style="text-align:right;">
+96
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+poputrem
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+75
+</td>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+querelli
+</td>
+<td style="text-align:right;">
+72
+</td>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:right;">
+104
+</td>
+<td style="text-align:right;">
+115
+</td>
+<td style="text-align:right;">
+116
+</td>
+<td style="text-align:right;">
+265
+</td>
+<td style="text-align:right;">
+278
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+tiliamer
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+56
+</td>
+<td style="text-align:right;">
+98
+</td>
+<td style="text-align:right;">
+237
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+tsugcana
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:right;">
+224
+</td>
+<td style="text-align:right;">
+425
+</td>
+<td style="text-align:right;">
+429
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+fraxamer
+</td>
+<td style="text-align:right;">
+77
+</td>
+<td style="text-align:right;">
+133
+</td>
+<td style="text-align:right;">
+181
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+pinustro
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+67
+</td>
+<td style="text-align:right;">
+220
+</td>
+<td style="text-align:right;">
+287
+</td>
+<td style="text-align:right;">
+293
+</td>
+<td style="text-align:right;">
+375
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+querrubr
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+89
+</td>
+<td style="text-align:right;">
+97
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+thujocci
+</td>
+<td style="text-align:right;">
+91
+</td>
+<td style="text-align:right;">
+244
+</td>
+<td style="text-align:right;">
+305
+</td>
+<td style="text-align:right;">
+390
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+abiebals
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:right;">
+95
+</td>
+<td style="text-align:right;">
+119
+</td>
+<td style="text-align:right;">
+121
+</td>
+<td style="text-align:right;">
+127
+</td>
+<td style="text-align:right;">
+158
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+betualle
+</td>
+<td style="text-align:right;">
+83
+</td>
+<td style="text-align:right;">
+113
+</td>
+<td style="text-align:right;">
+136
+</td>
+<td style="text-align:right;">
+161
+</td>
+<td style="text-align:right;">
+216
+</td>
+<td style="text-align:right;">
+231
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+betupapy
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+64
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+piceglau
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+63
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+102
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+acerrubr
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+112
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+betupapy
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+57
+</td>
+<td style="text-align:right;">
+61
+</td>
+<td style="text-align:right;">
+74
+</td>
+<td style="text-align:right;">
+80
+</td>
+<td style="text-align:right;">
+91
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+fraxamer
+</td>
+<td style="text-align:right;">
+63
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+140
+</td>
+<td style="text-align:right;">
+196
+</td>
+<td style="text-align:right;">
+294
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+pinubank
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+80
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+thujocci
+</td>
+<td style="text-align:right;">
+78
+</td>
+<td style="text-align:right;">
+146
+</td>
+<td style="text-align:right;">
+163
+</td>
+<td style="text-align:right;">
+213
+</td>
+<td style="text-align:right;">
+214
+</td>
+<td style="text-align:right;">
+228
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+tsugcana
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+387
+</td>
+<td style="text-align:right;">
+389
+</td>
+<td style="text-align:right;">
+449
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+</tbody>
+</table></div>
+<div class="inline-table"><table class="table table-sm">
 <caption>
 <span id="tab:tableLBSEtest5">Table 1.12: </span>Randomly generated community combination no. 3 used in the recruitment comparison runs.</caption>
 <thead><tr class="header">
@@ -3280,471 +5360,944 @@ the recruitment comparison runs.
 </tr>
 </tbody>
 </table></div>
-<!--
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| Species  | Longevity | Sexualmature | Shadetolerance | Seeddistance_eff | Seeddistance_max | Mortalityshape | Growthcurve |
-+==========+===========+==============+================+==================+==================+================+=============+
-| abiebals | 200       | 25           | 5              | 30               | 160              | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| acerrubr | 150       | 10           | 4              | 100              | 200              | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| acersacc | 300       | 40           | 5              | 100              | 200              | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| betualle | 300       | 40           | 4              | 100              | 400              | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| betupapy | 100       | 30           | 2              | 200              | 5000             | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| fraxamer | 300       | 30           | 4              | 70               | 140              | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| piceglau | 300       | 25           | 3              | 30               | 200              | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| pinubank | 100       | 15           | 1              | 20               | 100              | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| pinuresi | 200       | 35           | 2              | 20               | 275              | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| pinustro | 400       | 40           | 3              | 60               | 210              | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| poputrem | 100       | 20           | 1              | 1000             | 5000             | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| querelli | 300       | 35           | 2              | 30               | 3000             | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| querrubr | 250       | 25           | 3              | 30               | 3000             | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| thujocci | 400       | 30           | 2              | 45               | 60               | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| tiliamer | 250       | 30           | 4              | 30               | 120              | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-| tsugcana | 500       | 30           | 5              | 30               | 100              | 10             | 0.25        |
-+----------+-----------+--------------+----------------+------------------+------------------+----------------+-------------+
-
-: (#tab:tableLBSEtest6) Invariant species traits table used in comparison runs.
---><div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:tableLBSEtest6">Table 1.13: </span>Invariant species traits table used in comparison runs.</caption>
-<colgroup>
-<col width="8%">
-<col width="9%">
-<col width="12%">
-<col width="13%">
-<col width="15%">
-<col width="15%">
-<col width="13%">
-<col width="11%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">Species</th>
-<th align="right">Longevity</th>
-<th align="right">Sexualmature</th>
-<th align="right">Shadetolerance</th>
-<th align="right">Seeddistance_eff</th>
-<th align="right">Seeddistance_max</th>
-<th align="right">Mortalityshape</th>
-<th align="right">Growthcurve</th>
+<span id="tab:tableLBSEtest6">Table 1.13: </span>Invariant species traits table used in comparison runs.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:right;">
+Longevity
+</th>
+<th style="text-align:right;">
+Sexualmature
+</th>
+<th style="text-align:right;">
+Shadetolerance
+</th>
+<th style="text-align:right;">
+Seeddistance_eff
+</th>
+<th style="text-align:right;">
+Seeddistance_max
+</th>
+<th style="text-align:right;">
+Mortalityshape
+</th>
+<th style="text-align:right;">
+Growthcurve
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">abiebals</td>
-<td align="right">200</td>
-<td align="right">25</td>
-<td align="right">5</td>
-<td align="right">30</td>
-<td align="right">160</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+abiebals
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="even">
-<td align="left">acerrubr</td>
-<td align="right">150</td>
-<td align="right">10</td>
-<td align="right">4</td>
-<td align="right">100</td>
-<td align="right">200</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+acerrubr
+</td>
+<td style="text-align:right;">
+150
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="odd">
-<td align="left">acersacc</td>
-<td align="right">300</td>
-<td align="right">40</td>
-<td align="right">5</td>
-<td align="right">100</td>
-<td align="right">200</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+acersacc
+</td>
+<td style="text-align:right;">
+300
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="even">
-<td align="left">betualle</td>
-<td align="right">300</td>
-<td align="right">40</td>
-<td align="right">4</td>
-<td align="right">100</td>
-<td align="right">400</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+betualle
+</td>
+<td style="text-align:right;">
+300
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+400
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="odd">
-<td align="left">betupapy</td>
-<td align="right">100</td>
-<td align="right">30</td>
-<td align="right">2</td>
-<td align="right">200</td>
-<td align="right">5000</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+betupapy
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+5000
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="even">
-<td align="left">fraxamer</td>
-<td align="right">300</td>
-<td align="right">30</td>
-<td align="right">4</td>
-<td align="right">70</td>
-<td align="right">140</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+fraxamer
+</td>
+<td style="text-align:right;">
+300
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+140
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="odd">
-<td align="left">piceglau</td>
-<td align="right">300</td>
-<td align="right">25</td>
-<td align="right">3</td>
-<td align="right">30</td>
-<td align="right">200</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+piceglau
+</td>
+<td style="text-align:right;">
+300
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="even">
-<td align="left">pinubank</td>
-<td align="right">100</td>
-<td align="right">15</td>
-<td align="right">1</td>
-<td align="right">20</td>
-<td align="right">100</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+pinubank
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="odd">
-<td align="left">pinuresi</td>
-<td align="right">200</td>
-<td align="right">35</td>
-<td align="right">2</td>
-<td align="right">20</td>
-<td align="right">275</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+pinuresi
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+275
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="even">
-<td align="left">pinustro</td>
-<td align="right">400</td>
-<td align="right">40</td>
-<td align="right">3</td>
-<td align="right">60</td>
-<td align="right">210</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+pinustro
+</td>
+<td style="text-align:right;">
+400
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+210
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="odd">
-<td align="left">poputrem</td>
-<td align="right">100</td>
-<td align="right">20</td>
-<td align="right">1</td>
-<td align="right">1000</td>
-<td align="right">5000</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+poputrem
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1000
+</td>
+<td style="text-align:right;">
+5000
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="even">
-<td align="left">querelli</td>
-<td align="right">300</td>
-<td align="right">35</td>
-<td align="right">2</td>
-<td align="right">30</td>
-<td align="right">3000</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+querelli
+</td>
+<td style="text-align:right;">
+300
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+3000
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="odd">
-<td align="left">querrubr</td>
-<td align="right">250</td>
-<td align="right">25</td>
-<td align="right">3</td>
-<td align="right">30</td>
-<td align="right">3000</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+querrubr
+</td>
+<td style="text-align:right;">
+250
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+3000
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="even">
-<td align="left">thujocci</td>
-<td align="right">400</td>
-<td align="right">30</td>
-<td align="right">2</td>
-<td align="right">45</td>
-<td align="right">60</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+thujocci
+</td>
+<td style="text-align:right;">
+400
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="odd">
-<td align="left">tiliamer</td>
-<td align="right">250</td>
-<td align="right">30</td>
-<td align="right">4</td>
-<td align="right">30</td>
-<td align="right">120</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+tiliamer
+</td>
+<td style="text-align:right;">
+250
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
-<tr class="even">
-<td align="left">tsugcana</td>
-<td align="right">500</td>
-<td align="right">30</td>
-<td align="right">5</td>
-<td align="right">30</td>
-<td align="right">100</td>
-<td align="right">10</td>
-<td align="right">0.25</td>
+<tr>
+<td style="text-align:left;">
+tsugcana
+</td>
+<td style="text-align:right;">
+500
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.25
+</td>
 </tr>
 </tbody>
 </table></div>
-<!--
-| Ecolocation | X0  | X1   | X2   | X3  | X4  | X5   |
-|:------------|:----|:-----|:-----|:----|:----|:-----|
-| All         | 0   | 0.15 | 0.25 | 0.5 | 0.8 | 0.95 |
-
-: (#tab:tableLBSEtest7) Minimum relative biomass table used in comparison runs. X0-5 represent site shade classes from no-shade (0) to maximum shade (5). All ecolocations shared the same values.
---><div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:tableLBSEtest7">Table 1.14: </span>Minimum relative biomass table used in comparison runs. X0-5 represent site shade classes from no-shade (0) to maximum shade (5). All ecolocations shared the same values.</caption>
-<thead><tr class="header">
-<th align="left">Ecolocation</th>
-<th align="right">X0</th>
-<th align="right">X1</th>
-<th align="right">X2</th>
-<th align="right">X3</th>
-<th align="right">X4</th>
-<th align="right">X5</th>
+<span id="tab:tableLBSEtest7">Table 1.14: </span>Minimum relative biomass table used in comparison runs. X0-5 represent site shade classes from no-shade (0) to maximum shade (5). All ecolocations shared the same values.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+Ecolocation
+</th>
+<th style="text-align:right;">
+X0
+</th>
+<th style="text-align:right;">
+X1
+</th>
+<th style="text-align:right;">
+X2
+</th>
+<th style="text-align:right;">
+X3
+</th>
+<th style="text-align:right;">
+X4
+</th>
+<th style="text-align:right;">
+X5
+</th>
 </tr></thead>
-<tbody><tr class="odd">
-<td align="left">All</td>
-<td align="right">0</td>
-<td align="right">0.15</td>
-<td align="right">0.25</td>
-<td align="right">0.5</td>
-<td align="right">0.8</td>
-<td align="right">0.95</td>
+<tbody><tr>
+<td style="text-align:left;">
+All
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.15
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+0.5
+</td>
+<td style="text-align:right;">
+0.8
+</td>
+<td style="text-align:right;">
+0.95
+</td>
 </tr></tbody>
 </table></div>
-<!--
-| Shadetolerance | 0   | 1   | 2   | 3   | 4   | 5   |
-|:---------------|:----|:----|:----|:----|:----|:----|
-| 1              | 1   | 0   | 0   | 0   | 0   | 0   |
-| 2              | 1   | 1   | 0   | 0   | 0   | 0   |
-| 3              | 1   | 1   | 1   | 0   | 0   | 0   |
-| 4              | 1   | 1   | 1   | 1   | 0   | 0   |
-| 5              | 0   | 0   | 1   | 1   | 1   | 1   |
-
-: (#tab:tableLBSEtest8) Probability of germination for species shade tolerance and shade level combinations (called *sufficient light* table in LBSE and `sufficientLight` input `data.table` in LandR *Biomass_core*) used in comparison runs.
---><div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:tableLBSEtest8">Table 1.15: </span>Probability of germination for species shade tolerance and shade level combinations (called <em>sufficient light</em> table in LBSE and <code>sufficientLight</code> input <code>data.table</code> in LandR <em>Biomass_core</em>) used in comparison runs.</caption>
-<thead><tr class="header">
-<th align="right">Shadetolerance</th>
-<th align="right">0</th>
-<th align="right">1</th>
-<th align="right">2</th>
-<th align="right">3</th>
-<th align="right">4</th>
-<th align="right">5</th>
+<span id="tab:tableLBSEtest8">Table 1.15: </span>Probability of germination for species shade tolerance and shade level combinations (called <em>sufficient light</em> table in LBSE and <code>sufficientLight</code> input <code>data.table</code> in LandR <em>Biomass_core</em>) used in comparison runs.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+Shadetolerance
+</th>
+<th style="text-align:right;">
+0
+</th>
+<th style="text-align:right;">
+1
+</th>
+<th style="text-align:right;">
+2
+</th>
+<th style="text-align:right;">
+3
+</th>
+<th style="text-align:right;">
+4
+</th>
+<th style="text-align:right;">
+5
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0</td>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">1</td>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
 </tr>
 </tbody>
 </table></div>
-<!--
-| Ecolocation | Species  | SEP  | maxANPP | maxB  |
-|:------------|:---------|:-----|:--------|:------|
-| 1           | abiebals | 0.9  | 886     | 26580 |
-| 1           | acerrubr | 1    | 1175    | 35250 |
-| 1           | acersacc | 0.82 | 1106    | 33180 |
-| 1           | betualle | 0.64 | 1202    | 36060 |
-| 1           | betupapy | 1    | 1202    | 36060 |
-| 1           | fraxamer | 0.18 | 1202    | 36060 |
-| 1           | piceglau | 0.58 | 969     | 29070 |
-| 1           | pinubank | 1    | 1130    | 33900 |
-| 1           | pinuresi | 0.56 | 1017    | 30510 |
-| 1           | pinustro | 0.72 | 1090    | 38150 |
-| 1           | poputrem | 1    | 1078    | 32340 |
-| 1           | querelli | 0.96 | 1096    | 32880 |
-| 1           | querrubr | 0.66 | 1017    | 30510 |
-| 1           | thujocci | 0.76 | 1090    | 32700 |
-| 1           | tiliamer | 0.54 | 1078    | 32340 |
-| 1           | tsugcana | 0.22 | 1096    | 32880 |
-
-: (#tab:tableLBSEtest9) Species ecolocation table used in comparison runs. `SEP` stands for species establishment probability, `maxB` for maximum biomass and `maxANPP` for maximum aboveground net primary productivity. Values were held constant throughout the simulation.
---><div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:tableLBSEtest9">Table 1.16: </span>Species ecolocation table used in comparison runs. <code>SEP</code> stands for species establishment probability, <code>maxB</code> for maximum biomass and <code>maxANPP</code> for maximum aboveground net primary productivity. Values were held constant throughout the simulation.</caption>
-<thead><tr class="header">
-<th align="right">Ecolocation</th>
-<th align="left">Species</th>
-<th align="right">SEP</th>
-<th align="right">maxANPP</th>
-<th align="right">maxB</th>
+<span id="tab:tableLBSEtest9">Table 1.16: </span>Species ecolocation table used in comparison runs. <code>SEP</code> stands for species establishment probability, <code>maxB</code> for maximum biomass and <code>maxANPP</code> for maximum aboveground net primary productivity. Values were held constant throughout the simulation.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+Ecolocation
+</th>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:right;">
+SEP
+</th>
+<th style="text-align:right;">
+maxANPP
+</th>
+<th style="text-align:right;">
+maxB
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">abiebals</td>
-<td align="right">0.90</td>
-<td align="right">886</td>
-<td align="right">26580</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+abiebals
+</td>
+<td style="text-align:right;">
+0.90
+</td>
+<td style="text-align:right;">
+886
+</td>
+<td style="text-align:right;">
+26580
+</td>
 </tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="left">acerrubr</td>
-<td align="right">1.00</td>
-<td align="right">1175</td>
-<td align="right">35250</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+acerrubr
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+1175
+</td>
+<td style="text-align:right;">
+35250
+</td>
 </tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">acersacc</td>
-<td align="right">0.82</td>
-<td align="right">1106</td>
-<td align="right">33180</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+acersacc
+</td>
+<td style="text-align:right;">
+0.82
+</td>
+<td style="text-align:right;">
+1106
+</td>
+<td style="text-align:right;">
+33180
+</td>
 </tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="left">betualle</td>
-<td align="right">0.64</td>
-<td align="right">1202</td>
-<td align="right">36060</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+betualle
+</td>
+<td style="text-align:right;">
+0.64
+</td>
+<td style="text-align:right;">
+1202
+</td>
+<td style="text-align:right;">
+36060
+</td>
 </tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">betupapy</td>
-<td align="right">1.00</td>
-<td align="right">1202</td>
-<td align="right">36060</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+betupapy
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+1202
+</td>
+<td style="text-align:right;">
+36060
+</td>
 </tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="left">fraxamer</td>
-<td align="right">0.18</td>
-<td align="right">1202</td>
-<td align="right">36060</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+fraxamer
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+1202
+</td>
+<td style="text-align:right;">
+36060
+</td>
 </tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">piceglau</td>
-<td align="right">0.58</td>
-<td align="right">969</td>
-<td align="right">29070</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+piceglau
+</td>
+<td style="text-align:right;">
+0.58
+</td>
+<td style="text-align:right;">
+969
+</td>
+<td style="text-align:right;">
+29070
+</td>
 </tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="left">pinubank</td>
-<td align="right">1.00</td>
-<td align="right">1130</td>
-<td align="right">33900</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+pinubank
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+1130
+</td>
+<td style="text-align:right;">
+33900
+</td>
 </tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">pinuresi</td>
-<td align="right">0.56</td>
-<td align="right">1017</td>
-<td align="right">30510</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+pinuresi
+</td>
+<td style="text-align:right;">
+0.56
+</td>
+<td style="text-align:right;">
+1017
+</td>
+<td style="text-align:right;">
+30510
+</td>
 </tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="left">pinustro</td>
-<td align="right">0.72</td>
-<td align="right">1090</td>
-<td align="right">38150</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+pinustro
+</td>
+<td style="text-align:right;">
+0.72
+</td>
+<td style="text-align:right;">
+1090
+</td>
+<td style="text-align:right;">
+38150
+</td>
 </tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">poputrem</td>
-<td align="right">1.00</td>
-<td align="right">1078</td>
-<td align="right">32340</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+poputrem
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+1078
+</td>
+<td style="text-align:right;">
+32340
+</td>
 </tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="left">querelli</td>
-<td align="right">0.96</td>
-<td align="right">1096</td>
-<td align="right">32880</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+querelli
+</td>
+<td style="text-align:right;">
+0.96
+</td>
+<td style="text-align:right;">
+1096
+</td>
+<td style="text-align:right;">
+32880
+</td>
 </tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">querrubr</td>
-<td align="right">0.66</td>
-<td align="right">1017</td>
-<td align="right">30510</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+querrubr
+</td>
+<td style="text-align:right;">
+0.66
+</td>
+<td style="text-align:right;">
+1017
+</td>
+<td style="text-align:right;">
+30510
+</td>
 </tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="left">thujocci</td>
-<td align="right">0.76</td>
-<td align="right">1090</td>
-<td align="right">32700</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+thujocci
+</td>
+<td style="text-align:right;">
+0.76
+</td>
+<td style="text-align:right;">
+1090
+</td>
+<td style="text-align:right;">
+32700
+</td>
 </tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">tiliamer</td>
-<td align="right">0.54</td>
-<td align="right">1078</td>
-<td align="right">32340</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+tiliamer
+</td>
+<td style="text-align:right;">
+0.54
+</td>
+<td style="text-align:right;">
+1078
+</td>
+<td style="text-align:right;">
+32340
+</td>
 </tr>
-<tr class="even">
-<td align="right">1</td>
-<td align="left">tsugcana</td>
-<td align="right">0.22</td>
-<td align="right">1096</td>
-<td align="right">32880</td>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+tsugcana
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+1096
+</td>
+<td style="text-align:right;">
+32880
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -3757,39 +6310,6 @@ the recruitment comparison runs.
 
 </div>
 </div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-BurtonCumming1995" class="csl-entry">
-Burton, P.J. &amp; Cumming, S.G. (1995a). Potential effects of climatic change on some western canadian forests, based on phenological enhancements to a patch model of forest succession. <em>Water, Air and Soil Pollution</em>, 82, 401–414.
-</div>
-<div id="ref-ChubatyMcIntire2019" class="csl-entry">
-Chubaty, A.M. &amp; McIntire, E.J.B. (2019). <em><a href="https://CRAN.R-project.org/package=SpaDES">SpaDES: Develop and run spatially explicit discrete event simulation models</a></em>.
-</div>
-<div id="ref-McIntireChubaty2020" class="csl-entry">
-McIntire, E.J.B. &amp; Chubaty, A.M. (2020). <em><a href="https://reproducible.predictiveecology.org,%20https://github.com/PredictiveEcology/reproducible">Reproducible: A set of tools that enhance reproducibility beyond package management</a></em>.
-</div>
-<div id="ref-SchellerDomingo2011" class="csl-entry">
-Scheller, R.M. &amp; Domingo, J.B. (2011). <em>LANDIS-II model v6.0 <span></span> user guide</em>.
-</div>
-<div id="ref-SchellerDomingo2012" class="csl-entry">
-Scheller, R.M. &amp; Domingo, J.B. (2012). <em>LANDIS-II model v6.0 <span></span> conceptual description</em>.
-</div>
-<div id="ref-SchellerMiranda2015" class="csl-entry">
-Scheller, R.M. &amp; Miranda, B.R. (2015b). <em>LANDIS-II biomass succession v3.2 extension <span></span> user guide</em>.
-</div>
-<div id="ref-SchellerMladenoff2004" class="csl-entry">
-Scheller, R.M. &amp; Mladenoff, D.J. (2004). <a href="https://doi.org/10.1016/j.ecolmodel.2004.01.022">A forest growth and biomass module for a landscape simulation model, LANDIS: design, validation, and application</a>. <em>Ecological Modelling</em>, 180, 211–229.
-</div>
-<div id="ref-SturtevantEtAl2018" class="csl-entry">
-Sturtevant, B.R., Miranda, B.R., Scheller, R.M. &amp; Shinneman, D. (2018). <em>LANDIS-II dynamic fire system extension v3.0 – user guide</em>.
-</div>
-<div id="ref-Wickham2011" class="csl-entry">
-Wickham, H. (2011). <a href="https://doi.org/10.32614/RJ-2011-002">testthat: Get Started with Testing</a>. <em>The R Journal</em>, 3, 5.
-</div>
-<div id="ref-YangEtAl2011" class="csl-entry">
-Yang, J., He, H.S., Shifley, S.R., Thompson, F.R. &amp; Zhang, Y. (2011). <a href="https://doi.org/10.1016/j.ecolmodel.2011.04.032">An innovative computer design for modeling forest landscape change in very large spatial extents with fine resolutions</a>. <em>Ecological Modelling</em>, 222, 2623–2630.
-</div>
-</div>
 <div class="footnotes">
 <hr>
 <ol start="1">
@@ -3797,7 +6317,7 @@ Yang, J., He, H.S., Shifley, S.R., Thompson, F.R. &amp; Zhang, Y. (2011). <a hre
 number of time steps equal to the maximum cohort age for each site”,
 beginning at 0 minus <em>t</em> (<em>t =</em> oldest cohort age) and adding cohorts at the
 appropriate time until the initial simulation time is reached (0)
-<span class="citation">(<a href="#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>.<a href="landr-biomass_core-module.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">Scheller &amp; Miranda 2015b</a>)</span>.<a href="landr-biomass_core-module.html#fnref1" class="footnote-back">↩︎</a></p></li>
 <li id="fn2"><p>usually, default inputs are made when running the
 <code>.inputObjects</code> function (inside the module R script) during the <code>simInit</code>
 call and in the <code>init</code> event during the <code>spades</code> call – see
@@ -3815,7 +6335,7 @@ mechanisms to satisfy each module’s expected inputs with default values.<a hre
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="index.html">Preface</a></div>
-<div class="next"><a href="landr-data-and-calibration-modules.html"><span class="header-section-number">2</span> LandR Data and Calibration Modules</a></div>
+<div class="next"><a href="landr-data-and-calibration-modules.html">LandR Data and Calibration Modules</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -3867,8 +6387,8 @@ mechanisms to satisfy each module’s expected inputs with default values.<a hre
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>LandR Manual</strong>: v. 1.0.0" was written by </p>
-<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-06-01.
+    <p>"<strong>LandR Manual</strong>: v. 1.0.1" was written by </p>
+<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-06-14.
   </div>
 
   <div class="col-12 col-md-6 mt-3">

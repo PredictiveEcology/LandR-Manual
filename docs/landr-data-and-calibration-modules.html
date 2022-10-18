@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 2 LandR Data and Calibration Modules | LandR Manual</title>
+<title>LandR Data and Calibration Modules | LandR Manual</title>
 <meta name="description" content="The LandR ecosystem of SpaDES modules has a variety of data and/or calibration modules that are used to obtain and pre-process input data, as well as estimate input parameters required by the core...">
 <meta name="generator" content="bookdown 0.26 with bs4_book()">
-<meta property="og:title" content="Chapter 2 LandR Data and Calibration Modules | LandR Manual">
+<meta property="og:title" content="LandR Data and Calibration Modules | LandR Manual">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://predictiveecology.github.io/LandR-Manual/landr-data-and-calibration-modules.html">
 <meta property="og:image" content="https://predictiveecology.github.io/LandR-Manual/figures/LandRHex.png">
 <meta property="og:description" content="The LandR ecosystem of SpaDES modules has a variety of data and/or calibration modules that are used to obtain and pre-process input data, as well as estimate input parameters required by the core...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 2 LandR Data and Calibration Modules | LandR Manual">
+<meta name="twitter:title" content="LandR Data and Calibration Modules | LandR Manual">
 <meta name="twitter:description" content="The LandR ecosystem of SpaDES modules has a variety of data and/or calibration modules that are used to obtain and pre-process input data, as well as estimate input parameters required by the core...">
 <meta name="twitter:image" content="https://predictiveecology.github.io/LandR-Manual/figures/LandRHex.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -55,8 +55,8 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="v. 1.0.0">LandR Manual</a>:
-        <small class="text-muted">v. 1.0.0</small>
+        <a href="index.html" title="v. 1.0.1">LandR Manual</a>:
+        <small class="text-muted">v. 1.0.1</small>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -70,12 +70,12 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Preface</a></li>
 <li><a class="" href="landr-biomass_core-module.html"><span class="header-section-number">1</span> LandR Biomass_core Module</a></li>
-<li><a class="active" href="landr-data-and-calibration-modules.html"><span class="header-section-number">2</span> LandR Data and Calibration Modules</a></li>
-<li><a class="" href="landr-biomass_speciesdata-module.html"><span class="header-section-number">3</span> LandR Biomass_speciesData Module</a></li>
-<li><a class="" href="landr-biomass_borealdataprep-module.html"><span class="header-section-number">4</span> LandR Biomass_borealDataPrep Module</a></li>
-<li><a class="" href="landr-biomass_speciesparameters-module.html"><span class="header-section-number">5</span> LandR Biomass_speciesParameters Module</a></li>
-<li><a class="" href="landr-validation-modules.html"><span class="header-section-number">6</span> LandR Validation Modules</a></li>
-<li><a class="" href="landr-biomass_validationknn-module.html"><span class="header-section-number">7</span> LandR Biomass_validationKNN Module</a></li>
+<li><a class="active" href="landr-data-and-calibration-modules.html">LandR Data and Calibration Modules</a></li>
+<li><a class="" href="landr-biomass_speciesdata-module.html"><span class="header-section-number">2</span> LandR Biomass_speciesData Module</a></li>
+<li><a class="" href="landr-biomass_borealdataprep-module.html"><span class="header-section-number">3</span> LandR Biomass_borealDataPrep Module</a></li>
+<li><a class="" href="landr-biomass_speciesparameters-module.html"><span class="header-section-number">4</span> LandR Biomass_speciesParameters Module</a></li>
+<li><a class="" href="landr-validation-modules.html">LandR Validation Modules</a></li>
+<li><a class="" href="landr-biomass_validationknn-module.html"><span class="header-section-number">5</span> LandR Biomass_validationKNN Module</a></li>
 </ul>
 
         <div class="book-extra">
@@ -83,19 +83,18 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="landr-data-and-calibration-modules" class="section level1" number="2">
-<h1>
-<span class="header-section-number">2</span> LandR Data and Calibration Modules<a class="anchor" aria-label="anchor" href="#landr-data-and-calibration-modules"><i class="fas fa-link"></i></a>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="landr-data-and-calibration-modules" class="section level1 unnumbered">
+<h1>LandR Data and Calibration Modules<a class="anchor" aria-label="anchor" href="#landr-data-and-calibration-modules"><i class="fas fa-link"></i></a>
 </h1>
 <p>The LandR ecosystem of SpaDES modules has a variety of data and/or calibration modules that are used to obtain and pre-process input data, as well as estimate input parameters required by the core forest landscape simulation module <em>Biomass_core</em>. These modules are presented in the next chapters.</p>
 
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="landr-biomass_core-module.html"><span class="header-section-number">1</span> LandR Biomass_core Module</a></div>
-<div class="next"><a href="landr-biomass_speciesdata-module.html"><span class="header-section-number">3</span> LandR Biomass_speciesData Module</a></div>
+<div class="next"><a href="landr-biomass_speciesdata-module.html"><span class="header-section-number">2</span> LandR Biomass_speciesData Module</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#landr-data-and-calibration-modules"><span class="header-section-number">2</span> LandR Data and Calibration Modules</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#landr-data-and-calibration-modules">LandR Data and Calibration Modules</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
@@ -112,8 +111,8 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>LandR Manual</strong>: v. 1.0.0" was written by </p>
-<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-06-01.
+    <p>"<strong>LandR Manual</strong>: v. 1.0.1" was written by </p>
+<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-06-14.
   </div>
 
   <div class="col-12 col-md-6 mt-3">
