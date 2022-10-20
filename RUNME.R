@@ -39,19 +39,25 @@ if (!"Require" %in% installed.packages(lib.loc = pkgPath) ||
 ## use binary linux packages if on Ubuntu
 Require::setLinuxBinaryRepo()
 
-filePath <- file.path("packages",
+pkgSnapshotFile <- file.path("packages",
                       paste0("pkgSnapshot_",
                              paste0(version$major, "_", strsplit(version$minor, "[.]")[[1]][1]),
                              ".txt"))
-
-Require::Require(packageVersionFile = filePath,
+if (file.exists(pkgSnapshotFile)) {
+Require::Require(packageVersionFile = pkgSnapshotFile,
                  standAlone = TRUE, upgrade = FALSE)
+} else {
+  Require::Require(c("downlit", "formatR", "git2r", "rmarkdown", "xml2",
+                     "pander", "kableExtra", "yihui/knitr",
+                     "bookdown", "data.table", "RefManageR", "ROpenSci/bibtex",
+                     "PredictiveEcology/SpaDES.project@6d7de6ee12fc967c7c60de44f1aa3b04e6eeb5db",
+                     "PredictiveEcology/SpaDES@development",
+                     "PredictiveEcology/SpaDES.docs@development",
+                     "PredictiveEcology/SpaDES.experiment@development",
+                     "PredictiveEcology/LandR@development"),
+                   standAlone = TRUE, upgrade = FALSE, require = FALSE)
 
-if (FALSE) {  ## don't run this; only here if pkgSnapshot needs to be rebuilt
-  Require::pkgSnapshot(filePath, libPaths = .libPaths()[1], standAlone = TRUE)
-  ## Much later on a different or same machine
-  # Require(packageVersionFile = filePath)
-  ## - RandomFields and gdalUtils n/a on CRAN.
+  Require::pkgSnapshot(pkgSnapshotFile, libPaths = pkgPath, standAlone = TRUE)
 }
 
 ## install archived CRAN packages, which are N/A as April 2022
@@ -62,22 +68,6 @@ if (!all(c("gdalUtils", "RandomFields") %in% rownames(installed.packages(lib.loc
                    type = "source", ## needed when repos = NULL (at least in Win OS)
                    repos = NULL)
 }
-
-# if (FALSE) {
-#   Require("PredictiveEcology/SpaDES.install@development")
-#   installSpatialPackages()
-#   installSpaDES()
-# }
-
-## END WORKAROUND
-# Require(c("downlit", "formatR", "git2r", "rmarkdown", "xml2",
-#           "pander", "kableExtra", "yihui/knitr",
-#           "PredictiveEcology/SpaDES@development",
-#           "PredictiveEcology/SpaDES.docs@development",
-#           "PredictiveEcology/SpaDES.experiment@development",
-#           "PredictiveEcology/LandR@development"), require = FALSE)
-# Require(c("bookdown", "data.table",
-#           "RefManageR", "ROpenSci/bibtex"))
 
 Require::Require(c("bookdown", "data.table", "RefManageR", "ROpenSci/bibtex"),
                  install = FALSE, upgrade = FALSE)
