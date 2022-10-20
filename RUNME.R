@@ -19,6 +19,7 @@ for (pkg in needPkgs) {
 }
 
 tinytex::install_tinytex()
+N   ## prevent re-installing if tinytex is found
 
 pkgPath <- normalizePath(file.path("packages", version$platform,
                                    paste0(version$major, ".", strsplit(version$minor, "[.]")[[1]][1])),
