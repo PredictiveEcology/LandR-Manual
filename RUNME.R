@@ -139,3 +139,10 @@ file.copy(from = file.path("docs", "LandRManual.pdf"),
 ## remove temporary .Rmds
 file.remove(.copyModuleRmds)
 
+## to render each module manual separately (here for convenience)
+moduleNames <- basename(list.dirs("modules", recursive = FALSE))
+moduleRmds <- list.files("modules", pattern = paste0("(", paste(moduleNames, collapse = "|"),")\\.Rmd"),
+                         recursive = TRUE, full.names = TRUE)
+for (modRmd in moduleRmds[5]) {
+  rmarkdown::render(modRmd, knit_root_dir = NULL)
+}
