@@ -49,14 +49,14 @@ pkgSnapshotFile <- file.path("packages",
 if (file.exists(pkgSnapshotFile)) {
   Require::Require(packageVersionFile = pkgSnapshotFile, standAlone = TRUE, upgrade = FALSE)
 } else {
-  Require::Require(c("downlit", "formatR", "git2r", "rmarkdown", "xml2",
-                     "pander", "kableExtra", "yihui/knitr",
-                     "bookdown", "data.table", "RefManageR", "ROpenSci/bibtex",
-                     "PredictiveEcology/SpaDES.project@6d7de6ee12fc967c7c60de44f1aa3b04e6eeb5db",
-                     "PredictiveEcology/SpaDES@development",
-                     "PredictiveEcology/SpaDES.docs@development",
-                     "PredictiveEcology/SpaDES.experiment@development",
-                     "PredictiveEcology/LandR@development"),
+  Require::Require(c("bookdown", "ROpenSci/bibtex", "data.table", "downlit",
+                     "formatR", "git2r", "kableExtra", "yihui/knitr",
+                     "RefManageR", "rmarkdown", "pander", "openxlsx", "xml2",
+                     "PredictiveEcology/LandR@d0df43e543abfeb0bca1c175b062288c10cb4dcb",
+                     "PredictiveEcology/SpaDES@e8fb47e125fdace6bcbba2f7489a923f470fecf7",
+                     "PredictiveEcology/SpaDES.docs@b6b1e602f55b20bf409a6ae9d400f39f1a37cc17",
+                     "PredictiveEcology/SpaDES.experiment@91bfad98d67ea2b7fcee3ea0115f8746e47534ad",
+                     "PredictiveEcology/SpaDES.project@6d7de6ee12fc967c7c60de44f1aa3b04e6eeb5db"),
                    standAlone = TRUE, upgrade = FALSE, require = FALSE)
 
   Require::pkgSnapshot(pkgSnapshotFile, libPaths = pkgPath, standAlone = TRUE)
