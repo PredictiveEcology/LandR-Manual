@@ -35,7 +35,7 @@ if (!"remotes" %in% installed.packages(lib.loc = pkgPath))
 
 if (!"Require" %in% installed.packages(lib.loc = pkgPath) ||
     packageVersion("Require", lib.loc = pkgPath) < "0.1.6.9004") {
-  remotes::install_github("PredictiveEcology/Require@132f5f44553f6dae936633282ff0f505a1031afe",
+  remotes::install_github("PredictiveEcology/Require@5c44205bf407f613f53546be652a438ef1248147",
                           upgrade = FALSE, force = TRUE)
 }
 
