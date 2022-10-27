@@ -49,6 +49,8 @@ pkgSnapshotFile <- file.path("packages",
 if (file.exists(pkgSnapshotFile)) {
   Require::Require(packageVersionFile = pkgSnapshotFile, standAlone = TRUE, upgrade = FALSE)
 } else {
+  Require::Require(c("xfun"), type = "source", standAlone = TRUE, upgrade = FALSE,
+                   require = FALSE) ## needs to install from source
   Require::Require(c("bookdown", "ROpenSci/bibtex", "data.table", "downlit",
                      "formatR", "git2r", "kableExtra", "yihui/knitr",
                      "RefManageR", "rmarkdown", "pander", "openxlsx", "xml2",
