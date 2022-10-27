@@ -44,8 +44,7 @@ pkgSnapshotFile <- file.path("packages",
                              paste0(version$major, "_", strsplit(version$minor, "[.]")[[1]][1]),
                              ".txt"))
 if (file.exists(pkgSnapshotFile)) {
-Require::Require(packageVersionFile = pkgSnapshotFile,
-                 standAlone = TRUE, upgrade = FALSE)
+  Require::Require(packageVersionFile = pkgSnapshotFile, standAlone = TRUE, upgrade = FALSE)
 } else {
   Require::Require(c("downlit", "formatR", "git2r", "rmarkdown", "xml2",
                      "pander", "kableExtra", "yihui/knitr",
@@ -61,7 +60,7 @@ Require::Require(packageVersionFile = pkgSnapshotFile,
 }
 
 ## install archived CRAN packages, which are N/A as April 2022
-if (!all(c("gdalUtils", "RandomFields") %in% rownames(installed.packages(lib.loc = .libPaths()[1])))) {
+if (!all(c("gdalUtils", "RandomFields") %in% rownames(installed.packages(lib.loc = pkgPath)))) {
   install.packages("RandomFieldsUtils")
   install.packages(c("https://cran.r-project.org/src/contrib/Archive/gdalUtils/gdalUtils_2.0.3.2.tar.gz",
                      "https://cran.r-project.org/src/contrib/Archive/RandomFields/RandomFields_3.3.13.tar.gz"),
