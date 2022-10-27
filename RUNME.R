@@ -18,8 +18,11 @@ for (pkg in needPkgs) {
   install.packages(pkg, dependencies = TRUE)
 }
 
-tinytex::install_tinytex()
-N   ## prevent re-installing if tinytex is found
+if (!"tinytex" %in% installed.packages() ||
+    packageVersion("tinytex") < "0.41") {
+  ## version "0.41" is probably not mandatory, but it's the version used as of Oct 27 2022
+  tinytex::install_tinytex()
+}
 
 pkgPath <- normalizePath(file.path("packages", version$platform,
                                    paste0(version$major, ".", strsplit(version$minor, "[.]")[[1]][1])),
