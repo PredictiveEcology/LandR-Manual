@@ -71,7 +71,7 @@ if (file.exists(pkgSnapshotFile)) {
                      "PredictiveEcology/SpaDES.project@6d7de6ee12fc967c7c60de44f1aa3b04e6eeb5db"),
                    standAlone = TRUE, upgrade = FALSE, require = FALSE)
 
-  ## save snapshot for later -- commented out against
+  ## save snapshot for later -- commented out against accidental overwrite
   # Require::pkgSnapshot(pkgSnapshotFile, libPaths = pkgPath, exact = TRUE, standAlone = TRUE)
 }
 
