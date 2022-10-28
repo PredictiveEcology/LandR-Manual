@@ -1,11 +1,11 @@
-## clean workspace
-rm(list = ls(all.names = FALSE))
+pkgPath <- file.path("packages", version$platform,
+                     paste0(version$major, ".", strsplit(version$minor, "[.]")[[1]][1]))
+.libPaths(pkgPath)   ## need to include.side = TRUE to use bookdown and rmarkdown
 
 # example R options set globally
-options(
-  repos = c(CRAN = "https://cran.rstudio.com"),
-  width = 60
-)
+options("width" = 60
+        , repos = c(CRAN = "https://cran.rstudio.com")
+        )
 
 ## knitr-related options
 options(knitr.table.format = function() {
@@ -14,6 +14,8 @@ options(knitr.table.format = function() {
 })
 
 options("knitr.graphics.rel_path" = FALSE)
+
+rm(list = ls(all.names = TRUE))
 
 # options(bookdown.post.latex = function(x) {
 #   # substitute nonbreaking spaces in \texttt{} with normal spaces

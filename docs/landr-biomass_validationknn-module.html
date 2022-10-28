@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 5 LandR Biomass_validationKNN Module | LandR Manual</title>
 <meta name="description" content="5.0.0.1 Authors: Ceres Barros ceres.barros@ubc.ca [aut, cre], Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut] This documentation is work in progress. Potential discrepancies and omissions...">
-<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta name="generator" content="bookdown 0.29 with bs4_book()">
 <meta property="og:title" content="Chapter 5 LandR Biomass_validationKNN Module | LandR Manual">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://predictiveecology.github.io/LandR-Manual/landr-biomass_validationknn-module.html">
@@ -18,7 +18,7 @@
 <meta name="twitter:image" content="https://predictiveecology.github.io/LandR-Manual/figures/LandRHex.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -55,8 +55,8 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="v. 1.0.1">LandR Manual</a>:
-        <small class="text-muted">v. 1.0.1</small>
+        <a href="index.html" title="v. 1.0.2">LandR Manual</a>:
+        <small class="text-muted">v. 1.0.2</small>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -89,7 +89,7 @@
 </h1>
 <!-- the following are text references used in captions for LaTeX compatibility -->
 
-<p><a href="https://github.com:PredictiveEcology/Biomass_validationKNN/commit//tree/e06003a4a80adf0afd8e1469d9c488e98c136f8e"><img src="modules/Biomass_validationKNN/figures/moduleVersionBadge.png" alt="module-version-Badge"></a></p>
+<p><a href="https://github.com/CeresBarros/Biomass_validationKNN.git"><img src="modules/Biomass_validationKNN/figures/moduleVersionBadge.png" alt="module-version-Badge"></a></p>
 <p><a href="https://github.com/PredictiveEcology/Biomass_validationKNN/issues"><img src="modules/Biomass_validationKNN/figures/issuesBadge.png" alt="Issues-badge"></a></p>
 <!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
 <div id="authors-4" class="section level4" number="5.0.0.1">
@@ -576,7 +576,7 @@ simulationOutputs
 data.table
 </td>
 <td style="text-align:left;">
-An OPTIONAL table listing simulation outputs (as passed to <code><a href="https://spades-core.predictiveecology.org/reference/spades.html">spades()</a></code>, or <code>experiment</code>) that will be used to make <code>allCohortData</code>, <code>pixelGroupMapStk</code>, if these are not provided.
+An OPTIONAL table listing simulation outputs (as passed to <code>spades()</code>, or <code>experiment</code>) that will be used to make <code>allCohortData</code>, <code>pixelGroupMapStk</code>, if these are not provided.
 </td>
 <td style="text-align:left;">
 NA
@@ -994,6 +994,26 @@ This describes the simulation time interval between save events
 </tr>
 <tr>
 <td style="text-align:left;">
+.sslVerify
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+64
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Passed to <code>httr::config(ssl_verifypeer = P(sim)$sslVerify)</code> when downloading KNN (NFI) datasets. Set to 0L if necessary to bypass checking the SSL certificate (this may be necessary when NFI’s FTP website SSL certificate is down/out-of-date).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 .studyAreaName
 </td>
 <td style="text-align:left;">
@@ -1284,83 +1304,96 @@ save any objects (see Table <a href="landr-biomass_validationknn-module.html#tab
 <h2>
 <span class="header-section-number">5.3</span> Usage example<a class="anchor" aria-label="anchor" href="#bvalid-example"><i class="fas fa-link"></i></a>
 </h2>
-<div id="load-spades-and-other-packages.-2" class="section level3" number="5.3.1">
+<div id="bvalid-example-libs" class="section level3" number="5.3.1">
 <h3>
-<span class="header-section-number">5.3.1</span> Load <code>SpaDES</code> and other packages.<a class="anchor" aria-label="anchor" href="#load-spades-and-other-packages.-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3.1</span> Set up R libraries<a class="anchor" aria-label="anchor" href="#bvalid-example-libs"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades.predictiveecology.org">SpaDES</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">SpaDES.install</span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades-experiment.predictiveecology.org/">SpaDES.experiment</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://future.futureverse.org">future</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>CRAN <span class="op">=</span> <span class="st">"https://cloud.r-project.org"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">tempDir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">pkgPath</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"packages"</span>, <span class="va">version</span><span class="op">$</span><span class="va">platform</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">version</span><span class="op">$</span><span class="va">major</span>,</span>
+<span>    <span class="st">"."</span>, <span class="fu"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span><span class="op">(</span><span class="va">version</span><span class="op">$</span><span class="va">minor</span>, <span class="st">"[.]"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/files2.html">dir.create</a></span><span class="op">(</span><span class="va">pkgPath</span>, recursive <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/libPaths.html">.libPaths</a></span><span class="op">(</span><span class="va">pkgPath</span>, include.site <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span>, lib.loc <span class="op">=</span> <span class="va">pkgPath</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"PredictiveEcology/Require@5c44205bf407f613f53546be652a438ef1248147"</span>,</span>
+<span>        upgrade <span class="op">=</span> <span class="cn">FALSE</span>, force <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>    <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span>, lib.loc <span class="op">=</span> <span class="va">pkgPath</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="fu"><a href="https://Require.predictiveecology.org/reference/setLinuxBinaryRepo.html">setLinuxBinaryRepo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="get-the-modules" class="section level3" number="5.3.2">
+<div id="b-valid-example-pkg-mods" class="section level3" number="5.3.2">
 <h3>
-<span class="header-section-number">5.3.2</span> Get the modules<a class="anchor" aria-label="anchor" href="#get-the-modules"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3.2</span> Get the module and module dependencies<a class="anchor" aria-label="anchor" href="#b-valid-example-pkg-mods"><i class="fas fa-link"></i></a>
 </h3>
 <p>Because <em>Biomass_validationKNN</em> is meant to validate simulation outputs against
 observed data, we need to first run a simulation of forest dynamics with
 <em>Biomass_core</em>. To do that we get both modules’ code from the PredictiveEcology
-GitHub repository. Notice that we are placing all module code, inputs and
-outputs in temporary directories.</p>
+GitHub repository (all install all necessary packages). Notice that we are
+placing all packages, module code, inputs and outputs in temporary directories.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">tempDir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>inputPath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"inputs"</span><span class="op">)</span>, cachePath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>,
-    <span class="st">"cache"</span><span class="op">)</span>, modulePath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"modules"</span><span class="op">)</span>, outputPath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>,
-    <span class="st">"outputs"</span><span class="op">)</span><span class="op">)</span>
-
-<span class="fu">getModule</span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_core"</span>, modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>,
-    overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">getModule</span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_validationKNN"</span>, modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>,
-    overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="co">## by default the repository branch name is appended to the</span>
-<span class="co">## module folder name.  so we change the folder name to</span>
-<span class="co">## remove the '-master' suffix.</span>
-<span class="fu"><a href="https://rdrr.io/r/base/files.html">file.rename</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, <span class="st">"Biomass_core-master"</span><span class="op">)</span>,
-    <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, <span class="st">"Biomass_validationKNN-master"</span><span class="op">)</span><span class="op">)</span>,
-    <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, <span class="st">"Biomass_core"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>,
-        <span class="st">"Biomass_validationKNN"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="st">"PredictiveEcology/SpaDES.project@6d7de6ee12fc967c7c60de44f1aa3b04e6eeb5db"</span>,</span>
+<span>    require <span class="op">=</span> <span class="cn">FALSE</span>, upgrade <span class="op">=</span> <span class="cn">FALSE</span>, standAlone <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>inputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"inputs"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    cachePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"cache"</span><span class="op">)</span><span class="op">)</span>, modulePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>,</span>
+<span>        <span class="st">"modules"</span><span class="op">)</span><span class="op">)</span>, outputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>,</span>
+<span>        <span class="st">"outputs"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">SpaDES.project</span><span class="fu">::</span><span class="fu"><a href="http://spades-project.predictiveecology.org/reference/getModule.html">getModule</a></span><span class="op">(</span>modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_core@master"</span>,</span>
+<span>    <span class="st">"PredictiveEcology/Biomass_validationKNN@master"</span><span class="op">)</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## make sure all necessary packages are installed:</span></span>
+<span><span class="va">outs</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.project</span><span class="fu">::</span><span class="fu"><a href="http://spades-project.predictiveecology.org/reference/metadata.html">packagesInModules</a></span><span class="op">(</span>modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unname.html">unname</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="va">outs</span><span class="op">)</span><span class="op">)</span>, <span class="st">"PredictiveEcology/SpaDES.experiment@development"</span>,</span>
+<span>    <span class="st">"future"</span><span class="op">)</span>, require <span class="op">=</span> <span class="cn">FALSE</span>, standAlone <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## load necessary packages</span></span>
+<span><span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SpaDES.core"</span>, <span class="st">"LandR"</span>, <span class="st">"reproducible"</span>, <span class="st">"pemisc"</span>, <span class="st">"SpaDES.experiment"</span>,</span>
+<span>    <span class="st">"future"</span><span class="op">)</span>, upgrade <span class="op">=</span> <span class="cn">FALSE</span>, install <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="setup-simulation-2" class="section level3" number="5.3.3">
 <h3>
 <span class="header-section-number">5.3.3</span> Setup simulation<a class="anchor" aria-label="anchor" href="#setup-simulation-2"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">2001</span>, end <span class="op">=</span> <span class="fl">2011</span><span class="op">)</span>
-
-<span class="va">studyArea</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://reproducible.predictiveecology.org/reference/Cache.html">Cache</a></span><span class="op">(</span><span class="va">randomStudyArea</span>, size <span class="op">=</span> <span class="fl">1e+07</span><span class="op">)</span>  <span class="co"># cache this so it creates a random one only once on a machine</span>
-
-<span class="co"># Pick the species you want to work with -- using the</span>
-<span class="co"># naming convention in 'Boreal' column of</span>
-<span class="co"># LandR::sppEquivalencies_CA</span>
-<span class="va">speciesNameConvention</span> <span class="op">&lt;-</span> <span class="st">"Boreal"</span>
-<span class="va">speciesToUse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Pice_Gla"</span>, <span class="st">"Popu_Tre"</span>, <span class="st">"Pinu_Con"</span><span class="op">)</span>
-
-<span class="va">sppEquiv</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="va"><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">sppEquivalencies_CA</a></span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/get.html">get</a></span><span class="op">(</span><span class="va">speciesNameConvention</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span>
-    <span class="va">speciesToUse</span><span class="op">]</span>
-<span class="co"># Assign a colour convention for graphics for each species</span>
-<span class="va">sppColorVect</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="fu"><a href="https://landr.predictiveecology.org/reference/sppColors.html">sppColors</a></span><span class="op">(</span><span class="va">sppEquiv</span>, <span class="va">speciesNameConvention</span>,
-    newVals <span class="op">=</span> <span class="st">"Mixed"</span>, palette <span class="op">=</span> <span class="st">"Set1"</span><span class="op">)</span>
-
-<span class="co">## Usage example</span>
-<span class="va">modules</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">as.list</a></span><span class="op">(</span><span class="st">"Biomass_core"</span><span class="op">)</span>
-<span class="va">objects</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>studyArea <span class="op">=</span> <span class="va">studyArea</span>, sppEquiv <span class="op">=</span> <span class="va">sppEquiv</span>, sppColorVect <span class="op">=</span> <span class="va">sppColorVect</span><span class="op">)</span>
-
-<span class="va">successionTimestep</span> <span class="op">&lt;-</span> <span class="fl">20L</span>
-
-<span class="co">## keep default values for most parameters (ommitted from</span>
-<span class="co">## this list)</span>
-<span class="va">parameters</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Biomass_core <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>sppEquivCol <span class="op">=</span> <span class="va">speciesNameConvention</span>,
-    successionTimestep <span class="op">=</span> <span class="va">successionTimestep</span>, .plotInitialTime <span class="op">=</span> <span class="va">times</span><span class="op">$</span><span class="va">start</span>,
-    .plotInterval <span class="op">=</span> <span class="fl">1L</span>, .plots <span class="op">=</span> <span class="st">"png"</span>, .saveInitialTime <span class="op">=</span> <span class="va">times</span><span class="op">$</span><span class="va">start</span>,
-    .useCache <span class="op">=</span> <span class="st">"init"</span>, .useParallel <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span>
-
-<span class="va">outputs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html">expand.grid</a></span><span class="op">(</span>objectName <span class="op">=</span> <span class="st">"cohortData"</span>,
-    saveTime <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">times</span><span class="op">$</span><span class="va">start</span>, <span class="va">times</span><span class="op">$</span><span class="va">end</span>, by <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>, eventPriority <span class="op">=</span> <span class="fl">1</span>,
-    stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span>
-<span class="va">outputs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">outputs</span>, <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>objectName <span class="op">=</span> <span class="st">"pixelGroupMap"</span>,
-    saveTime <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">times</span><span class="op">$</span><span class="va">start</span>, <span class="va">times</span><span class="op">$</span><span class="va">end</span>, by <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>, eventPriority <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">2001</span>, end <span class="op">=</span> <span class="fl">2011</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">studyArea</span> <span class="op">&lt;-</span> <span class="fu">Cache</span><span class="op">(</span><span class="va">randomStudyArea</span>, size <span class="op">=</span> <span class="fl">1e+07</span><span class="op">)</span>  <span class="co"># cache this so it creates a random one only once on a machine</span></span>
+<span></span>
+<span><span class="co"># Pick the species you want to work with -- using the</span></span>
+<span><span class="co"># naming convention in 'Boreal' column of</span></span>
+<span><span class="co"># LandR::sppEquivalencies_CA</span></span>
+<span><span class="va">speciesNameConvention</span> <span class="op">&lt;-</span> <span class="st">"Boreal"</span></span>
+<span><span class="va">speciesToUse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Pice_Gla"</span>, <span class="st">"Popu_Tre"</span>, <span class="st">"Pinu_Con"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">sppEquiv</span> <span class="op">&lt;-</span> <span class="va">sppEquivalencies_CA</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/get.html">get</a></span><span class="op">(</span><span class="va">speciesNameConvention</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span></span>
+<span>    <span class="va">speciesToUse</span><span class="op">]</span></span>
+<span><span class="co"># Assign a colour convention for graphics for each species</span></span>
+<span><span class="va">sppColorVect</span> <span class="op">&lt;-</span> <span class="fu">sppColors</span><span class="op">(</span><span class="va">sppEquiv</span>, <span class="va">speciesNameConvention</span>, newVals <span class="op">=</span> <span class="st">"Mixed"</span>,</span>
+<span>    palette <span class="op">=</span> <span class="st">"Set1"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## Usage example</span></span>
+<span><span class="va">modules</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">as.list</a></span><span class="op">(</span><span class="st">"Biomass_core"</span><span class="op">)</span></span>
+<span><span class="va">objects</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>studyArea <span class="op">=</span> <span class="va">studyArea</span>, sppEquiv <span class="op">=</span> <span class="va">sppEquiv</span>, sppColorVect <span class="op">=</span> <span class="va">sppColorVect</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">successionTimestep</span> <span class="op">&lt;-</span> <span class="fl">20L</span></span>
+<span></span>
+<span><span class="co">## keep default values for most parameters (omitted from</span></span>
+<span><span class="co">## this list)</span></span>
+<span><span class="va">parameters</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Biomass_core <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>sppEquivCol <span class="op">=</span> <span class="va">speciesNameConvention</span>,</span>
+<span>    successionTimestep <span class="op">=</span> <span class="va">successionTimestep</span>, .plotInitialTime <span class="op">=</span> <span class="va">times</span><span class="op">$</span><span class="va">start</span>,</span>
+<span>    .plotInterval <span class="op">=</span> <span class="fl">1L</span>, .plots <span class="op">=</span> <span class="st">"png"</span>, .saveInitialTime <span class="op">=</span> <span class="va">times</span><span class="op">$</span><span class="va">start</span>,</span>
+<span>    .useCache <span class="op">=</span> <span class="st">"init"</span>, .useParallel <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">outputs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html">expand.grid</a></span><span class="op">(</span>objectName <span class="op">=</span> <span class="st">"cohortData"</span>,</span>
+<span>    saveTime <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">times</span><span class="op">$</span><span class="va">start</span>, <span class="va">times</span><span class="op">$</span><span class="va">end</span>, by <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>, eventPriority <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>    stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">outputs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">outputs</span>, <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>objectName <span class="op">=</span> <span class="st">"pixelGroupMap"</span>,</span>
+<span>    saveTime <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">times</span><span class="op">$</span><span class="va">start</span>, <span class="va">times</span><span class="op">$</span><span class="va">end</span>, by <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>, eventPriority <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="run-simulation" class="section level3" number="5.3.4">
 <h3>
@@ -1370,13 +1403,15 @@ outputs in temporary directories.</p>
 of the <code>SpaDES.experiment</code> R package <span class="citation">(<a href="landr-biomass_validationknn-module.html#ref-McIntireChubaty2021" role="doc-biblioref">McIntire &amp; Chubaty 2021</a>)</span>, which builds a
 folder structure where simulation outputs are conveniently organised.</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">graphics.off</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">mySimInit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInit.html">simInit</a></span><span class="op">(</span>times <span class="op">=</span> <span class="va">times</span>, params <span class="op">=</span> <span class="va">parameters</span>, modules <span class="op">=</span> <span class="va">modules</span>,
-    objects <span class="op">=</span> <span class="va">objects</span>, paths <span class="op">=</span> <span class="va">paths</span>, outputs <span class="op">=</span> <span class="va">outputs</span><span class="op">)</span>
-
-<span class="fu"><a href="https://future.futureverse.org/reference/plan.html">plan</a></span><span class="op">(</span><span class="va">sequential</span><span class="op">)</span>
-<span class="va">mySimExperiment</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://spades-experiment.predictiveecology.org//reference/experiment2.html">experiment2</a></span><span class="op">(</span>sim1 <span class="op">=</span> <span class="va">mySimInit</span>, clearSimEnv <span class="op">=</span> <span class="cn">FALSE</span>,
-    replicates <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">opts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>reproducible.useCache <span class="op">=</span> <span class="cn">TRUE</span>, reproducible.destinationPath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">inputPath</span>,</span>
+<span>    spades.useRequire <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">graphics.off</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">mySimInit</span> <span class="op">&lt;-</span> <span class="fu">simInit</span><span class="op">(</span>times <span class="op">=</span> <span class="va">times</span>, params <span class="op">=</span> <span class="va">parameters</span>, modules <span class="op">=</span> <span class="va">modules</span>,</span>
+<span>    objects <span class="op">=</span> <span class="va">objects</span>, paths <span class="op">=</span> <span class="va">paths</span>, outputs <span class="op">=</span> <span class="va">outputs</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">plan</span><span class="op">(</span><span class="va">sequential</span><span class="op">)</span></span>
+<span><span class="va">mySimExperiment</span> <span class="op">&lt;-</span> <span class="fu">experiment2</span><span class="op">(</span>sim1 <span class="op">=</span> <span class="va">mySimInit</span>, clearSimEnv <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>    replicates <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="validate-simulation-outputs-with-biomass_validationknn" class="section level3" number="5.3.5">
 <h3>
@@ -1385,39 +1420,40 @@ folder structure where simulation outputs are conveniently organised.</p>
 <p>Note that because we ran <em>Biomass_core</em> by itself using theoretical input data,
 we can expect the validation to reveal that the module didn’t do a great job at
 reproducing observed patterns.</p>
+<p><em>Note that a Google Account is needed to download some of the input files.</em></p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">simulationOutputs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">mySimExperiment</span>, FUN <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>,
-    <span class="va">localSimPaths</span><span class="op">)</span> <span class="op">{</span>
-    <span class="va">oldPath</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/basename.html">dirname</a></span><span class="op">(</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-paths.html">outputPath</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>  <span class="co">## exclude sim*_rep* folder</span>
-    <span class="va">DT</span> <span class="op">&lt;-</span> <span class="fu">as.data.table</span><span class="op">(</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-outputs.html">outputs</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>
-    <span class="va">DT</span><span class="op">[</span>, <span class="fu">`:=`</span><span class="op">(</span><span class="va">file</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html">sub</a></span><span class="op">(</span><span class="va">oldPath</span>, <span class="va">localSimPaths</span><span class="op">$</span><span class="va">outputPath</span>, <span class="va">file</span><span class="op">)</span><span class="op">)</span><span class="op">]</span>
-    <span class="va">DT</span>
-<span class="op">}</span>, localSimPaths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">as.list</a></span><span class="op">(</span><span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="va">paths</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-<span class="va">simulationOutputs</span> <span class="op">&lt;-</span> <span class="fu">rbindlist</span><span class="op">(</span><span class="va">simulationOutputs</span><span class="op">)</span>
-
-<span class="va">validationPaths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">as.list</a></span><span class="op">(</span><span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="va">paths</span><span class="op">)</span><span class="op">)</span>
-<span class="va">validationPaths</span><span class="op">$</span><span class="va">outputPath</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">validationPaths</span><span class="op">$</span><span class="va">outputPath</span>,
-    <span class="st">"validation"</span><span class="op">)</span>
-
-<span class="va">validationTimes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">1</span>, end <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
-<span class="va">validationParams</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Biomass_validationKNN <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>sppEquivCol <span class="op">=</span> <span class="fu"><a href="https://spades-core.predictiveecology.org/reference/params.html">params</a></span><span class="op">(</span><span class="va">mySimInit</span><span class="op">)</span><span class="op">$</span><span class="va">Biomass_core</span><span class="op">$</span><span class="va">sppEquivCol</span>,
-    validationReps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span>  <span class="co">## or length of simLists</span>
-,
-    validationYears <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2001</span>, <span class="fl">2011</span><span class="op">)</span><span class="op">)</span>, .plots <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"png"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-
-<span class="co">## make an empty fire polygon object to bypass removing</span>
-<span class="co">## fire-disturbed pixels</span>
-<span class="va">noFires</span> <span class="op">&lt;-</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st.html">st_polygon</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">validationObjects</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>biomassMap <span class="op">=</span> <span class="va">mySimExperiment</span><span class="op">$</span><span class="va">sim1_rep1</span><span class="op">$</span><span class="va">biomassMap</span>,
-    firePerimeters <span class="op">=</span> <span class="va">noFires</span>, rasterToMatch <span class="op">=</span> <span class="va">mySimExperiment</span><span class="op">$</span><span class="va">sim1_rep1</span><span class="op">$</span><span class="va">rasterToMatch</span>,
-    rawBiomassMapStart <span class="op">=</span> <span class="va">mySimExperiment</span><span class="op">$</span><span class="va">sim1_rep1</span><span class="op">$</span><span class="va">biomassMap</span>,
-    simulationOutputs <span class="op">=</span> <span class="va">simulationOutputs</span>, speciesLayersStart <span class="op">=</span> <span class="va">mySimExperiment</span><span class="op">$</span><span class="va">sim1_rep1</span><span class="op">$</span><span class="va">speciesLayers</span>,
-    sppColorVect <span class="op">=</span> <span class="va">mySimExperiment</span><span class="op">$</span><span class="va">sim1_rep1</span><span class="op">$</span><span class="va">sppColorVect</span>, sppEquiv <span class="op">=</span> <span class="va">mySimExperiment</span><span class="op">$</span><span class="va">sim1_rep1</span><span class="op">$</span><span class="va">sppEquiv</span>,
-    studyArea <span class="op">=</span> <span class="va">mySimExperiment</span><span class="op">$</span><span class="va">sim1_rep1</span><span class="op">$</span><span class="va">studyArea</span><span class="op">)</span>
-
-<span class="va">mySimValidation</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInitAnd.html">simInitAndSpades</a></span><span class="op">(</span>times <span class="op">=</span> <span class="va">validationTimes</span>,
-    params <span class="op">=</span> <span class="va">validationParams</span>, modules <span class="op">=</span> <span class="st">"Biomass_validationKNN"</span>,
-    objects <span class="op">=</span> <span class="va">validationObjects</span>, paths <span class="op">=</span> <span class="va">validationPaths</span>, .studyAreaName <span class="op">=</span> <span class="va">SAname</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">simulationOutputs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">mySimExperiment</span>, FUN <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>,</span>
+<span>    <span class="va">localSimPaths</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">oldPath</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/basename.html">dirname</a></span><span class="op">(</span><span class="fu">outputPath</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>  <span class="co">## exclude sim*_rep* folder</span></span>
+<span>    <span class="va">DT</span> <span class="op">&lt;-</span> <span class="fu">as.data.table</span><span class="op">(</span><span class="fu">outputs</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="va">DT</span><span class="op">[</span>, <span class="fu">`:=`</span><span class="op">(</span><span class="va">file</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html">sub</a></span><span class="op">(</span><span class="va">oldPath</span>, <span class="va">localSimPaths</span><span class="op">$</span><span class="va">outputPath</span>, <span class="va">file</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span>
+<span>    <span class="va">DT</span></span>
+<span><span class="op">}</span>, localSimPaths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">as.list</a></span><span class="op">(</span><span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="va">paths</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">simulationOutputs</span> <span class="op">&lt;-</span> <span class="fu">rbindlist</span><span class="op">(</span><span class="va">simulationOutputs</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">validationPaths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">as.list</a></span><span class="op">(</span><span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="va">paths</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">validationPaths</span><span class="op">$</span><span class="va">outputPath</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">validationPaths</span><span class="op">$</span><span class="va">outputPath</span>,</span>
+<span>    <span class="st">"validation"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">validationTimes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">1</span>, end <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">validationParams</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Biomass_validationKNN <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>sppEquivCol <span class="op">=</span> <span class="fu">params</span><span class="op">(</span><span class="va">mySimInit</span><span class="op">)</span><span class="op">$</span><span class="va">Biomass_core</span><span class="op">$</span><span class="va">sppEquivCol</span>,</span>
+<span>    validationReps <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span>  <span class="co">## or length of simLists</span></span>
+<span>,</span>
+<span>    validationYears <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2001</span>, <span class="fl">2011</span><span class="op">)</span><span class="op">)</span>, .plots <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"png"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## make an empty fire polygon object to bypass removing</span></span>
+<span><span class="co">## fire-disturbed pixels</span></span>
+<span><span class="va">noFires</span> <span class="op">&lt;-</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st.html">st_polygon</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">validationObjects</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>biomassMap <span class="op">=</span> <span class="va">mySimExperiment</span><span class="op">$</span><span class="va">sim1_rep1</span><span class="op">$</span><span class="va">biomassMap</span>,</span>
+<span>    firePerimeters <span class="op">=</span> <span class="va">noFires</span>, rasterToMatch <span class="op">=</span> <span class="va">mySimExperiment</span><span class="op">$</span><span class="va">sim1_rep1</span><span class="op">$</span><span class="va">rasterToMatch</span>,</span>
+<span>    rawBiomassMapStart <span class="op">=</span> <span class="va">mySimExperiment</span><span class="op">$</span><span class="va">sim1_rep1</span><span class="op">$</span><span class="va">biomassMap</span>,</span>
+<span>    simulationOutputs <span class="op">=</span> <span class="va">simulationOutputs</span>, speciesLayersStart <span class="op">=</span> <span class="va">mySimExperiment</span><span class="op">$</span><span class="va">sim1_rep1</span><span class="op">$</span><span class="va">speciesLayers</span>,</span>
+<span>    sppColorVect <span class="op">=</span> <span class="va">mySimExperiment</span><span class="op">$</span><span class="va">sim1_rep1</span><span class="op">$</span><span class="va">sppColorVect</span>, sppEquiv <span class="op">=</span> <span class="va">mySimExperiment</span><span class="op">$</span><span class="va">sim1_rep1</span><span class="op">$</span><span class="va">sppEquiv</span>,</span>
+<span>    studyArea <span class="op">=</span> <span class="va">mySimExperiment</span><span class="op">$</span><span class="va">sim1_rep1</span><span class="op">$</span><span class="va">studyArea</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mySimValidation</span> <span class="op">&lt;-</span> <span class="fu">simInitAndSpades</span><span class="op">(</span>times <span class="op">=</span> <span class="va">validationTimes</span>,</span>
+<span>    params <span class="op">=</span> <span class="va">validationParams</span>, modules <span class="op">=</span> <span class="st">"Biomass_validationKNN"</span>,</span>
+<span>    objects <span class="op">=</span> <span class="va">validationObjects</span>, paths <span class="op">=</span> <span class="va">validationPaths</span>, .studyAreaName <span class="op">=</span> <span class="va">SAname</span><span class="op">)</span></span></code></pre></div>
 <p>Here are some of the output figures automatically produced by
 <em>Biomass_validationKNN</em></p>
 <div class="figure">
@@ -1587,8 +1623,8 @@ in `dataPath(sim)`, which can be controlled via
 </li>
 <li>
 <a class="nav-link" href="#bvalid-example"><span class="header-section-number">5.3</span> Usage example</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#load-spades-and-other-packages.-2"><span class="header-section-number">5.3.1</span> Load SpaDES and other packages.</a></li>
-<li><a class="nav-link" href="#get-the-modules"><span class="header-section-number">5.3.2</span> Get the modules</a></li>
+<li><a class="nav-link" href="#bvalid-example-libs"><span class="header-section-number">5.3.1</span> Set up R libraries</a></li>
+<li><a class="nav-link" href="#b-valid-example-pkg-mods"><span class="header-section-number">5.3.2</span> Get the module and module dependencies</a></li>
 <li><a class="nav-link" href="#setup-simulation-2"><span class="header-section-number">5.3.3</span> Setup simulation</a></li>
 <li><a class="nav-link" href="#run-simulation"><span class="header-section-number">5.3.4</span> Run simulation</a></li>
 <li><a class="nav-link" href="#validate-simulation-outputs-with-biomass_validationknn"><span class="header-section-number">5.3.5</span> Validate simulation outputs with Biomass_validationKNN</a></li>
@@ -1612,8 +1648,8 @@ in `dataPath(sim)`, which can be controlled via
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>LandR Manual</strong>: v. 1.0.1" was written by </p>
-<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-06-14.
+    <p>"<strong>LandR Manual</strong>: v. 1.0.2" was written by </p>
+<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-10-28.
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -1626,7 +1662,7 @@ in `dataPath(sim)`, which can be controlled via
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -39,12 +39,13 @@ change), as well as interactions with other components of forest systems, such
 as bird communities and ungulates (via changes in the habitat of these species),
 and carbon cycling.
 
-The present manual is a "live" document, in that grows and changes according to
+The present manual is a "live" document, in that it grows and changes according to
 the existing number of LandR modules, as well as their development. In addition,
-sub-manuals may be produced describing smaller collections of LandR modules --
-e.g., a LandR Biomass manual would describe only the LandR modules that are
-essential for the simulation of the vegetation components of forest succession,
-excluding disturbances or carbon cycling.
+"sub-manuals" may be produced describing particular collections of LandR modules
+used for a simulation project or a group of similar modules -- e.g., a LandR 
+Biomass manual would describe only the LandR modules that are essential for the
+simulation of the vegetation components of forest succession, excluding 
+disturbances or carbon cycling.
 
 This manual does not cover the `SpaDES` toolkit, which we use to create and run
 LandR modules. To learn more about `SpaDES` go to the [SpaDES
@@ -52,5 +53,6 @@ webpage](https://spades.predictiveecology.org/).
 
 **Previous versions:**
 
--   [LandR Manual v. 1.0.0](archive/pdf/LandR-manual-v1.0.0.pdf)
+-   [LandR Manual v. 1.0.0](https://github.com/PredictiveEcology/LandR-Manual/raw/main/archive/pdf/LandR-manual-v1.0.0.pdf)
+-   [LandR Manual v. 1.0.1](https://github.com/PredictiveEcology/LandR-Manual/raw/main/archive/pdf/LandR-manual-v1.0.1.pdf)
 

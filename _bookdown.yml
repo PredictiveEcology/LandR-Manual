@@ -1,7 +1,7 @@
 book_filename: LandRManual
 repo: https://github.com/PredictiveEcology/LandR-Manual
 output_dir: "docs"
-before_chapter_script: common.R
+before_chapter_script: _common.R
 language:
   ui:
     chapter_name: "Chapter "
