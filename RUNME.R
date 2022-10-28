@@ -146,10 +146,11 @@ render_book(output_format = "all", envir = new.env())
 # render_book(output_format = "bookdown::pdf_book", envir = new.env())
 # render_book(output_format = "bookdown::bs4_book", envir = new.env())
 
+overwriteArchivedPdf <- FALSE ## here to prevent accidental overwrite in case one forgets to update version.
 pdfArchiveDir <- checkPath(file.path("archive", "pdf"), create = TRUE)
 file.copy(from = file.path("docs", "LandRManual.pdf"),
           to = file.path(pdfArchiveDir, paste0("LandR-manual-v", Sys.getenv("LANDR_MAN_VERSION"), ".pdf")),
-          overwrite = TRUE)
+          overwrite = overwriteArchivedPdf)
 
 ## remove temporary .Rmds
 file.remove(.copyModuleRmds)
