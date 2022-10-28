@@ -44,8 +44,8 @@ if (!"remotes" %in% installed.packages(lib.loc = pkgPath))
   install.packages("remotes")
 
 if (!"Require" %in% installed.packages(lib.loc = pkgPath) ||
-    packageVersion("Require", lib.loc = pkgPath) < "0.1.6.9004") {
-  remotes::install_github("PredictiveEcology/Require@5c44205bf407f613f53546be652a438ef1248147",
+   packageVersion("Require", lib.loc = pkgPath) < "0.1.6.9015") {
+  remotes::install_github("PredictiveEcology/Require@bfb3ed19231d38362e7324f10435a387e29b6ce1",
                           upgrade = FALSE, force = TRUE)
 }
 
@@ -53,17 +53,16 @@ if (!"Require" %in% installed.packages(lib.loc = pkgPath) ||
 Require::setLinuxBinaryRepo()
 
 pkgSnapshotFile <- file.path("packages",
-                      paste0("pkgSnapshot_",
-                             paste0(version$major, "_", strsplit(version$minor, "[.]")[[1]][1]),
-                             ".txt"))
+                             paste0("pkgSnapshot_",
+                                    paste0(version$major, "_", strsplit(version$minor, "[.]")[[1]][1]),
+                                    ".txt"))
 if (file.exists(pkgSnapshotFile)) {
   Require::Require(packageVersionFile = pkgSnapshotFile, standAlone = TRUE, upgrade = FALSE)
 } else {
-  Require::Require(c("xfun", "sylly"), type = "source", standAlone = TRUE, upgrade = FALSE,
-                   require = FALSE) ## needs to install from source
   Require::Require(c("bookdown", "ROpenSci/bibtex", "data.table", "downlit",
                      "formatR", "git2r", "kableExtra", "yihui/knitr",
-                     "RefManageR", "rmarkdown", "pander", "openxlsx", "xml2",
+                     "RefManageR", "rmarkdown", "pander", "openxlsx", "sylly", "xfun", "xml2",
+                     "gdalUtils == 2.0.3.2", "RandomFieldsUtils", "RandomFields == 3.3.13",
                      "PredictiveEcology/LandR@d0df43e543abfeb0bca1c175b062288c10cb4dcb",
                      "PredictiveEcology/SpaDES@e8fb47e125fdace6bcbba2f7489a923f470fecf7",
                      "PredictiveEcology/SpaDES.docs@b6b1e602f55b20bf409a6ae9d400f39f1a37cc17",
@@ -71,17 +70,19 @@ if (file.exists(pkgSnapshotFile)) {
                      "PredictiveEcology/SpaDES.project@6d7de6ee12fc967c7c60de44f1aa3b04e6eeb5db"),
                    standAlone = TRUE, upgrade = FALSE, require = FALSE)
 
+  if (!all(c("gdalUtils", "RandomFields") %in% rownames(installed.packages(lib.loc = pkgPath)))) {
+    install.packages(c("https://cran.r-project.org/src/contrib/Archive/gdalUtils/gdalUtils_2.0.3.2.tar.gz",
+                       "https://cran.r-project.org/src/contrib/Archive/RandomFields/RandomFields_3.3.13.tar.gz"),
+                     type = "source", ## needed when repos = NULL (at least in Win OS)
+                     repos = NULL)
+  }
   ## save snapshot for later -- commented out against accidental overwrite
   # Require::pkgSnapshot(pkgSnapshotFile, libPaths = pkgPath, exact = TRUE, standAlone = TRUE)
 }
 
-## install archived CRAN packages, which are N/A as April 2022
-if (!all(c("gdalUtils", "RandomFields") %in% rownames(installed.packages(lib.loc = pkgPath)))) {
-  install.packages("RandomFieldsUtils")
-  install.packages(c("https://cran.r-project.org/src/contrib/Archive/gdalUtils/gdalUtils_2.0.3.2.tar.gz",
-                     "https://cran.r-project.org/src/contrib/Archive/RandomFields/RandomFields_3.3.13.tar.gz"),
-                   type = "source", ## needed when repos = NULL (at least in Win OS)
-                   repos = NULL)
+## xfun failed to install from source using the specific version in pkgSnapshot
+if (!"xfun" %in% rownames(installed.packages(lib.loc = pkgPath))) {
+  install.packages("xfun", type = "source")
 }
 
 Require::Require(c("bookdown", "data.table", "RefManageR", "ROpenSci/bibtex"),
