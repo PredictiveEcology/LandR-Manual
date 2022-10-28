@@ -3,9 +3,6 @@ tab:invariantSpptraits
 tab:varyingSpptraits
 tab:minRelB
 tab:suffLight
-tab:moduleInputs2-Biomass-core
-tab:moduleParams2-Biomass-core
-tab:moduleOutputs-Biomass-core
 fig:figLBSEtest1
 fig:figLBSEtest2
 fig:figLBSEtest3
@@ -100,7 +97,8 @@ bsppdata-outputs-list
 bsppdata-sim-flow
 bsppdata-example
 load-spades-and-other-packages.
-get-module-necessary-packages-and-set-up-folder-directories
+bsppdata-example-libs
+bsppdataexample-pkg-mods
 setup-simulation
 run-module
 bsppdata-refs
@@ -124,7 +122,7 @@ bboreal-maxB-maxANPP
 bboreal-SEP
 bboreal-minRelB
 bboreal-B_sppParams-calib
-agregating-species
+aggregating-species
 bboreal-inputs-list
 bboreal-params-list
 bboreal-outputs-list
@@ -149,7 +147,7 @@ bsppparam-outputs-list
 bsppparam-sim-flow
 bsppparam-example
 load-spades-and-other-packages.-1
-get-module-necessary-packages-and-set-up-folder-directories-1
+get-module-necessary-packages-and-set-up-folder-directories
 setup-simulation-1
 bsppparam-refs
 landr-biomass_validationknn-module
@@ -169,8 +167,8 @@ bvalid-params-list
 bvalid-outputs-list
 bvalid-sim-flow
 bvalid-example
-load-spades-and-other-packages.-2
-get-the-modules
+bvalid-example-libs
+b-valid-example-pkg-mods
 setup-simulation-2
 run-simulation
 validate-simulation-outputs-with-biomass_validationknn
