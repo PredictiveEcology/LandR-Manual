@@ -3,6 +3,9 @@ tab:invariantSpptraits
 tab:varyingSpptraits
 tab:minRelB
 tab:suffLight
+tab:moduleInputs2-Biomass-core
+tab:moduleParams2-Biomass-core
+tab:moduleOutputs-Biomass-core
 fig:figLBSEtest1
 fig:figLBSEtest2
 fig:figLBSEtest3
