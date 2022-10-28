@@ -53,6 +53,6 @@ webpage](https://spades.predictiveecology.org/).
 
 **Previous versions:**
 
--   [LandR Manual v. 1.0.0](archive/pdf/LandR-manual-v1.0.0.pdf)
--   [LandR Manual v. 1.0.1](archive/pdf/LandR-manual-v1.0.1.pdf)
+-   [LandR Manual v. 1.0.0](https://github.com/PredictiveEcology/LandR-Manual/raw/main/archive/pdf/LandR-manual-v1.0.0.pdf)
+-   [LandR Manual v. 1.0.1](https://github.com/PredictiveEcology/LandR-Manual/raw/main/archive/pdf/LandR-manual-v1.0.1.pdf)
 
