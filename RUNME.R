@@ -11,11 +11,21 @@
 options(repos = c(CRAN = "https://cloud.r-project.org"))
 
 ## note that "rmarkdown", "bookdown", "htmlwidgets" need to be installed in the default
-## libraries, because each .Rmd starts from a clean R session
-needPkgs <- c("rmarkdown", "bookdown", "htmlwidgets", "tinytex")
-needPkgs <- needPkgs[!needPkgs %in% installed.packages()]
-for (pkg in needPkgs) {
-  install.packages(pkg, dependencies = TRUE)
+## libraries with the same versions as in the project lib,
+## because each .Rmd starts from a clean R session
+if (!"rmarkdown" %in% installed.packages() ||
+    packageVersion("rmarkdown") < "2.17") {
+  install.packages("rmarkdown", dependencies = TRUE)
+}
+
+if (!"bookdown" %in% installed.packages() ||
+    packageVersion("bookdown") < "0.29") {
+  install.packages("bookdown", dependencies = TRUE)
+}
+
+if (!"htmlwidgets" %in% installed.packages() ||
+    packageVersion("htmlwidgets") < "1.5.4") {
+  install.packages("htmlwidgets", dependencies = TRUE)
 }
 
 if (!"tinytex" %in% installed.packages() ||
