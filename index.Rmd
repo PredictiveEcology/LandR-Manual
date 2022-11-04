@@ -53,6 +53,18 @@ webpage](https://spades.predictiveecology.org/).
 
 **Previous versions:**
 
--   [LandR Manual v. 1.0.0](https://github.com/PredictiveEcology/LandR-Manual/raw/main/archive/pdf/LandR-manual-v1.0.0.pdf)
--   [LandR Manual v. 1.0.1](https://github.com/PredictiveEcology/LandR-Manual/raw/main/archive/pdf/LandR-manual-v1.0.1.pdf)
+```{r, eval = TRUE, echo = FALSE, results = 'asis'}
+allPDFs <- list.files("archive/pdf", full.names = TRUE)
+allPDFs <- grep(Sys.getenv('LANDR_MAN_VERSION'), allPDFs, invert = TRUE, value = TRUE)
+versionNames <- sub("\\.pdf", "", gsub("(-|_)", " ", basename(allPDFs)))
+versionNames <- sub("[m|M]anual", "Manual", versionNames)
+pdfURLs <- paste0("https://github.com/PredictiveEcology/LandR-Manual/raw/main/", allPDFs)
+
+## text to render
+cat(paste0("-   [", versionNames, "](", pdfURLs, ")\n"))
+```
+
+<!-- -   [LandR Manual v. 1.0.0](https://github.com/PredictiveEcology/LandR-Manual/raw/main/archive/pdf/LandR-manual-v1.0.0.pdf) -->
+<!-- -   [LandR Manual v. 1.0.1](https://github.com/PredictiveEcology/LandR-Manual/raw/main/archive/pdf/LandR-manual-v1.0.1.pdf) -->
+<!-- -   [LandR Manual v. 1.0.2](https://github.com/PredictiveEcology/LandR-Manual/raw/main/archive/pdf/LandR-manual-v1.0.2.pdf) -->
 
