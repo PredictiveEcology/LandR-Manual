@@ -99,7 +99,7 @@
 
 
 
-<p><a href="https://github.com/PredictiveEcology/Biomass_core/commit/e7e97465272742b432944935d233467178c49ef6"><img src="modules/Biomass_core/figures/moduleVersionBadge.png" alt="module-version-Badge"></a></p>
+<p><a href="https://github.com/PredictiveEcology/Biomass_core/commit/ee09095ad6dc11353ac0d76714524c029c93d7a8"><img src="modules/Biomass_core/figures/moduleVersionBadge.png" alt="module-version-Badge"></a></p>
 <p><a href="https://github.com/PredictiveEcology/Biomass_core/issues"><img src="modules/Biomass_core/figures/issuesBadge.png" alt="Issues-badge"></a></p>
 <div id="authors" class="section level4" number="1.0.0.1">
 <h4>
@@ -1387,10 +1387,12 @@ follow <code>species$speciesCode</code>.</p></li>
 </ul>
 <p><strong>Cohort-simulation-related objects</strong></p>
 <ul>
-<li><p><code>cohortData</code> – a <code>data.table</code> containing initial cohort information per
+<li>
+<p><code>cohortData</code> – a <code>data.table</code> containing initial cohort information per
 <code>pixelGroup</code> (see <code>pixelGroupMap</code> below). This table is updated during the
 simulation as cohort dynamics are simulated. It must contain the following
-columns:</p></li>
+columns:</p>
+<ul>
 <li><p><em>pixelGroup</em> – integer. <em>pixelGroup</em> ID. See
 <a href="landr-biomass_core-module.html#biomass-core-vs-lbse-enhan2">Hashing</a>.</p></li>
 <li><p><em>ecoregionGroup</em> – character. Ecolocation names. See <code>ecoregionMap</code> and
@@ -1405,6 +1407,8 @@ current year in <span class="math inline">\(g/m^2\)</span>. <code>B</code> is th
 minus the current year’s <code>mortality</code> plus <code>aNPPAct</code>. Usually filled with
 0s in initial conditions. See “<em>1.1.3 Cohort growth and ageing</em>” section
 of <span class="citation">Scheller &amp; Miranda (<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">2015b</a>)</span>.</p></li>
+</ul>
+</li>
 <li><p><code>pixelGroupMap</code> – a raster layer with <code>pixelGroup</code> IDs per pixel. Pixels
 are always grouped based on identical <code>ecoregionGroup</code>, <code>speciesCode</code>, <code>age</code>
 and <code>B</code> composition, even if the user supplies other initial groupings
@@ -1705,9 +1709,10 @@ We also note that the <code>"spin-up"</code> and <code>"biomassMap"</code> optio
 no longer generates initial cohort biomass conditions using a spin-up based on
 initial stand age like LANDIS-II (<code>"spin-up"</code>), nor does it attempt to fill
 initial cohort biomasses using <code>biomassMap</code>.</p>
-<p><strong>Plotting and saving</strong> - <code>.plots</code> – activates/deactivates plotting and defines
-type of plotting (see <code>?Plots</code>);</p>
+<p><strong>Plotting and saving</strong></p>
 <ul>
+<li><p><code>.plots</code> – activates/deactivates plotting and defines
+type of plotting (see <code>?Plots</code>);</p></li>
 <li><p><code>.plotInitialTime</code> – defines when plotting starts;</p></li>
 <li><p><code>.plotInterval</code> – defines plotting frequency;</p></li>
 <li><p><code>.plotMaps</code> – activates/deactivates map plotting;</p></li>
@@ -1720,12 +1725,11 @@ type of plotting (see <code>?Plots</code>);</p>
 <li><p><code>successionTimestep</code> – defines frequency of dispersal/local recruitment
 event (growth and mortality are always yearly);</p></li>
 </ul>
-<p><strong>Other</strong><br>
-- <code>mixedType</code> – how mixed forest stands are defined;</p>
+<p><strong>Other</strong></p>
 <ul>
-<li>
-<code>vegLeadingProportion</code> – relative biomass threshold to consider a species
-“leading” (i.e., dominant);</li>
+<li><p><code>mixedType</code> – how mixed forest stands are defined;</p></li>
+<li><p><code>vegLeadingProportion</code> – relative biomass threshold to consider a species
+“leading” (i.e., dominant);</p></li>
 </ul>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
@@ -2714,8 +2718,8 @@ calibration modules or by <em>Biomass_core</em> itself (during <code>simInit</co
 <em>LandMine</em>);</p></li>
 <li><p>Post-disturbance mortality/regeneration (OPTIONAL) – simulated by a
 regeneration module (e.g., <em>Biomass_regeneration</em>);</p></li>
-<li><p>Seed dispersal (every <code>successionTimestep</code>; <code>Dispersal</code> event):</p></li>
-</ol>
+<li>
+<p>Seed dispersal (every <code>successionTimestep</code>; <code>Dispersal</code> event):</p>
 <ul>
 <li>seed dispersal can be a slow process and has been adapted to occur every
 10 years (default <code>successionTimestep</code>). The user can set it to occur
@@ -2724,24 +2728,24 @@ to estimate species establishment probabilities, these values are
 integrated over 10 years.</li>
 <li>see <span class="citation">Scheller &amp; Domingo (<a href="landr-biomass_validationknn-module.html#ref-SchellerDomingo2012" role="doc-biblioref">2012</a>)</span> for details on dispersal algorithms.</li>
 </ul>
-<ol start="5" style="list-style-type: decimal">
-<li>Growth and mortality (<code>mortalityAndGrowth</code> event):</li>
-</ol>
+</li>
+<li>
+<p>Growth and mortality (<code>mortalityAndGrowth</code> event):</p>
 <ul>
 <li>unlike dispersal, growth and mortality always occur time step (year).</li>
 <li>see <span class="citation">Scheller &amp; Mladenoff (<a href="landr-biomass_validationknn-module.html#ref-SchellerMladenoff2004" role="doc-biblioref">2004</a>)</span> for further detail.</li>
 </ul>
-<ol start="6" style="list-style-type: decimal">
-<li>Cohort age binning (every <code>successionTimestep</code>; <code>cohortAgeReclassification</code>
-event):</li>
-</ol>
+</li>
+<li>
+<p>Cohort age binning (every <code>successionTimestep</code>; <code>cohortAgeReclassification</code>
+event):</p>
 <ul>
 <li>follows the same frequency as dispersal, collapsing cohorts (i.e.,
 summing their biomass/mortality/aNPP) to ages classes with resolution
 equal to <code>successionTimestep</code>.</li>
 <li>see <span class="citation">Scheller &amp; Miranda (<a href="landr-biomass_validationknn-module.html#ref-SchellerMiranda2015" role="doc-biblioref">2015b</a>)</span> for further detail.</li>
 </ul>
-<ol start="7" style="list-style-type: decimal">
+</li>
 <li><p>Summary tables of regeneration (<code>summaryRegen</code> event), biomass, age, growth
 and mortality (<code>summaryBGM</code> event);</p></li>
 <li><p>Plots of maps (<code>plotMaps</code> event) and averages (<code>plotAvgs</code> and
@@ -3008,7 +3012,7 @@ Figure 1.6: Simulation efficiencies of LBSE and <em>Biomass_core</em> with incre
 <span><span class="fu"><a href="https://rdrr.io/r/base/libPaths.html">.libPaths</a></span><span class="op">(</span><span class="va">pkgPath</span>, include.site <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span>, lib.loc <span class="op">=</span> <span class="va">pkgPath</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"PredictiveEcology/Require@5c44205bf407f613f53546be652a438ef1248147"</span>,</span>
+<span>    <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"PredictiveEcology/"</span>, <span class="st">"Require@5c44205bf407f613f53546be652a438ef1248147"</span><span class="op">)</span>,</span>
 <span>        upgrade <span class="op">=</span> <span class="cn">FALSE</span>, force <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span>    <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span>, lib.loc <span class="op">=</span> <span class="va">pkgPath</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
@@ -3029,7 +3033,7 @@ dependencies are installed in their correct version.
 <code><a href="http://spades-project.predictiveecology.org/reference/metadata.html">SpaDES.project::packagesInModules</a></code> makes a list of necessary packages for all
 modules in the <code>paths$modulePath</code>, and <code>Require</code> installs them.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="st">"PredictiveEcology/SpaDES.project@6d7de6ee12fc967c7c60de44f1aa3b04e6eeb5db"</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"PredictiveEcology/"</span>, <span class="st">"SpaDES.project@6d7de6ee12fc967c7c60de44f1aa3b04e6eeb5db"</span><span class="op">)</span>,</span>
 <span>    require <span class="op">=</span> <span class="cn">FALSE</span>, upgrade <span class="op">=</span> <span class="cn">FALSE</span>, standAlone <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>inputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"inputs"</span><span class="op">)</span><span class="op">)</span>,</span>
@@ -3114,7 +3118,7 @@ and where inputs should be downloaded to (<code>"reproducible.destinationPath"</
 <span>    debug <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
 <span style="display:block;" id="fig:fig-Biomass-coreOutPlots"></span>
-<img src="modules/Biomass_core/figures/Biomass_coreOutPlots1.png" alt="Biomass_core automatically generates simulation visuals of species dynamics across the landscape in terms of total biomass, number of presences and age and productivity (above), as well as yearly plots of total biomass, productivity, mortality, reproduction and leading species in each pixel (below)." width="50%"><img src="modules/Biomass_core/figures/Biomass_coreOutPlots2.png" alt="Biomass_core automatically generates simulation visuals of species dynamics across the landscape in terms of total biomass, number of presences and age and productivity (above), as well as yearly plots of total biomass, productivity, mortality, reproduction and leading species in each pixel (below)." width="50%"><p class="caption">
+<img src="modules/Biomass_core/figures/Biomass_coreOutPlots1.png" alt="Biomass_core automatically generates simulation visuals of species dynamics across the landscape in terms of total biomass, number of presences and age and productivity (above), as well as yearly plots of total biomass, productivity, mortality, reproduction and leading species in each pixel (below)." width="80%"><img src="modules/Biomass_core/figures/Biomass_coreOutPlots2.png" alt="Biomass_core automatically generates simulation visuals of species dynamics across the landscape in terms of total biomass, number of presences and age and productivity (above), as well as yearly plots of total biomass, productivity, mortality, reproduction and leading species in each pixel (below)." width="80%"><p class="caption">
 Figure 1.7: <em>Biomass_core</em> automatically generates simulation visuals of species dynamics across the landscape in terms of total biomass, number of presences and age and productivity (above), as well as yearly plots of total biomass, productivity, mortality, reproduction and leading species in each pixel (below).
 </p>
 </div>
@@ -8073,7 +8077,7 @@ mechanisms to satisfy each module’s expected inputs with default values.<a hre
 
   <div class="col-12 col-md-6 mt-3">
     <p>"<strong>LandR Manual</strong>: v. 1.0.3" was written by </p>
-<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-11-03.
+<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-11-04.
   </div>
 
   <div class="col-12 col-md-6 mt-3">

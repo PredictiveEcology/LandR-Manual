@@ -90,7 +90,7 @@
 </h1>
 <!-- the following are text references used in captions for LaTeX compatibility -->
 
-<p><a href="https://github.com/PredictiveEcology/Biomass_validationKNN/commit/c80439fd817bfae82d09497980162857bafe4f85"><img src="modules/Biomass_validationKNN/figures/moduleVersionBadge.png" alt="module-version-Badge"></a></p>
+<p><a href="https://github.com/PredictiveEcology/Biomass_validationKNN/commit/5a62e4be7d0c752d9456367307aa33a58a4cc2f7"><img src="modules/Biomass_validationKNN/figures/moduleVersionBadge.png" alt="module-version-Badge"></a></p>
 <p><a href="https://github.com/PredictiveEcology/Biomass_validationKNN/issues"><img src="modules/Biomass_validationKNN/figures/issuesBadge.png" alt="Issues-badge"></a></p>
 <!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
 <div id="authors-4" class="section level4" number="5.0.0.1">
@@ -1251,9 +1251,9 @@ only runs once, i.e. in one “time step”):</p>
 layers from on-line repositories (or if available stored local copies) and
 the compiling simulated data if the user has not done so previously (see
 <a href="landr-biomass_validationknn-module.html#bvalid-inputs-list">list of input objects</a>) – (<code>init</code> event).</p></li>
-<li><p>Calculation of summary variables for validation (<code>calculateValidVars</code>
-event), namely :</p></li>
-</ol>
+<li>
+<p>Calculation of summary variables for validation (<code>calculateValidVars</code>
+event), namely :</p>
 <ul>
 <li><p>relative biomass per species per pixel and across the landscape (per year
 and per replicate)</p></li>
@@ -1262,14 +1262,14 @@ replicate), with respect to the first year.</p></li>
 <li><p>species dominance across the landscape</p></li>
 <li><p>species presences across the landscape</p></li>
 </ul>
-<ol start="3" style="list-style-type: decimal">
+</li>
 <li><p>Calculation of validation statistics (<code>validationStats</code> event), namely mean
 absolute deviations (MAD) and sum of negative log-likelihoods (SNLL).</p></li>
-<li><p>Assessment of the relationship between observed <span class="math inline">\(\Delta\)</span>B and observed
+<li>
+<p>Assessment of the relationship between observed <span class="math inline">\(\Delta\)</span>B and observed
 <span class="math inline">\(\Delta\)</span>Age (<code>obsDeltaMaps</code> event) – this is an optional visual diagnostic
 of the observed data that produces scatterplots of <span class="math inline">\(\Delta\)</span>B ~ <span class="math inline">\(\Delta\)</span>Age
-of three types:</p></li>
-</ol>
+of three types:</p>
 <ul>
 <li><p>With raw observed values of <span class="math inline">\(\Delta\)</span>B and <span class="math inline">\(\Delta\)</span>Age</p></li>
 <li><p>With <span class="math inline">\(\Delta\)</span>B and <span class="math inline">\(\Delta\)</span>Age calculated on observed data <em>after</em>
@@ -1285,10 +1285,10 @@ phenomenon in only 10 years. We remind the user that disturbed pixels should
 be removed from the analyses when validating succession dynamics in the
 absence of disturbance - the default option.</p></li>
 </ul>
-<ol start="5" style="list-style-type: decimal">
-<li>Plots (<code>landscapeWidePlots</code>, <code>pixelLevelPlots</code> and <code>deltaBComparisons</code>
-events):</li>
-</ol>
+</li>
+<li>
+<p>Plots (<code>landscapeWidePlots</code>, <code>pixelLevelPlots</code> and <code>deltaBComparisons</code>
+events):</p>
 <ul>
 <li><p>Barplots of landscape-wide and pixel-level comparisons between observed and
 simulated data, with respect to relative biomass, dominance and presences.</p></li>
@@ -1297,6 +1297,8 @@ respect to the first year.</p></li>
 <li><p>Maps of biomass and age changes (<span class="math inline">\(\Delta\)</span>B, <span class="math inline">\(\Delta\)</span>Age) with respect to the
 first year, in observed and simulated data.</p></li>
 </ul>
+</li>
+</ol>
 <p>All module default outputs are in the form of plots, but the user can chose to
 save any objects (see Table <a href="landr-biomass_validationknn-module.html#tab:moduleOutputs-Biomass-validationKNN">5.3</a>).</p>
 </div>
@@ -1319,7 +1321,7 @@ save any objects (see Table <a href="landr-biomass_validationknn-module.html#tab
 <span><span class="fu"><a href="https://rdrr.io/r/base/libPaths.html">.libPaths</a></span><span class="op">(</span><span class="va">pkgPath</span>, include.site <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span>, lib.loc <span class="op">=</span> <span class="va">pkgPath</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"PredictiveEcology/Require@5c44205bf407f613f53546be652a438ef1248147"</span>,</span>
+<span>    <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"PredictiveEcology/"</span>, <span class="st">"Require@5c44205bf407f613f53546be652a438ef1248147"</span><span class="op">)</span>,</span>
 <span>        upgrade <span class="op">=</span> <span class="cn">FALSE</span>, force <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span>    <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span>, lib.loc <span class="op">=</span> <span class="va">pkgPath</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
@@ -1336,7 +1338,7 @@ observed data, we need to first run a simulation of forest dynamics with
 GitHub repository (all install all necessary packages). Notice that we are
 placing all packages, module code, inputs and outputs in temporary directories.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="st">"PredictiveEcology/SpaDES.project@6d7de6ee12fc967c7c60de44f1aa3b04e6eeb5db"</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"PredictiveEcology/"</span>, <span class="st">"SpaDES.project@6d7de6ee12fc967c7c60de44f1aa3b04e6eeb5db"</span><span class="op">)</span>,</span>
 <span>    require <span class="op">=</span> <span class="cn">FALSE</span>, upgrade <span class="op">=</span> <span class="cn">FALSE</span>, standAlone <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>inputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"inputs"</span><span class="op">)</span><span class="op">)</span>,</span>
@@ -1463,13 +1465,13 @@ reproducing observed patterns.</p>
 Figure 5.1: <em>Biomass_validationKNN</em> automatically generates plots showing a visual comparison between simulated and observed species presences (right) across the landscape, and relative species biomass per pixel (left).
 </p>
 </div>
-<div class="figure">
+<div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-Biomass-validationKNNOutPlots2"></span>
 <img src="modules/Biomass_validationKNN/figures/landscapeMAD.png" alt="A plot of landscape-wide mean absolute deviations (MAD) from (top to bottom) observed mean relative abundance, no. of presences, no. of pixels where the species is dominant and $\Delta$B." width="70%"><p class="caption">
 Figure 5.2: A plot of landscape-wide mean absolute deviations (MAD) from (top to bottom) observed mean relative abundance, no. of presences, no. of pixels where the species is dominant and <span class="math inline">\(\Delta\)</span>B.
 </p>
 </div>
-<div class="figure">
+<div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-Biomass-validationKNNOutPlots3"></span>
 <img src="modules/Biomass_validationKNN/figures/observedDeltaBDeltaAge.png" alt="Diagnostic plot of observed changes in biomass and age $\Delta$B and $\Delta$Age, respectively)." width="70%"><p class="caption">
 Figure 5.3: Diagnostic plot of observed changes in biomass and age <span class="math inline">\(\Delta\)</span>B and <span class="math inline">\(\Delta\)</span>Age, respectively).
@@ -1650,7 +1652,7 @@ in `dataPath(sim)`, which can be controlled via
 
   <div class="col-12 col-md-6 mt-3">
     <p>"<strong>LandR Manual</strong>: v. 1.0.3" was written by </p>
-<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-11-03.
+<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-11-04.
   </div>
 
   <div class="col-12 col-md-6 mt-3">

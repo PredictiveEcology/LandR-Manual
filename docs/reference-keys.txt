@@ -150,7 +150,8 @@ bsppparam-outputs-list
 bsppparam-sim-flow
 bsppparam-example
 load-spades-and-other-packages.-1
-get-module-necessary-packages-and-set-up-folder-directories
+bsppparam-example-libs
+bsppparam-example-pkg-mods
 setup-simulation-1
 bsppparam-refs
 landr-biomass_validationknn-module
