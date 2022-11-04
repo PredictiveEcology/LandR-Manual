@@ -19,7 +19,8 @@
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -55,8 +56,8 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="v. 1.0.2">LandR Manual</a>:
-        <small class="text-muted">v. 1.0.2</small>
+        <a href="index.html" title="v. 1.0.3">LandR Manual</a>:
+        <small class="text-muted">v. 1.0.3</small>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -89,7 +90,7 @@
 </h1>
 <!-- the following are text references used in captions for LaTeX compatibility -->
 
-<p><a href="https://github.com/CeresBarros/Biomass_speciesParameters.git"><img src="modules/Biomass_speciesParameters/figures/moduleVersionBadge.png" alt="module-version-Badge"></a></p>
+<p><a href="https://github.com/CeresBarros/Biomass_speciesParameters/commit/002bae31eb3cf851d694e4d55cbba5fe5064c5c8"><img src="modules/Biomass_speciesParameters/figures/moduleVersionBadge.png" alt="module-version-Badge"></a></p>
 <p><a href="https://github.com/PredictiveEcology/Biomass_speciesParameters/issues"><img src="modules/Biomass_speciesParameters/figures/issuesBadge.png" alt="Issues-badge"></a></p>
 <!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
 <div id="authors-3" class="section level4" number="4.0.0.1">
@@ -139,7 +140,7 @@ maximum biomass (<code>maxB</code>) and maximum aboveground net primary producti
 module that does so (e.g., <em>Biomass_borealDataPrep</em>).</p>
 <p>It can however be used stand-alone in an initial developmental phase for easier
 inspection of the statistical calibration procedure employed.</p>
-<p>As of October 28, 2022, the <em>raw</em> PSP data used in this module is not freely
+<p>As of November 04, 2022, the <em>raw</em> PSP data used in this module is not freely
 available, and data sharing agreements must be obtained from the governments of
 SK, AB, and BC to obtain it. However, the <em>processed and anonymized</em> PSP data is
 provided via a Google Drive folder accessed automatically by the module.</p>
@@ -384,7 +385,7 @@ have been produced by another module. It <strong>must</strong> contain the colum
 ‘speciesCode’, ‘maxB’ and ‘maxANPP’ and ‘ecoregionGroup’ (the ecolocation
 ID). ‘maxB’ and ‘maxANPP’ values are (re-)calibrated by species.</li>
 </ul>
-<div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:moduleInputs2-Biomass-speciesParameters">Table 4.1: </span>List of <em>Biomass_speciesParameters</em> input objects and their description.
 </caption>
@@ -555,7 +556,7 @@ the GAMMs.</p></li>
 <li><p><code>PSPperiod</code> – PSP data period to use.</p></li>
 <li><p><code>quantileAgeSubset</code> – upper quantile age value used to subset PSP data.</p></li>
 </ul>
-<div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:moduleParams2-Biomass-speciesParameters">Table 4.2: </span>List of <em>Biomass_speciesParameters</em> parameters and their description.
 </caption>
@@ -936,7 +937,7 @@ name.</p>
 <li><p><code>species</code> and <code>speciesEcoregion</code> – tables with calibrated trait values.</p></li>
 <li><p><code>speciesGAMMs</code> – the fitted GAMM model objects for each species.</p></li>
 </ul>
-<div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:moduleOutputs-Biomass-speciesParameters">Table 4.3: </span>List of <em>Biomass_speciesParameters</em> output objects and their description.
 </caption>
@@ -1035,77 +1036,90 @@ repository</a> and in
 <h3>
 <span class="header-section-number">4.3.1</span> Load <code>SpaDES</code> and other packages.<a class="anchor" aria-label="anchor" href="#load-spades-and-other-packages.-1"><i class="fas fa-link"></i></a>
 </h3>
+</div>
+<div id="bsppparam-example-libs" class="section level3" number="4.3.2">
+<h3>
+<span class="header-section-number">4.3.2</span> Set up R libraries<a class="anchor" aria-label="anchor" href="#bsppparam-example-libs"><i class="fas fa-link"></i></a>
+</h3>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"Require"</span><span class="op">)</span></span>
-<span>    <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>CRAN <span class="op">=</span> <span class="st">"https://cloud.r-project.org"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">tempDir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">pkgPath</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"packages"</span>, <span class="va">version</span><span class="op">$</span><span class="va">platform</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">version</span><span class="op">$</span><span class="va">major</span>,</span>
+<span>    <span class="st">"."</span>, <span class="fu"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span><span class="op">(</span><span class="va">version</span><span class="op">$</span><span class="va">minor</span>, <span class="st">"[.]"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/files2.html">dir.create</a></span><span class="op">(</span><span class="va">pkgPath</span>, recursive <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/libPaths.html">.libPaths</a></span><span class="op">(</span><span class="va">pkgPath</span>, include.site <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span>, lib.loc <span class="op">=</span> <span class="va">pkgPath</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"PredictiveEcology/"</span>, <span class="st">"Require@5c44205bf407f613f53546be652a438ef1248147"</span><span class="op">)</span>,</span>
+<span>        upgrade <span class="op">=</span> <span class="cn">FALSE</span>, force <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>    <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://Require.predictiveecology.org">Require</a></span>, lib.loc <span class="op">=</span> <span class="va">pkgPath</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
-<span><span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/SpaDES.install"</span>, <span class="st">"SpaDES"</span>, <span class="st">"PredictiveEcology/SpaDES.core@development"</span><span class="op">)</span>,</span>
-<span>    install_githubArgs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://Require.predictiveecology.org/reference/setLinuxBinaryRepo.html">setLinuxBinaryRepo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="get-module-necessary-packages-and-set-up-folder-directories" class="section level3" number="4.3.2">
+<div id="bsppparam-example-pkg-mods" class="section level3" number="4.3.3">
 <h3>
-<span class="header-section-number">4.3.2</span> Get module, necessary packages and set up folder directories<a class="anchor" aria-label="anchor" href="#get-module-necessary-packages-and-set-up-folder-directories"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3.3</span> Get the module and module dependencies<a class="anchor" aria-label="anchor" href="#bsppparam-example-pkg-mods"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">tempDir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="fu">pasteo</span><span class="op">(</span><span class="st">"PredictiveEcology/"</span>, <span class="st">"SpaDES.project@6d7de6ee12fc967c7c60de44f1aa3b04e6eeb5db"</span><span class="op">)</span>,</span>
+<span>    require <span class="op">=</span> <span class="cn">FALSE</span>, upgrade <span class="op">=</span> <span class="cn">FALSE</span>, standAlone <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>inputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"inputs"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    cachePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>, <span class="st">"cache"</span><span class="op">)</span><span class="op">)</span>, modulePath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>,</span>
 <span>        <span class="st">"modules"</span><span class="op">)</span><span class="op">)</span>, outputPath <span class="op">=</span> <span class="fu"><a href="https://Require.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">tempDir</span>,</span>
 <span>        <span class="st">"outputs"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">getModule</span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_speciesParameters@79896a4e3b785e34e5f509798ab6c2204bb334d7"</span>,</span>
-<span>    modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu">SpaDES.project</span><span class="fu">::</span><span class="fu"><a href="http://spades-project.predictiveecology.org/reference/getModule.html">getModule</a></span><span class="op">(</span>modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_speciesParameters@master"</span><span class="op">)</span>,</span>
+<span>    overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## make sure all necessary packages are installed:</span></span>
-<span><span class="fu">makeSureAllPackagesInstalled</span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">outs</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.project</span><span class="fu">::</span><span class="fu"><a href="http://spades-project.predictiveecology.org/reference/metadata.html">packagesInModules</a></span><span class="op">(</span>modulePath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">modulePath</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unname.html">unname</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="va">outs</span><span class="op">)</span><span class="op">)</span>, <span class="st">"SpaDES"</span><span class="op">)</span>, require <span class="op">=</span> <span class="cn">FALSE</span>, standAlone <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## load necessary packages</span></span>
+<span><span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Require</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SpaDES"</span><span class="op">)</span>, upgrade <span class="op">=</span> <span class="cn">FALSE</span>, install <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="setup-simulation-1" class="section level3" number="4.3.3">
+<div id="setup-simulation-1" class="section level3" number="4.3.4">
 <h3>
-<span class="header-section-number">4.3.3</span> Setup simulation<a class="anchor" aria-label="anchor" href="#setup-simulation-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3.4</span> Setup simulation<a class="anchor" aria-label="anchor" href="#setup-simulation-1"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades.predictiveecology.org">SpaDES</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">0</span>, end <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">times</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">0</span>, end <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">modules</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"Biomass_speciesParameters"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># the purpose of this table is experiment with modify</span></span>
-<span><span class="co"># longevity - longevity is not estimated by the module but</span></span>
-<span><span class="co"># it is used in trait estimation.</span></span>
-<span><span class="va">inputSpecies</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="op">(</span>species <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Abie_bal"</span>, <span class="st">"Abie_las"</span>,</span>
-<span>    <span class="st">"Betu_pap"</span>, <span class="st">"Lari_lar"</span>, <span class="st">"Pice_eng"</span>, <span class="st">"Pice_gla"</span>, <span class="st">"Pice_mar"</span>,</span>
-<span>    <span class="st">"Pinu_ban"</span>, <span class="st">"Pinu_con"</span>, <span class="st">"Pseu_men"</span>, <span class="st">"Popu_tre"</span><span class="op">)</span>, longevity <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">300</span>,</span>
-<span>    <span class="fl">300</span>, <span class="fl">170</span>, <span class="fl">170</span>, <span class="fl">330</span>, <span class="fl">250</span>, <span class="fl">250</span>, <span class="fl">175</span>, <span class="fl">300</span>, <span class="fl">600</span>, <span class="fl">200</span><span class="op">)</span>, mortalityshape <span class="op">=</span> <span class="fl">15</span>,</span>
-<span>    growthcurve <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span>
+<span><span class="co"># the purpose of this table is experiment with modify longevity -</span></span>
+<span><span class="co"># longevity is not estimated by the module but it is used in trait</span></span>
+<span><span class="co"># estimation.</span></span>
+<span><span class="va">inputSpecies</span> <span class="op">&lt;-</span> <span class="fu">data.table</span><span class="op">(</span>species <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Abie_bal"</span>, <span class="st">"Abie_las"</span>, <span class="st">"Betu_pap"</span>,</span>
+<span>    <span class="st">"Lari_lar"</span>, <span class="st">"Pice_eng"</span>, <span class="st">"Pice_gla"</span>, <span class="st">"Pice_mar"</span>, <span class="st">"Pinu_ban"</span>, <span class="st">"Pinu_con"</span>,</span>
+<span>    <span class="st">"Pseu_men"</span>, <span class="st">"Popu_tre"</span><span class="op">)</span>, longevity <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">300</span>, <span class="fl">300</span>, <span class="fl">170</span>, <span class="fl">170</span>, <span class="fl">330</span>, <span class="fl">250</span>,</span>
+<span>    <span class="fl">250</span>, <span class="fl">175</span>, <span class="fl">300</span>, <span class="fl">600</span>, <span class="fl">200</span><span class="op">)</span>, mortalityshape <span class="op">=</span> <span class="fl">15</span>, growthcurve <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span>
 <span><span class="va">objects</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>species <span class="op">=</span> <span class="va">inputSpecies</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">inputs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">outputs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">parameters</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Biomass_speciesParameters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>GAMMiterations <span class="op">=</span> <span class="fl">2</span>,</span>
-<span>    GAMMknots <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Abie_bal <span class="op">=</span> <span class="fl">3</span>, Abie_las <span class="op">=</span> <span class="fl">3</span>, Betu_pap <span class="op">=</span> <span class="fl">3</span>,</span>
-<span>        Lari_lar <span class="op">=</span> <span class="fl">4</span>, Pice_eng <span class="op">=</span> <span class="fl">4</span>, Pice_gla <span class="op">=</span> <span class="fl">3</span>, Pice_mar <span class="op">=</span> <span class="fl">4</span>,</span>
-<span>        Pinu_ban <span class="op">=</span> <span class="fl">3</span>, Pinu_con <span class="op">=</span> <span class="fl">4</span>, Popu_tre <span class="op">=</span> <span class="fl">4</span>, Pseu_men <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>,</span>
-<span>    minimumPlotsPerGamm <span class="op">=</span> <span class="fl">40</span>, constrainMortalityShape <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Abie_bal <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>,</span>
+<span>    GAMMknots <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Abie_bal <span class="op">=</span> <span class="fl">3</span>, Abie_las <span class="op">=</span> <span class="fl">3</span>, Betu_pap <span class="op">=</span> <span class="fl">3</span>, Lari_lar <span class="op">=</span> <span class="fl">4</span>,</span>
+<span>        Pice_eng <span class="op">=</span> <span class="fl">4</span>, Pice_gla <span class="op">=</span> <span class="fl">3</span>, Pice_mar <span class="op">=</span> <span class="fl">4</span>, Pinu_ban <span class="op">=</span> <span class="fl">3</span>, Pinu_con <span class="op">=</span> <span class="fl">4</span>,</span>
+<span>        Popu_tre <span class="op">=</span> <span class="fl">4</span>, Pseu_men <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>, minimumPlotsPerGamm <span class="op">=</span> <span class="fl">40</span>, constrainMortalityShape <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Abie_bal <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>,</span>
 <span>        <span class="fl">25</span><span class="op">)</span>, Abie_las <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">25</span><span class="op">)</span>, Betu_pap <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">20</span><span class="op">)</span>, Lari_lar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>,</span>
 <span>        <span class="fl">25</span><span class="op">)</span>, Pice_eng <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">25</span><span class="op">)</span>, Pice_gla <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">25</span><span class="op">)</span>, Pice_mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>,</span>
 <span>        <span class="fl">25</span><span class="op">)</span>, Pinu_ban <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">25</span><span class="op">)</span>, Pinu_con <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">25</span><span class="op">)</span>, Popu_tre <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>,</span>
 <span>        <span class="fl">25</span><span class="op">)</span>, Pseu_men <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">25</span><span class="op">)</span><span class="op">)</span>, constrainGrowthCurve <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Abie_bal <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,</span>
-<span>        <span class="fl">1</span><span class="op">)</span>, Abie_las <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Betu_pap <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Lari_lar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,</span>
-<span>        <span class="fl">1</span><span class="op">)</span>, Pice_eng <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Pice_gla <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Pice_mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,</span>
-<span>        <span class="fl">1</span><span class="op">)</span>, Pinu_ban <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Pinu_con <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Popu_tre <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,</span>
-<span>        <span class="fl">1</span><span class="op">)</span>, Pseu_men <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span>, quantileAgeSubset <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Abie_bal <span class="op">=</span> <span class="fl">95</span>,</span>
-<span>        Abie_las <span class="op">=</span> <span class="fl">95</span>, Betu_pap <span class="op">=</span> <span class="fl">95</span>, Lari_lar <span class="op">=</span> <span class="fl">95</span>, Pice_eng <span class="op">=</span> <span class="fl">95</span>,</span>
-<span>        Pice_gla <span class="op">=</span> <span class="fl">95</span>, Pice_mar <span class="op">=</span> <span class="fl">95</span>, Pinu_ban <span class="op">=</span> <span class="fl">95</span>, Pinu_con <span class="op">=</span> <span class="fl">99</span>,</span>
-<span>        Popu_tre <span class="op">=</span> <span class="fl">99</span>, Pseu_men <span class="op">=</span> <span class="fl">99</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>        <span class="fl">1</span><span class="op">)</span>, Abie_las <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Betu_pap <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Lari_lar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>,</span>
+<span>        Pice_eng <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Pice_gla <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Pice_mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Pinu_ban <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,</span>
+<span>            <span class="fl">1</span><span class="op">)</span>, Pinu_con <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Popu_tre <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, Pseu_men <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,</span>
+<span>            <span class="fl">1</span><span class="op">)</span><span class="op">)</span>, quantileAgeSubset <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Abie_bal <span class="op">=</span> <span class="fl">95</span>, Abie_las <span class="op">=</span> <span class="fl">95</span>,</span>
+<span>        Betu_pap <span class="op">=</span> <span class="fl">95</span>, Lari_lar <span class="op">=</span> <span class="fl">95</span>, Pice_eng <span class="op">=</span> <span class="fl">95</span>, Pice_gla <span class="op">=</span> <span class="fl">95</span>, Pice_mar <span class="op">=</span> <span class="fl">95</span>,</span>
+<span>        Pinu_ban <span class="op">=</span> <span class="fl">95</span>, Pinu_con <span class="op">=</span> <span class="fl">99</span>, Popu_tre <span class="op">=</span> <span class="fl">99</span>, Pseu_men <span class="op">=</span> <span class="fl">99</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span></span>
-<span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">simInitAndSpades</span><span class="op">(</span>times <span class="op">=</span> <span class="va">times</span>, params <span class="op">=</span> <span class="va">parameters</span>,</span>
-<span>    modules <span class="op">=</span> <span class="va">modules</span>, paths <span class="op">=</span> <span class="va">paths</span>, objects <span class="op">=</span> <span class="va">objects</span><span class="op">)</span></span>
+<span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">simInitAndSpades</span><span class="op">(</span>times <span class="op">=</span> <span class="va">times</span>, params <span class="op">=</span> <span class="va">parameters</span>, modules <span class="op">=</span> <span class="va">modules</span>,</span>
+<span>    paths <span class="op">=</span> <span class="va">paths</span>, objects <span class="op">=</span> <span class="va">objects</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## to inspect the fitted GAMM models:</span></span>
 <span><span class="va">mySim</span><span class="op">$</span><span class="va">speciesGAMMs</span><span class="op">$</span><span class="va">Pice_mar</span></span></code></pre></div>
@@ -1144,8 +1158,9 @@ repository</a> and in
 <li>
 <a class="nav-link" href="#bsppparam-example"><span class="header-section-number">4.3</span> Usage example</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#load-spades-and-other-packages.-1"><span class="header-section-number">4.3.1</span> Load SpaDES and other packages.</a></li>
-<li><a class="nav-link" href="#get-module-necessary-packages-and-set-up-folder-directories"><span class="header-section-number">4.3.2</span> Get module, necessary packages and set up folder directories</a></li>
-<li><a class="nav-link" href="#setup-simulation-1"><span class="header-section-number">4.3.3</span> Setup simulation</a></li>
+<li><a class="nav-link" href="#bsppparam-example-libs"><span class="header-section-number">4.3.2</span> Set up R libraries</a></li>
+<li><a class="nav-link" href="#bsppparam-example-pkg-mods"><span class="header-section-number">4.3.3</span> Get the module and module dependencies</a></li>
+<li><a class="nav-link" href="#setup-simulation-1"><span class="header-section-number">4.3.4</span> Setup simulation</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#bsppparam-refs"><span class="header-section-number">4.4</span> References</a></li>
@@ -1166,8 +1181,8 @@ repository</a> and in
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>LandR Manual</strong>: v. 1.0.2" was written by </p>
-<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-10-28.
+    <p>"<strong>LandR Manual</strong>: v. 1.0.3" was written by </p>
+<p>Edited by: Ceres Barros, Alex M. Chubaty, Ian M. S. Eddy, Eliot J. B. McIntire</p>. It was last built on Last updated: 2022-11-04.
   </div>
 
   <div class="col-12 col-md-6 mt-3">
