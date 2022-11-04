@@ -65,7 +65,7 @@ if (file.exists(pkgSnapshotFile)) {
                      "gdalUtils == 2.0.3.2", "RandomFieldsUtils", "RandomFields == 3.3.13",
                      "PredictiveEcology/LandR@d0df43e543abfeb0bca1c175b062288c10cb4dcb",
                      "PredictiveEcology/SpaDES@e8fb47e125fdace6bcbba2f7489a923f470fecf7",
-                     "PredictiveEcology/SpaDES.docs@b6b1e602f55b20bf409a6ae9d400f39f1a37cc17",
+                     "PredictiveEcology/SpaDES.docs@1a08beb7d53148e674d6bada7a7581483459cad2",
                      "PredictiveEcology/SpaDES.experiment@91bfad98d67ea2b7fcee3ea0115f8746e47534ad",
                      "PredictiveEcology/SpaDES.project@6d7de6ee12fc967c7c60de44f1aa3b04e6eeb5db"),
                    standAlone = TRUE, upgrade = FALSE, require = FALSE)
