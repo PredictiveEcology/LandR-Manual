@@ -18,6 +18,11 @@ if (!"rmarkdown" %in% installed.packages() ||
   install.packages("rmarkdown", dependencies = TRUE)
 }
 
+if (!"knitr" %in% installed.packages() ||
+    packageVersion("knitr") < "1.40.4") {
+  remotes::install_github("yihui/knitr", dependencies = TRUE)
+}
+
 if (!"bookdown" %in% installed.packages() ||
     packageVersion("bookdown") < "0.29") {
   install.packages("bookdown", dependencies = TRUE)
