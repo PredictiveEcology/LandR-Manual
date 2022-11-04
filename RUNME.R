@@ -145,7 +145,7 @@ if (!file.exists("docs/.nojekyll")) {
 }
 
 ## set manual version
-Sys.setenv(LANDR_MAN_VERSION = "1.0.2") ## update this for each new release
+Sys.setenv(LANDR_MAN_VERSION = "1.0.3") ## update this for each new release
 
 ## render the book using new env -- see <https://stackoverflow.com/a/46083308>
 render_book(output_format = "all", envir = new.env())
@@ -153,7 +153,7 @@ render_book(output_format = "all", envir = new.env())
 # render_book(output_format = "bookdown::bs4_book", envir = new.env())
 
 overwriteArchivedPdf <- FALSE ## here to prevent accidental overwrite in case one forgets to update version.
-pdfArchiveDir <- checkPath(file.path("archive", "pdf"), create = TRUE)
+pdfArchiveDir <- Require::checkPath(file.path("archive", "pdf"), create = TRUE)
 file.copy(from = file.path("docs", "LandRManual.pdf"),
           to = file.path(pdfArchiveDir, paste0("LandR-manual-v", Sys.getenv("LANDR_MAN_VERSION"), ".pdf")),
           overwrite = overwriteArchivedPdf)

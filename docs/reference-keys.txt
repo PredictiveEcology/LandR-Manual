@@ -101,7 +101,7 @@ bsppdata-sim-flow
 bsppdata-example
 load-spades-and-other-packages.
 bsppdata-example-libs
-bsppdataexample-pkg-mods
+bsppdata-example-pkg-mods
 setup-simulation
 run-module
 bsppdata-refs
