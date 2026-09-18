@@ -48,9 +48,15 @@ bibFiles <- c(
   file.path(bibDir, "referencesLandRManual.bib")
 )
 bibdata <- lapply(bibFiles, function(f) {
-  if (file.exists(f)) RefManageR::ReadBib(f)
+  if (!file.exists(f)) return(NULL)
+  ## A module with no citations yet ships a comments-only .bib -- a reasonable
+  ## placeholder, but ReadBib() fails on a file with no entries with
+  ## "arguments imply differing number of rows: 0, 1", which takes the whole
+  ## manual down over one module. Skip those instead.
+  if (!any(grepl("^[[:space:]]*@", readLines(f, warn = FALSE)))) return(NULL)
+  RefManageR::ReadBib(f)
 })
-bibdata <- Reduce(merge, bibdata)
+bibdata <- Reduce(merge, Filter(Negate(is.null), bibdata))
 WriteBib(bibdata, file = file.path(bibDir, "referencesLandRManual.bib"))
 
 csl <- file.path(bibDir, "ecology-letters.csl")
