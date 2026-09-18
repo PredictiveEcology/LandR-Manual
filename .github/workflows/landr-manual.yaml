@@ -152,10 +152,18 @@ jobs:
           source("install.R")
         shell: Rscript {0}
 
+      ## The module chapters set `cache = TRUE` in their setup chunks, so knitr
+      ## does cache. With `output_dir` set, bookdown writes that cache to
+      ## <book_filename>_cache/ and the figures to <book_filename>_files/ --
+      ## there is no `_bookdown_files` directory, which is why caching a path of
+      ## that name warned "Path(s) ... do(es) not exist" on every build and
+      ## nothing was ever preserved between runs.
       - name: Cache bookdown results
         uses: actions/cache@v6
         with:
-          path: _bookdown_files
+          path: |
+            *_cache
+            *_files
           key: bookdown-${{ hashFiles('**/*Rmd') }}
           restore-keys: bookdown-
 
