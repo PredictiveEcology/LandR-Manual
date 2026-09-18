@@ -1,11 +1,7 @@
-pkgPath <- file.path("packages", version$platform,
-                     paste0(version$major, ".", strsplit(version$minor, "[.]")[[1]][1]))
-.libPaths(pkgPath)   ## need to include.side = TRUE to use bookdown and rmarkdown
+## Runs before every chapter, in a fresh session. Do not set .libPaths() here:
+## chapters use whatever library the build is running in.
 
-# example R options set globally
-options("width" = 60
-        , repos = c(CRAN = "https://cran.rstudio.com")
-        )
+options("width" = 60)
 
 ## knitr-related options
 options(knitr.table.format = function() {
