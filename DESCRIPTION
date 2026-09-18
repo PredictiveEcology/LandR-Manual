@@ -1,0 +1,44 @@
+Type: project
+Package: LandRManual
+Title: LandR Manual
+Version: 1.0.4
+Authors@R: c(
+    person("Ceres", "Barros", role = "aut"),
+    person("Alex M.", "Chubaty", , "achubaty@for-cast.ca", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-7146-8135")),
+    person("Ian M. S.", "Eddy", , "ian.eddy@nrcan-rncan.gc.ca", role = "aut"),
+    person("Eliot J. B.", "McIntire", , "eliot.mcintire@nrcan-rncan.gc.ca", role = "aut")
+  )
+Description: A manual for the LandR ecosystem of SpaDES modules. This file
+    exists so that install.R can resolve the manual's build dependencies with
+    remotes::install_deps(); it is not an R package.
+License: GPL-3
+Depends:
+    R (>= 4.4)
+Imports:
+    bibtex,
+    bookdown,
+    bslib,
+    data.table,
+    downlit,
+    formatR,
+    fs,
+    kableExtra,
+    knitr,
+    pander,
+    purrr,
+    RefManageR,
+    remotes,
+    Require,
+    rmarkdown,
+    rprojroot,
+    SpaDES.core,
+    SpaDES.docs,
+    svglite,
+    xml2,
+    yaml
+Remotes:
+    PredictiveEcology/SpaDES.core@development,
+    PredictiveEcology/SpaDES.docs@v0.2.0
+Encoding: UTF-8
+Language: en-CA

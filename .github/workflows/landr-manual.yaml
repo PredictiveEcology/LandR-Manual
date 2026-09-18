@@ -1,0 +1,174 @@
+## Based on https://github.com/r-lib/actions/tree/v2/examples/bookdown.yaml, and
+## on PredictiveEcology/fireSenseManual/.github/workflows/firesense-manual.yaml
+
+name: LandR manual
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    ## This manual documents the modules' own branches, so it goes stale without
+    ## anything changing here. Rebuild daily.
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      module_ref:
+        description: 'Check all modules out at this branch or tag (blank = the defaults below)'
+        required: false
+        type: string
+        default: ''
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: false
+
+## The modules are documented from their development branches. They are being
+## merged to main and released, after which this becomes `main` or a tag -- one
+## edit, rather than one per module. `workflow_dispatch` can override it for a
+## trial build without changing this file.
+env:
+  MODULE_REF: development
+
+jobs:
+  build-manual-site:
+    if: "!contains(github.event.commits[0].message, '[skip-ci]')"
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v7
+
+      ## Module sources.
+      ##
+      ## These were git submodules, which record a commit: every module change
+      ## then needed someone to bump a pointer here before the manual could show
+      ## it. This manual is meant to track the modules' development, so each is
+      ## checked out by branch instead.
+      ##
+      ## Adding a module here also needs a matching chapter entry in _bookdown.yml.
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/Biomass_core
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/Biomass_core
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/Biomass_speciesData
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/Biomass_speciesData
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/Biomass_borealDataPrep
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/Biomass_borealDataPrep
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/Biomass_speciesParameters
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/Biomass_speciesParameters
+
+      ## main, not development: this module's main is 12 commits ahead of its
+      ## development branch, the opposite of the other four.
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/Biomass_validationKNN
+          ref: ${{ github.event.inputs.module_ref || 'main' }}
+          path: modules/Biomass_validationKNN
+
+      ## Which module commits this build actually used. Without submodules there
+      ## is no pointer in the tree to read it off, and a scheduled build of
+      ## moving branches is not reproducible from the manual's own history.
+      - name: Record module versions
+        run: |
+          {
+            echo "### Module sources"
+            echo
+            echo "| module | ref | commit |"
+            echo "| --- | --- | --- |"
+            for d in modules/*/; do
+              m=$(basename "$d")
+              echo "| $m | $(git -C "$d" rev-parse --abbrev-ref HEAD) | $(git -C "$d" rev-parse --short HEAD) |"
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: r-lib/actions/setup-pandoc@v2
+
+      - uses: r-lib/actions/setup-tinytex@v2
+
+      - uses: PredictiveEcology/actions/install-spatial-deps@main
+
+      - name: Install additional system dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y \
+          libarchive-dev \
+          libcurl4-openssl-dev \
+          libgit2-dev \
+          libglpk-dev \
+          libmagick++-dev \
+          libxml2-dev
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          extra-repositories: 'https://predictiveecology.r-universe.dev/'
+          Ncpus: 2
+          use-public-rspm: false
+
+      ## Installing the SpaDES stack from source is most of this job's runtime,
+      ## which a daily schedule would otherwise pay every day.
+      - name: Cache R library
+        uses: actions/cache@v6
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-rlib-${{ hashFiles('DESCRIPTION') }}-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-rlib-${{ hashFiles('DESCRIPTION') }}-
+            ${{ runner.os }}-rlib-
+
+      - uses: PredictiveEcology/actions/install-Require@main
+        with:
+          GitTag: 'development'
+
+      - uses: PredictiveEcology/actions/install-SpaDES@main
+
+      - uses: PredictiveEcology/actions/install-Rmd-pkgs@main
+
+      - name: Install module packages and other dependencies
+        run: |
+          source("install.R")
+        shell: Rscript {0}
+
+      - name: Cache bookdown results
+        uses: actions/cache@v6
+        with:
+          path: _bookdown_files
+          key: bookdown-${{ hashFiles('**/*Rmd') }}
+          restore-keys: bookdown-
+
+      - name: Build LandR manual
+        run: |
+          source("build.R")
+        shell: Rscript {0}
+
+      ## build.R writes .nojekyll and CNAME into docs/ so they reach the branch.
+      - name: Deploy to GitHub pages 🚀
+        if: github.event_name != 'pull_request'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          clean: true
+          branch: gh-pages
+          folder: docs

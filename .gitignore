@@ -19,7 +19,16 @@ rsconnect
 
 packages/*
 !packages/pkgSnapshot*.txt
+
+## generated at build time, except the manual's own bibliography
 citations/*
+!citations/referencesLandRManual.bib
+
+## module sources, checked out by the manual's workflow (see .github/workflows)
+modules/
+
+## generated chapters (SpaDES.docs::prepManualRmds)
+_manual_rmds/
 
 # produced vignettes
 vignettes/*.html
