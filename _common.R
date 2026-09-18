@@ -1,7 +1,5 @@
-## No .libPaths() here. This file runs before every chapter in a fresh session,
-## and the old private-library scheme (packages/<platform>/<R-version>, built for
-## R 4.0 and 4.2) does not exist on a build runner -- pointing .libPaths() at it
-## replaced the real library rather than adding to it.
+## Runs before every chapter, in a fresh session. Do not set .libPaths() here:
+## chapters use whatever library the build is running in.
 
 options("width" = 60)
 

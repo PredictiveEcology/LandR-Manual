@@ -1,10 +1,5 @@
 ## This manual must be knitted by running this script.
-##
-## It replaces RUNME.R, which built a private library under
-## packages/<platform>/<R-version> from snapshots taken for R 4.0 and 4.2, and
-## installed `RandomFields` and `gdalUtils` from the CRAN archive. Neither builds
-## on current R, and no module has referenced RandomFields for years. Package
-## installation now happens in install.R, ahead of this script.
+## Package installation happens in install.R, ahead of it.
 
 prjDir <- rprojroot::find_root(
   rprojroot::is_rstudio_project | rprojroot::is_git_root | rprojroot::from_wd,
@@ -30,7 +25,7 @@ library(SpaDES.docs)
 ## references ---------------------------------------
 
 ## a bib database for the R packages in use
-allPkgs <- c("base", .packages(all.available = TRUE, lib.loc = .libPaths()))
+allPkgs <- c("base", .packages(all.available = TRUE))
 suppressWarnings({
   write_bib(allPkgs, file.path(bibDir, "packages.bib"))
 })
@@ -38,8 +33,7 @@ suppressWarnings({
 ## index.Rmd cites the SpaDES package as @ChubatyMcIntire2019, but write_bib()
 ## keys package entries by package name (R-SpaDES), so that key resolves to
 ## nothing. Take the citation from the package itself rather than transcribing
-## it, and file it under the key the prose uses. Nothing under citations/ was
-## ever tracked, so the bib this key used to come from is not in the repository.
+## it, and file it under the key the prose uses.
 spadesEntry <- utils::toBibtex(utils::citation("SpaDES"))
 spadesEntry[1] <- sub("\\{[^,]*,", "{ChubatyMcIntire2019,", spadesEntry[1])
 writeLines(spadesEntry, file.path(bibDir, "references_SpaDES.bib"))

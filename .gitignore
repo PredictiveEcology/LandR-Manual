@@ -17,9 +17,6 @@ nul
 _bookdown_files
 rsconnect
 
-packages/*
-!packages/pkgSnapshot*.txt
-
 ## generated at build time, except the manual's own bibliography
 citations/*
 !citations/referencesLandRManual.bib
