@@ -21,6 +21,10 @@ rsconnect
 citations/*
 !citations/referencesLandRManual.bib
 
+## rendered output; published to the gh-pages branch by the workflow, and no
+## longer committed here -- a committed copy rode along into every deploy
+docs/
+
 ## module sources, checked out by the manual's workflow (see .github/workflows)
 modules/
 
