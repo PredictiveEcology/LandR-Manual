@@ -59,11 +59,9 @@ Sys.setenv(R_USE_REQUIRE = "false")
 ## NOTE: needs the dot, because knitting does `rm(list = ls())`
 .copyModuleRmds <- prepManualRmds(modulePath = "./modules", rebuildCache = FALSE) ## use rel path!
 
-## HTML only for now. _output.yml also declares pdf_book (xelatex, krantz.cls,
-## biblatex) and epub_book; `output_format = "all"` builds all three, so a
-## missing LaTeX package fails the whole build. Restore "all" -- and the
-## download links in _output.yml -- once the PDF toolchain is known to work.
-bookdown::render_book(output_format = "bookdown::bs4_book", envir = new.env())
+## every format _output.yml declares: bs4_book, pdf_book (xelatex, krantz.cls,
+## biblatex) and epub_book
+bookdown::render_book(output_format = "all", envir = new.env())
 
 ## .nojekyll and CNAME have to be inside the published directory: the deploy
 ## pushes the contents of docs/, so anything at the repository root never reaches
