@@ -8,6 +8,8 @@ library(knitr)
 library(RefManageR)
 library(SpaDES.docs)
 
+
+
 paths <- manualPaths()
 
 ## references ---------------------------------------
@@ -47,8 +49,9 @@ for (b in names(badges)) {
 
 # RENDER BOOK ------------------------------------------
 
-## set manual version
-Sys.setenv(LANDR_MAN_VERSION = "1.0.4") ## update this for each new release
+## set manual version. From DESCRIPTION, by field name, so there is one source
+## of truth and no per-release edit here to forget.
+Sys.setenv(LANDR_MAN_VERSION = read.dcf("DESCRIPTION", fields = "Version")[1])
 
 ## don't use Require for package installation etc.
 Sys.setenv(R_USE_REQUIRE = "false")
@@ -71,6 +74,15 @@ archiveManualPDF(
   file.path(paths$docs, "LandRManual.pdf"),
   version = Sys.getenv("LANDR_MAN_VERSION"),
   prefix = "LandR-manual"
+)
+
+## Publish the archived release PDFs with the site. They are tracked under
+## archive/pdf/ rather than left on gh-pages: that branch is rebuilt by every
+## deploy, and an old PDF cannot be regenerated from current sources.
+publishManualArchive(
+  archiveDir = file.path(paths$prj, "archive", "pdf"),
+  docsDir = paths$docs,
+  manualName = "LandR Manual"
 )
 
 ## remove the temporary .Rmds

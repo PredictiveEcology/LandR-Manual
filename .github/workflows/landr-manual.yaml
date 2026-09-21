@@ -173,6 +173,29 @@ jobs:
         shell: Rscript {0}
 
       ## build.R writes .nojekyll and CNAME into docs/ so they reach the branch.
+      ## Persist a newly archived PDF back to main, so the next build republishes
+      ## it. Self-gating: build.R only writes archive/pdf/LandR-manual-v<version>.pdf
+      ## when a PDF was rendered and that version is not already archived, so this
+      ## is a no-op on ordinary builds and needs nobody to remember anything at
+      ## release time.
+      - name: Archive the release PDF
+        if: github.event_name != 'pull_request'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain archive/pdf)" ]; then
+            echo "No newly archived PDF; nothing to commit."
+            exit 0
+          fi
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archive/pdf
+          git commit -m "Archive the manual PDF for v$(Rscript -e 'cat(read.dcf("DESCRIPTION", fields = "Version")[1])')"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            "HEAD:${GITHUB_REF_NAME}"
+
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4

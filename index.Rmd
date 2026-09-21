@@ -28,6 +28,9 @@ lof: yes
 
 # Preface {-}
 
+Previous released versions of this manual are archived as PDFs and listed at
+[landr-manual.predictiveecology.org/archive/](archive/).
+
 ```{r figLandRHex, eval = TRUE, echo = FALSE, fig.align = 'center', fig.dim = c(10,10)}
 knitr::include_graphics(Require::normPath(c("figures/LandRHex.png")))
 ```
