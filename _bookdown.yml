@@ -13,5 +13,9 @@ rmd_files:
   - _manual_rmds/Biomass_speciesData2.Rmd
   - _manual_rmds/Biomass_borealDataPrep2.Rmd
   - _manual_rmds/Biomass_speciesParameters2.Rmd
+  - _manual_rmds/Biomass_speciesFactorial2.Rmd
+  - LandR-disturbanceModulesForeword.Rmd
+  - _manual_rmds/Biomass_regeneration2.Rmd
+  - _manual_rmds/simpleHarvestPlanning2.Rmd
   - LandR-validModulesForeword.Rmd
   - _manual_rmds/Biomass_validationKNN2.Rmd
