@@ -60,8 +60,34 @@ Sys.setenv(R_USE_REQUIRE = "false")
 .copyModuleRmds <- prepManualRmds(modulePath = "./modules", rebuildCache = FALSE) ## use rel path!
 
 ## every format _output.yml declares: bs4_book, pdf_book (xelatex, krantz.cls,
-## biblatex) and epub_book
-bookdown::render_book(output_format = "all", envir = new.env())
+## biblatex) and epub_book.
+##
+## bookdown knits once and then writes each format in turn, so the site is on
+## disk before the PDF is attempted. Letting a LaTeX error propagate therefore
+## threw away a site that had already rendered: the deploy step never ran and
+## the published manual sat unchanged from 2026-09-21. The error is reported
+## instead, as a GitHub Actions warning so it stays visible on the run, and the
+## build carries on to deploy what did render. archiveManualPDF() below already
+## does nothing when there is no PDF.
+##
+## The site itself must still not ship broken, so it is checked for separately.
+## Removing it first means the check cannot pass on a stale local copy; in CI
+## docs/ is absent anyway, as it is no longer committed.
+indexHTML <- file.path(paths$docs, "index.html")
+unlink(indexHTML)
+
+tryCatch(
+  bookdown::render_book(output_format = "all", envir = new.env()),
+  error = function(e) {
+    message("::warning title=Manual render incomplete::",
+            "not every output format rendered: ", conditionMessage(e))
+  }
+)
+
+if (!file.exists(indexHTML)) {
+  stop("render_book() produced no '", indexHTML, "': the site itself failed to ",
+       "render, so there is nothing to deploy.", call. = FALSE)
+}
 
 ## .nojekyll and CNAME have to be inside the published directory: the deploy
 ## pushes the contents of docs/, so anything at the repository root never reaches

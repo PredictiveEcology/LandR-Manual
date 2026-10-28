@@ -40,6 +40,13 @@ bookdown::bs4_book:
 #     whatsapp: false
 #   github-repo: PredictiveEcology/LandR-Manual
 
+## epub before pdf deliberately: bookdown knits once and writes the
+## formats in the order declared, and a LaTeX failure aborts the rest.
+## With the pdf last, a broken pdf no longer costs the epub as well.
+bookdown::epub_book:
+  dev: svglite
+  stylesheet: css/style.css
+
 bookdown::pdf_book:
   includes:
     in_header: latex/preamble.tex
@@ -57,7 +64,3 @@ bookdown::pdf_book:
   toc_appendix: true
   highlight_bw: false
   quote_footer: ["\\VA{", "}{}"]
-
-bookdown::epub_book:
-  dev: svglite
-  stylesheet: css/style.css
