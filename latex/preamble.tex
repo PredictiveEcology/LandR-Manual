@@ -67,16 +67,28 @@
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,breakautoindent=true,breaksymbol=, commandchars=\\\{\}}
 
 % figures
+%
+% Wraps every image in \XeTeXLinkBox so that an image inside a link is
+% clickable, which XeTeX does not do on its own.
+%
+% The optional argument is grabbed with xparse's O{} rather than the delimited
+% \def\includegraphics#1#{...} this used to use. That form takes #1 up to the
+% first {, which was fine until pandoc began emitting alt text:
+%
+%   \includegraphics[keepaspectratio,alt={module-version-Badge}]{figures/x.png}
+%
+% The brace in alt={...} ended #1 early, the real path was then parsed as part
+% of the options, and the PDF died with "Argument of \Gin@ii has an extra }" on
+% the first linked badge -- every module chapter has one.
 \ifxetex
   \usepackage{letltxmacro}
   \setlength{\XeTeXLinkMargin}{1pt}
   \LetLtxMacro\SavedIncludeGraphics\includegraphics
-  \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
-    \IncludeGraphicsAux{#1}%
-  }%
-  \newcommand*{\IncludeGraphicsAux}[2]{%
+  \RenewDocumentCommand{\includegraphics}{s O{} m}{%
     \XeTeXLinkBox{%
-      \SavedIncludeGraphics#1{#2}%
+      \IfBooleanTF{#1}%
+        {\SavedIncludeGraphics*[#2]{#3}}%
+        {\SavedIncludeGraphics[#2]{#3}}%
     }%
-  }%
+  }
 \fi
