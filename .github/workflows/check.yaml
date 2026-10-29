@@ -1,0 +1,74 @@
+## Configuration checks for the manual, separate from building it.
+##
+## The build takes about 25 minutes: it installs the SpaDES stack, fetches every
+## module and renders three formats. These tests read this repository's own files
+## and assert they agree with each other, so they need only testthat, yaml and
+## rmarkdown and finish in under a minute. A manual that is misconfigured --
+## a module fetched with no chapter, a deploy folder that is not the one the book
+## writes -- fails here instead of after a full render, or in the published book.
+##
+## Nothing here fetches a module, renders the book or touches data.
+
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: manual configuration
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      ## no DESCRIPTION drives the suite, so the edition is set here. NOT_CRAN
+      ## as well, or expect_snapshot() skips with "On CRAN" and a snapshot test
+      ## passes by not running.
+      TESTTHAT_EDITION: "3"
+      NOT_CRAN: "true"
+    steps:
+      ## persist-credentials: false keeps the token out of .git/config, where a
+      ## cache of the workspace or an artifact upload would carry it along
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: release
+          ## binaries, so this job stays under a minute. The SpaDES stack is
+          ## deliberately not installed: these tests do not load it.
+          use-public-rspm: true
+
+      - name: Install what the tests need
+        run: install.packages(c("testthat", "yaml", "rmarkdown"))
+        shell: Rscript {0}
+
+      - name: Parse every tracked R file
+        run: |
+          files <- system2("git", c("ls-files", shQuote("*.R")), stdout = TRUE)
+          for (f in files) parse(f)
+          cat(length(files), "files parse\n")
+        shell: Rscript {0}
+
+      - name: Check the manual's configuration
+        run: Rscript scripts/run-tests.R
+
+      ## the suite asserts on files and must not rewrite them. A test that
+      ## edited the checkout would otherwise pass here and change the build.
+      - name: Confirm the tests changed nothing
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::error::the test suite modified the checkout:"
+            git status --porcelain
+            exit 1
+          fi
