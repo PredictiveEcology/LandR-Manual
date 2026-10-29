@@ -10,7 +10,10 @@ bookdown::bs4_book:
     base: https://github.com/PredictiveEcology/LandR-Manual
     branch: main
   edit: null
-  download: ["pdf", "epub"]
+  ## No `download:` here. It is a gitbook option -- bs4_book has no download
+  ## menu and ignores it silently, so setting it reads like a working link and
+  ## produces nothing. The current version's PDF and EPUB are linked from
+  ## index.Rmd instead, beside the archived ones.
 
 # bookdown::gitbook:
 #   description: "A manual to the LandR Ecosystem of SpaDES modules"
