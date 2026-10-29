@@ -8,7 +8,7 @@ description: "A manual for the LandR ecosystem of SpaDES modules"
 documentclass: krantz
 site: bookdown::bookdown_site
 github-repo: PredictiveEcology/LandR-Manual
-url: 'https\://predictiveecology.github.io/LandR-Manual'
+url: 'https\://landr-manual.predictiveecology.org'
 knit: "bookdown::render_book"
 bibliography:
   - citations/referencesLandRManual.bib
@@ -41,6 +41,12 @@ account various disturbances that affect them (e.g., wildfire and climate
 change), as well as interactions with other components of forest systems, such
 as bird communities and ungulates (via changes in the habitat of these species),
 and carbon cycling.
+
+Many of the functions used by LandR modules are in the
+[`LandR` R package](https://landr.predictiveecology.org/), e.g., to prepare species
+data, to create and update cohorts and to calculate fire severity. Users do not
+usually need to call these functions themselves, but their documentation is
+useful to understand what the modules do.
 
 The present manual is a "live" document, in that it grows and changes according to
 the existing number of LandR modules, as well as their development. In addition,

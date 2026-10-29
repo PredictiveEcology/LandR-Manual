@@ -1,7 +1,7 @@
 Type: project
 Package: LandRManual
 Title: LandR Manual
-Version: 1.0.4
+Version: 1.1.0
 Authors@R: c(
     person("Ceres", "Barros", role = "aut"),
     person("Alex M.", "Chubaty", , "achubaty@for-cast.ca", role = c("aut", "cre"),

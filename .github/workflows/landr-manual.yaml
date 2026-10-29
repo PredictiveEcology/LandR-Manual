@@ -80,8 +80,26 @@ jobs:
           ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/Biomass_speciesParameters
 
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/Biomass_speciesFactorial
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/Biomass_speciesFactorial
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/Biomass_regeneration
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/Biomass_regeneration
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/simpleHarvestPlanning
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/simpleHarvestPlanning
+
       ## main, not development: this module's main is 12 commits ahead of its
-      ## development branch, the opposite of the other four.
+      ## development branch, the opposite of the others.
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/Biomass_validationKNN

@@ -1,0 +1,6 @@
+# LandR Disturbance Modules {-}
+
+LandR 'disturbance modules' simulate disturbances, such as harvesting, or the response of forest vegetation to them, such as post-fire regeneration.
+They are used together with the core forest landscape simulation module *Biomass_core*, which simulates forest succession between disturbances.
+The modules presented in the next chapters are *Biomass_regeneration*, which simulates post-fire mortality and regeneration, and *simpleHarvestPlanning*, which decides where and what to harvest.
+Fire itself is simulated by other modules, such as *LandMine*, *scfm* or the *fireSense* modules (see the [fireSense manual](https://predictiveecology.github.io/fireSenseManual/)).
