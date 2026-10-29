@@ -83,12 +83,10 @@ jobs:
           ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/Biomass_speciesParameters
 
-      ## main, not development: this module's main is 12 commits ahead of its
-      ## development branch, the opposite of the other four.
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/Biomass_validationKNN
-          ref: ${{ github.event.inputs.module_ref || 'main' }}
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/Biomass_validationKNN
 
       ## Which module commits this build actually used. Without submodules there
