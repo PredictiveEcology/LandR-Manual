@@ -20,9 +20,12 @@ on:
         type: string
         default: ''
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# contents: write to deploy to GitHub Pages and to push the archive branch;
+# pull-requests: write so the archive step can open its pull request, since the
+# ruleset on main refuses a direct push.
 permissions:
   contents: write
+  pull-requests: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -173,11 +176,30 @@ jobs:
         shell: Rscript {0}
 
       ## build.R writes .nojekyll and CNAME into docs/ so they reach the branch.
+      ##
+      ## Deploying comes before archiving on purpose. The archive step used to run
+      ## first, and when it failed the deploy was skipped -- so a PDF that could
+      ## not be stored stopped the site from updating at all, which is the same
+      ## coupling build.R no longer has between the PDF and the HTML.
+      - name: Deploy to GitHub pages 🚀
+        if: github.event_name != 'pull_request'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          clean: true
+          branch: gh-pages
+          folder: docs
+
       ## Persist a newly archived PDF back to main, so the next build republishes
       ## it. Self-gating: build.R only writes archive/pdf/LandR-manual-v<version>.pdf
       ## when a PDF was rendered and that version is not already archived, so this
       ## is a no-op on ordinary builds and needs nobody to remember anything at
       ## release time.
+      ##
+      ## It opens a pull request rather than pushing to main, which the branch
+      ## ruleset refuses ("Changes must be made through a pull request", GH006).
+      ## A release PDF is wanted in the repository permanently, so it has to be a
+      ## tracked commit on main and cannot live only on gh-pages, which every
+      ## deploy rebuilds.
       - name: Archive the release PDF
         if: github.event_name != 'pull_request'
         shell: bash
@@ -189,17 +211,33 @@ jobs:
             echo "No newly archived PDF; nothing to commit."
             exit 0
           fi
+          version="$(Rscript -e 'cat(read.dcf("DESCRIPTION", fields = "Version")[1])')"
+          branch="archive/pdf-v${version}"
+          ## Re-running a build for the same version must not open a second PR,
+          ## and must not fail the run once one is already open.
+          if gh pr list --head "${branch}" --state open --json number \
+               --jq 'length' | grep -qv '^0$'; then
+            echo "A pull request for ${branch} is already open; nothing to do."
+            exit 0
+          fi
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "${branch}"
           git add archive/pdf
-          git commit -m "Archive the manual PDF for v$(Rscript -e 'cat(read.dcf("DESCRIPTION", fields = "Version")[1])')"
-          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
-            "HEAD:${GITHUB_REF_NAME}"
-
-      - name: Deploy to GitHub pages 🚀
-        if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          clean: true
-          branch: gh-pages
-          folder: docs
+          git commit -m "Archive the manual PDF for v${version}"
+          ## --force, not --force-with-lease: the lease compares against a
+          ## remote-tracking ref this fresh checkout has never fetched, which
+          ## fails as "stale info". The branch is created and owned by this step
+          ## and named for one version, so overwriting a leftover from an earlier
+          ## failed run of the same build is what we want.
+          git push --force \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            "HEAD:refs/heads/${branch}"
+          gh pr create --base "${GITHUB_REF_NAME}" --head "${branch}" \
+            --title "Archive the manual PDF for v${version}" \
+            --body "$(printf '%s\n' \
+              "Produced by the manual build for v${version}." \
+              "" \
+              "\`archiveManualPDF()\` wrote \`archive/pdf/LandR-manual-v${version}.pdf\`, which it does only when a PDF rendered and that version is not already archived. The PDF is tracked here rather than left on \`gh-pages\`, because that branch is rebuilt by every deploy and an old PDF cannot be regenerated from current sources." \
+              "" \
+              "Merging it makes the next build republish it with the site's archive list.")"
