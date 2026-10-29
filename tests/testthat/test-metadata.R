@@ -38,3 +38,36 @@ test_that("the manual's version appears in the README news list", {
   ## a release whose version is not described is a release nobody can identify
   expect_match(paste(news, collapse = "\n"), v, fixed = TRUE)
 })
+
+test_that("GitHub dependency specs are in Remotes, not a dependency field", {
+  d <- read.dcf(file.path(repoRoot(), "DESCRIPTION"))
+  fields <- intersect(c("Depends", "Imports", "Suggests", "LinkingTo"), colnames(d))
+  entries <- unlist(lapply(fields, function(f) strsplit(d[1, f], ",\\s*")[[1]]))
+  entries <- trimws(entries[!is.na(entries)])
+
+  ## only Remotes is read for them. An `owner/repo@ref` under Imports or
+  ## Suggests is an invalid package name there, so the pin it looks like it
+  ## applies is inert and the version actually installed is whatever else
+  ## provided it.
+  misplaced <- grep("^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", entries, value = TRUE)
+
+  expect_setequal(misplaced, character(0))
+})
+
+test_that("the R version constraint is a floor, not an equality", {
+  d <- read.dcf(file.path(repoRoot(), "DESCRIPTION"))
+  skip_if_not("Depends" %in% colnames(d), "no Depends field")
+  r <- grep("^R\\s*\\(", trimws(strsplit(d[1, "Depends"], ",\\s*")[[1]]), value = TRUE)
+  skip_if_not(length(r) == 1, "no R constraint")
+
+  ## `R (== 4.4)` refuses every other version, including the one CI runs
+  expect_no_match(r, "==", fixed = TRUE)
+})
+
+test_that("the license is set", {
+  d <- read.dcf(file.path(repoRoot(), "DESCRIPTION"))
+  skip_if_not("License" %in% colnames(d), "no License field")
+
+  ## usethis leaves a placeholder naming the functions that would set one
+  expect_no_match(d[1, "License"], "use_.*_license", fixed = FALSE)
+})
