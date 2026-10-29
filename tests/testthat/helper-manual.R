@@ -9,10 +9,16 @@ repoRoot <- function() {
   normalizePath(testthat::test_path("..", ".."), winslash = "/", mustWork = TRUE)
 }
 
+## found by content, not by name: each manual names its workflow after itself
 manualWorkflow <- function() {
-  f <- file.path(repoRoot(), ".github", "workflows", "landr-manual.yaml")
-  testthat::skip_if_not(file.exists(f), "no manual workflow in this repository")
-  readLines(f, warn = FALSE)
+  wf <- list.files(
+    file.path(repoRoot(), ".github", "workflows"),
+    pattern = "[.]ya?ml$", full.names = TRUE
+  )
+  builds <- Filter(function(f) any(grepl("path: modules/", readLines(f, warn = FALSE))), wf)
+  testthat::skip_if_not(length(builds) > 0, "no workflow fetches modules")
+  testthat::expect_length(builds, 1L)
+  readLines(builds[[1L]], warn = FALSE)
 }
 
 ## the modules the workflow checks out, from the `path: modules/<name>` of each
@@ -22,17 +28,24 @@ workflowModules <- function(lines = manualWorkflow()) {
   sort(unlist(m, use.names = FALSE), method = "radix")
 }
 
-## the ref each module checkout uses, to catch one pinned past the shared
-## MODULE_REF -- which is how a module's branch silently stops being tracked
+## the ref each module checkout uses, and whether a deviation from the shared
+## MODULE_REF is explained by a comment above the step. A module may genuinely
+## need pinning -- one with no `development` branch cannot be checked out at
+## MODULE_REF -- but an unexplained pin is indistinguishable from a module whose
+## branch silently stopped being tracked.
 workflowModuleRefs <- function(lines = manualWorkflow()) {
   idx <- grep("^\\s*repository:\\s*PredictiveEcology/", lines)
-  refs <- vapply(idx, function(i) {
+  out <- lapply(idx, function(i) {
     window <- lines[seq(i, min(i + 3L, length(lines)))]
     ref <- grep("^\\s*ref:", window, value = TRUE)
-    if (length(ref)) trimws(sub("^\\s*ref:\\s*", "", ref[[1]])) else NA_character_
-  }, character(1))
-  names(refs) <- sub("^.*PredictiveEcology/", "", trimws(lines[idx]))
-  refs
+    before <- lines[seq(max(1L, i - 6L), i)]
+    list(
+      ref = if (length(ref)) trimws(sub("^\\s*ref:\\s*", "", ref[[1]])) else NA_character_,
+      explained = any(grepl("^\\s*##", before))
+    )
+  })
+  names(out) <- sub("^.*PredictiveEcology/", "", trimws(lines[idx]))
+  out
 }
 
 bookdownConfig <- function() {

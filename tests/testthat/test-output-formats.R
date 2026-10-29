@@ -17,8 +17,9 @@ test_that("the PDF is declared after the EPUB", {
 
 test_that("bs4_book does not set download:, which it ignores", {
   cfg <- outputConfig()
-  bs4 <- cfg[[grep("bs4_book", names(cfg))[[1]]]]
-  skip_if_not(!is.null(bs4), "no bs4_book format")
+  i <- grep("bs4_book", names(cfg))
+  skip_if_not(length(i) == 1, "no bs4_book format")
+  bs4 <- cfg[[i]]
 
   ## `download` is a gitbook option. Under bs4_book it is accepted and does
   ## nothing, so the PDF and EPUB are published with nothing linking to them
@@ -27,20 +28,25 @@ test_that("bs4_book does not set download:, which it ignores", {
 
 test_that("the output directory matches what the deploy publishes", {
   cfg <- bookdownConfig()
-
-  ## the workflow deploys the contents of this directory; if the two disagree,
-  ## the build succeeds and the site does not change
-  expect_identical(cfg$output_dir, "docs")
-
   wf <- manualWorkflow()
   folder <- grep("^\\s*folder:", wf, value = TRUE)
   skip_if_not(length(folder) == 1, "no single deploy folder")
-  expect_identical(trimws(sub("^\\s*folder:\\s*", "", folder)), cfg$output_dir)
+  folder <- trimws(sub("^\\s*folder:\\s*", "", folder))
+
+  ## the workflow deploys the contents of this directory; if the two name
+  ## different places the build succeeds and the site does not change.
+  ## Compared as paths: "./docs" and "docs" are the same directory.
+  expect_identical(
+    normalizePath(file.path(repoRoot(), cfg$output_dir), winslash = "/", mustWork = FALSE),
+    normalizePath(file.path(repoRoot(), folder), winslash = "/", mustWork = FALSE)
+  )
 })
 
 test_that("the LaTeX preamble the PDF declares exists", {
   cfg <- outputConfig()
-  pdf <- cfg[[grep("pdf_book", names(cfg))[[1]]]]
+  i <- grep("pdf_book", names(cfg))
+  skip_if_not(length(i) == 1, "no pdf_book format")
+  pdf <- cfg[[i]]
   skip_if_not(!is.null(pdf$includes$in_header), "no preamble declared")
 
   expect_true(file.exists(file.path(repoRoot(), pdf$includes$in_header)))

@@ -22,15 +22,18 @@ test_that("the chapter list and the fetch list name the same modules", {
   expect_setequal(workflowModules(), chapterModules())
 })
 
-test_that("each module is fetched at the shared MODULE_REF", {
+test_that("a module pinned off MODULE_REF says why", {
   refs <- workflowModuleRefs()
   skip_if_not(length(refs) > 0, "no module checkouts found")
 
-  ## a hardcoded ref stops tracking that module's branch, and the override is
-  ## then invisible to anyone changing MODULE_REF
-  pinned <- refs[!grepl("MODULE_REF", refs, fixed = TRUE)]
+  ## pinning is sometimes necessary: a module with no `development` branch
+  ## cannot be fetched at MODULE_REF. Unexplained, it is indistinguishable from
+  ## a module whose branch quietly stopped being tracked, which is how one
+  ## manual carried a stale exception for a year.
+  pinned <- Filter(function(x) !grepl("MODULE_REF", x$ref, fixed = TRUE), refs)
+  undocumented <- names(Filter(function(x) !x$explained, pinned))
 
-  expect_setequal(names(pinned), character(0))
+  expect_setequal(undocumented, character(0))
 })
 
 test_that("no module is fetched twice", {
