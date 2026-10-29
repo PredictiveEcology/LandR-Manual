@@ -10,8 +10,7 @@ bookdown::bs4_book:
     base: https://github.com/PredictiveEcology/LandR-Manual
     branch: main
   edit: null
-  ## restore once build.R renders "all" again and the pdf/epub builds work
-  # download: ["pdf", "epub"]
+  download: ["pdf", "epub"]
 
 # bookdown::gitbook:
 #   description: "A manual to the LandR Ecosystem of SpaDES modules"
