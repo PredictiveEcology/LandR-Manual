@@ -54,6 +54,30 @@ This manual does not cover the `SpaDES` toolkit, which we use to create and run
 LandR modules. To learn more about `SpaDES` go to the [SpaDES
 webpage](https://spades.predictiveecology.org/).
 
+**This version:**
+
+```{r, eval = TRUE, echo = FALSE, results = 'asis'}
+## bs4_book has no download menu -- `download:` is a gitbook option it ignores
+## -- so the current build's PDF and EPUB are linked here, beside the archived
+## ones. The paths are relative to the published book, where both files sit
+## next to index.html, so no GitHub URL is needed.
+##
+## The formats are taken from _output.yml rather than from what is on disk.
+## bookdown renders bs4_book first, so at the moment this chunk runs the PDF and
+## EPUB have not been written yet and testing for them would drop the links from
+## every build -- which is how `download:` appeared to work and did nothing.
+## If a format stops building, build.R reports it as a warning on the run.
+thisVersion <- Sys.getenv("LANDR_MAN_VERSION")
+declared <- names(yaml::read_yaml("_output.yml"))
+formats <- c(PDF = "pdf_book", EPUB = "epub_book")
+formats <- formats[vapply(formats, \(f) any(grepl(f, declared, fixed = TRUE)), logical(1))]
+
+if (length(formats)) {
+  cat(paste0("-   [LandR Manual v", thisVersion, " (", names(formats), ")](",
+             "LandRManual.", tolower(names(formats)), ")\n"), sep = "")
+}
+```
+
 **Previous versions:**
 
 ```{r, eval = TRUE, echo = FALSE, results = 'asis'}

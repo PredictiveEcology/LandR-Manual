@@ -188,10 +188,16 @@ jobs:
           folder: docs
 
       ## Persist a newly archived PDF back to main, so the next build republishes
-      ## it. Self-gating: build.R only writes archive/pdf/LandR-manual-v<version>.pdf
-      ## when a PDF was rendered and that version is not already archived, so this
-      ## is a no-op on ordinary builds and needs nobody to remember anything at
-      ## release time.
+      ## it, without anyone having to remember at release time.
+      ##
+      ## Only an *untracked* file counts as newly archived. Testing for any change
+      ## under archive/pdf was wrong: a PDF is not reproducible byte for byte,
+      ## because xelatex stamps a creation date into each run, so the archived
+      ## file looked modified after every single build and this step opened a
+      ## fresh pull request each time -- three for the same v1.0.4 before it was
+      ## noticed. SpaDES.docs >= 0.5.1 also no longer overwrites an archived
+      ## version, which fixes it at the source; this is the second line of
+      ## defence, and the one that holds whatever a helper does to the file.
       ##
       ## It opens a pull request rather than pushing to main, which the branch
       ## ruleset refuses ("Changes must be made through a pull request", GH006).
@@ -205,10 +211,16 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          if [ -z "$(git status --porcelain archive/pdf)" ]; then
+          ## '??' is untracked: a version that was not in the repository before.
+          ## A modified tracked file is a re-render of a version already archived
+          ## and is deliberately ignored, and restored so it cannot be committed
+          ## by the `git add` below.
+          if [ -z "$(git status --porcelain archive/pdf | grep '^??' || true)" ]; then
             echo "No newly archived PDF; nothing to commit."
+            git checkout -- archive/pdf 2>/dev/null || true
             exit 0
           fi
+          git checkout -- archive/pdf 2>/dev/null || true
           version="$(Rscript -e 'cat(read.dcf("DESCRIPTION", fields = "Version")[1])')"
           branch="archive/pdf-v${version}"
           ## Re-running a build for the same version must not open a second PR,
