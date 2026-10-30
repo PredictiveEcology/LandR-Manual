@@ -63,7 +63,7 @@ for (b in names(badges)) {
 ## per-release edit here to forget. index.Rmd's subtitle reads it from the
 ## environment, because the YAML header is parsed before any of the book's code
 ## runs. Sets LANDR_MAN_VERSION too, which the chapters still use.
-version <- manualVersion()
+version <- manualVersion(legacy = "LANDR_MAN_VERSION")
 
 ## don't use Require for package installation etc.
 Sys.setenv(R_USE_REQUIRE = "false")

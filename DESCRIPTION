@@ -41,6 +41,6 @@ Suggests:
     testthat (>= 3.0.0)
 Remotes:
     PredictiveEcology/SpaDES.core@development,
-    PredictiveEcology/SpaDES.docs@v0.6.0
+    PredictiveEcology/SpaDES.docs@v0.6.1
 Encoding: UTF-8
 Language: en-CA
