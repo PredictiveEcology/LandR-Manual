@@ -49,7 +49,6 @@ moduleDepenencies <- function(modules, modulePath) {
   modsFlat <- modsFlat[dirsExist]
 
   obs <- lapply(modsFlat, function(mod) {
-    if (mod == "spades_ws3_connect_LandR-Biomass") browser()
     io <- inputObjects(module = mod, path = modulePath)
     oo <- outputObjects(module = mod, path = modulePath)
     list(io = io[[mod]], oo = oo[[mod]], name = mod)
@@ -120,13 +119,12 @@ listModules <- function(moduleGreps, accounts, ignore = c("fireSense_dataPrepFit
     repos <- unlist(strsplit(repos, ","))
 
     out <- lapply(moduleGreps, function(mg) {
-      if (grepl("PredictiveEcology", url) && mg == "scfm") browser()
       outs <- grep(mg, repos, value = TRUE)
       gitRepo <- grep("full_name", outs, value = TRUE)
       gitRepo <- strsplit(gitRepo, "\"")
       gitRepo <- grep(mg, unlist(gitRepo), value = TRUE)
       if (length(gitRepo)) {
-        gitPaths <- paste0("https://github.com/",gitRepo,"/blob/master/",
+        gitPaths <- paste0("https://github.com/",gitRepo,"/blob/main/",
                            basename(gitRepo),".Rmd")
         isRepo <- unlist(lapply(gitPaths, validUrl))
         if (any(!isRepo)) {

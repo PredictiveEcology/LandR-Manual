@@ -61,3 +61,21 @@ test_that("the document class the book names is available", {
   ## krantz.cls is carried in the repository, not supplied by TeX Live
   expect_true(file.exists(file.path(repoRoot(), paste0(cls, ".cls"))))
 })
+
+test_that("the repo branch the book links to is one the workflow builds", {
+  cfg <- outputConfig()
+  i <- grep("bs4_book|gitbook", names(cfg))
+  skip_if_not(length(i) == 1, "no HTML format with a repo block")
+  branch <- cfg[[i]]$repo$branch
+  skip_if_not(!is.null(branch), "no repo branch declared")
+
+  ## the "view source" links are built from this. A branch that was renamed
+  ## still resolves through GitHub's redirect, so nothing breaks visibly and
+  ## the stale name stays.
+  wf <- manualWorkflow()
+  built <- regmatches(wf, regexpr("(?<=branches: \\[)[^]]+", wf, perl = TRUE))
+  built <- trimws(strsplit(paste(unlist(built), collapse = ","), ",")[[1]])
+  skip_if_not(length(built) > 0, "workflow declares no push branches")
+
+  expect_contains(built, branch)
+})
