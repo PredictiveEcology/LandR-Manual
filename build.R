@@ -26,14 +26,24 @@ spadesEntry <- utils::toBibtex(utils::citation("SpaDES"))
 spadesEntry[1] <- sub("\\{[^,]*,", "{ChubatyMcIntire2019,", spadesEntry[1])
 writeLines(spadesEntry, file.path(paths$citations, "references_SpaDES.bib"))
 
-## referencesLandRManual.bib holds the manual's own references -- those cited
-## outside any module chapter -- and is both an input here and the output, since
-## the manual accumulates into its own bibliography.
+## referencesLandRManual.bib is OUTPUT ONLY, assembled from the module
+## bibliographies plus the two generated above.
+##
+## It used to be its own input as well, on the premise that the manual
+## accumulated references cited outside any module chapter. It never had any:
+## the only citation in the manual's own files is @ChubatyMcIntire2019, which
+## references_SpaDES.bib supplies from the installed package. What the pattern
+## did instead was merge the file into itself on every local build -- the copy
+## found in October 2026 held 265 keys, 216 of them RefManageR's `:1`-style
+## duplicate markers. CI never saw that, because citations/ is generated and
+## starts empty there, which is also why nothing was ever lost by it.
+##
+## Should the manual gain references of its own, put them in a tracked
+## references_manual.bib and add it to extraBibs, as the LandWeb manual does.
 collapseModuleBibs(
   modulePath = file.path(paths$prj, "modules"),
   extraBibs = file.path(paths$citations,
-                        c("references_SpaDES.bib", "packages.bib",
-                          "referencesLandRManual.bib")),
+                        c("references_SpaDES.bib", "packages.bib")),
   outFile = file.path(paths$citations, "referencesLandRManual.bib")
 )
 

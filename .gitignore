@@ -17,9 +17,13 @@ nul
 *_files/
 rsconnect
 
-## generated at build time, except the manual's own bibliography
+## all generated at build time: the CSL, packages.bib, references_SpaDES.bib and
+## referencesLandRManual.bib, which build.R assembles from the module
+## bibliographies. The negation that used to keep referencesLandRManual.bib
+## tracked described an intention, not a fact -- it was never committed, and the
+## manual has no references of its own to commit. A tracked
+## references_manual.bib would belong here if that changes.
 citations/*
-!citations/referencesLandRManual.bib
 
 ## rendered output; published to the gh-pages branch by the workflow, and no
 ## longer committed here -- a committed copy rode along into every deploy
@@ -27,6 +31,12 @@ docs/
 
 ## module sources, checked out by the manual's workflow (see .github/workflows)
 modules/
+
+## project-local R library, created by Require when a build runs here. It is
+## entirely rebuildable, and the copy found in October 2026 was 618 MB of R 4.2
+## packages last written to in May 2022 -- unloadable by any R now in use, and
+## 10k untracked files between a reader and their own changes.
+packages/
 
 ## generated chapters (SpaDES.docs::prepManualRmds)
 _manual_rmds/
