@@ -71,3 +71,14 @@ test_that("the license is set", {
   ## usethis leaves a placeholder naming the functions that would set one
   expect_no_match(d[1, "License"], "use_.*_license", fixed = FALSE)
 })
+
+test_that("every environment variable index.Rmd reads is one build.R sets", {
+  read <- indexEnvVars()
+  skip_if_not(length(read) > 0, "index.Rmd reads no environment variables")
+  provided <- buildEnvVars()
+
+  ## the title page's subtitle comes from one of these. A name nothing sets
+  ## yields "", so the manual renders with "v." and no version after it and
+  ## nothing else reports a problem.
+  expect_contains(provided, read)
+})

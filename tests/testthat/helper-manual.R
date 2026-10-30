@@ -84,3 +84,41 @@ archivedPDFs <- function() {
   testthat::skip_if_not(dir.exists(d), "no archived PDFs in this repository")
   list.files(d, pattern = "[.]pdf$")
 }
+
+## Environment variables index.Rmd reads. The YAML header is parsed before any
+## of the book's code runs, so the title page can only reach the version
+## through the environment, and a name nothing sets renders as an empty string
+## rather than failing.
+indexEnvVars <- function() {
+  f <- file.path(repoRoot(), "index.Rmd")
+  testthat::skip_if_not(file.exists(f), "no index.Rmd")
+  lines <- readLines(f, warn = FALSE)
+  m <- regmatches(
+    lines,
+    gregexpr("Sys[.]getenv\\([\"'][A-Z_]+[\"']\\)", lines)
+  )
+  vars <- unlist(m, use.names = FALSE)
+  sort(unique(gsub("^Sys[.]getenv\\([\"']|[\"']\\)$", "", vars)), method = "radix")
+}
+
+## Environment variables build.R arranges to be set, whether by Sys.setenv() or
+## through manualVersion()'s `envVar` and `legacy` arguments.
+buildEnvVars <- function() {
+  f <- file.path(repoRoot(), "build.R")
+  testthat::skip_if_not(file.exists(f), "no build.R")
+  src <- paste(readLines(f, warn = FALSE), collapse = "\n")
+
+  direct <- unlist(regmatches(src, gregexpr("Sys[.]setenv\\([A-Z_]+", src)))
+  direct <- sub("^Sys[.]setenv\\(", "", direct)
+
+  ## manualVersion() sets SPADES_MANUAL_VERSION unless told otherwise, plus
+  ## whatever `legacy` names
+  viaHelper <- character(0)
+  if (grepl("manualVersion\\(", src)) {
+    viaHelper <- "SPADES_MANUAL_VERSION"
+    args <- unlist(regmatches(src, gregexpr("manualVersion\\([^)]*\\)", src)))
+    named <- unlist(regmatches(args, gregexpr("[\"'][A-Z_]+[\"']", args)))
+    viaHelper <- c(viaHelper, gsub("[\"']", "", named))
+  }
+  sort(unique(c(direct, viaHelper)), method = "radix")
+}
