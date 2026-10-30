@@ -59,9 +59,11 @@ for (b in names(badges)) {
 
 # RENDER BOOK ------------------------------------------
 
-## set manual version. From DESCRIPTION, by field name, so there is one source
-## of truth and no per-release edit here to forget.
-Sys.setenv(LANDR_MAN_VERSION = read.dcf("DESCRIPTION", fields = "Version")[1])
+## set manual version from DESCRIPTION, so there is one source of truth and no
+## per-release edit here to forget. index.Rmd's subtitle reads it from the
+## environment, because the YAML header is parsed before any of the book's code
+## runs. Sets LANDR_MAN_VERSION too, which the chapters still use.
+version <- manualVersion()
 
 ## don't use Require for package installation etc.
 Sys.setenv(R_USE_REQUIRE = "false")
@@ -69,35 +71,13 @@ Sys.setenv(R_USE_REQUIRE = "false")
 ## NOTE: needs the dot, because knitting does `rm(list = ls())`
 .copyModuleRmds <- prepManualRmds(modulePath = "./modules", rebuildCache = FALSE) ## use rel path!
 
-## every format _output.yml declares: bs4_book, pdf_book (xelatex, krantz.cls,
-## biblatex) and epub_book.
+## every format _output.yml declares: bs4_book, epub_book and pdf_book (xelatex,
+## krantz.cls, biblatex), in that order so a LaTeX failure costs only the PDF.
 ##
-## bookdown knits once and then writes each format in turn, so the site is on
-## disk before the PDF is attempted. Letting a LaTeX error propagate therefore
-## threw away a site that had already rendered: the deploy step never ran and
-## the published manual sat unchanged from 2026-09-21. The error is reported
-## instead, as a GitHub Actions warning so it stays visible on the run, and the
-## build carries on to deploy what did render. archiveManualPDF() below already
-## does nothing when there is no PDF.
-##
-## The site itself must still not ship broken, so it is checked for separately.
-## Removing it first means the check cannot pass on a stale local copy; in CI
-## docs/ is absent anyway, as it is no longer committed.
-indexHTML <- file.path(paths$docs, "index.html")
-unlink(indexHTML)
-
-tryCatch(
-  bookdown::render_book(output_format = "all", envir = new.env()),
-  error = function(e) {
-    message("::warning title=Manual render incomplete::",
-            "not every output format rendered: ", conditionMessage(e))
-  }
-)
-
-if (!file.exists(indexHTML)) {
-  stop("render_book() produced no '", indexHTML, "': the site itself failed to ",
-       "render, so there is nothing to deploy.", call. = FALSE)
-}
+## renderManual() keeps the site when another format fails and still requires the
+## site itself. The three manuals each had a copy of that logic; it now lives in
+## SpaDES.docs.
+renderManual(outputDir = paths$docs, output_format = "all", envir = new.env())
 
 ## .nojekyll and CNAME have to be inside the published directory: the deploy
 ## pushes the contents of docs/, so anything at the repository root never reaches
@@ -106,7 +86,7 @@ stagePagesFiles(paths$docs, cname = "landr-manual.predictiveecology.org")
 
 archiveManualPDF(
   file.path(paths$docs, "LandRManual.pdf"),
-  version = Sys.getenv("LANDR_MAN_VERSION"),
+  version = version,
   prefix = "LandR-manual"
 )
 
@@ -119,5 +99,5 @@ publishManualArchive(
   manualName = "LandR Manual"
 )
 
-## remove the temporary .Rmds
-unlink("_manual_rmds", recursive = TRUE)
+## remove the temporary .Rmds, at wherever prepManualRmds() actually staged them
+unlink(unique(dirname(.copyModuleRmds)), recursive = TRUE)
