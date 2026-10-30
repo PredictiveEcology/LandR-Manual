@@ -20,6 +20,7 @@ Manual of the LandR ecosystem of SpaDES modules - available at <https://LandR-ma
 
 ## News
 
+-   v. 1.0.4 -- built by GitHub Actions from the modules' development branches; PDF and EPUB published and linked, and each release's PDF archived
 -   v. 1.0.3 -- manual formatting improvements
 -   v. 1.0.2 -- manual improvements, and minor changes to modules
 -   v. 1.0.1 -- manual improvements, mostly related with table formatting

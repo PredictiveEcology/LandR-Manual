@@ -37,6 +37,8 @@ Imports:
     svglite,
     xml2,
     yaml
+Suggests:
+    testthat (>= 3.0.0)
 Remotes:
     PredictiveEcology/SpaDES.core@development,
     PredictiveEcology/SpaDES.docs@v0.5.0
