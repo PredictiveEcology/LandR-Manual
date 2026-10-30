@@ -81,17 +81,11 @@ if (length(formats)) {
 **Previous versions:**
 
 ```{r, eval = TRUE, echo = FALSE, results = 'asis'}
-allPDFs <- list.files("archive/pdf", full.names = TRUE)
-allPDFs <- grep(Sys.getenv('LANDR_MAN_VERSION'), allPDFs, invert = TRUE, value = TRUE)
-versionNames <- sub("\\.pdf", "", gsub("(-|_)", " ", basename(allPDFs)))
-versionNames <- sub("[m|M]anual", "Manual", versionNames)
-pdfURLs <- paste0("https://github.com/PredictiveEcology/LandR-Manual/raw/main/", allPDFs)
-
-## text to render
-cat(paste0("-   [", versionNames, "](", pdfURLs, ")\n"))
+## built from the files present, newest first, excluding the version being
+## built. Links the copies publishManualArchive() puts in the book rather than
+## this repository's raw files, which stop resolving if it is renamed or made
+## private.
+cat(SpaDES.docs::manualArchiveLinks(manualName = "LandR Manual"), sep = "")
 ```
 
-<!-- -   [LandR Manual v. 1.0.0](https://github.com/PredictiveEcology/LandR-Manual/raw/main/archive/pdf/LandR-manual-v1.0.0.pdf) -->
-<!-- -   [LandR Manual v. 1.0.1](https://github.com/PredictiveEcology/LandR-Manual/raw/main/archive/pdf/LandR-manual-v1.0.1.pdf) -->
-<!-- -   [LandR Manual v. 1.0.2](https://github.com/PredictiveEcology/LandR-Manual/raw/main/archive/pdf/LandR-manual-v1.0.2.pdf) -->
 
