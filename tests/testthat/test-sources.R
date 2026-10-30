@@ -10,7 +10,9 @@
 ## only the files already in it, never those in subdirectories.
 trackedSources <- function(patterns = c("*.R", "*.Rmd")) {
   out <- system2("git", c("-C", shQuote(repoRoot()), "ls-files", shQuote(patterns)), stdout = TRUE)
-  out[nzchar(out)]
+  out <- out[nzchar(out)]
+  ## this file holds the patterns it searches for, so it matches itself
+  out[out != "tests/testthat/test-sources.R"]
 }
 
 ## lines matching `pattern`, as "file:line", across the given files. Returns
