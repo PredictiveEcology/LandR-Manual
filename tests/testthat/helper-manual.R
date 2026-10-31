@@ -28,6 +28,16 @@ workflowModules <- function(lines = manualWorkflow()) {
   sort(unlist(m, use.names = FALSE), method = "radix")
 }
 
+## the repositories the workflow fetches from, which are not always the module
+## names: four fireSense repositories capitalise the word after the underscore
+## while the module inside does not. The landing page links repositories, the
+## book names chapters after modules, so the two lists are compared against
+## their own namespace.
+workflowRepos <- function(lines = manualWorkflow()) {
+  m <- regmatches(lines, regexpr("(?<=repository: PredictiveEcology/)\\S+", lines, perl = TRUE))
+  sort(unlist(m, use.names = FALSE), method = "radix")
+}
+
 ## the ref each module checkout uses, and whether a deviation from the shared
 ## MODULE_REF is explained by a comment above the step. A module may genuinely
 ## need pinning -- one with no `development` branch cannot be checked out at
