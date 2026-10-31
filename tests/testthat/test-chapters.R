@@ -64,13 +64,15 @@ test_that("every chapter the book lists exists or is generated", {
   expect_setequal(missing, character(0))
 })
 
-test_that("the landing page lists the modules the book has chapters for", {
+test_that("the landing page links the repositories the book is built from", {
   linked <- indexModuleLinks()
-  charted <- chapterModules()
+  fetched <- workflowRepos()
   ## only some manuals keep such a list; where one exists it is hand-maintained,
-  ## so a module can be fetched, charted, and still missing from the overview
-  listed <- intersect(linked, charted)
-  skip_if_not(length(listed) > 0, "no module list on the landing page")
+  ## so a module can be fetched, charted, and still missing from the overview.
+  ## Compared against the repositories rather than the chapters, because for
+  ## four modules the two differ in case and only the repository name resolves
+  ## as a URL.
+  skip_if_not(length(intersect(linked, fetched)) > 0, "no module list on the landing page")
 
-  expect_setequal(setdiff(charted, linked), character(0))
+  expect_setequal(setdiff(fetched, linked), character(0))
 })
