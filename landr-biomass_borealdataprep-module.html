@@ -311,8 +311,8 @@ estimated using the remainder of the data to fit the model supplied by
 <code>P(sim)$imputeBadAgeModel</code>, which defaults to:</p></li>
 </ol>
 <pre><code>## [[1]]
-## lme4::lmer(age ~ log(totalBiomass) * cover * speciesCode + (log(totalBiomass) | 
-##     initialEcoregionCode))</code></pre>
+## lme4::lmer(log(age) ~ log(totalBiomass) * cover * speciesCode + 
+##     (log(totalBiomass) | initialEcoregionCode))</code></pre>
 <p>Cohort biomass is then adjusted to reflect the different cover to biomass
 relationship of conifer and broadleaf species (see <a href="landr-biomass_borealdataprep-module.html#bboreal-adjustB">Adjustment of initial
 species biomass</a>).</p>
@@ -480,18 +480,18 @@ machinery of <code>lme4</code>.</p>
 <p>Finally, we highlight that modelling <code>log(B)</code> is NOT an appropriate solution,
 because it will wrongly assume an <em>exponential</em> relationship between
 <code>B ~ log(age) + cover</code>, leading to a serious overestimation of <code>maxB</code>(Fig.
-<a href="landr-biomass_borealdataprep-module.html#fig:fig-biomassModelLogBtest">3.1</a>) and steep increases in species biomasses
-during the first years of the simulation (Fig. <a href="landr-biomass_borealdataprep-module.html#fig:fig-simBLogBtest">3.2</a>).</p>
+<a href="landr-biomass_borealdataprep-module.html#fig:fig-biomassModelLogBtest-Biomass-borealDataPrep">3.1</a>) and steep increases in species biomasses
+during the first years of the simulation (Fig. <a href="landr-biomass_borealdataprep-module.html#fig:fig-simBLogBtest-Biomass-borealDataPrep">3.2</a>).</p>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:fig-biomassModelLogBtest"></span>
+<span style="display:block;" id="fig:fig-biomassModelLogBtest-Biomass-borealDataPrep"></span>
 <img src="_manual_rmds/Biomass_borealDataPrep/figures/biomassModel_logBtest.png" alt="Modelling biomass as a linear vs. exponential relationship. a) `modelBiomass` as `B ~ logAge * speciesCode + cover * speciesCode + (logAge + cover | ecoregionGroup)`. b) `modelBiomass` as `logB ~ logAge * speciesCode + cover * speciesCode + (logAge + cover | ecoregionGroup)`. Blue dots are marginal mean B values (back-transformed in b) cross ages with confidence intervals as the bars." width="70%"><p class="caption">
 Figure 3.1: Modelling biomass as a linear vs. exponential relationship. a) <code>modelBiomass</code> as <code>B ~ logAge * speciesCode + cover * speciesCode + (logAge + cover | ecoregionGroup)</code>. b) <code>modelBiomass</code> as <code>logB ~ logAge * speciesCode + cover * speciesCode + (logAge + cover | ecoregionGroup)</code>. Blue dots are marginal mean B values (back-transformed in b) cross ages with confidence intervals as the bars.
 </p>
 </div>
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:fig-simBLogBtest"></span>
-<img src="_manual_rmds/Biomass_borealDataPrep/figures/simulatedB_logBtest.png" alt="Thirty years of simulation with `maxB` values estimated from a `logB ~ ...` `biomassModel` (see Fig. \@ref(fig:fig-biomassModelLogBtest)). The steep increase in such little time is abnormal." width="70%"><p class="caption">
-Figure 3.2: Thirty years of simulation with <code>maxB</code> values estimated from a <code>logB ~ ...</code> <code>biomassModel</code> (see Fig. <a href="landr-biomass_borealdataprep-module.html#fig:fig-biomassModelLogBtest">3.1</a>). The steep increase in such little time is abnormal.
+<span style="display:block;" id="fig:fig-simBLogBtest-Biomass-borealDataPrep"></span>
+<img src="_manual_rmds/Biomass_borealDataPrep/figures/simulatedB_logBtest.png" alt="Thirty years of simulation with `maxB` values estimated from a `logB ~ ...` `biomassModel` (see Fig. \@ref(fig:fig-biomassModelLogBtest-Biomass-borealDataPrep)). The steep increase in such little time is abnormal." width="70%"><p class="caption">
+Figure 3.2: Thirty years of simulation with <code>maxB</code> values estimated from a <code>logB ~ ...</code> <code>biomassModel</code> (see Fig. <a href="landr-biomass_borealdataprep-module.html#fig:fig-biomassModelLogBtest-Biomass-borealDataPrep">3.1</a>). The steep increase in such little time is abnormal.
 </p>
 </div>
 <p>After the biomass model is fit, <code>maxB</code> is predicted by species and ecolocation
