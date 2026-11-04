@@ -32,6 +32,7 @@ Imports:
     Require,
     rmarkdown,
     rprojroot,
+    SpaDES,
     SpaDES.core,
     SpaDES.docs,
     svglite,
